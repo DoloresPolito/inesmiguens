@@ -1,0 +1,159 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.navbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: white;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  transition: 0.5s height;
+  z-index: 1000;
+  font-weight: 200 !important;
+
+  .navigation {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: calc(100% - 20vw);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+
+    .burgerMenuContainer {
+      content: "";
+      width: 55px;
+      height: 25px;
+      position: relative;
+      right: 0;
+      cursor: pointer;
+
+      .burgerMenuTrigger {
+        content: "";
+        width: 55px;
+        height: 25px;
+        position: relative;
+        right: 0;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      .burgerMenu {
+        content: "";
+        background: black;
+        position: absolute;
+        width: 55px;
+        height: 2px;
+        z-index: 0;
+        top: calc(25px / 2 - 1.5px);
+        transition: 0.25s width ease-in-out, 0.5s background-color ease-in-out;
+      }
+
+      .burgerMenu::after {
+        content: "";
+        background-color: black;
+        position: absolute;
+        width: 55px;
+        height: 2px;
+        transform: translateY(10px);
+        z-index: 0;
+        transition: 0.25s transform ease-in-out,
+          0.5s background-color ease-in-out;
+      }
+
+      .burgerMenu::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        width: 55px;
+        height: 2px;
+        transform: translateY(-10px);
+        z-index: 0;
+        transition: 0.25s transform ease-in-out,
+          0.5s background-color ease-in-out;
+      }
+
+      .burgerMenuTrigger:hover ~ .burgerMenu {
+        width: 35px;
+      }
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 30vh;
+    display: none;
+
+
+    ul {
+      list-style: none;
+
+      li {
+        padding: 1rem 0;
+
+        a {
+          font-family: "Montserrat", sans-serif;
+          font-size: 20px;
+          color: #281a0f;
+          transition: 0.25s color;
+          font-weight: 400 !important;
+        }
+
+        a:hover {
+          color: rgb(127, 127, 127);
+          transition: 0.25s color;
+        }
+      }
+    }
+  }
+}
+
+.navbar.active {
+  background-color: #ece8e5;
+  transition: 0.75s height;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .navigation {
+    .button {
+      color: white;
+      transition: 0.5s color;
+    }
+    .burgerMenuContainer {
+      .burgerMenu {
+        width: 0;
+        background-color: black;
+        transition: 0.25s width ease-in-out, 0.25s background-color ease-in-out;
+      }
+
+      .burgerMenu::after {
+        transform: translateY(0px) rotate(135deg);
+        background-color: black;
+        transition: 0.25s transform ease-in-out,
+          0.25s background-color ease-in-out;
+      }
+
+      .burgerMenu::before {
+        transform: translateY(0px) rotate(-135deg);
+        background-color: black;
+        transition: 0.25s transform ease-in-out,
+          0.25s background-color ease-in-out;
+      }
+
+      .burgerMenuTrigger:hover ~ .burgerMenu {
+        width: 0px;
+      }
+    }
+  }
+  .content {
+    display: initial;
+  }
+}
