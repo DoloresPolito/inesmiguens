@@ -206,12 +206,12 @@ const Container = styled.div`
   max-width: 1600px;
 
   
-  opacity: ${(props) =>
+  /* opacity: ${(props) =>
     props.visible || props.scrollDirection === "up" ? 1 : 0};
   transform: ${(props) =>
     props.visible || props.scrollDirection === "up"
       ? "none"
-      : "translateY(-100%)"};
+      : "translateY(-100%)"}; */
 `;
 
 const Nav = styled.nav`
