@@ -125,7 +125,7 @@ const Work = () => {
               animate="show"
             >
               {trayectoria.map((tra, index) => (
-                <motion.li variants={item}>
+                <motion.li variants={item} key={index}>
                   <WorkLi>
                     <WorkDate>
                       <p>{tra.año}</p>
