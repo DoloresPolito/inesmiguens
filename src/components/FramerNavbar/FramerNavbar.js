@@ -4,6 +4,15 @@ import Styles from "./navbar.module.scss";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import styled from "styled-components";
+import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/hoteles", title: "HOTELES" },
+  { href: "/obras", title: "OBRAS" },
+  { href: "/talleres", title: "TRAVEL & WORKSHOPS" },
+  { href: "/trayectoria", title: "TRAYECTORIA" },
+  { href: "/contacto", title: "CONTACTO" },
+];
 
 const FramerNavbar = () => {
   const [width, setWidth] = useState(null);
@@ -13,12 +22,12 @@ const FramerNavbar = () => {
       setWidth(window.innerWidth);
     };
 
-    handleResize(); // Establecer el ancho inicial
+    handleResize();
 
-    window.addEventListener("resize", handleResize); // Agregar listener de evento de cambio de tamaño de ventana
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize); // Eliminar listener de evento al desmontar el componente
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -29,6 +38,39 @@ const FramerNavbar = () => {
   const toggleBurgerMenu = () => {
     setBurgerMenuActive(!burgerMenuActive);
   };
+
+  const path = usePathname();
+
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+      setScrollDirection("up");
+    } else {
+      setScrollDirection("down");
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos, scrollDirection]);
+
+  useEffect(() => {
+    // Ocultar la barra de navegación al hacer scroll hacia abajo y mostrarla al hacer scroll hacia arriba
+    setVisible(
+      (scrollDirection === "up" && window.scrollY > 20) || window.scrollY <= 0
+    );
+  }, [scrollDirection]);
 
   const motionVariants = {
     open: {
@@ -67,91 +109,151 @@ const FramerNavbar = () => {
   };
 
   return (
-    <div
-      className={`${Styles.navbar} ${burgerMenuActive ? Styles.active : ""}`}
-    >
+    <>
       {width >= medium ? (
         <>
-        <Container>
-          <div>
-            <p>INES MIGUENS</p>
-          </div>
-          
-         <div className="items">
-         <Link href="/hoteles">HOTELES</Link>
-         <Link href="/talleres">TALLERES</Link>
-         <Link href="/trayectoria">TRAYECTORIA</Link>
-         <Link href="/contacto">CONTACO</Link>
-         </div>
+         
+            <Container visible={visible}>
+              <NavbarCont>
 
+     
+              <div>
+                <Link href="/">
+                  <p>INES MIGUENS</p>
+                </Link>
+              </div>
 
-
-        </Container>
+              <Nav>
+                <List>
+                  {links.map((link) => (
+                    <ListItem key={link.href}>
+                      <StyledLink href={link.href} className="relative">
+                        {link.href === path && <Underline />}
+                        {link.title}
+                      </StyledLink>
+                    </ListItem>
+                  ))}
+                </List>
+              </Nav>
+              </NavbarCont>
+            </Container>
+      
         </>
       ) : (
         <>
-          <div className={Styles.navigation}>
-          <div>
-            <p>INES MIGUENS</p>
-          </div>
-            <div
-              className={Styles.burgerMenuContainer}
-              onClick={() => toggleBurgerMenu()}
-            >
-              <div className={Styles.burgerMenuTrigger}></div>
-              <div className={Styles.burgerMenu}></div>
+          <div
+            className={`${Styles.navbar} ${
+              burgerMenuActive ? Styles.active : ""
+            }`}
+          >
+            <div className={Styles.navigation}>
+              <div>
+                <Link href="/">
+                  <p>INES MIGUENS</p>
+                </Link>
+              </div>
+              <div
+                className={Styles.burgerMenuContainer}
+                onClick={() => toggleBurgerMenu()}
+              >
+                <div className={Styles.burgerMenuTrigger}></div>
+                <div className={Styles.burgerMenu}></div>
+              </div>
             </div>
-          </div>
-          <div className={Styles.content}>
-            <motion.ul
-              animate={burgerMenuActive ? "open" : "closed"}
-              variants={motionVariants}
-            >
-              <motion.li variants={listItemVariants}>
-                <Link href="/hoteles">HOTELES</Link>
-              </motion.li>
-              <motion.li variants={listItemVariants}>
-                <Link href="/talleres">TALLERES</Link>
-              </motion.li>
-              <motion.li variants={listItemVariants}>
-                <Link href="/trayectoria">TRAYECTORIA</Link>
-              </motion.li>
-              <motion.li variants={listItemVariants}>
-                <Link href="/contacto">CONTACO</Link>
-              </motion.li>
-            </motion.ul>
+            <div className={Styles.content}>
+              <motion.ul
+                animate={burgerMenuActive ? "open" : "closed"}
+                variants={motionVariants}
+              >
+                {links.map((link) => (
+                  <motion.li variants={listItemVariants} key={link.href}>
+                    <Link href={link.href}>{link.title}</Link>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
           </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 
-
-
 //desktop navbar styles
 
+const NavbarCont = styled.div`
+  width: 90%;
+  height: auto;
+  display: flex;
+  margin: 0 auto;
+`;
+
 const Container = styled.div`
-display: flex;
-width: 90%;
-height: 100%;
-align-items: center;
-justify-content: space-between;
-margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin: 0 auto;
+  max-width: 1600px;
 
-.items{
- padding: 0px 50px;
+  
+  opacity: ${(props) =>
+    props.visible || props.scrollDirection === "up" ? 1 : 0};
+  transform: ${(props) =>
+    props.visible || props.scrollDirection === "up"
+      ? "none"
+      : "translateY(-100%)"};
+`;
 
- a{
+const Nav = styled.nav`
+  width: 50%;
+`;
 
+const List = styled.ul`
+  margin-left: 2px;
+
+  @media (min-width: 640px) {
+    margin-left: 12px;
+  }
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ListItem = styled.li`
+  width: auto;
+  list-style-type: none;
+`;
+
+const StyledLink = styled.a`
+  position: relative;
   font-family: "Montserrat", sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
-  padding: 0px 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
 
+  &:hover {
+    font-weight: 500;
+  }
+`;
 
- }
-}
-`
+const Underline = styled.span`
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: black;
+`;
 
 export default FramerNavbar;

@@ -1,24 +1,23 @@
 import React from "react";
-import { Section, Container } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
+import HomeSection from "@/sections/Home";
+import Footer from "@/components/Footer";
 
 function Home() {
   return (
     <>
-          <motion.div
-        initial={{ opacity: 0 }}
+      <motion.div
+        initial={{ opacity: 0.5 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-      <FramerNavbar />
-      <Section>
-        <Container>
-        <h2>HOLA</h2>
-        </Container>
-      </Section>
+        <FramerNavbar />
+        <HomeSection />
+        <Footer />
       </motion.div>
+ 
     </>
   );
 }
