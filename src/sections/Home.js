@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import impermanencia from "../../public/assets/images/obras/impermanencia comp/1 baja.jpg";
+import impermanencia from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
 import voces from "../../public/assets/images/obras/voces de la tierra comp/1baja.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 
