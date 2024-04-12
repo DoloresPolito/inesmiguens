@@ -10,7 +10,7 @@ import vanishing2 from "../../public/assets/images/obras/vanishing jpg reduce co
 import voces from "../../public/assets/images/obras/voces de la tierra comp/6baja.jpg";
 import voces2 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
 
-import ecos from "../../public/assets/images/obras/ecos en el tiempo comp/baja6a.jpg";
+import ecos from "../../public/assets/images/obras/ecos jpg reduce/estabaja6a.jpg";
 import { Section, Container, Title } from "../styles/styles";
 import Link from "next/link";
 import More from "@/components/More";
@@ -28,7 +28,7 @@ function ObrasSection() {
               <div>
                 <ObrasSubtitle>vanishing landscapes</ObrasSubtitle>
 
-                <More />
+                <More text="ver más" />
               </div>
             </Link>
           </div>
@@ -48,11 +48,8 @@ function ObrasSection() {
             <Link href="/impermanencia">
               <div>
                 <ObrasSubtitle>impermanencia</ObrasSubtitle>
-                {/* <ObrasText>
-              La ciudad se convierte en un mar de fugaces  y fantasmagóricos
-              encuentros.
-            </ObrasText> */}
-                <More />
+  
+                <More text="ver más" />
               </div>
             </Link>
           </div>
@@ -68,7 +65,7 @@ function ObrasSection() {
               <div>
                 <ObrasSubtitle>voces de la tierra</ObrasSubtitle>
 
-                <More />
+                <More text="ver más" />
               </div>
             </Link>
           </div>
@@ -83,7 +80,7 @@ function ObrasSection() {
             <Link href="/ecos-en-el-tiempo">
               <div>
                 <ObrasSubtitle>ecos en el tiempo</ObrasSubtitle>
-                <More />
+                <More text="ver más" />
               </div>
             </Link>
           </div>
@@ -125,9 +122,9 @@ const VanishingContainer = styled.div`
     width: 55%;
 
     img {
-      max-width: 100%; /* Cambia width a max-width */
-      height: auto; /* Agrega esta línea para mantener la proporción */
-      object-fit: cover; /* Ajusta el comportamiento de la imagen */
+      max-width: 100%; 
+      height: auto; 
+      object-fit: cover; 
     }
   }
 

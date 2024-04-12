@@ -1,19 +1,29 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Section, Container } from "../styles/styles";
+import {
+  Section,
+  Container,
+  ObrasTitle,
+  ObrasText,
+  ObrasTopContainer,
+} from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion, useAnimation } from "framer-motion";
 import Footer from "@/components/Footer";
-
+import More from "@/components/More";
 import Image from "next/image";
-import img1 from "../../public/assets/images/obras/ecos en el tiempo comp/baja 7.jpg";
-import img2 from "../../public/assets/images/obras/ecos en el tiempo comp/baja5.jpg";
-import img3 from "../../public/assets/images/obras/ecos en el tiempo comp/baja6.jpg";
-import img4 from "../../public/assets/images/obras/ecos en el tiempo comp/baja6a.jpg";
-import img5 from "../../public/assets/images/obras/ecos en el tiempo comp/baja2.jpg";
-import img6 from "../../public/assets/images/obras/ecos en el tiempo comp/baja3.jpg";
-import img7 from "../../public/assets/images/obras/ecos en el tiempo comp/baja 1.jpg";
-import img8 from "../../public/assets/images/obras/ecos en el tiempo comp/baja10.jpg";
+import img1 from "../../public/assets/images/obras/ecos jpg reduce/baja 7.jpg";
+import img2 from "../../public/assets/images/obras/ecos jpg reduce/baja5.jpg";
+import img3 from "../../public/assets/images/obras/ecos jpg reduce/baja6.jpg";
+import img4 from "../../public/assets/images/obras/ecos jpg reduce/estabaja6a.jpg";
+import img5 from "../../public/assets/images/obras/ecos jpg reduce/baja2.jpg";
+import img6 from "../../public/assets/images/obras/ecos jpg reduce/baja3.jpg";
+import img7 from "../../public/assets/images/obras/ecos jpg reduce/estabaja 1.jpg";
+import img8 from "../../public/assets/images/obras/ecos jpg reduce/baja10.jpg";
+
+import img9 from "../../public/assets/images/obras/ecos jpg reduce/baja8.jpg";
+import img10 from "../../public/assets/images/obras/ecos jpg reduce/cuba10baja.jpg";
+
 import { useInView } from "react-intersection-observer";
 
 function Ecos() {
@@ -43,10 +53,13 @@ function Ecos() {
       >
         <FramerNavbar />
         <VocesSection>
-          <VocesContainer>
+          <ObrasTopContainer>
             <div className="left">
-              <h2>ecos en el tiempo</h2>
-              <p>
+              <ObrasTitle>
+                Ecos en el <br />
+                tiempo
+              </ObrasTitle>
+              <ObrasText>
                 La ciudad se convierte en un mar de fugaces  y fantasmagóricos
                 encuentros, en la que se desvanece la posibilidad de la
                 percepción de los otros, prácticamente invisibles, incorpóreos.
@@ -54,7 +67,8 @@ function Ecos() {
                 preñado de destiempo y expatriado de toda permanencia. Su cruce
                 demora apenas un minuto que es la cifra de la celeridad en la
                 que vivimos.
-              </p>
+              </ObrasText>
+              <More text="obras" link="/obras" />
             </div>
             <motion.div
               className="right"
@@ -64,13 +78,14 @@ function Ecos() {
             >
               <StyledImageCover src={img1} alt="image1" />
             </motion.div>
-          </VocesContainer>
+          </ObrasTopContainer>
 
           <PicturesContainer>
             <RowOf2 image1={img2} image2={img3} />
             <RowOf2 image1={img5} image2={img6} />
             <RowOf1 />
             <RowOf2 image1={img7} image2={img8} />
+            <RowOf2 image1={img9} image2={img10} />
           </PicturesContainer>
         </VocesSection>
         <Footer />
@@ -94,14 +109,14 @@ const RowOf2 = ({ image1, image2 }) => {
   return (
     <>
       <Row2Container ref={ref}>
-        <StyledImage
+        <StyledImage2
           src={image1}
           alt="image1"
           custom={0}
           animate={controls}
           initial="hidden"
         />
-        <StyledImage
+        <StyledImage2
           src={image2}
           alt="image1"
           custom={0}
@@ -144,92 +159,15 @@ const VocesSection = styled(Section)`
   justify-content: center;
 `;
 
-const VocesContainer = styled(Container)`
-  margin-top: 95px;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 80px;
-  width: 93%;
-  align-items: center;
-
-  .left {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #f9f9f9;
-    padding: 30px;
-    @media screen and (max-width: 1100px) {
-      width: 70%;
-      height: auto;
-      align-self: flex-start;
-    }
-
-    @media screen and (max-width: 700px) {
-      width: 90%;
-    }
-
-    h2 {
-      font-family: "Georama", sans-serif;
-      font-size: 110px;
-      color: #4a4747;
-      line-height: 90%;
-      font-weight: 900;
-      max-width: 500px;
-      margin-top: 5px;
-      @media screen and (max-width: 1100px) {
-        margin-top: 0px;
-        font-size: 80px;
-      }
-    }
-
-    p {
-      font-family: "Montserrat", sans-serif;
-      color: black;
-      font-size: 12px;
-      line-height: 170%;
-      max-width: 600px;
-      letter-spacing: 0.5px;
-      padding-right: 50px;
-      @media screen and (max-width: 1100px) {
-        margin-top: -50px;
-      }
-    }
-  }
-  .right {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center !important;
-    justify-content: center;
-    background-color: violet;
-    @media screen and (max-width: 1100px) {
-      width: 100%;
-    }
-  }
-
-  @media screen and (max-width: 1100px) {
-    flex-direction: column;
-  }
-`;
-
 const StyledImage = styled(Image)`
   width: 100%;
   height: 90%;
   object-fit: cover;
-
-  /* opacity: 0;
-  transition: opacity 0.5s ease;
-
-  &.visible {
-    opacity: 1;
-  } */
 `;
 
 const StyledImageCover = styled(Image)`
   width: 100%;
-  height: 90%;
+  height: 100%;
   object-fit: cover;
 
   @media screen and (max-width: 950px) {
@@ -247,16 +185,37 @@ const PicturesContainer = styled(Container)`
 `;
 
 const Row2Container = styled.div`
-  height: 420px;
+  height: 500px;
   width: 100%;
   background-color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 0px;
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1190px) {
     flex-direction: column;
     height: auto;
+    margin-top: -60px;
+  }
+`;
+
+const StyledImage2 = styled(Image)`
+  width: 650px;
+  height: 380px;
+  padding: 0px 30px;
+  object-fit: cover;
+
+  @media screen and (max-width: 1190px) {
+    object-fit: cover;
+    /* width: 100%; */
+    height: 600px;
+    padding: 0px 10px;
+  }
+  @media screen and (max-width: 750px) {
+    width: 90%;
+    height: auto;
+    padding: 10px 0px;
   }
 `;
 
@@ -268,4 +227,5 @@ const Row1Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 export default Ecos;

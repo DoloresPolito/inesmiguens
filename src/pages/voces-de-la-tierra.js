@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Section, Container } from "../styles/styles";
+import { Section, Container, ObrasTitle, ObrasText, ObrasTopContainer } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion, useAnimation } from "framer-motion";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-
+import More from "@/components/More";
 
 import img1 from "../../public/assets/images/obras/voces de la tierra comp/1baja.jpg";
 import img2 from "../../public/assets/images/obras/voces de la tierra comp/2baja.jpg";
@@ -49,10 +49,10 @@ function Voces() {
       >
         <FramerNavbar />
         <VocesSection>
-          <VocesContainer>
+        <ObrasTopContainer>
             <div className="left">
-              <h2>voces de la tierra</h2>
-              <p>
+              <ObrasTitle>Voces de la tierra</ObrasTitle>
+              <ObrasText>
                 La ciudad se convierte en un mar de fugaces  y fantasmagóricos
                 encuentros, en la que se desvanece la posibilidad de la
                 percepción de los otros, prácticamente invisibles, incorpóreos.
@@ -60,7 +60,8 @@ function Voces() {
                 preñado de destiempo y expatriado de toda permanencia. Su cruce
                 demora apenas un minuto que es la cifra de la celeridad en la
                 que vivimos.
-              </p>
+              </ObrasText>
+              <More text="obras" link="/obras"/>
             </div>
             <motion.div
               className="right"
@@ -70,7 +71,7 @@ function Voces() {
             >
               <StyledImageCover src={img1} alt="image1" />
             </motion.div>
-          </VocesContainer>
+            </ObrasTopContainer>
 
           <PicturesContainer>
           {/* <RowOf1 image={img3}/> */}
@@ -193,75 +194,7 @@ const VocesSection = styled(Section)`
   justify-content: center;
 `;
 
-const VocesContainer = styled(Container)`
-  margin-top: 95px;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 80px;
-  width: 93%;
-  align-items: center;
 
-  .left {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #f9f9f9;
-    padding: 30px;
-    @media screen and (max-width: 1100px) {
-      width: 70%;
-      height: auto;
-      align-self: flex-start;
-    }
-
-    @media screen and (max-width: 700px) {
-      width: 90%;
-    }
-
-    h2 {
-      font-family: "Georama", sans-serif;
-      font-size: 110px;
-      color: #4a4747;
-      line-height: 90%;
-      font-weight: 900;
-      max-width: 500px;
-      margin-top: 5px;
-      @media screen and (max-width: 1100px) {
-        margin-top: 0px;
-        font-size: 80px;
-      }
-    }
-
-    p {
-      font-family: "Montserrat", sans-serif;
-      color: black;
-      font-size: 12px;
-      line-height: 170%;
-      max-width: 600px;
-      letter-spacing: 0.5px;
-      padding-right: 50px;
-      @media screen and (max-width: 1100px) {
-        margin-top: -50px;
-      }
-    }
-  }
-  .right {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center !important;
-    justify-content: center;
-    background-color: violet;
-    @media screen and (max-width: 1100px) {
-      width: 100%;
-    }
-  }
-
-  @media screen and (max-width: 1100px) {
-    flex-direction: column;
-  }
-`;
 
 const StyledImage = styled(Image)`
   width: 100%;
@@ -278,8 +211,8 @@ const StyledImageVertical = styled(Image)`
 `;
 
 const StyledImageCover = styled(Image)`
-  width: 100%;
-  height: 90%;
+  width: 500px;
+  height: 500px;
   object-fit: cover;
 
   @media screen and (max-width: 950px) {
@@ -334,5 +267,7 @@ const Row1Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+
 export default Voces;
 

@@ -2,15 +2,28 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import arrow from "../../public/assets/icons/small-black.svg";
+import Link from "next/link";
 
-function More() {
+function More({ text, link }) {
   return (
     <>
-        <SectionLinks>
-          <h6>ver más</h6>
-          <Image src={arrow} alt="arrow" />
-        </SectionLinks>
- 
+      {link ? (
+        <>
+          <Link href={link}>
+            <SectionLinks>
+              <h6>{text}</h6>
+              <Image src={arrow} alt="arrow" />
+            </SectionLinks>
+          </Link>
+        </>
+      ) : (
+        <>
+          <SectionLinks>
+            <h6>{text}</h6>
+            <Image src={arrow} alt="arrow" />
+          </SectionLinks>
+        </>
+      )}
     </>
   );
 }
