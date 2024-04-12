@@ -3,7 +3,7 @@ import React from "react";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-// import TrayectoriaSection from "@/sections/Trayectoria"
+import TrayectoriaSection from "@/sections/Trayectoria"
 function Trayectoria() {
   return (
     <>
@@ -20,7 +20,7 @@ function Trayectoria() {
           </Container>
         </Section> */}
 
-        {/* <TrayectoriaSection/> */}
+        <TrayectoriaSection/>
         <Footer/>
       </motion.div>
     </>

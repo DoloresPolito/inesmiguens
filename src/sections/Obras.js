@@ -21,6 +21,22 @@ function ObrasSection() {
       <ObrasContainer>
         <ObrasTitle>obras</ObrasTitle>
 
+        <VocesContainer>
+          <div className="left">
+            <Image src={voces} alt="voces1" />
+          </div>
+          <div className="right">
+            <Image src={voces2} alt="voces2" />
+            <Link href="/voces-de-la-tierra">
+              <div>
+                <ObrasSubtitle>voces de la tierra</ObrasSubtitle>
+
+                <More text="ver más" />
+              </div>
+            </Link>
+          </div>
+        </VocesContainer>
+
         <VanishingContainer>
           <div className="left">
             <Image src={vanishing2} alt="vanishing" />
@@ -55,21 +71,7 @@ function ObrasSection() {
           </div>
         </ImpermanenciaContainer>
 
-        <VocesContainer>
-          <div className="left">
-            <Image src={voces} alt="voces1" />
-          </div>
-          <div className="right">
-            <Image src={voces2} alt="voces2" />
-            <Link href="/voces-de-la-tierra">
-              <div>
-                <ObrasSubtitle>voces de la tierra</ObrasSubtitle>
-
-                <More text="ver más" />
-              </div>
-            </Link>
-          </div>
-        </VocesContainer>
+        
 
         <EcosContainer>
           <div className="top">

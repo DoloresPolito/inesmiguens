@@ -4,7 +4,6 @@ import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
-import Carousel from "@/components/Carousel";
 function Talleres() {
   return (
     <>
@@ -17,7 +16,7 @@ function Talleres() {
         <FramerNavbar />
         <TalleresSection>
           <TalleresContainer>
-            <Left>
+            <Top>
               <TitleContainer>
                 <h2>travel & workshops</h2>
               </TitleContainer>
@@ -59,12 +58,10 @@ function Talleres() {
                     un Portfolio. Preparación y exposición.
                   </p>
                 </CursoContainer>
-              </InfoContainer>
-            </Left>
+              </InfoContainer>  
+            </Top>
 
-            <Right>
-              <Carousel />
-            </Right>
+  
           </TalleresContainer>
         </TalleresSection>
         <Footer />
@@ -86,13 +83,12 @@ const TalleresContainer = styled(Container)`
   display: flex;
   margin-top: 80px;
   flex-direction: row;
-
   padding-bottom: 100px;
-  /* padding-top: 100px; */
+
 `;
 
-const Left = styled.div`
-  width: 50%;
+const Top = styled.div`
+  width: 100%;
   justify-content: space-between !important;
   align-items: space-between;
   height: 100%;
@@ -121,31 +117,44 @@ const CursoContainer = styled.div`
   margin-bottom: 10px;
 
   h4 {
-    font-family: "Georama", sans-serif;
-    font-size: 22px;
-    color: #4a4747;
-    line-height: 90%;
-    font-weight: 200;
-    margin: 0;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
+    font-family: "Montserrat";
+  font-size: 20px;
+  color: #4a4747;
+  line-height: 90%;
+  font-weight: 200;
+  align-self: flex-start;
+  line-height: 90%;
+  margin: 0;
+  margin-right: 20px;
+
+  @media screen and (max-width: 1100px) {
+    line-height: 100%;
+    font-size: 80px;
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: 530px) {
+    line-height: 100%;
+    font-size: 60px;
+    margin-bottom: 30px;
+  }
   }
 
   p {
     font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    color: #4a4747;
-    line-height: 130%;
-    letter-spacing: 1px;
-    font-weight: 300;
+  color: black;
+  font-size: 12px;
+  line-height: 170%;
+  max-width: 600px;
+  letter-spacing: 0.5px;
+
+  @media screen and (max-width: 530px) {
+    font-size: 11px;
+    line-height: 160%;
+  }
   }
 `;
 
-const Right = styled.div`
-  width: 50%;
-  justify-content: space-between !important;
-  align-items: space-between;
-  height: 100%;
-`;
+
 
 export default Talleres;
