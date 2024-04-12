@@ -1,7 +1,7 @@
 import React from "react";
-import { Section, Container, Text } from "../styles/styles";
+import { Container, Text } from "../styles/styles";
 import styled from "styled-components";
-import Link from "next/link";
+
 
 function Footer() {
   return (
@@ -14,7 +14,7 @@ function Footer() {
               <FooterText>+54 11 5467 5902</FooterText>
               <FooterText>inesmiguensphoto@gmail.com</FooterText>
             </div>
-            <div>
+            {/* <div>
               <h6>Nav</h6>
               <Link href="/hoteles">
                 <FooterText>HOTELES</FooterText>
@@ -31,7 +31,7 @@ function Footer() {
                 {" "}
                 <FooterText>CONTACTO</FooterText>{" "}
               </Link>
-            </div>
+            </div> */}
           </TopContainer>
           <BottomContainer>
             <div>
@@ -56,7 +56,7 @@ height: auto;
   justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
-  height: 300px;
+  height: 150px;
   padding: 30px 0px 30px 0px;
 `;
 
@@ -87,10 +87,13 @@ const BottomContainer = styled.div`
   height: 20%;
   width: 100%;
 
-  justify-content: flex-start;
+
+
   div {
     display: flex;
     flex-direction: column;
+
+ 
   }
 `;
 

@@ -53,7 +53,7 @@ function ObrasSection() {
             <Image src={vanishing1} alt="impermanencia" />
           </div>
         </VanishingContainer>
-
+        <Link href="/impermanencia">
         <ImpermanenciaContainer>
           <div className="top">
             <Image src={impermanencia1} alt="impermanencia" />
@@ -61,15 +61,17 @@ function ObrasSection() {
           </div>
 
           <div className="bottom">
-            <Link href="/impermanencia">
+         
               <div>
                 <ObrasSubtitle>impermanencia</ObrasSubtitle>
   
                 <More text="ver más" />
               </div>
-            </Link>
+        
           </div>
         </ImpermanenciaContainer>
+
+        </Link>
 
         
 
@@ -102,6 +104,7 @@ const ObrasContainer = styled(Container)`
   justify-content: center;
   align-items: center;
   max-width: 1100px;
+  margin-bottom: 200px;
 `;
 
 const ObrasTitle = styled(Title)`
@@ -135,6 +138,7 @@ const VanishingContainer = styled.div`
     flex-direction: column;
     height: 500px;
     width: 40%;
+    height: 500px;
 
     img {
       max-width: 100%; 
@@ -187,6 +191,53 @@ const ImpermanenciaContainer = styled.div`
     align-items: flex-start;
   }
 `;
+
+// const ImpermanenciaContainer = styled.div`
+//   position: relative;
+//   width: 100%;
+//   height: auto;
+//   overflow: hidden;
+//   height: 500px;
+//   width: 500px;
+
+//   .top {
+//     position: relative;
+//     width: 100%;
+//     height: 85%; /* Inicialmente ocupa el 80% de la altura */
+//     transition: height 0.3s ease; /* Transición para el cambio de altura */
+//      /* img {
+
+//        object-fit: cover; 
+//      } */
+ 
+//   }
+
+//   .top img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover; /* La imagen se ajusta al contenedor sin distorsión */
+//   }
+//   .bottom {
+//     position: relative;
+//     width: 100%;
+//     height: 10%; /* Inicialmente ocupa el 20% de la altura */
+//     background-color: white;
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     padding: 20px;
+//     transition: height 0.3s ease; /* Transición para el cambio de altura */
+//   }
+
+//   &:hover .top {
+//     height: 70%; /* Al hacer hover, la altura del div top se reduce al 60% */
+//   }
+
+//   &:hover .bottom {
+//     height: 30%; /* Al hacer hover, la altura del div bottom se incrementa al 40% */
+//   }
+// `;
+
 
 const VocesContainer = styled.div`
   display: flex;
@@ -255,7 +306,7 @@ const EcosContainer = styled.div`
 const ObrasSubtitle = styled.h4`
   margin: 0;
   font-family: "Montserrat";
-  font-size: 18px;
+  font-size: 25px;
   color: #4a4747;
   line-height: 130%;
   font-weight: 400;

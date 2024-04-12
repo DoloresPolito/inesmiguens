@@ -1,7 +1,8 @@
 import React from "react";
 import { Section, Container } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
 import Image from "next/image";
@@ -34,13 +35,12 @@ function Cauquenes() {
             <PicturesContainer>
               <RowOf2 image1={img1} image2={img2}></RowOf2>
 
-              <RowOf2 image1={img3} image2={img4}></RowOf2>
+              <AnimatedRowOf2 image1={img3} image2={img4}></AnimatedRowOf2>
 
-              <RowOf2 image1={img5} image2={img6}></RowOf2>
+              <AnimatedRowOf2 image1={img5} image2={img6}></AnimatedRowOf2>
 
-              <RowOf2 image1={img7} image2={img8}></RowOf2>
-
-              <RowOf2 image1={img9} image2={img10}></RowOf2>
+              <AnimatedRowOf2 image1={img7} image2={img8} />
+              <AnimatedRowOf2 image1={img9} image2={img10} />
             </PicturesContainer>
           </HotelesContainer>
         </HotelesSection>
@@ -68,6 +68,28 @@ const RowOf2 = ({ image1, image2 }) => {
         />
       </Row2Container>
     </>
+  );
+};
+
+const AnimatedRowOf2 = ({ image1, image2 }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 80 }}
+      animate={controls}
+      transition={{ duration: 1 }}
+    >
+      <RowOf2 image1={image1} image2={image2} />
+    </motion.div>
   );
 };
 
@@ -119,6 +141,7 @@ const PicturesContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  margin-top: 40px;
 `;
 
 const HotelSubtitle = styled.h4`

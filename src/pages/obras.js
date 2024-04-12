@@ -2,7 +2,8 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
-import ObrasSection from "@/sections/Obras";
+// import ObrasSection from "@/sections/Obras";
+import ObrasSection from "@/sections/Obras2";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import Footer from "@/components/Footer";
 import DisableContextMenu from "@/components/DisableContextMenu";

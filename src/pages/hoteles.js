@@ -1,19 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Section, Container } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
-import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
-// import img1 from "../../public/assets/images/hoteles/cauquenes comp/1baja.jpg";
-// import img2 from "../../public/assets/images/hoteles/la bamba comp/9baja.jpg";
-// import img3 from "../../public/assets/images/hoteles/parque diana comp/2bajaa (2).jpg";
+import { motion, AnimatePresence } from "framer-motion";
 
 import img1a from "../../public/assets/images/hoteles/principal/1.jpg";
 import img2a from "../../public/assets/images/hoteles/principal/2.jpg";
 import img3a from "../../public/assets/images/hoteles/principal/3.jpg";
 function Hoteles() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const listItemVariants = {
+    visible: (index) => ({
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        delay: index * 0.1,
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    }),
+    hidden: {
+      opacity: 0,
+      x: -100,
+      y: 20,
+    },
+    hover: {
+      scale: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const hoteles = [
+    {
+      nombre: "Los Cauquenes",
+      lugar: "Bariloche",
+      imagen: img1a,
+      href: "/cauquenes",
+    },
+    {
+      nombre: "La Bamba de Areco",
+      lugar: "San Antonio de Areco",
+      imagen: img3a,
+      href: "/bamba",
+    },
+    { nombre: "Parque Diana", lugar: "Neuquen", imagen: img2a, href: "/diana" },
+  ];
+
   return (
     <>
       <motion.div
@@ -27,29 +73,47 @@ function Hoteles() {
           <HotelesContainer>
             <h2>hoteles y estancias</h2>
 
-            <HotelLink href="/cauquenes">
-              <HotelSection>
-                <Image src={img1a} alt="Cauquenes" />
-                <HotelSubtitle>Los Cauquenes</HotelSubtitle>
-                <HotelText>Bariloche</HotelText>
-              </HotelSection>
-            </HotelLink>
+            {/* <AnimatePresence>
+              {isVisible &&
+                hoteles.map((item, index) => (
+                  <HotelLink href={item.href}>
+                    <HotelSection
+                      key={index}
+                      variants={listItemVariants}
+                      custom={index}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      <Image src={item.imagen} alt={item.nombre} />
+                      <HotelSubtitle>{item.nombre}</HotelSubtitle>
+                      <HotelText>{item.lugar}</HotelText>
+                    </HotelSection>
+                  </HotelLink>
+                ))}
+            </AnimatePresence> */}
 
-            <HotelLink href="/bamba">
-              <HotelSection2>
-                <Image src={img3a} alt="La Bamba de Areco" />
-                <HotelSubtitle>La Bamba de Areco</HotelSubtitle>
-                <HotelText>San Antonio de Areco</HotelText>
-              </HotelSection2>
-            </HotelLink>
-
-            <HotelLink href="/diana">
-              <HotelSection>
-                <Image src={img2a} alt="Parque Diana" />
-                <HotelSubtitle>Parque Diana</HotelSubtitle>
-                <HotelText>Neuquen</HotelText>
-              </HotelSection>
-            </HotelLink>
+            <AnimatePresence>
+              {isVisible &&
+                hoteles.map((item, index) => (
+                  <HotelLink href={item.href} key={index}>
+              
+                    <HotelSection
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: index * 0.1,
+                        duration: 0.8,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Image src={item.imagen} alt={item.nombre} />
+                      <HotelSubtitle>{item.nombre}</HotelSubtitle>
+                      <HotelText>{item.lugar}</HotelText>
+                    </HotelSection>
+                    </HotelLink>
+               
+                ))}
+            </AnimatePresence>
           </HotelesContainer>
         </HotelesSection>
         <Footer />
