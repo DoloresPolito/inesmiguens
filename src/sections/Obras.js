@@ -132,16 +132,30 @@ const VanishingContainer = styled.div`
   }
 
   .right {
+    display: flex;
+    flex-direction: column;
     height: 500px;
-    width: 40%; /* Cambia a porcentaje para hacerlo más adaptable */
+    width: 40%;
+
+    img {
+      max-width: 100%; 
+      height: auto; 
+      object-fit: cover; 
+    }
+  }
+
+
+  /* .right {
+    height: auto;
+    width: 40%; 
     background-color: grey;
 
     img {
-      max-width: 100%; /* Cambia width a max-width */
-      height: 500px; /* Agrega esta línea para mantener la proporción */
-      object-fit: cover; /* Ajusta el comportamiento de la imagen */
+      max-width: 100%; 
+      height: auto; 
+   
     }
-  }
+  } */
 `;
 
 const ImpermanenciaContainer = styled.div`
@@ -161,7 +175,7 @@ const ImpermanenciaContainer = styled.div`
     img {
       max-width: 45%;
       height: auto; /* Agrega esta línea para mantener la proporción */
-      object-fit: cover; /* Ajusta el comportamiento de la imagen */
+      object-fit: cover; 
     }
   }
 
