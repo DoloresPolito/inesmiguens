@@ -1,6 +1,6 @@
 import { ServerStyleSheet } from "styled-components";
 import Document, { Head, Html, Main, NextScript } from "next/document";
-
+import DisableContextMenu from "@/components/DisableContextMenu";
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -37,10 +37,13 @@ class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossorigin="anonymus"
           />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Georama:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Georama:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
+          <code>onload="disableRightClick()"</code>
           <Main />
           <NextScript />
         </body>

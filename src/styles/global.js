@@ -13,8 +13,13 @@ const GlobalStyles = createGlobalStyle`
     overscroll-behavior-y: contain; 
     background-color: white;
     overflow-x: hidden;
+    user-select: none;
 
   }
+
+  img {
+  pointer-events: none;
+}
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

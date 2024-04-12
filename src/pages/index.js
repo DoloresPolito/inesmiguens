@@ -3,6 +3,7 @@ import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
 import HomeSection from "@/sections/Home";
 import Footer from "@/components/Footer";
+import DisableContextMenu from "@/components/DisableContextMenu";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         exit={{ opacity: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
+                <DisableContextMenu />
         <FramerNavbar />
         <HomeSection />
         <Footer />

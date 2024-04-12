@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Image from "next/image";
 import impermanencia from "../../public/assets/images/obras/impermanencia comp/1 baja.jpg";
 
-import vanishing1 from "../../public/assets/images/obras/vanishing comp/1.jpg";
-import vanishing2 from "../../public/assets/images/obras/vanishing comp/2.jpg";
+import vanishing1 from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
+import vanishing2 from "../../public/assets/images/obras/vanishing jpg reduce comp/2.jpg";
 
 import voces from "../../public/assets/images/obras/voces de la tierra comp/6baja.jpg";
 import voces2 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
@@ -22,8 +22,8 @@ function ObrasSection() {
 
         <VanishingContainer>
           <div className="left">
-            <Image src={vanishing2} alt="impermanencia" />
-            <Link href="/impermanencia">
+            <Image src={vanishing2} alt="vanishing" />
+            <Link href="/vanishing">
               <div>
                 <ObrasSubtitle>vanishing landscapes</ObrasSubtitle>
 

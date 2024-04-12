@@ -55,6 +55,10 @@ function Home() {
     },
   };
 
+  const preventContextMenu = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <HomeSection>
       <HomeContainer>
@@ -68,7 +72,7 @@ function Home() {
                 initial="hidden"
                 animate="visible"
               >
-                <StyledImage src={item.image} alt={`imagen-${index}`} />
+                <StyledImage src={item.image} alt={`imagen-${index}`}      onContextMenu={preventContextMenu}/>
               </PictureContainer>
             ))}
         </AnimatePresence>

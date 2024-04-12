@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import ObrasSection from "@/sections/Obras";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import Footer from "@/components/Footer";
+import DisableContextMenu from "@/components/DisableContextMenu";
 function Obras() {
   return (
     <>
@@ -14,6 +15,7 @@ function Obras() {
         exit={{ opacity: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
+        <DisableContextMenu />
         <FramerNavbar />
 
         <ObrasSection />
