@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Section, Container } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
@@ -7,11 +7,11 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 
 
-import img1 from "../../public/assets/images/obras/impermanencia comp/1 baja.jpg";
-import img2 from "../../public/assets/images/obras/impermanencia comp/2 baja.jpg";
-import img3 from "../../public/assets/images/obras/impermanencia comp/3 baja.jpg";
-import img4 from "../../public/assets/images/obras/impermanencia comp/4 baja.jpg";
-import img5 from "../../public/assets/images/obras/impermanencia comp/5 baja.jpg";
+import img1 from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
+import img2 from "../../public/assets/images/obras/impermanencia jpg reduce comp/2.jpg";
+
+import img3 from "../../public/assets/images/obras/impermanencia jpg reduce comp/3.jpg";
+import img4 from "../../public/assets/images/obras/impermanencia jpg reduce comp/4.jpg";
 
 import { useInView } from "react-intersection-observer";
 
@@ -68,8 +68,8 @@ function Impermanencia() {
 
           <PicturesContainer>
       
-            <RowOf2 image1={img2} image2={img3} />
-            <RowOf2 image1={img4} image2={img5} />
+            <RowOf2 image1={img1} image2={img2} />
+            <RowOf2 image1={img3} image2={img4} />
       
           
           </PicturesContainer>
@@ -245,7 +245,6 @@ const VocesContainer = styled(Container)`
     display: flex;
     align-items: center !important;
     justify-content: center;
-    background-color: violet;
     @media screen and (max-width: 1100px) {
       width: 100%;
     }

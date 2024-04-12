@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import impermanencia from "../../public/assets/images/obras/impermanencia comp/1 baja.jpg";
+import impermanencia1 from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
+import impermanencia2 from "../../public/assets/images/obras/impermanencia jpg reduce comp/2.jpg";
 
 import vanishing1 from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
 import vanishing2 from "../../public/assets/images/obras/vanishing jpg reduce comp/2.jpg";
@@ -39,8 +40,8 @@ function ObrasSection() {
 
         <ImpermanenciaContainer>
           <div className="top">
-            <Image src={impermanencia} alt="impermanencia" />
-            <Image src={impermanencia} alt="impermanencia" />
+            <Image src={impermanencia1} alt="impermanencia" />
+            <Image src={impermanencia2} alt="impermanencia" />
           </div>
 
           <div className="bottom">
