@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import impermanencia1 from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
@@ -8,15 +8,60 @@ import ecos from "../../public/assets/images/obras/ecos jpg reduce/estabaja6a.jp
 import { Section, Container, Title } from "../styles/styles";
 import Link from "next/link";
 import More from "@/components/More";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-function ObrasSection() {
+function ObrasInside() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [ref, inView] = useInView();
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const titleVariants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    hidden: {
+      opacity: 0.5,
+      y: 10,
+    },
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
+
   return (
     <ObrasSectionContainer>
-      <ObrasContainer>
-        <ObrasTitle>obras</ObrasTitle>
+      <ObrasContainer >
+        <ObrasTitleAnimated
+          variants={titleVariants}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+        >
+          Obras
+        </ObrasTitleAnimated>
 
         <ObrasGrid>
-          <ObrasItem1>
+          <ObrasItem1Animated
+          ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={controls}
+            transition={{ duration: 1 }}
+          >
             <Link href="/voces-de-la-tierra">
               <ImpermanenciaContainer>
                 <div className="top">
@@ -26,15 +71,18 @@ function ObrasSection() {
                 <div className="bottom">
                   <div>
                     <ObrasSubtitle>voces de la tierra</ObrasSubtitle>
-
                     <More text="ver más" />
                   </div>
                 </div>
               </ImpermanenciaContainer>
             </Link>
-          </ObrasItem1>
+          </ObrasItem1Animated>
 
-          <ObrasItem2>
+          <ObrasItem2Animated
+            initial={{ opacity: 0, y: 50 }}
+            animate={controls}
+            transition={{ duration: 1 }}
+          >
             <Link href="/vanishing">
               <ImpermanenciaContainer>
                 <div className="top">
@@ -44,15 +92,15 @@ function ObrasSection() {
                 <div className="bottom">
                   <div>
                     <ObrasSubtitle>vanishing landscapes</ObrasSubtitle>
-
                     <More text="ver más" />
                   </div>
                 </div>
               </ImpermanenciaContainer>
             </Link>
-          </ObrasItem2>
+          </ObrasItem2Animated>
 
-          <ObrasItem1>
+          <ObrasItem3
+          >
             <Link href="/impermanencia">
               <ImpermanenciaContainer>
                 <div className="top">
@@ -62,15 +110,15 @@ function ObrasSection() {
                 <div className="bottom">
                   <div>
                     <ObrasSubtitle>impermanencia</ObrasSubtitle>
-
                     <More text="ver más" />
                   </div>
                 </div>
               </ImpermanenciaContainer>
             </Link>
-          </ObrasItem1>
+          </ObrasItem3>
 
-          <ObrasItem2>
+          <ObrasItem4
+          >
             <Link href="/ecos-en-el-tiempo">
               <ImpermanenciaContainer>
                 <div className="top">
@@ -80,13 +128,12 @@ function ObrasSection() {
                 <div className="bottom">
                   <div>
                     <ObrasSubtitle>ecos en el tiempo</ObrasSubtitle>
-
                     <More text="ver más" />
                   </div>
                 </div>
               </ImpermanenciaContainer>
             </Link>
-          </ObrasItem2>
+          </ObrasItem4>
         </ObrasGrid>
       </ObrasContainer>
     </ObrasSectionContainer>
@@ -100,23 +147,25 @@ const ObrasSectionContainer = styled(Section)`
 
 const ObrasContainer = styled(Container)`
   margin: 0 auto;
-  max-width: 1100px;
   margin-bottom: 200px;
   overflow: hidden;
 `;
 
 const ObrasTitle = styled(Title)`
   align-self: flex-end;
+  margin-top: 90px;
 `;
+
+const ObrasTitleAnimated = motion(ObrasTitle);
 
 const ObrasGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas */
-  gap: 100px; /* Espacio entre las obras */
+  grid-template-columns: 1fr 1fr; 
+  gap: 100px;
+  width: 100%;
 
   @media screen and (max-width: 1200px) {
-
-    grid-template-columns: 1fr; /* Dos columnas */
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -125,22 +174,40 @@ const ObrasItem1 = styled.div`
   margin-top: -60px;
 `;
 
+const ObrasItem1Animated = motion(ObrasItem1);
+
 const ObrasItem2 = styled.div`
   width: 100%;
   margin-top: 0px;
+`;
+
+const ObrasItem2Animated = motion(ObrasItem2);
+
+const ObrasItem3 = styled.div`
+  width: 100%;
+  margin-top: -60px;
 
 `;
 
+const ObrasItem3Animated = motion(ObrasItem3);
+
+const ObrasItem4 = styled.div`
+  width: 100%;
+  margin-top: 0px;
+`;
+
+const ObrasItem4Animated = motion(ObrasItem4);
+
 const ImpermanenciaContainer = styled.div`
   width: 100%;
-  height: 500px; /* Altura fija para cada contenedor */
-  margin-bottom: 20px; /* Espacio entre contenedores */
+  height: 500px; 
+  margin-bottom: 20px;
 
   .top {
     width: 100%;
-    height: 90%; /* Altura del 70% por defecto */
-    overflow: hidden; /* Oculta cualquier contenido adicional */
-    transition: height 0.5s ease; /* Transición suave */
+    height: 90%;
+    overflow: hidden; 
+    transition: height 0.5s ease; 
   }
 
   .top img {
@@ -151,7 +218,7 @@ const ImpermanenciaContainer = styled.div`
 
   .bottom {
     width: 100%;
-    height: 10%; /* Altura del 30% por defecto */
+    height: 10%; 
     background-color: white;
     padding: 20px;
     display: flex;
@@ -159,11 +226,11 @@ const ImpermanenciaContainer = styled.div`
   }
 
   &:hover .top {
-    height: 80%; /* Al hacer hover, ajusta la altura */
+    height: 80%;
   }
 
   &:hover .bottom {
-    height: 20%; /* Al hacer hover, ajusta la altura */
+    height: 20%; 
   }
 `;
 
@@ -178,4 +245,4 @@ const ObrasSubtitle = styled.h4`
   letter-spacing: 0.5px;
 `;
 
-export default ObrasSection;
+export default ObrasInside;

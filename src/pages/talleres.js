@@ -1,10 +1,40 @@
-import React from "react";
-import { Section, Container } from "../styles/styles";
+import React, {useState, useEffect} from "react";
+import { Section, Container, ObrasTitle } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
+import More from "@/components/More";
 function Talleres() {
+
+  const [isVisible, setIsVisible] = useState(false);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const titleVariants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    hidden: {
+      opacity: 0.5,
+      y: 10,
+    },
+  };
+
+
+
   return (
     <>
       <motion.div
@@ -17,9 +47,13 @@ function Talleres() {
         <TalleresSection>
           <TalleresContainer>
             <Top>
-              <TitleContainer>
-                <h2>travel & workshops</h2>
-              </TitleContainer>
+              <TitleContainerAnimated
+               variants={titleVariants}
+               initial="hidden"
+               animate={isVisible ? "visible" : "hidden"}
+              >
+                <h2>Travel & workshops</h2>
+              </TitleContainerAnimated>
               <InfoContainer>
                 <CursoContainer>
                   <h4>ciclo basico</h4>
@@ -33,6 +67,9 @@ function Talleres() {
                     figuras y formas y líneas, Conocimientos de las herramientas
                     Photoshop, jpeg y raw.
                   </p>
+
+
+                  <More text="más info" link="/contacto"/>
                 </CursoContainer>
 
                 <CursoContainer>
@@ -45,6 +82,7 @@ function Talleres() {
                     nuestra propia semiótica. Reforzamos la edición y la
                     elaboración de un portfolio sobre dicho tema.
                   </p>
+                  <More text="más info" link="/contacto"/>
                 </CursoContainer>
 
                 <CursoContainer>
@@ -57,11 +95,10 @@ function Talleres() {
                     desarrollo técnico. Análisis y edición de obra. Creación de
                     un Portfolio. Preparación y exposición.
                   </p>
+                  <More text="más info" link="/contacto"/>
                 </CursoContainer>
-              </InfoContainer>  
+              </InfoContainer>
             </Top>
-
-  
           </TalleresContainer>
         </TalleresSection>
         <Footer />
@@ -71,11 +108,10 @@ function Talleres() {
 }
 
 const TalleresSection = styled(Section)`
-justify-content: center;
-align-items: center !important;
-
-
-`
+  justify-content: center;
+  align-items: center !important;
+  height: auto;
+`;
 
 const TalleresContainer = styled(Container)`
   height: 100%;
@@ -84,7 +120,6 @@ const TalleresContainer = styled(Container)`
   margin-top: 80px;
   flex-direction: row;
   padding-bottom: 100px;
-
 `;
 
 const Top = styled.div`
@@ -97,64 +132,57 @@ const Top = styled.div`
   h2 {
     font-family: "Montserrat";
     font-size: 70px;
-    color: #4A4747;
+    color: #4a4747;
     line-height: 90%;
     font-weight: 200;
-    max-width: 500px;
+    /* max-width: 500px; */
     margin-top: 5px;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
   }
 `;
 
 const InfoContainer = styled.div`
-  margin-top: 100px;
+  margin-top: 50px;
 `;
-const TitleContainer = styled.div``;
+const TitleContainer = styled.div`
+  width: 800px;
+`;
+
+const TitleContainerAnimated = motion(TitleContainer);
 
 const CursoContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-
+  width: 50%;
+  margin-bottom: 40px;
   h4 {
     font-family: "Montserrat";
-  font-size: 20px;
-  color: #4a4747;
-  line-height: 90%;
-  font-weight: 200;
-  align-self: flex-start;
-  line-height: 90%;
-  margin: 0;
-  margin-right: 20px;
+    font-size: 20px;
+    color: #4a4747;
+    line-height: 90%;
+    font-weight: 300;
+    align-self: flex-start;
+    line-height: 110%;
+    margin: 0;
+    margin-right: 20px;
 
-  @media screen and (max-width: 1100px) {
-    line-height: 100%;
-    font-size: 80px;
-    margin-bottom: 50px;
-  }
-
-  @media screen and (max-width: 530px) {
-    line-height: 100%;
-    font-size: 60px;
-    margin-bottom: 30px;
-  }
   }
 
   p {
     font-family: "Montserrat", sans-serif;
-  color: black;
-  font-size: 12px;
-  line-height: 170%;
-  max-width: 600px;
-  letter-spacing: 0.5px;
+    color: black;
+    font-size: 12px;
+    line-height: 170%;
+    max-width: 600px;
+    letter-spacing: 0.5px;
 
-  @media screen and (max-width: 530px) {
-    font-size: 11px;
-    line-height: 160%;
-  }
+
+    @media screen and (max-width: 530px) {
+      font-size: 11px;
+      line-height: 160%;
+    }
   }
 `;
-
-
 
 export default Talleres;

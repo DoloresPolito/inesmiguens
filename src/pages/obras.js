@@ -1,13 +1,12 @@
 import React from "react";
-
 import { motion } from "framer-motion";
-
-// import ObrasSection from "@/sections/Obras";
-import ObrasSection from "@/sections/Obras2";
+import ObrasInside from "@/sections/ObrasInside";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import Footer from "@/components/Footer";
 import DisableContextMenu from "@/components/DisableContextMenu";
+
 function Obras() {
+
   return (
     <>
       <motion.div
@@ -19,7 +18,7 @@ function Obras() {
         <DisableContextMenu />
         <FramerNavbar />
 
-        <ObrasSection />
+        <ObrasInside />
         <Footer />
       </motion.div>
     </>

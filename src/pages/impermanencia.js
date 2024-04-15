@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
   Section,
-  Container,
   ObrasTitle,
   ObrasText,
   ObrasTopContainer,
+  PicturesContainer,
 } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import More from "@/components/More";
@@ -18,7 +18,7 @@ import img2 from "../../public/assets/images/obras/impermanencia jpg reduce comp
 import img3 from "../../public/assets/images/obras/impermanencia jpg reduce comp/3.jpg";
 import img4 from "../../public/assets/images/obras/impermanencia jpg reduce comp/4.jpg";
 
-import { useInView } from "react-intersection-observer";
+import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
 function Impermanencia() {
   const variants = {
@@ -63,7 +63,7 @@ function Impermanencia() {
                 demora apenas un minuto que es la cifra de la celeridad en la
                 que vivimos.
               </ObrasText>
-              <More text="obras" link="/obras"/>
+              <More text="obras" link="/obras" />
             </div>
             <motion.div
               className="right"
@@ -74,10 +74,13 @@ function Impermanencia() {
               <StyledImageCover src={img1} alt="image1" />
             </motion.div>
           </ObrasTopContainer>
-          <PicturesContainer>
-            <RowOf2 image1={img1} image2={img2} />
-            <RowOf2 image1={img3} image2={img4} />
-          </PicturesContainer>
+
+          <ObrasBottomContainer>
+            <PicturesContainer>
+              <AnimatedRowOf2 image1={img1} image2={img2} />
+              <AnimatedRowOf2 image1={img3} image2={img4} />
+            </PicturesContainer>
+          </ObrasBottomContainer>
         </VocesSection>
         <Footer />
       </motion.div>
@@ -85,97 +88,27 @@ function Impermanencia() {
   );
 }
 
-const RowOf2 = ({ image1, image2 }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  return (
-    <>
-      <Row2Container ref={ref}>
-        <StyledImage
-          src={image1}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-        <StyledImage
-          src={image2}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-      </Row2Container>
-    </>
-  );
-};
-
 const VocesSection = styled(Section)`
   height: auto;
   justify-content: center;
 `;
-
-
 
 const StyledImageCover = styled(Image)`
   width: 500px;
   height: 500px;
   object-fit: cover;
 
-
   @media screen and (max-width: 750px) {
     width: 90%;
     height: auto;
-    padding:10px 0px;
+    padding: 10px 0px;
   }
 `;
 
-const PicturesContainer = styled(Container)`
+const ObrasBottomContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  height: auto;
-  width: 93%;
-  background-color: red;
-  @media screen and (max-width: 1100px) {
-    margin-bottom: 40px;
-  }
-`;
-
-const Row2Container = styled.div`
-  height: 600px;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  flex-wrap:wrap;
-
-  @media screen and (max-width: 1100px) {
-    flex-direction: column;
-    height: auto;
-  }
-`;
-
-const StyledImage = styled(Image)`
-  width: 500px;
-  height: 500px;
-  object-fit: cover;
-
-  @media screen and (max-width: 750px) {
-    width: 90%;
-    height: auto;
-    padding:10px 0px;
-  }
+  margin: 0 auto;
+  width: 90%;
 `;
 
 export default Impermanencia;

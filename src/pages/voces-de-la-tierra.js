@@ -1,6 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Section, Container, ObrasTitle, ObrasText, ObrasTopContainer } from "../styles/styles";
+import {
+  Section,
+  ObrasTitle,
+  ObrasText,
+  ObrasTopContainer,
+  PicturesContainer,
+} from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion, useAnimation } from "framer-motion";
 import Footer from "@/components/Footer";
@@ -18,9 +24,9 @@ import img8 from "../../public/assets/images/obras/voces de la tierra comp/11baj
 import img10 from "../../public/assets/images/obras/voces de la tierra comp/12baja.jpg";
 import img11 from "../../public/assets/images/obras/voces de la tierra comp/13baja.jpg";
 
-
 import { useInView } from "react-intersection-observer";
 
+import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
 function Voces() {
   const variants = {
@@ -49,7 +55,7 @@ function Voces() {
       >
         <FramerNavbar />
         <VocesSection>
-        <ObrasTopContainer>
+          <ObrasTopContainer>
             <div className="left">
               <ObrasTitle>Voces de la tierra</ObrasTitle>
               <ObrasText>
@@ -61,7 +67,7 @@ function Voces() {
                 demora apenas un minuto que es la cifra de la celeridad en la
                 que vivimos.
               </ObrasText>
-              <More text="obras" link="/obras"/>
+              <More text="obras" link="/obras" />
             </div>
             <motion.div
               className="right"
@@ -71,16 +77,18 @@ function Voces() {
             >
               <StyledImageCover src={img1} alt="image1" />
             </motion.div>
-            </ObrasTopContainer>
+          </ObrasTopContainer>
 
-          <PicturesContainer>
-          {/* <RowOf1 image={img3}/> */}
-          <RowOf3Vertical image1={img4} image2={img6} image3={img5} />
-            <RowOf2 image1={img2} image2={img3} />
-            <RowOf2 image1={img10} image2={img11} />
-      
-            <RowOf2 image1={img7} image2={img8} />
-          </PicturesContainer>
+          <ObrasBottomContainer>
+            <PicturesContainer>
+            <AnimatedRowOf2 image1={img2} image2={img3} />
+              <AnimatedRowOf3Vertical image1={img4} image2={img6} image3={img5} />
+           
+              <AnimatedRowOf2 image1={img10} image2={img11} />
+
+              <AnimatedRowOf2 image1={img7} image2={img8} />
+            </PicturesContainer>
+          </ObrasBottomContainer>
         </VocesSection>
         <Footer />
       </motion.div>
@@ -88,106 +96,41 @@ function Voces() {
   );
 }
 
-const RowOf2 = ({ image1, image2 }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  return (
-    <>
-      <Row2Container ref={ref}>
-        <StyledImage
-          src={image1}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-        <StyledImage
-          src={image2}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-      </Row2Container>
-    </>
-  );
-};
-
 const RowOf3Vertical = ({ image1, image2, image3 }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
   return (
     <>
-      <Row3ContainerVertical ref={ref}>
-        <StyledImageVertical
-          src={image1}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-        <StyledImageVertical
-          src={image2}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-             <StyledImageVertical
-          src={image3}
-          alt="image3"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-      </Row3ContainerVertical>
+      <Row3VerticalContainer>
+        <StyledImageVertical src={image1} alt="image1" />
+        <StyledImageVertical src={image2} alt="image1" />
+        <StyledImageVertical src={image3} alt="image1" />
+      </Row3VerticalContainer>
     </>
   );
 };
 
-const RowOf1 = ({image}) => {
+const AnimatedRowOf3Vertical = ({ image1, image2, image3 }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
+      controls.start({ opacity: 1, y: 0 });
     }
   }, [controls, inView]);
+
   return (
-    <>
-      <Row1Container ref={ref}>
-        <StyledImage
-          src={image}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-      </Row1Container>
-    </>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 80 }}
+      animate={controls}
+      transition={{ duration: 1 }}
+    >
+      <RowOf3Vertical image1={image1} image2={image2} image3={image3} />
+    </motion.div>
   );
 };
+
+
 
 const VocesSection = styled(Section)`
   height: auto;
@@ -195,20 +138,6 @@ const VocesSection = styled(Section)`
 `;
 
 
-
-const StyledImage = styled(Image)`
-  width: 100%;
-  height: 90%;
-  object-fit: cover;
-
-`;
-
-const StyledImageVertical = styled(Image)`
-  width: 90%;
-  height: 100%;
-  object-fit: cover;
-
-`;
 
 const StyledImageCover = styled(Image)`
   width: 500px;
@@ -219,55 +148,47 @@ const StyledImageCover = styled(Image)`
   }
 `;
 
-const PicturesContainer = styled(Container)`
+const ObrasBottomContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+`;
+
+
+
+
+
+const Row3VerticalContainer = styled.div`
   height: auto;
-  width: 93%;
-  @media screen and (max-width: 1100px) {
-    margin-bottom: 40px;
-  }
-`;
-
-const Row2Container = styled.div`
-  height: 420px;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap:10px;
-
-  @media screen and (max-width: 1100px) {
-    flex-direction: column;
-    height: auto;
-  }
-`;
-
-const Row3ContainerVertical = styled.div`
-  height: 600px;
   width: 100%;
   background-color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap:10px;
+  gap: 10px;
+  margin-bottom: 10px;
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1190px) {
     flex-direction: column;
+    height: auto;
+    margin-top: -60px;
+    gap: 0px;
+  }
+`;
+const StyledImageVertical = styled(Image)`
+  height: auto;
+  width: 32%;
+  object-fit: cover;
+
+  @media screen and (max-width: 1190px) {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+  }
+  @media screen and (max-width: 750px) {
+    width: 100%;
     height: auto;
   }
 `;
 
-const Row1Container = styled.div`
-  height: 500px;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-
 export default Voces;
-

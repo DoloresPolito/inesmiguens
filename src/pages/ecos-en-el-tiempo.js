@@ -6,6 +6,7 @@ import {
   ObrasTitle,
   ObrasText,
   ObrasTopContainer,
+  PicturesContainer
 } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion, useAnimation } from "framer-motion";
@@ -20,11 +21,12 @@ import img5 from "../../public/assets/images/obras/ecos jpg reduce/baja2.jpg";
 import img6 from "../../public/assets/images/obras/ecos jpg reduce/baja3.jpg";
 import img7 from "../../public/assets/images/obras/ecos jpg reduce/estabaja 1.jpg";
 import img8 from "../../public/assets/images/obras/ecos jpg reduce/baja10.jpg";
-
 import img9 from "../../public/assets/images/obras/ecos jpg reduce/baja8.jpg";
 import img10 from "../../public/assets/images/obras/ecos jpg reduce/cuba10baja.jpg";
 
 import { useInView } from "react-intersection-observer";
+
+import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
 function Ecos() {
   const variants = {
@@ -79,14 +81,17 @@ function Ecos() {
               <StyledImageCover src={img1} alt="image1" />
             </motion.div>
           </ObrasTopContainer>
+<ObrasBottomContainer>
+
 
           <PicturesContainer>
-            <RowOf2 image1={img2} image2={img3} />
-            <RowOf2 image1={img5} image2={img6} />
+            <AnimatedRowOf2 image1={img2} image2={img3} />
+            <AnimatedRowOf2 image1={img5} image2={img6} />
             <RowOf1 />
-            <RowOf2 image1={img7} image2={img8} />
-            <RowOf2 image1={img9} image2={img10} />
+            <AnimatedRowOf2 image1={img7} image2={img8} />
+            <AnimatedRowOf2 image1={img9} image2={img10} />
           </PicturesContainer>
+          </ObrasBottomContainer>
         </VocesSection>
         <Footer />
       </motion.div>
@@ -94,39 +99,7 @@ function Ecos() {
   );
 }
 
-const RowOf2 = ({ image1, image2 }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  return (
-    <>
-      <Row2Container ref={ref}>
-        <StyledImage2
-          src={image1}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-        <StyledImage2
-          src={image2}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-      </Row2Container>
-    </>
-  );
-};
 
 const RowOf1 = () => {
   const controls = useAnimation();
@@ -174,50 +147,9 @@ const StyledImageCover = styled(Image)`
   }
 `;
 
-const PicturesContainer = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  width: 93%;
-  @media screen and (max-width: 1100px) {
-    margin-bottom: 40px;
-  }
-`;
 
-const Row2Container = styled.div`
-  height: 500px;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0px;
 
-  @media screen and (max-width: 1190px) {
-    flex-direction: column;
-    height: auto;
-    margin-top: -60px;
-  }
-`;
 
-const StyledImage2 = styled(Image)`
-  width: 650px;
-  height: 380px;
-  padding: 0px 30px;
-  object-fit: cover;
-
-  @media screen and (max-width: 1190px) {
-    object-fit: cover;
-    /* width: 100%; */
-    height: 600px;
-    padding: 0px 10px;
-  }
-  @media screen and (max-width: 750px) {
-    width: 90%;
-    height: auto;
-    padding: 10px 0px;
-  }
-`;
 
 const Row1Container = styled.div`
   height: 380px;
@@ -227,5 +159,13 @@ const Row1Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+
+const ObrasBottomContainer = styled.div`
+display: flex;
+margin: 0 auto;
+width:90%
+
+`
 
 export default Ecos;

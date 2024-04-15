@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import impermanencia from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
+import vanishing from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
 import voces from "../../public/assets/images/obras/voces de la tierra comp/1baja.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Home() {
   const images = [
     {
-      image: impermanencia,
+      image: vanishing,
     },
     {
       image: voces,
     },
     {
-      image: impermanencia,
+      image: vanishing,
     },
     {
       image: voces,
     },
     {
-      image: impermanencia,
+      image: vanishing,
     },
     {
       image: voces,
@@ -67,7 +67,7 @@ function Home() {
 
   return (
     <HomeSection>
-      <HomeContainer>
+      <HomeContainer style={{marginTop:"30px"}}>
         {/* <AnimatePresence>
           {isVisible &&
             images.map((item, index) => (
@@ -83,50 +83,64 @@ function Home() {
             ))}
         </AnimatePresence> */}
 
-        <PictureContainer>
-          <StyledImage  src={impermanencia}>
+
+        <PictureContainer >
+          <StyledImage  src={vanishing}>
+
+          </StyledImage>
+        </PictureContainer>
+        {/* <PictureContainer>
+          <StyledImage  src={vanishing}>
 
           </StyledImage>
         </PictureContainer>
         <PictureContainer>
-          <StyledImage  src={impermanencia}>
+          <StyledImage  src={vanishing}>
 
           </StyledImage>
-        </PictureContainer>
-        <PictureContainer>
-          <StyledImage  src={impermanencia}>
-
-          </StyledImage>
-        </PictureContainer>
+        </PictureContainer> */}
 
       </HomeContainer>
+      {/* <HomeContainer>
+      <PictureContainer>
+          <StyledImage  src={vanishing}>
+
+          </StyledImage>
+        </PictureContainer>
+        <PictureContainer>
+          <StyledImage  src={vanishing}>
+
+          </StyledImage>
+        </PictureContainer>
+        <PictureContainer>
+          <StyledImage  src={vanishing}>
+
+          </StyledImage>
+        </PictureContainer>
+      </HomeContainer> */}
     </HomeSection>
   );
 }
 
 const HomeSection = styled.section`
-  height: auto;
+  height: 100vh;
   margin-top: 0px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: red;
+
 `;
 
 const HomeContainer = styled.div`
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: center;
-  padding-top: 2%;
   width: 100%;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 100px;
   max-width: 1600px;
-  background-color: blue;
-  width: 98%;
+  width: 90%;
 
   @media screen and (max-width: 500px) {
     margin-bottom: 50px;
@@ -135,7 +149,7 @@ const HomeContainer = styled.div`
 
   div {
     background-color: #eeeeee;
-    width: 32%;
+    width: 100%;
     height: auto;
 
 
@@ -148,9 +162,8 @@ const HomeContainer = styled.div`
 const PictureContainer = styled(motion.div)`
   position: relative;
   background-color: #eeeeee;
-  width: 33%;
-  /* height: 300px; */
-  height: 300px;
+  width: 100%;
+  height: 90vh;
   margin: 5px 5px;
   overflow: hidden;
   background-color: violet;
@@ -159,8 +172,7 @@ const PictureContainer = styled(motion.div)`
 
 const StyledImage = styled(Image)`
   width: 100%;
-  /* height: 300px; */
-  height: 300px;
+  height: 90vh;
   object-fit: cover;
 `;
 

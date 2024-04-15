@@ -1,111 +1,13 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Section, Container } from "../styles/styles";
+import Image from "next/image";
+import libro1 from "../../public/assets/images/libros/hijos del sol.png";
+import libro2 from "../../public/assets/images/libros/madres argentinas.png";
+import libro3 from "../../public/assets/images/libros/parques y jardones.png";
+
 const Work = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
 
-  const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-  };
-
-  const trayectoria = [
-    { año: "2023", titulo: "Planet Art Collection", texto: "Alemania" },
-    {
-      año: "2023",
-      titulo: "Praxis, Galeria virtual",
-      texto: "'Hijos del Sol'",
-    },
-    {
-      año: "2016",
-      titulo: "FESTIVAL DE LA LUZ",
-      texto: "Centro Cultural Haroldo Conti, “Impermanencia”",
-    },
-    { año: "2015", titulo: "MILÁN", texto: "ARTinterete" },
-    {
-      año: "2014",
-      titulo: "NEW YORK",
-      texto: "Agora Gallery, “Creencias Latinas”",
-    },
-    {
-      año: "2014",
-      titulo: "FESTIVAL DE LA LUZ CCR",
-      texto: "“Deconstruyendo Muros”",
-    },
-    { año: "2014", titulo: "ARTEXARTE", texto: "“Deconstruyendo Muros”" },
-    {
-      año: "2012",
-      titulo: "FESTIVAL DE LA LUZ XVII",
-      texto: "Centro Cultural Recoleta, “Pasiones”",
-    },
-    {
-      año: "2012",
-      titulo: "CENTRO CULTURAL BORGES",
-      texto: "“Horizontes Imaginarios”",
-    },
-    {
-      año: "2012",
-      titulo: "BIENAL",
-      texto: "El Gran Sur, Montevideo “Creencias Latinas”",
-    },
-    {
-      año: "2011",
-      titulo: "CENTRO CULTURAL BORGES",
-      texto: "“Pueblos Olvidados”",
-    },
-    { año: "2011", titulo: "GALERÍA THAMES", texto: "“Pueblos Olvidados”" },
-    {
-      año: "2011",
-      titulo: "CENTRO CULTURAL BORGES",
-      texto: "“Madres Argentinas”",
-    },
-
-    {
-      año: "2010",
-      titulo: "FESTIVAL DE LA LUZ XVII",
-      texto: "Fundación Itaú, “Cicatrices”",
-    },
-    {
-      año: "2008",
-      titulo: "FUNDACIÓN PATIÑO MAYER, BOLIVIA",
-      texto: "“Analogías”",
-    },
-    {
-      año: "2007",
-      titulo: "BA PHOTO",
-      texto: "Galería Gonzalo Vidal, “Hijos del Sol”",
-    },
-    { año: "2007", titulo: "EMBAJADA DE PERÚ", texto: "“Hijos del Sol”" },
-
-    { año: "2004", titulo: "ECO CENTRO, PTO. MADRYN", texto: "“Ratros”" },
-    {
-      año: "2004",
-      titulo: "FESTIVAL DE LA LUZ XIII",
-      texto: "Galería Stein, “Encuentro”",
-    },
-
-    { año: "2003", titulo: "RTE BA", texto: "Galería Cromática, “Huellas”" },
-    { año: "2003", titulo: "ARTE BA", texto: "Banco Ciudad Bs. As." },
-    {
-      año: "2003",
-      titulo: "CENTRO CULTURAL RECOLETA",
-      texto: "“Mi ciudad y su gente”",
-    },
-
-    {
-      año: "2002",
-      titulo: "FESTIVAL DE LA LUZ XII,",
-      texto: "“Ceremonias Andinas”",
-    },
-  ];
 
   return (
     <>
@@ -116,36 +18,64 @@ const Work = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <WorkSection>
-  
-            <motion.ul
-              style={{ listStyle: "none" }}
-              variants={container}
-              initial="hidden"
-              animate="show"
-            >
-              {trayectoria.map((tra, index) => (
-                <motion.li variants={item} key={index}>
-                  <WorkLi>
-                    <WorkDate>
-                      <p>{tra.año}</p>
-                    </WorkDate>
-                    <Content>
-                      <WorkTitle>{tra.titulo}</WorkTitle>
-                      <More>{tra.texto}</More>
-                    </Content>
-                  </WorkLi>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </WorkSection>
+          <TrayectoriaContainer>
+            <LibrosSection>
+              <div>
+                <Image src={libro1} alt="Hijos del Sol" />
+                <Text style={{ marginLeft: "10px" }}>Hijos del Sol</Text>
+              </div>
+              <div>
+                <Image src={libro2} alt="Madres Argentinas" />
+                <Text>Madres Argentinas</Text>
+              </div>
+              <div>
+                <Image src={libro3} alt="Parques y Jardines" />
+                <Text>Parques y Jardines</Text>
+              </div>
+            </LibrosSection>
+
+            <TrayectoriaSection>
+
+            </TrayectoriaSection>
+          </TrayectoriaContainer>
         </motion.div>
       </Section>
     </>
   );
 };
 
+const TrayectoriaContainer = styled(Container)`
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+`;
+const LibrosSection = styled.div`
+  display: flex;
+  flex: row;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  flex-wrap: wrap;
 
+  div {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      height: 350px;
+      width: auto;
+    }
+  }
+`;
+
+const TrayectoriaSection = styled.div`
+height: 600px;
+width: 100%;
+
+
+
+
+`
 const WorkSection = styled.div`
   width: 100%;
   margin-top: 110px;
@@ -153,7 +83,7 @@ const WorkSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   padding: 50px;
 `;
 const WorkLi = styled.div`
@@ -201,6 +131,15 @@ const More = styled.p`
   line-height: 100%;
 `;
 
-
+export const Text = styled.h5`
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: #4a4747;
+  line-height: 130%;
+  font-weight: 400;
+  max-width: 200px;
+  margin-top: 5px;
+`;
 
 export default Work;

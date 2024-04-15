@@ -7,7 +7,7 @@ export const Section = styled.div`
   flex-direction: column;
   /* justify-content: center;
   align-items: center; */
-  min-height: 100vh;
+  /* min-height: 100vh; */
 `;
 
 export const Container = styled.div`
@@ -33,7 +33,7 @@ export const Text = styled.p`
 
 export const Title = styled.h2`
   font-family: "Montserrat";
-  font-size: 80px;
+  font-size: 60px;
   color: #4a4747;
   line-height: 90%;
   font-weight: 200;
@@ -54,6 +54,8 @@ export const ObrasTitle = styled.h2`
   line-height: 90%;
   margin: 0;
   margin-right: 20px;
+
+max-width: 700px;
 
   @media screen and (max-width: 1100px) {
     line-height: 100%;
@@ -129,4 +131,55 @@ export const ObrasText = styled.p`
     font-size: 11px;
     line-height: 160%;
   }
+`;
+
+
+
+//hoteles
+
+export const HotelesContainer = styled(Container)`
+  height: auto;
+  margin-top: 110px;
+  width: 90%;
+
+`;
+
+
+export const PicturesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1190px) {
+    margin-top: 90px;
+  }
+`;
+
+
+
+export const HotelSubtitle = styled.h4`
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 23px;
+  color: #4a4747;
+  line-height: 130%;
+  font-weight: 400;
+  max-width: 200px;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+`;
+
+export const HotelText = styled.h5`
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: #4a4747;
+  line-height: 130%;
+  font-weight: 300;
+  max-width: 200px;
 `;

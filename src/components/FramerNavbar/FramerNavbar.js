@@ -10,7 +10,7 @@ const links = [
   { href: "/hoteles", title: "HOTELES" },
   { href: "/obras", title: "OBRAS" },
   { href: "/talleres", title: "TRAVEL & WORKSHOPS" },
-  { href: "/trayectoria", title: "TRAYECTORIA" },  { href: "/trayectoria", title: "CLIENTES" },
+  { href: "/trayectoria", title: "TRAYECTORIA" },  { href: "/clientes", title: "CLIENTES" },
   { href: "/contacto", title: "CONTACTO" },
 ];
 
@@ -117,7 +117,7 @@ const FramerNavbar = () => {
               <NavbarCont>
 
      
-              <div>
+              <div className="logo">
                 <Link href="/">
                   <p>INES MIGUENS</p>
                 </Link>
@@ -186,6 +186,12 @@ const NavbarCont = styled.div`
   height: auto;
   display: flex;
   margin: 0 auto;
+  
+  justify-content: space-between;
+
+  .logo{
+    
+  }
 `;
 
 const Container = styled.div`
@@ -206,16 +212,17 @@ const Container = styled.div`
   max-width: 1600px;
 
   
-  /* opacity: ${(props) =>
+  opacity: ${(props) =>
     props.visible || props.scrollDirection === "up" ? 1 : 0};
   transform: ${(props) =>
     props.visible || props.scrollDirection === "up"
       ? "none"
-      : "translateY(-100%)"}; */
+      : "translateY(-100%)"};
 `;
 
 const Nav = styled.nav`
   width: 50%;
+
 `;
 
 const List = styled.ul`
@@ -238,7 +245,7 @@ const StyledLink = styled.a`
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 14px;
+  font-size: 12px;
   transition: all 0.3s ease;
 
   &:hover {

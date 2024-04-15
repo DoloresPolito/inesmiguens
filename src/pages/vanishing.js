@@ -6,20 +6,21 @@ import {
   ObrasTitle,
   ObrasText,
   ObrasTopContainer,
+  PicturesContainer
 } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion, useAnimation } from "framer-motion";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import More from "@/components/More";
-
 import img1 from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
 import img2 from "../../public/assets/images/obras/vanishing jpg reduce comp/2.jpg";
 import img3 from "../../public/assets/images/obras/vanishing jpg reduce comp/3a.jpg";
 import img4 from "../../public/assets/images/obras/vanishing jpg reduce comp/3b.jpg";
 import img5 from "../../public/assets/images/obras/vanishing jpg reduce comp/4.jpg";
 
-import { useInView } from "react-intersection-observer";
+
+import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
 function Vanishing() {
   const variants = {
@@ -76,10 +77,14 @@ function Vanishing() {
             </motion.div>
           </ObrasTopContainer>
 
+<ObrasBottomContainer>
+
+
           <PicturesContainer>
             <AnimatedRowOf2 image1={img2} image2={img3} />
             <AnimatedRowOf2 image1={img4} image2={img5} />
           </PicturesContainer>
+          </ObrasBottomContainer>
         </VocesSection>
         <Footer />
       </motion.div>
@@ -87,61 +92,7 @@ function Vanishing() {
   );
 }
 
-const RowOf2 = ({ image1, image2 }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  return (
-    <>
-      <Row2Container ref={ref}>
-        <StyledImage
-          src={image1}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-        <StyledImage
-          src={image2}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-      </Row2Container>
-    </>
-  );
-};
-
-const AnimatedRowOf2 = ({ image1, image2 }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  React.useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 80 }}
-      animate={controls}
-      transition={{ duration: 1 }}
-    >
-      <RowOf2 image1={image1} image2={image2} />
-    </motion.div>
-  );
-};
 
 
 const VocesSection = styled(Section)`
@@ -169,55 +120,14 @@ const StyledImageCover = styled(Image)`
   }
 `;
 
-const PicturesContainer = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  width: 93%;
-  @media screen and (max-width: 1100px) {
-    margin-bottom: 40px;
-  }
-`;
+const ObrasBottomContainer = styled.div`
+display: flex;
+margin: 0 auto;
+width:90%
 
-const Row2Container = styled.div`
-  height: auto;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 10px;
-  /* flex-wrap: wrap; */
+`
 
-  @media screen and (max-width: 1190px) {
-    flex-direction: column;
-    height: auto;
-    margin-top: -60px;
-  }
 
-  /* @media screen and (max-width: 750px) {
-    flex-direction: column;
-    height: auto;
-  } */
-`;
 
-const StyledImage = styled(Image)`
-  width: 700px;
-  height: 410px;
-  padding:30px 0px;
-  object-fit: cover;
-
-  @media screen and (max-width: 1190px) {
-    object-fit: cover;
-    width: 100%;
-    height: 600px;
-    padding:10px 0px;
-  }
-  @media screen and (max-width: 750px) {
-    width: 90%;
-    height: auto;
-    padding:10px 0px;
-  }
-`;
 
 export default Vanishing;
