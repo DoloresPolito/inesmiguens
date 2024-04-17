@@ -32,13 +32,13 @@ const LoopSection = styled.div`
 
   .firstBlock {
     display: inline-block;
-    animation: animation1 30s linear infinite;
+    animation: animation1 40s linear infinite;
     animation-direction: ${props => (props.reverse ? 'reverse' : 'normal')};
   }
 
   .secondBlock {
     display: inline-block;
-    animation: animation2 30s linear infinite;
+    animation: animation2 40s linear infinite;
     animation-direction: ${props => (props.reverse ? 'reverse' : 'normal')};
   }
   /* scrolling-left is continuous/repeatly text */

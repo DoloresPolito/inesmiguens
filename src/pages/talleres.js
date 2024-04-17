@@ -57,7 +57,7 @@ function Talleres() {
                 <div className="cursos">
                   <CursoContainer>
                     <h4>ciclo basico</h4>
-                    <AnimatedText >
+                    <p >
                     Se impartirán los conocimientos para la comprensión de
                       imágenes color y blanco y negro. Se aprenderá a manejar la
                       cámara, sensibilidad, diafragma, profundidad de campo,
@@ -66,7 +66,7 @@ function Talleres() {
                       clave alta y clave baja. Profundización en composición,
                       figuras y formas y líneas, Conocimientos de las
                       herramientas Photoshop, jpeg y raw.
-                    </AnimatedText>
+                    </p>
 
                     <More text="más info" link="/contacto" />
                   </CursoContainer>

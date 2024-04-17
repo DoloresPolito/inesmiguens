@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import HomeSection from "@/sections/Home2";
 import Footer from "@/components/Footer";
 import DisableContextMenu from "@/components/DisableContextMenu";
-
+import MovingComponent from "@/components/MovingComponent"
 
 function Home() {
   return (
@@ -18,7 +18,7 @@ function Home() {
         <DisableContextMenu />
         <FramerNavbar />
         {/* <HomeSection /> */}
-
+<MovingComponent/>
 
         <Footer />
       </motion.div>
