@@ -147,7 +147,7 @@ const FramerNavbar = () => {
             }`}
           >
             <div className={Styles.navigation}>
-              <div>
+              <div className="logo">
                 <Link href="/">
                   <p>INES MIGUENS</p>
                 </Link>
@@ -188,9 +188,15 @@ const NavbarCont = styled.div`
   margin: 0 auto;
   
   justify-content: space-between;
+  align-items: center;
 
   .logo{
-    
+    p{
+      font-size: 30px;
+  color: #4a4747;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+    }
   }
 `;
 

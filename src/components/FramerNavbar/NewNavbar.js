@@ -270,7 +270,7 @@ const FramerNavbar = () => {
             <ListItem key={link.href}>
               <StyledLink href={link.href} className="relative">
                 {link.href === path && <Underline />}
-                {link.title}
+               <h6> {link.title}</h6>
               </StyledLink>
             </ListItem>
           ))}

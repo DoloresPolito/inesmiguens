@@ -1,10 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
+
+
 const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'DMSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','Bebas Neue'
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -33,6 +35,8 @@ const GlobalStyles = createGlobalStyle`
     color: inherit;
  
   }
+
+
   
 `;
 

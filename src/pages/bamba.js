@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
 import Image from "next/image";
-import More from "@/components/More";
+import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/hoteles/la bamba comp/1baja.jpg";
 import img2 from "../../public/assets/images/hoteles/la bamba comp/2baja.jpg";
 import img3 from "../../public/assets/images/hoteles/la bamba comp/3baja.jpg";
@@ -34,7 +34,7 @@ function LaBamba() {
           <HotelesContainer>
             <HotelSubtitle>La Bamba de Areco</HotelSubtitle>
             <HotelText>San Antonio de Areco</HotelText>
-            <More text="hoteles" link="/hoteles" />
+            <MoreBack text="hoteles" link="/hoteles" />
             <PicturesContainer>
               <AnimatedRowOf2 image1={img1} image2={img2}></AnimatedRowOf2>
 

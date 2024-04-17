@@ -109,6 +109,7 @@ const ObrasContainer = styled(Container)`
 
 const ObrasTitle = styled(Title)`
   align-self: flex-end;
+
 `;
 
 const VanishingContainer = styled.div`

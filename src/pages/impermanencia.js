@@ -49,21 +49,19 @@ function Impermanencia() {
         <VocesSection>
           <ObrasTopContainer>
             <div className="left">
-              <ObrasTitle>
-                Imperma
-                <br />
-                nencia
-              </ObrasTitle>
-              <ObrasText>
-                La ciudad se convierte en un mar de fugaces  y fantasmagóricos
-                encuentros, en la que se desvanece la posibilidad de la
-                percepción de los otros, prácticamente invisibles, incorpóreos.
-                 Una geometría que dibuja en el asfalto el vértigo del tiempo,
-                preñado de destiempo y expatriado de toda permanencia. Su cruce
-                demora apenas un minuto que es la cifra de la celeridad en la
-                que vivimos.
-              </ObrasText>
-              <More text="obras" link="/obras" />
+              <ObrasTitle>Impermanencia</ObrasTitle>
+              <div>
+                <ObrasText>
+                  La ciudad se convierte en un mar de fugaces  y fantasmagóricos
+                  encuentros, en la que se desvanece la posibilidad de la
+                  percepción de los otros, prácticamente invisibles,
+                  incorpóreos.  Una geometría que dibuja en el asfalto el
+                  vértigo del tiempo, preñado de destiempo y expatriado de toda
+                  permanencia. Su cruce demora apenas un minuto que es la cifra
+                  de la celeridad en la que vivimos.
+                </ObrasText>
+                <More text="obras" link="/obras" />
+              </div>
             </div>
             <motion.div
               className="right"
@@ -109,6 +107,14 @@ const ObrasBottomContainer = styled.div`
   display: flex;
   margin: 0 auto;
   width: 90%;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  @media screen and (max-width: 1190px) {
+    width: 93%;
+    margin-top: 0px !important;
+
+  }
+
 `;
 
 export default Impermanencia;

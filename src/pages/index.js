@@ -5,7 +5,6 @@ import HomeSection from "@/sections/Home2";
 import Footer from "@/components/Footer";
 import DisableContextMenu from "@/components/DisableContextMenu";
 
-
 function Home() {
   return (
     <>
@@ -15,12 +14,11 @@ function Home() {
         exit={{ opacity: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-                <DisableContextMenu />
+        <DisableContextMenu />
         <FramerNavbar />
         <HomeSection />
         <Footer />
       </motion.div>
- 
     </>
   );
 }

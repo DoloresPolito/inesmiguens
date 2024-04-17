@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
-import { Section, Container, ObrasTitle } from "../styles/styles";
+import { Section, Container, Title } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
-import { useInView } from "react-intersection-observer";
+
 import More from "@/components/More";
 function Talleres() {
 
@@ -52,7 +52,7 @@ function Talleres() {
                initial="hidden"
                animate={isVisible ? "visible" : "hidden"}
               >
-                <h2>Travel & workshops</h2>
+                <TitleTalleres>Travel and workshops</TitleTalleres>
               </TitleContainerAnimated>
               <InfoContainer>
                 <CursoContainer>
@@ -128,18 +128,21 @@ const Top = styled.div`
   align-items: space-between;
   height: 100%;
   margin-top: 20px;
-
+/* 
   h2 {
     font-family: "Montserrat";
     font-size: 70px;
     color: #4a4747;
     line-height: 90%;
     font-weight: 200;
-    /* max-width: 500px; */
+
     margin-top: 5px;
-    /* margin-bottom: 25px; */
-  }
+  
+  } */
 `;
+
+const TitleTalleres = styled(Title)`
+`
 
 const InfoContainer = styled.div`
   margin-top: 50px;

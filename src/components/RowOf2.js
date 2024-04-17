@@ -23,7 +23,7 @@ const RowOf2 = ({ image1, image2 }) => {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 
 
   @media screen and (max-width: 1190px) {
@@ -31,19 +31,22 @@ const RowOf2 = ({ image1, image2 }) => {
     height: auto;
     margin-top: -60px;
     gap: 0px;
+    margin-top: 0px;
+
   }
 `;
 
 const StyledImage = styled(Image)`
   height: 380px;
-  width: 50%;
+  width: 49%;
   object-fit: cover;
 
   @media screen and (max-width: 1190px) {
     object-fit: cover;
     width: 100%;
     height: 600px;
-    padding: 10px 0px;
+    padding-bottom: 30px;
+
   }
   @media screen and (max-width: 750px) {
     width: 100%;

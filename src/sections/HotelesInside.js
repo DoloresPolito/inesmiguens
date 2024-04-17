@@ -54,7 +54,7 @@ function HotelesInside() {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          Hoteles y estancias
+         HOTELES Y ESTANCIAS
         </ObrasTitleAnimated>
 
         <ObrasGrid>
@@ -128,16 +128,27 @@ const ObrasContainer = styled(Container)`
   margin-bottom: 200px;
   overflow: hidden;
   width: 100%;
+
+  /* h2{
+    color:red;
+    font-family: "Bebas Neue", sans-serif !important;
+    margin-top: 100px;
+      font-family: "Montserrat";
+  } */
 `;
 
 const ObrasTitle = styled(Title)`
-  align-self: flex-start;
-  font-family: "Montserrat";
-  font-size: 70px;
+  align-self: flex-end;
+  /* font-family: "Montserrat"; */
+
+  font-family: "Bebas Neue", sans-serif !important;
+  font-size: 60px;
   color: #4a4747;
   line-height: 90%;
   font-weight: 200;
   margin-top: 100px;
+
+
 `;
 
 const ObrasTitleAnimated = motion(ObrasTitle);

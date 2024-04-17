@@ -68,7 +68,7 @@ function Home() {
   return (
     <HomeSection>
       <HomeContainer>
-        {/* <AnimatePresence>
+        <AnimatePresence>
           {isVisible &&
             images.map((item, index) => (
               <PictureContainer
@@ -81,8 +81,8 @@ function Home() {
                 <StyledImage src={item.image} alt={`imagen-${index}`}      onContextMenu={preventContextMenu}/>
               </PictureContainer>
             ))}
-        </AnimatePresence> */}
-
+        </AnimatePresence>
+{/* 
         <PictureContainer>
           <StyledImage  src={impermanencia}>
 
@@ -97,7 +97,7 @@ function Home() {
           <StyledImage  src={impermanencia}>
 
           </StyledImage>
-        </PictureContainer>
+        </PictureContainer> */}
 
       </HomeContainer>
     </HomeSection>

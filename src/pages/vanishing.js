@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
   Section,
-  Container,
   ObrasTitle,
   ObrasText,
   ObrasTopContainer,
   PicturesContainer
 } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
-import { motion, useAnimation } from "framer-motion";
+import { motion  } from "framer-motion";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import More from "@/components/More";
@@ -52,6 +51,7 @@ function Vanishing() {
           <ObrasTopContainer>
             <div className="left">
               <ObrasTitle>vanishing landscapes</ObrasTitle>
+              <div>
               <ObrasText>
                 El Amazonas esta en permanente peligro de existencia. Mi fuerte
                 conexión con la naturaleza me ha llevado varias veces a
@@ -66,6 +66,8 @@ function Vanishing() {
                 en peligro el mayor reservorio de agua dulce del planeta.
               </ObrasText>
               <More text="obras" link="/obras" />
+              </div>
+ 
             </div>
             <motion.div
               className="right"
@@ -121,11 +123,18 @@ const StyledImageCover = styled(Image)`
 `;
 
 const ObrasBottomContainer = styled.div`
-display: flex;
-margin: 0 auto;
-width:90%
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  @media screen and (max-width: 1190px) {
+    width: 93%;
+    margin-top: 0px !important;
 
-`
+  }
+
+`;
 
 
 

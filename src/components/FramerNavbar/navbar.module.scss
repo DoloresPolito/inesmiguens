@@ -1,7 +1,5 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Georama:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 .navbar {
   display: flex;
@@ -16,11 +14,6 @@
   z-index: 1000;
   font-weight: 200 !important;
 
-
-
-
-
-
   .navigation {
     position: absolute;
     top: 20px;
@@ -32,6 +25,15 @@
     justify-content: space-between;
     width: 95%;
 
+
+
+      p {
+        font-size: 30px;
+        color: #4a4747;
+        font-weight: 200;
+        font-family: "Montserrat", sans-serif !important;
+      }
+ 
 
     .burgerMenuContainer {
       content: "";
@@ -55,8 +57,8 @@
         content: "";
         background: black;
         position: absolute;
-        width: 55px;
-        height: 2px;
+        width: 40px;
+        height: 1.5px;
         z-index: 0;
         top: calc(25px / 2 - 1.5px);
         transition: 0.25s width ease-in-out, 0.5s background-color ease-in-out;
@@ -66,8 +68,8 @@
         content: "";
         background-color: black;
         position: absolute;
-        width: 55px;
-        height: 2px;
+        width: 40px;
+        height: 1.5px;
         transform: translateY(10px);
         z-index: 0;
         transition: 0.25s transform ease-in-out,
@@ -78,8 +80,8 @@
         content: "";
         background-color: black;
         position: absolute;
-        width: 55px;
-        height: 2px;
+        width: 40px;
+        height: 1.5px;
         transform: translateY(-10px);
         z-index: 0;
         transition: 0.25s transform ease-in-out,
@@ -97,7 +99,6 @@
     top: 30vh;
     display: none;
 
-
     ul {
       list-style: none;
 
@@ -105,11 +106,12 @@
         padding: 1rem 0;
 
         a {
-          font-family: "Montserrat", sans-serif;
-          font-size: 20px;
+          font-family: "Montserrat", sans-serif !important;
+          font-size: 15px;
           color: #281a0f;
           transition: 0.25s color;
           font-weight: 400 !important;
+
         }
 
         a:hover {
@@ -164,7 +166,6 @@
     display: initial;
   }
 }
-
 
 .navbar.visible {
   opacity: 1;

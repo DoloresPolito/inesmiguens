@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+
 export const Section = styled.div`
   height: auto;
   width: 100%;
@@ -8,6 +10,10 @@ export const Section = styled.div`
   /* justify-content: center;
   align-items: center; */
   /* min-height: 100vh; */
+
+  @media screen and (max-width: 700px) {
+    margin-top: 30px;
+  }
 `;
 
 export const Container = styled.div`
@@ -32,11 +38,12 @@ export const Text = styled.p`
 `;
 
 export const Title = styled.h2`
-  font-family: "Montserrat";
+
   font-size: 60px;
   color: #4a4747;
   line-height: 90%;
   font-weight: 200;
+  font-family: "Bebas Neue", sans-serif;
 `;
 
 
@@ -45,17 +52,18 @@ export const Title = styled.h2`
 
 //obras
 export const ObrasTitle = styled.h2`
-  font-family: "Montserrat";
-  font-size: 100px;
+  /* font-family: "Montserrat"; */
+
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-size: 60px !important;
   color: #4a4747;
   line-height: 90%;
-  font-weight: 200;
   align-self: flex-start;
-  line-height: 90%;
   margin: 0;
   margin-right: 20px;
 
-max-width: 700px;
+
 
   @media screen and (max-width: 1100px) {
     line-height: 100%;
@@ -81,7 +89,7 @@ export const ObrasTopContainer = styled(Container)`
 
   .left {
     width: 50%;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -93,6 +101,7 @@ export const ObrasTopContainer = styled(Container)`
       height: 100%;
       align-self: flex-start;
       padding: 10px;
+      margin-bottom: 30px;
     }
   }
   .right {
@@ -103,7 +112,11 @@ export const ObrasTopContainer = styled(Container)`
     justify-content: center;
     @media screen and (max-width: 1100px) {
       width: 100%;
-      background-color: grey;
+
+      img{
+        width: 100%;
+      }
+
     }
   }
 
@@ -111,6 +124,7 @@ export const ObrasTopContainer = styled(Container)`
     margin-top: 100px;
     flex-direction: column;
     height: auto;
+    margin-bottom: 0px;
 
   }
 
@@ -124,8 +138,9 @@ export const ObrasText = styled.p`
   color: black;
   font-size: 12px;
   line-height: 170%;
-  max-width: 600px;
+  max-width: 500px;
   letter-spacing: 0.5px;
+  margin-bottom: 30px;
 
   @media screen and (max-width: 530px) {
     font-size: 11px;

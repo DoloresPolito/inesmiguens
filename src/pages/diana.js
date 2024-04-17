@@ -4,7 +4,7 @@ import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
-import More from "@/components/More";
+import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/hoteles/parque diana comp/1bajaa.jpg";
 import img2 from "../../public/assets/images/hoteles/parque diana comp/2bajaa (2).jpg";
 import img3 from "../../public/assets/images/hoteles/parque diana comp/2bajaa.jpg";
@@ -31,7 +31,7 @@ function Diana() {
           <HotelesContainer>
             <HotelSubtitle>Parque Diana</HotelSubtitle>
             <HotelText>Neuquen</HotelText>
-            <More text="hoteles" link="/hoteles" />
+            <MoreBack text="hoteles" link="/hoteles" />
             <PicturesContainer>
               <AnimatedRowOf2 image1={img1} image2={img2}></AnimatedRowOf2>
 

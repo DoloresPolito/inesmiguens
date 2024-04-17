@@ -8,7 +8,7 @@ function ClientesInside() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -16,6 +16,44 @@ function ClientesInside() {
   const item = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
+  };
+
+
+  const motionVariants = {
+    open: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        ease: "easeOut",
+        type: "spring",
+      },
+    },
+    closed: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0,
+        duration: 0,
+      },
+    },
+  };
+
+
+  const listItemVariants = {
+    hidden: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.35,
+        ease: "easeOut",
+      },
+    },
+    show: {
+      y: 100,
+      opacity: 0,
+      transition: {
+        duration: 0,
+      },
+    },
   };
 
   const clientes1 = [
@@ -60,18 +98,21 @@ function ClientesInside() {
           </div>
           <div className="right">
             <Info>
-         
-
               <WorkSection>
                 <motion.ul
                   style={{ listStyle: "none" }}
-                  variants={container}
-                  initial="hidden"
-                  animate="show"
+                  variants={motionVariants}
+                  initial="closed"
+                  animate="open"
                 >
                   {/* <h2>HOTELES Y ESTANCIAS</h2> */}
                   {clientes1.map((cliente, index) => (
-                    <motion.li variants={item} key={index}>
+                    <motion.li
+                      variants={listItemVariants}
+                      initial="closed"
+                      animate="open"
+                      key={index}
+                    >
                       <WorkLi>
                         <Content>
                           <WorkTitle>{cliente.nombre}</WorkTitle>

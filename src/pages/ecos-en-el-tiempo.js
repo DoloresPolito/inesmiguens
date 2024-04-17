@@ -6,12 +6,12 @@ import {
   ObrasTitle,
   ObrasText,
   ObrasTopContainer,
-  PicturesContainer
+  PicturesContainer,
 } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion, useAnimation } from "framer-motion";
 import Footer from "@/components/Footer";
-import More from "@/components/More";
+import MoreBack from "@/components/MoreBack";
 import Image from "next/image";
 import img1 from "../../public/assets/images/obras/ecos jpg reduce/baja 7.jpg";
 import img2 from "../../public/assets/images/obras/ecos jpg reduce/baja5.jpg";
@@ -58,9 +58,12 @@ function Ecos() {
           <ObrasTopContainer>
             <div className="left">
               <ObrasTitle>
-                Ecos en el <br />
-                tiempo
+                ECOS EN EL 
+                TIEMPO
               </ObrasTitle>
+              <div>
+
+          
               <ObrasText>
                 La ciudad se convierte en un mar de fugaces  y fantasmagóricos
                 encuentros, en la que se desvanece la posibilidad de la
@@ -70,7 +73,8 @@ function Ecos() {
                 demora apenas un minuto que es la cifra de la celeridad en la
                 que vivimos.
               </ObrasText>
-              <More text="obras" link="/obras" />
+              <MoreBack text="obras" link="/obras" />
+              </div>
             </div>
             <motion.div
               className="right"
@@ -81,16 +85,14 @@ function Ecos() {
               <StyledImageCover src={img1} alt="image1" />
             </motion.div>
           </ObrasTopContainer>
-<ObrasBottomContainer>
-
-
-          <PicturesContainer>
-            <AnimatedRowOf2 image1={img2} image2={img3} />
-            <AnimatedRowOf2 image1={img5} image2={img6} />
-            <RowOf1 />
-            <AnimatedRowOf2 image1={img7} image2={img8} />
-            <AnimatedRowOf2 image1={img9} image2={img10} />
-          </PicturesContainer>
+          <ObrasBottomContainer>
+            <PicturesContainer>
+              <AnimatedRowOf2 image1={img2} image2={img3} />
+              <AnimatedRowOf2 image1={img5} image2={img6} />
+              <RowOf1 />
+              <AnimatedRowOf2 image1={img7} image2={img8} />
+              <AnimatedRowOf2 image1={img9} image2={img10} />
+            </PicturesContainer>
           </ObrasBottomContainer>
         </VocesSection>
         <Footer />
@@ -98,8 +100,6 @@ function Ecos() {
     </>
   );
 }
-
-
 
 const RowOf1 = () => {
   const controls = useAnimation();
@@ -147,10 +147,6 @@ const StyledImageCover = styled(Image)`
   }
 `;
 
-
-
-
-
 const Row1Container = styled.div`
   height: 380px;
   width: 100%;
@@ -160,12 +156,23 @@ const Row1Container = styled.div`
   align-items: center;
 `;
 
-
 const ObrasBottomContainer = styled.div`
-display: flex;
-margin: 0 auto;
-width:90%
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  @media screen and (max-width: 1190px) {
+    width: 93%;
+    margin-top: 0px !important;
 
-`
+  }
 
+`;
+
+const NewTitle = styled.h2`
+
+font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;`;
 export default Ecos;

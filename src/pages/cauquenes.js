@@ -4,7 +4,7 @@ import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import styled from "styled-components";
-import More from "@/components/More";
+import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/hoteles/cauquenes comp/1baja.jpg";
 import img2 from "../../public/assets/images/hoteles/cauquenes comp/2baja.jpg";
 import img3 from "../../public/assets/images/hoteles/cauquenes comp/3baja.jpg";
@@ -37,7 +37,7 @@ function Cauquenes() {
           <HotelesContainer>
             <HotelSubtitle>Los Cauquenes</HotelSubtitle>
             <HotelText>Bariloche</HotelText>
-            <More text="hoteles" link="/hoteles" />
+            <MoreBack text="hoteles" link="/hoteles" />
             <PicturesContainer>
     
               <AnimatedRowOf2 image1={img1} image2={img2}></AnimatedRowOf2>

@@ -13,22 +13,18 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import MoreBack from "@/components/MoreBack";
 
-import img1 from "../../public/assets/images/obras/voces de la tierra comp/1baja.jpg";
-import img2 from "../../public/assets/images/obras/voces de la tierra comp/2baja.jpg";
-import img3 from "../../public/assets/images/obras/voces de la tierra comp/3baja.jpg";
-import img4 from "../../public/assets/images/obras/voces de la tierra comp/4baja.jpg";
-import img5 from "../../public/assets/images/obras/voces de la tierra comp/6baja.jpg";
-import img6 from "../../public/assets/images/obras/voces de la tierra comp/7baja.jpg";
-import img7 from "../../public/assets/images/obras/voces de la tierra comp/9baja.jpg";
-import img8 from "../../public/assets/images/obras/voces de la tierra comp/11baja.jpg";
-import img10 from "../../public/assets/images/obras/voces de la tierra comp/12baja.jpg";
-import img11 from "../../public/assets/images/obras/voces de la tierra comp/13baja.jpg";
+import img1 from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
+import img2 from "../../public/assets/images/obras/hijos del sol/baja2.jpg";
+import img3 from "../../public/assets/images/obras/hijos del sol/baja4.jpg";
+import img4 from "../../public/assets/images/obras/hijos del sol/baja7.jpg";
+import img5 from "../../public/assets/images/obras/hijos del sol/baja9.jpg";
+
 
 import { useInView } from "react-intersection-observer";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
-function Voces() {
+function Hijos() {
   const variants = {
     visible: {
       opacity: 1,
@@ -57,18 +53,12 @@ function Voces() {
         <VocesSection>
           <ObrasTopContainer>
             <div className="left">
-              <ObrasTitle>Voces de la tierra</ObrasTitle>
+              <ObrasTitle>Hijos del Sol</ObrasTitle>
               <div>
 
       
               <ObrasText>
-                La ciudad se convierte en un mar de fugaces  y fantasmagóricos
-                encuentros, en la que se desvanece la posibilidad de la
-                percepción de los otros, prácticamente invisibles, incorpóreos.
-                 Una geometría que dibuja en el asfalto el vértigo del tiempo,
-                preñado de destiempo y expatriado de toda permanencia. Su cruce
-                demora apenas un minuto que es la cifra de la celeridad en la
-                que vivimos.
+              Hijos del sol es el testimonio de la fe de un pueblo, y pretende reflejar su esencia, sus creencias y sus costumbres. Pasado y presente continúan conviviendo en estos herederos de los Incas.
               </ObrasText>
               <MoreBack text="obras" link="/obras" />
               </div>
@@ -86,11 +76,10 @@ function Voces() {
           <ObrasBottomContainer>
             <PicturesContainer>
             <AnimatedRowOf2 image1={img2} image2={img3} />
-              <AnimatedRowOf3Vertical image1={img4} image2={img6} image3={img5} />
+              <AnimatedRowOf3Vertical image1={img4} image2={img5} image3={img5} />
            
-              <AnimatedRowOf2 image1={img10} image2={img11} />
+              <AnimatedRowOf2 image1={img1} image2={img2} />
 
-              <AnimatedRowOf2 image1={img7} image2={img8} />
             </PicturesContainer>
           </ObrasBottomContainer>
         </VocesSection>
@@ -139,8 +128,6 @@ const AnimatedRowOf3Vertical = ({ image1, image2, image3 }) => {
 const VocesSection = styled(Section)`
   height: auto;
   justify-content: center;
-
-
 `;
 
 
@@ -205,4 +192,4 @@ const StyledImageVertical = styled(Image)`
   }
 `;
 
-export default Voces;
+export default Hijos;

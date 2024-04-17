@@ -14,24 +14,7 @@ function Footer() {
               <FooterText>+54 11 5467 5902</FooterText>
               <FooterText>inesmiguensphoto@gmail.com</FooterText>
             </div>
-            {/* <div>
-              <h6>Nav</h6>
-              <Link href="/hoteles">
-                <FooterText>HOTELES</FooterText>
-              </Link>
-              <Link href="/talleres">
-                {" "}
-                <FooterText>TALLERES</FooterText>{" "}
-              </Link>
-              <Link href="/trayectoria">
-                {" "}
-                <FooterText>TRAYECTORIA</FooterText>{" "}
-              </Link>
-              <Link href="/contacto">
-                {" "}
-                <FooterText>CONTACTO</FooterText>{" "}
-              </Link>
-            </div> */}
+
           </TopContainer>
           <BottomContainer>
             <div>
@@ -49,7 +32,7 @@ export default Footer;
 
 const FooterSection = styled.div`
 
-height: auto;
+
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -58,6 +41,10 @@ height: auto;
   background-color: #f9f9f9;
   height: 150px;
   padding: 30px 0px 30px 0px;
+
+  @media screen and (max-width: 700px) {
+    height: auto;
+  }
 `;
 
 const FooterContainer = styled(Container)``;
@@ -72,6 +59,8 @@ const TopContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0px 50px;
+    justify-content: center;
+    align-items: center;
   }
 
   h6{
@@ -81,19 +70,29 @@ const TopContainer = styled.div`
     margin-bottom: 10px;
 
   }
+
+  @media screen and (max-width: 700px) {
+    justify-content: center;
+  }
 `;
 
 const BottomContainer = styled.div`
   height: 20%;
   width: 100%;
-
+  display: flex;
+  @media screen and (max-width: 700px) {
+    justify-content: center;
+    margin-top: 50px;
+  }
 
 
   div {
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 700px) {
+align-items: center;
+  }
 
- 
   }
 `;
 

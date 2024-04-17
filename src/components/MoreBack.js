@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import arrow2 from "../../public/assets/icons/arrow2.svg";
+import arrow1 from "../../public/assets/icons/arrow1.svg";
 import Link from "next/link"
 
 function More({ text, link }) {
@@ -11,8 +11,9 @@ function More({ text, link }) {
         <>
           <Link href={link}>
             <SectionLinks>
+            <Image src={arrow1} alt="arrow" />
               <h6>{text}</h6>
-              <Image src={arrow2} alt="arrow" />
+      
             </SectionLinks>
           </Link>
         </>
@@ -20,7 +21,7 @@ function More({ text, link }) {
         <>
           <SectionLinks>
             <h6>{text}</h6>
-            <Image src={arrow2} alt="arrow" />
+            <Image src={arrow1} alt="arrow" />
           </SectionLinks>
         </>
       )}
@@ -37,13 +38,14 @@ const SectionLinks = styled.div`
   h6 {
     font-family: "Montserrat";
     color: #4a4747;
-    font-size: 11px;
+    font-size: 12px;
     margin-right: 5px;
   }
 
   img {
-    height: 8px;
-    width: 15px;
+    height: 10px;
+    width: 010px;
+    margin-right: 5px;
   }
 `;
 export default More;
