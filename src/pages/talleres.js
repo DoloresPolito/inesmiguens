@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Section, Container, Title } from "../styles/styles";
 import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
@@ -6,10 +6,11 @@ import Footer from "@/components/Footer";
 import styled from "styled-components";
 
 import More from "@/components/More";
+import Cover from "@/components/Carousel";
+
+import AnimatedText from "@/components/AnimatedText";
 function Talleres() {
-
   const [isVisible, setIsVisible] = useState(false);
-
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -33,8 +34,6 @@ function Talleres() {
     },
   };
 
-
-
   return (
     <>
       <motion.div
@@ -48,55 +47,60 @@ function Talleres() {
           <TalleresContainer>
             <Top>
               <TitleContainerAnimated
-               variants={titleVariants}
-               initial="hidden"
-               animate={isVisible ? "visible" : "hidden"}
+                variants={titleVariants}
+                initial="hidden"
+                animate={isVisible ? "visible" : "hidden"}
               >
                 <TitleTalleres>Travel and workshops</TitleTalleres>
               </TitleContainerAnimated>
               <InfoContainer>
-                <CursoContainer>
-                  <h4>ciclo basico</h4>
-                  <p>
+                <div className="cursos">
+                  <CursoContainer>
+                    <h4>ciclo basico</h4>
+                    <AnimatedText >
                     Se impartirán los conocimientos para la comprensión de
-                    imágenes color y blanco y negro. Se aprenderá a manejar la
-                    cámara, sensibilidad, diafragma, profundidad de campo,
-                    velocidad, foco. Conocimientos de composición, toma, luz y
-                    flash. Retrato, paisaje y macro. Profundización en la luz,
-                    clave alta y clave baja. Profundización en composición,
-                    figuras y formas y líneas, Conocimientos de las herramientas
-                    Photoshop, jpeg y raw.
-                  </p>
+                      imágenes color y blanco y negro. Se aprenderá a manejar la
+                      cámara, sensibilidad, diafragma, profundidad de campo,
+                      velocidad, foco. Conocimientos de composición, toma, luz y
+                      flash. Retrato, paisaje y macro. Profundización en la luz,
+                      clave alta y clave baja. Profundización en composición,
+                      figuras y formas y líneas, Conocimientos de las
+                      herramientas Photoshop, jpeg y raw.
+                    </AnimatedText>
 
+                    <More text="más info" link="/contacto" />
+                  </CursoContainer>
 
-                  <More text="más info" link="/contacto"/>
-                </CursoContainer>
+                  <CursoContainer>
+                    <h4>travel and workshops</h4>
+                    <p>
+                      Workshop es un taller especializado en un tema específico,
+                      donde se destaca la teoría, los autores contemporáneos que
+                      trabajan sobre él, y los conceptos que lo trascienden.
+                      Adquirimos nuevas habilidades para leer una imagen según
+                      nuestra propia semiótica. Reforzamos la edición y la
+                      elaboración de un portfolio sobre dicho tema.
+                    </p>
+                    <More text="más info" link="/contacto" />
+                  </CursoContainer>
 
-                <CursoContainer>
-                  <h4>travel and workshops</h4>
-                  <p>
-                    Workshop es un taller especializado en un tema específico,
-                    donde se destaca la teoría, los autores contemporáneos que
-                    trabajan sobre él, y los conceptos que lo trascienden.
-                    Adquirimos nuevas habilidades para leer una imagen según
-                    nuestra propia semiótica. Reforzamos la edición y la
-                    elaboración de un portfolio sobre dicho tema.
-                  </p>
-                  <More text="más info" link="/contacto"/>
-                </CursoContainer>
+                  <CursoContainer>
+                    <h4>talleres</h4>
+                    <p>
+                      Los talleres son grupos que se organizan cada 15 días,
+                      según el nivel de conocimiento del alumno. El objetivo es
+                      alcanzar un alto nivel creativo respetando la mirada de
+                      cada uno en su obra y enseñando los recursos necesarios
+                      para un buen desarrollo técnico. Análisis y edición de
+                      obra. Creación de un Portfolio. Preparación y exposición.
+                    </p>
+                    <More text="más info" link="/contacto" />
+                  </CursoContainer>
+                </div>
 
-                <CursoContainer>
-                  <h4>talleres</h4>
-                  <p>
-                    Los talleres son grupos que se organizan cada 15 días, según
-                    el nivel de conocimiento del alumno. El objetivo es alcanzar
-                    un alto nivel creativo respetando la mirada de cada uno en
-                    su obra y enseñando los recursos necesarios para un buen
-                    desarrollo técnico. Análisis y edición de obra. Creación de
-                    un Portfolio. Preparación y exposición.
-                  </p>
-                  <More text="más info" link="/contacto"/>
-                </CursoContainer>
+                <div className="imagenes-container">
+                  <Cover />
+                </div>
               </InfoContainer>
             </Top>
           </TalleresContainer>
@@ -128,27 +132,31 @@ const Top = styled.div`
   align-items: space-between;
   height: 100%;
   margin-top: 20px;
-/* 
-  h2 {
-    font-family: "Montserrat";
-    font-size: 70px;
-    color: #4a4747;
-    line-height: 90%;
-    font-weight: 200;
-
-    margin-top: 5px;
-  
-  } */
 `;
 
 const TitleTalleres = styled(Title)`
-`
+height:auto;`;
 
 const InfoContainer = styled.div`
-  margin-top: 50px;
+  margin-top: -10px;
+
+  display: flex;
+  flex-direction: row;
+
+  .cursos {
+    width: 50%;
+  }
+
+  .imagenes-container {
+    width: 50%;
+    margin-top: -100px;
+  }
 `;
 const TitleContainer = styled.div`
-  width: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
 `;
 
 const TitleContainerAnimated = motion(TitleContainer);
@@ -157,8 +165,9 @@ const CursoContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  width: 50%;
+  width: 90%;
   margin-bottom: 40px;
+
   h4 {
     font-family: "Montserrat";
     font-size: 20px;
@@ -169,7 +178,6 @@ const CursoContainer = styled.div`
     line-height: 110%;
     margin: 0;
     margin-right: 20px;
-
   }
 
   p {
@@ -179,7 +187,6 @@ const CursoContainer = styled.div`
     line-height: 170%;
     max-width: 600px;
     letter-spacing: 0.5px;
-
 
     @media screen and (max-width: 530px) {
       font-size: 11px;

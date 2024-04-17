@@ -14,11 +14,7 @@ function Trayectoria() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <FramerNavbar />
-        {/* <Section>
-          <Container>
-          
-          </Container>
-        </Section> */}
+ 
 
         <TrayectoriaSection/>
         <Footer/>

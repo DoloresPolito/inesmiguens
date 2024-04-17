@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import picture1 from "../../public/assets/images/profile/profile.jpeg";
-
+import picture1 from "../../public/assets/images/talleres/13.jpeg";
+import picture2 from "../../public/assets/images/talleres/9.jpeg";
+import picture3 from "../../public/assets/images/talleres/3.jpeg";
+import picture4 from "../../public/assets/images/talleres/1.jpeg";
+import arrow1 from "../../public/assets/icons/arrow1.svg";
+import arrow2 from "../../public/assets/icons/arrow2.svg";
 function Cover() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -15,12 +19,11 @@ function Cover() {
   };
 
   const items = [
-    { id: 1, nombre: "Salar de Uyuni", imagen: "picture1" },
-    { id: 2, nombre: "Africa", imagen: "picture2" },
-    { id: 3, nombre: "India", imagen: "picture3" },
-    { id: 4, nombre: "Salar de Uyuni", imagen: "picture3" },
-    { id: 5, nombre: "Africa", imagen: "picture3" },
-    { id: 6, nombre: "India", imagen: "picture3" },
+    { id: 1, nombre: "Salar de Uyuni", imagen: picture1},
+    { id: 2, nombre: "Africa", imagen: picture2 },
+    { id: 3, nombre: "India", imagen: picture3 },
+    { id: 4, nombre: "Salar de Uyuni", imagen: picture4 },
+
   ];
   return (
     <>
@@ -34,10 +37,10 @@ function Cover() {
             >
               {items.map((item, index) => (
                 <CarouselItem key={index}>
-                  <Image src={picture1} alt="picture" />
-                  <div>
+                  <Image src={item.imagen} alt="picture" />
+                  {/* <div>
                     <p>{item.nombre}</p>
-                  </div>
+                  </div> */}
                 </CarouselItem>
               ))}
             </CarouselTrack>
@@ -47,8 +50,8 @@ function Cover() {
           <div>
             <ArrowContainer>
               <div className="arrows-container">
-                {/* <Image
-                      src={leftcarousel}
+                <Image
+                      src={arrow1}
                       alt="leftcarousel"
                       onClick={handlePrev}
                       direction="prev"
@@ -56,18 +59,13 @@ function Cover() {
                
 
                     <Image
-                      src={rightcarousel}
+                      src={arrow2}
                       alt="rightcarousel"
                       onClick={handleNext}
                       direction="next"
                       style={{ marginLeft: "5px" }}
-                    /> */}
-                <p onClick={handlePrev} direction="prev">
-                  left
-                </p>
-                <p onClick={handleNext} direction="next">
-                  right
-                </p>
+                    />
+        
               </div>
               <Scrollbar>
                 <ScrollbarIndicator
@@ -84,10 +82,10 @@ function Cover() {
 
 const CarouselContainer = styled.div`
   width: 100%;
-  height: auto;
+  height: 500px;
   display: flex;
   flex-direction: column;
-  margin-left: 40px;
+  margin-left: 10px;
 
 `;
 
@@ -120,13 +118,11 @@ const Top = styled.div`
 `;
 
 const CarouselCon = styled.div`
-  width: 500px;
+  width: 100%;
   overflow: hidden;
 
-  width: 100%;
-
   img {
-    width: 500px;
+    width: 700px;
     height: 500px;
   }
 `;
@@ -167,6 +163,8 @@ const ArrowContainer = styled.div`
     display: flex;
     width: 100px;
     justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 20px;
   }
 
 `;
