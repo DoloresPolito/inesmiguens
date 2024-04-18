@@ -10,7 +10,7 @@ const links = [
   { href: "/hoteles", title: "HOTELES" },
   { href: "/obras", title: "OBRAS" },
   { href: "/talleres", title: "TRAVEL & WORKSHOPS" },
-  { href: "/trayectoria", title: "TRAYECTORIA" },  { href: "/clientes", title: "CLIENTES" },
+  { href: "/libros", title: "LIBROS" },  { href: "/clientes", title: "CLIENTES" },
   { href: "/contacto", title: "CONTACTO" },
 ];
 

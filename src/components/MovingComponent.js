@@ -1,50 +1,49 @@
 import React from "react";
 import styled from "styled-components";
 import Loop from "./Loop";
+import LoopReves from "./LoopReves";
 import Image from "next/image";
 import img1 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
-import img2 from "../../public/assets/images/obras/hijos del sol/baja2.jpg";
+import img2 from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
 
-import img3 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
-import img4 from "../../public/assets/images/obras/hijos del sol/baja2.jpg";
-import img5 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
-import img6 from "../../public/assets/images/obras/hijos del sol/baja2.jpg";
+import img3 from "../../public/assets/images/obras/ecos en el tiempo comp/baja 7.jpg";
+import img4 from "../../public/assets/images/obras/ecos en el tiempo comp/baja3.jpg";
+import img5 from "../../public/assets/images/obras/ecos en el tiempo comp/baja6.jpg";
+import img6 from "../../public/assets/images/obras/ecos en el tiempo comp/baja10.jpg";
 
-const Customers = () => {
+const Customers = ({ item }) => {
   return (
-    <CustomersSection>
+    <CustomersSection item={item}>
       <CustomersContainer>
         <Loop
+          item
           reverse="true"
           content={
             <>
-        
-                <Image src={img1} alt="fortnite"  />
-            
-           
-                <Image src={img2} alt="crunchyroll"  />
-          
+              <Image src={img1} alt="fortnite" />
 
-           
-                <Image src={img3} alt="freefire"  />
-       
-   
-                <Image src={img4} alt="minecraft"  />
-       
+              <Image src={img2} alt="crunchyroll" />
 
-              <Image src={img5} alt="mobilelegends"  />
+              <Image src={img3} alt="freefire" />
 
-              <Image src={img6} alt="pubg"  />
+              <Image src={img4} alt="minecraft" />
+
+              <Image src={img5} alt="mobilelegends" />
+
+              <Image src={img6} alt="pubg" />
             </>
           }
         />
+
       </CustomersContainer>
+
+     
     </CustomersSection>
   );
 };
 
 const CustomersSection = styled.div`
-  height: 80vh;
+  height: 350px;
   width: 100%;
   margin: auto;
   overflow: hidden;
@@ -52,7 +51,8 @@ const CustomersSection = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  margin-top: 100px;
+  margin-top: ${(props) => (props.item === "first" ? "40px" : "0px")};
+  /* margin-top: 30px; */
   max-width: 1600px;
 `;
 
@@ -67,12 +67,10 @@ const CustomersContainer = styled.div`
     flex-direction: column;
   }
   img {
-    padding: 0 50px;
-    height: 400px;
+    padding: 0 20px;
+    height: 300px;
     width: 500px;
   }
 `;
-
-
 
 export default Customers;

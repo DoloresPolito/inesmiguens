@@ -10,7 +10,6 @@ export const Section = styled.div`
   /* justify-content: center;
   align-items: center; */
   /* min-height: 100vh; */
-
   @media screen and (max-width: 700px) {
     margin-top: 30px;
   }

@@ -6,15 +6,16 @@ import Image from "next/image";
 import libro1 from "../../public/assets/images/libros/hijos del sol.png";
 import libro2 from "../../public/assets/images/libros/madres argentinas.png";
 import libro3 from "../../public/assets/images/libros/parques y jardones.png";
-
+import More from "@/components/MoreBack";
 const Work = () => {
   const libros = [
     {
       nombre: "Hijos del Sol",
       image: libro1,
+      link: "/hijos-del-sol",
     },
-    { nombre: "Madres Argentinas", image: libro2 },
-    { nombre: "Parques y Jardines", image: libro3 },
+    { nombre: "Madres Argentinas", image: libro2, link: "/" },
+    { nombre: "Parques y Jardines", image: libro3, link: "/" },
   ];
 
   const [isVisible, setIsVisible] = useState(false);
@@ -66,7 +67,7 @@ const Work = () => {
               <AnimatePresence>
                 {isVisible &&
                   libros.map((item, index) => (
-                    <motion.div
+                    <Item
                       key={index}
                       variants={listItemVariants}
                       custom={index}
@@ -75,21 +76,9 @@ const Work = () => {
                     >
                       <Image src={item.image} alt={`imagen-${index}`} />
                       <Text>{item.nombre}</Text>
-                    </motion.div>
+                    </Item>
                   ))}
               </AnimatePresence>
-              {/* <div>
-                <Image src={libro1} alt="Hijos del Sol" />
-                <Text style={{ marginLeft: "10px" }}>Hijos del Sol</Text>
-              </div>
-              <div>
-                <Image src={libro2} alt="Madres Argentinas" />
-                <Text>Madres Argentinas</Text>
-              </div>
-              <div>
-                <Image src={libro3} alt="Parques y Jardines" />
-                <Text>Parques y Jardines</Text>
-              </div> */}
             </LibrosSection>
 
             <TrayectoriaSection></TrayectoriaSection>
@@ -101,7 +90,7 @@ const Work = () => {
 };
 
 const TrayectoriaContainer = styled(Container)`
-  margin-top: 100px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
 `;
@@ -109,18 +98,18 @@ const LibrosSection = styled.div`
   display: flex;
   flex: row;
   justify-content: center;
-  gap: 30px;
-  margin-top: 50px;
+  gap: 50px;
+  margin-top: 30px;
   flex-wrap: wrap;
+`;
 
-  div {
-    display: flex;
-    flex-direction: column;
+const Item = styled.div`
+  display: flex;
+  flex-direction: column;
 
-    img {
-      height: 350px;
-      width: auto;
-    }
+  img {
+    height: 350px;
+    width: auto;
   }
 `;
 
@@ -136,16 +125,16 @@ const BooksTitle = styled(Title)`
   letter-spacing: 1px;
 `;
 
-
 export const Text = styled.h5`
   margin: 0;
   font-family: "Montserrat";
-  font-size: 16px;
+  font-size: 14px;
   color: #4a4747;
   line-height: 130%;
-  font-weight: 400;
+  font-weight: 500;
   max-width: 200px;
   margin-top: 5px;
+  margin-left: 8px;
 `;
 
 export default Work;

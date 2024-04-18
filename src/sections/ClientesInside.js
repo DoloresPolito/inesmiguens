@@ -91,7 +91,7 @@ function ClientesInside() {
   ];
   return (
     <>
-      <Section>
+      <ClientsSection>
         <ClientesContainer>
           <div className="left">
             <Title>Clientes</Title>
@@ -161,29 +161,49 @@ function ClientesInside() {
             </Info>
           </div>
         </ClientesContainer>
-      </Section>
+      </ClientsSection>
     </>
   );
 }
 
+const ClientsSection = styled(Section)`
+margin-top: 100px;
+`
+
 const ClientesContainer = styled(Container)`
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
+ 
+  @media screen and (max-width: 820px) {
+flex-direction: column;
+  }
 
   .left {
     width: 30%;
     margin-top: 50px;
+    @media screen and (max-width: 820px) {
+      width: 100%;
+      margin-top: 0px;
+  }
   }
 
   .right {
-    margin-top: -150px;
+    margin-top: -80px;
     width: 70%;
+
+    @media screen and (max-width: 820px) {
+      width: 100%;
+      margin-top: 0px;
+  }
   }
 `;
 
 const Info = styled.div`
   display: flex;
+
+  @media screen and (max-width: 500px) {
+flex-direction: column;
+  }
   h2 {
     color: red;
     font-family: "Montserrat", sans-serif;
@@ -205,6 +225,14 @@ const WorkSection = styled.div`
   align-items: flex-start;
   background-color: #fafafa;
   padding-top: 50px;
+
+  @media screen and (max-width: 820px) {
+    padding-top: 10px;
+    margin-top: 0px;
+  }
+  @media screen and (max-width: 500px) {
+    margin-bottom: 20px;
+  }
 `;
 const WorkLi = styled.div`
   display: flex;
@@ -229,13 +257,12 @@ const Content2 = styled.div`
   justify-content: center;
 `;
 const WorkTitle = styled.h4`
-  font-family: "Georama", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   letter-spacing: 1px;
   font-weight: 400;
-  color: #4a4747;
+  color: black;
   margin: 0;
-  line-height: 0;
   line-height: 100%;
 `;
 const More = styled.p`
@@ -244,7 +271,8 @@ const More = styled.p`
   letter-spacing: 0.3px;
   font-weight: 500;
   color: #6a6f58;
-  line-height: 100%;
+  line-height: 0%;
+  background-color: red;
 `;
 
 export default ClientesInside;

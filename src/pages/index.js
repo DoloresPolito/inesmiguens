@@ -18,7 +18,8 @@ function Home() {
         <DisableContextMenu />
         <FramerNavbar />
         {/* <HomeSection /> */}
-<MovingComponent/>
+<MovingComponent item="first"/>
+<MovingComponent item="second"/>
 
         <Footer />
       </motion.div>
