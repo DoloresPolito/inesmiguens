@@ -8,9 +8,9 @@ import {
   ObrasTopContainer,
   PicturesContainer,
 } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
+
 import { motion, useAnimation } from "framer-motion";
-import Footer from "@/components/Footer";
+
 import MoreBack from "@/components/MoreBack";
 import Image from "next/image";
 import img1 from "../../public/assets/images/obras/ecos jpg reduce/baja 7.jpg";
@@ -47,23 +47,11 @@ function Ecos() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
-        <VocesSection>
-          <ObrasTopContainer>
-            <div className="left">
-              <ObrasTitle>
-                ECOS EN EL 
-                TIEMPO
-              </ObrasTitle>
-              <div>
-
-          
+      <VocesSection>
+        <ObrasTopContainer>
+          <div className="left">
+            <ObrasTitle>ECOS EN EL TIEMPO</ObrasTitle>
+            <div>
               <ObrasText>
                 La ciudad se convierte en un mar de fugaces  y fantasmagóricos
                 encuentros, en la que se desvanece la posibilidad de la
@@ -74,29 +62,27 @@ function Ecos() {
                 que vivimos.
               </ObrasText>
               <MoreBack text="obras" link="/obras" />
-              </div>
             </div>
-            <motion.div
-              className="right"
-              variants={variants}
-              initial="hidden"
-              animate="visible"
-            >
-              <StyledImageCover src={img1} alt="image1" />
-            </motion.div>
-          </ObrasTopContainer>
-          <ObrasBottomContainer>
-            <PicturesContainer>
-              <AnimatedRowOf2 image1={img2} image2={img3} />
-              <AnimatedRowOf2 image1={img5} image2={img6} />
-              <RowOf1 />
-              <AnimatedRowOf2 image1={img7} image2={img8} />
-              <AnimatedRowOf2 image1={img9} image2={img10} />
-            </PicturesContainer>
-          </ObrasBottomContainer>
-        </VocesSection>
-        <Footer />
-      </motion.div>
+          </div>
+          <motion.div
+            className="right"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+          >
+            <StyledImageCover src={img1} alt="image1" />
+          </motion.div>
+        </ObrasTopContainer>
+        <ObrasBottomContainer>
+          <PicturesContainer>
+            <AnimatedRowOf2 image1={img2} image2={img3} />
+            <AnimatedRowOf2 image1={img5} image2={img6} />
+            <RowOf1 />
+            <AnimatedRowOf2 image1={img7} image2={img8} />
+            <AnimatedRowOf2 image1={img9} image2={img10} />
+          </PicturesContainer>
+        </ObrasBottomContainer>
+      </VocesSection>
     </>
   );
 }
@@ -165,14 +151,12 @@ const ObrasBottomContainer = styled.div`
   @media screen and (max-width: 1190px) {
     width: 93%;
     margin-top: 0px !important;
-
   }
-
 `;
 
 const NewTitle = styled.h2`
-
-font-family: "Bebas Neue", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
-  font-style: normal;`;
+  font-style: normal;
+`;
 export default Ecos;

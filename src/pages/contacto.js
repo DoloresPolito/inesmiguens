@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Section, Container, Text } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
-import Footer from "@/components/Footer";
 import styled from "styled-components";
 import Image from "next/image";
 import instagram from "../../public/assets/icons/instagram.png";
@@ -98,7 +96,6 @@ function Contacto() {
         exit={{ opacity: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <FramerNavbar />
         <Section>
           <ContactContainer>
             <LeftContainer
@@ -162,7 +159,6 @@ function Contacto() {
             </RightContainer>
           </ContactContainer>
         </Section>
-        <Footer />
       </motion.div>
     </>
   );

@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Loop from "./Loop";
-
+import LoopReves from "./LoopReves";
 import Image from "next/image";
-// import img1 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
-// import img2 from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
+import img1 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
+import img2 from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
 
-// import img3 from "../../public/assets/images/obras/ecos en el tiempo comp/baja 7.jpg";
+import img3 from "../../public/assets/images/obras/ecos en el tiempo comp/baja 7.jpg";
 import img4 from "../../public/assets/images/obras/ecos en el tiempo comp/baja3.jpg";
 import img5 from "../../public/assets/images/obras/ecos en el tiempo comp/baja6.jpg";
 import img6 from "../../public/assets/images/obras/ecos en el tiempo comp/baja10.jpg";
@@ -15,22 +14,22 @@ const Customers = () => {
   return (
     <CustomersSection >
       <CustomersContainer>
-        <Loop
+        <LoopReves
           item
-          reverse="true"
+          reverse="false"
           content={
             <>
-              <Image src={img6} alt="fortnite" />
+              <Image src={img3} alt="fortnite" />
 
-              <Image src={img4} alt="crunchyroll" />
+              <Image src={img2} alt="crunchyroll" />
 
-              <Image src={img5} alt="freefire" />
+              <Image src={img6} alt="freefire" />
 
-              <Image src={img6} alt="minecraft" />
+              <Image src={img4} alt="minecraft" />
 
-              <Image src={img4} alt="mobilelegends" />
+              <Image src={img2} alt="mobilelegends" />
 
-              <Image src={img5} alt="pubg" />
+              <Image src={img3} alt="pubg" />
             </>
           }
         />

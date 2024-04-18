@@ -1,6 +1,6 @@
 import React from "react";
-import { Section, HotelesContainer, PicturesContainer,  HotelSubtitle, HotelText  } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
+import { Section, HotelesContainer, PicturesContainer,  HotelSubtitle, HotelText, TextContainer  } from "../styles/styles";
+
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Footer from "@/components/Footer";
@@ -23,18 +23,16 @@ import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 function LaBamba() {
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
+
         <HotelesSection>
           <HotelesContainer>
+            <TextContainer>
+
+      
             <HotelSubtitle>La Bamba de Areco</HotelSubtitle>
             <HotelText>San Antonio de Areco</HotelText>
             <MoreBack text="hoteles" link="/hoteles" />
+            </TextContainer>
             <PicturesContainer>
               <AnimatedRowOf2 image1={img1} image2={img2}></AnimatedRowOf2>
 
@@ -50,8 +48,7 @@ function LaBamba() {
             </PicturesContainer>
           </HotelesContainer>
         </HotelesSection>
-        <Footer />
-      </motion.div>
+
     </>
   );
 }

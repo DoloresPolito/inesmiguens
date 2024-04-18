@@ -2,7 +2,6 @@
   "name": "inesmiguens",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.2",
     "framer-motion": "^11.0.25",
     "next": "14.1.4",
     "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
     "react-intersection-observer": "^9.8.2",
+    "react-scroll-parallax": "^3.4.5",
     "sass": "^1.74.1",
     "sharp": "^0.33.3",
     "styled-components": "^6.1.8"

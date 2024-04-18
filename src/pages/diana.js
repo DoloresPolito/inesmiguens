@@ -1,8 +1,6 @@
 import React from "react";
-import { Section, PicturesContainer, HotelesContainer,  HotelSubtitle, HotelText  } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
-import { motion } from "framer-motion";
-import Footer from "@/components/Footer";
+import { Section, PicturesContainer, HotelesContainer,  HotelSubtitle, HotelText, TextContainer  } from "../styles/styles";
+
 import styled from "styled-components";
 import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/hoteles/parque diana comp/1bajaa.jpg";
@@ -20,18 +18,16 @@ import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 function Diana() {
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
+
         <HotelesSection>
           <HotelesContainer>
+            <TextContainer>
+
+      
             <HotelSubtitle>Parque Diana</HotelSubtitle>
             <HotelText>Neuquen</HotelText>
             <MoreBack text="hoteles" link="/hoteles" />
+            </TextContainer>
             <PicturesContainer>
               <AnimatedRowOf2 image1={img1} image2={img2}></AnimatedRowOf2>
 
@@ -46,8 +42,7 @@ function Diana() {
             </PicturesContainer>
           </HotelesContainer>
         </HotelesSection>
-        <Footer />
-      </motion.div>
+
     </>
   );
 }

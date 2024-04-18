@@ -7,9 +7,7 @@ import {
   ObrasTopContainer,
   PicturesContainer,
 } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion, useAnimation } from "framer-motion";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import MoreBack from "@/components/MoreBack";
 
@@ -18,6 +16,13 @@ import img2 from "../../public/assets/images/obras/hijos del sol/baja2.jpg";
 import img3 from "../../public/assets/images/obras/hijos del sol/baja4.jpg";
 import img4 from "../../public/assets/images/obras/hijos del sol/baja7.jpg";
 import img5 from "../../public/assets/images/obras/hijos del sol/baja9.jpg";
+
+import img6 from "../../public/assets/images/obras/hijos del sol/baja11.jpg";
+import img7 from "../../public/assets/images/obras/hijos del sol/dddbaja.jpg";
+import img8 from "../../public/assets/images/obras/hijos del sol/iiibaja.jpg";
+import img9 from "../../public/assets/images/obras/hijos del sol/jjbaja.jpg";
+import img10 from "../../public/assets/images/obras/hijos del sol/kkbaja.jpg";
+import img11 from "../../public/assets/images/obras/hijos del sol/nnbaja.jpg";
 
 
 import { useInView } from "react-intersection-observer";
@@ -43,13 +48,7 @@ function Hijos() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
+
         <VocesSection>
           <ObrasTopContainer>
             <div className="left">
@@ -69,22 +68,23 @@ function Hijos() {
               initial="hidden"
               animate="visible"
             >
-              <StyledImageCover src={img1} alt="image1" />
+              <StyledImageCover src={img11} alt="image1" />
             </motion.div>
           </ObrasTopContainer>
 
           <ObrasBottomContainer>
             <PicturesContainer>
-            <AnimatedRowOf2 image1={img2} image2={img3} />
-              <AnimatedRowOf3Vertical image1={img4} image2={img5} image3={img5} />
+            {/* <AnimatedRowOf2 image1={img2} image2={img3} /> */}
+              <AnimatedRowOf3Vertical image1={img2} image2={img3} image3={img4} />
            
-              <AnimatedRowOf2 image1={img1} image2={img2} />
+              <AnimatedRowOf2 image1={img1} image2={img8} />
 
+              <AnimatedRowOf3Vertical image1={img1} image2={img5} image3={img6} />
+              <AnimatedRowOf2 image1={img9} image2={img10} />
             </PicturesContainer>
           </ObrasBottomContainer>
         </VocesSection>
-        <Footer />
-      </motion.div>
+
     </>
   );
 }

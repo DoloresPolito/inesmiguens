@@ -7,9 +7,7 @@ import {
   ObrasTopContainer,
   PicturesContainer
 } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion  } from "framer-motion";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import More from "@/components/More";
 import img1 from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
@@ -40,13 +38,7 @@ function Vanishing() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
+
         <VocesSection>
           <ObrasTopContainer>
             <div className="left">
@@ -88,8 +80,7 @@ function Vanishing() {
           </PicturesContainer>
           </ObrasBottomContainer>
         </VocesSection>
-        <Footer />
-      </motion.div>
+
     </>
   );
 }

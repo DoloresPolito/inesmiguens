@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Section, Container, Title } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
+import { Section, Container, SectionTitle } from "../styles/styles";
 import { motion } from "framer-motion";
-import Footer from "@/components/Footer";
 import styled from "styled-components";
 
 import More from "@/components/More";
 import Cover from "@/components/Carousel";
-
+import { Parallax } from "react-scroll-parallax";
+import AnimatedText from "@/components/AnimatedText";
 
 function Talleres() {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,77 +35,67 @@ function Talleres() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
-        <TalleresSection>
-          <TalleresContainer>
-            <Top>
-              <TitleContainerAnimated
-                variants={titleVariants}
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-              >
-                <TitleTalleres>Travel and workshops</TitleTalleres>
-              </TitleContainerAnimated>
-              <InfoContainer>
-                <div className="cursos">
-                  <CursoContainer>
-                    <h4>ciclo basico</h4>
-                    <p >
+      <TalleresSection>
+        <TalleresContainer>
+          <Top>
+            <AnimatedText>
+              <SectionTitle>Travel and workshops</SectionTitle>
+            </AnimatedText>
+
+            <InfoContainer>
+              <div className="cursos">
+                <CursoContainer>
+                  <h4>ciclo basico</h4>
+                  <p>
                     Se impartirán los conocimientos para la comprensión de
-                      imágenes color y blanco y negro. Se aprenderá a manejar la
-                      cámara, sensibilidad, diafragma, profundidad de campo,
-                      velocidad, foco. Conocimientos de composición, toma, luz y
-                      flash. Retrato, paisaje y macro. Profundización en la luz,
-                      clave alta y clave baja. Profundización en composición,
-                      figuras y formas y líneas, Conocimientos de las
-                      herramientas Photoshop, jpeg y raw.
-                    </p>
+                    imágenes color y blanco y negro. Se aprenderá a manejar la
+                    cámara, sensibilidad, diafragma, profundidad de campo,
+                    velocidad, foco. Conocimientos de composición, toma, luz y
+                    flash. Retrato, paisaje y macro. Profundización en la luz,
+                    clave alta y clave baja. Profundización en composición,
+                    figuras y formas y líneas, Conocimientos de las herramientas
+                    Photoshop, jpeg y raw.
+                  </p>
 
-                    <More text="más info" link="/contacto" />
-                  </CursoContainer>
+                  <More text="más info" link="/contacto" />
+                </CursoContainer>
 
-                  <CursoContainer>
-                    <h4>travel and workshops</h4>
-                    <p>
-                      Workshop es un taller especializado en un tema específico,
-                      donde se destaca la teoría, los autores contemporáneos que
-                      trabajan sobre él, y los conceptos que lo trascienden.
-                      Adquirimos nuevas habilidades para leer una imagen según
-                      nuestra propia semiótica. Reforzamos la edición y la
-                      elaboración de un portfolio sobre dicho tema.
-                    </p>
-                    <More text="más info" link="/contacto" />
-                  </CursoContainer>
+                <CursoContainer>
+                  <h4>travel and workshops</h4>
+                  <p>
+                    Workshop es un taller especializado en un tema específico,
+                    donde se destaca la teoría, los autores contemporáneos que
+                    trabajan sobre él, y los conceptos que lo trascienden.
+                    Adquirimos nuevas habilidades para leer una imagen según
+                    nuestra propia semiótica. Reforzamos la edición y la
+                    elaboración de un portfolio sobre dicho tema.
+                  </p>
+                  <More text="más info" link="/contacto" />
+                </CursoContainer>
 
-                  <CursoContainer>
-                    <h4>talleres</h4>
-                    <p>
-                      Los talleres son grupos que se organizan cada 15 días,
-                      según el nivel de conocimiento del alumno. El objetivo es
-                      alcanzar un alto nivel creativo respetando la mirada de
-                      cada uno en su obra y enseñando los recursos necesarios
-                      para un buen desarrollo técnico. Análisis y edición de
-                      obra. Creación de un Portfolio. Preparación y exposición.
-                    </p>
-                    <More text="más info" link="/contacto" />
-                  </CursoContainer>
-                </div>
+                <CursoContainer>
+                  <h4>talleres</h4>
+                  <p>
+                    Los talleres son grupos que se organizan cada 15 días, según
+                    el nivel de conocimiento del alumno. El objetivo es alcanzar
+                    un alto nivel creativo respetando la mirada de cada uno en
+                    su obra y enseñando los recursos necesarios para un buen
+                    desarrollo técnico. Análisis y edición de obra. Creación de
+                    un Portfolio. Preparación y exposición.
+                  </p>
+                  <More text="más info" link="/contacto" />
+                </CursoContainer>
+              </div>
 
-                <div className="imagenes-container">
+              <div className="imagenes-container">
+                <Parallax speed={-20}>
                   <Cover />
-                </div>
-              </InfoContainer>
-            </Top>
-          </TalleresContainer>
-        </TalleresSection>
-        <Footer />
-      </motion.div>
+                </Parallax>
+              </div>
+            </InfoContainer>
+          </Top>
+        </TalleresContainer>
+      </TalleresSection>
     </>
   );
 }
@@ -124,11 +113,6 @@ const TalleresContainer = styled(Container)`
   margin-top: 80px;
   flex-direction: row;
   padding-bottom: 100px;
-
-
-
-
-
 `;
 
 const Top = styled.div`
@@ -137,22 +121,17 @@ const Top = styled.div`
   align-items: space-between;
   height: 100%;
   margin-top: 20px;
-
-
 `;
-
-const TitleTalleres = styled(Title)`
-height:auto;`;
 
 const InfoContainer = styled.div`
   margin-top: -10px;
 
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   @media screen and (max-width: 1100px) {
-flex-direction: column;
-
+    flex-direction: column;
   }
 
   .cursos {
@@ -163,8 +142,8 @@ flex-direction: column;
   }
 
   .imagenes-container {
-    width: 50%;
-    margin-top: -100px;
+    width: 45%;
+    margin-top: -80px;
     @media screen and (max-width: 1100px) {
       width: 100%;
       margin-top: 30px;
@@ -175,7 +154,6 @@ const TitleContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-start;
-
 `;
 
 const TitleContainerAnimated = motion(TitleContainer);

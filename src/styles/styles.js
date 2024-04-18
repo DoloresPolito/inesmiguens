@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 
-
 export const Section = styled.div`
   height: auto;
   width: 100%;
@@ -27,7 +26,7 @@ export const Container = styled.div`
 `;
 
 export const Text = styled.p`
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat);
   font-size: 13px;
   color: #000000;
   transition: 0.25s color;
@@ -36,13 +35,14 @@ export const Text = styled.p`
   margin: 0; */
 `;
 
-export const Title = styled.h2`
+export const SectionTitle = styled.h2`
 
   font-size: 60px;
-  color: #4a4747;
+  color: #5E5D5D;
   line-height: 90%;
   font-weight: 200;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: var(--font-bebasneue);
+  letter-spacing: 1px;
 `;
 
 
@@ -53,10 +53,10 @@ export const Title = styled.h2`
 export const ObrasTitle = styled.h2`
   /* font-family: "Montserrat"; */
 
-  font-family: "Bebas Neue";
+  font-family: var(--font-bebasneue);
   font-style: normal;
   font-size: 60px !important;
-  color: #4a4747;
+  color: #5E5D5D;
   line-height: 90%;
   align-self: flex-start;
   margin: 0;
@@ -133,7 +133,7 @@ export const ObrasTopContainer = styled(Container)`
 `;
 
 export const ObrasText = styled.p`
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat);
   color: black;
   font-size: 12px;
   line-height: 170%;
@@ -178,22 +178,30 @@ export const PicturesContainer = styled.div`
 
 export const HotelSubtitle = styled.h4`
   margin: 0;
-  font-family: "Montserrat";
+  font-family: var(--font-montserrat);
   font-size: 23px;
   color: #4a4747;
   line-height: 130%;
   font-weight: 400;
-  max-width: 200px;
+  max-width: 400px;
   letter-spacing: 0.5px;
   margin-top: 5px;
 `;
 
 export const HotelText = styled.h5`
   margin: 0;
-  font-family: "Montserrat";
+  font-family: var(--font-montserrat);
   font-size: 16px;
   color: #4a4747;
   line-height: 130%;
   font-weight: 300;
   max-width: 200px;
+  margin-bottom: 10px;
 `;
+
+
+export const TextContainer = styled.div`
+display: flex;
+flex-direction: column;
+margin-bottom: 30px;
+`

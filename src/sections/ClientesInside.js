@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import styled from "styled-components";
-import { Section, Container, Title } from "../styles/styles";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { Section, Container, SectionTitle } from "../styles/styles";
+import { motion} from "framer-motion";
+import { Parallax } from "react-scroll-parallax";
+import AnimatedText from "@/components/AnimatedText";
 function ClientesInside() {
   const container = {
     hidden: { opacity: 0 },
@@ -18,7 +19,6 @@ function ClientesInside() {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   };
-
 
   const motionVariants = {
     open: {
@@ -37,7 +37,6 @@ function ClientesInside() {
       },
     },
   };
-
 
   const listItemVariants = {
     hidden: {
@@ -91,112 +90,84 @@ function ClientesInside() {
     { nombre: "VZ", lugar: "" },
   ];
 
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
 
-  const titleVariants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-    hidden: {
-      opacity: 0.5,
-      y: 10,
-    },
-  };
-
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  React.useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [controls, inView]);
   return (
     <>
       <ClientsSection>
         <ClientesContainer>
           <div className="left">
-            <ObrasTitleAnimated
-                variants={titleVariants}
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-            >Clientes</ObrasTitleAnimated>
+            <AnimatedText>
+            <SectionTitle>Clientes</SectionTitle>
+            </AnimatedText>
+
           </div>
+
           <div className="right">
-            <Info>
-              <WorkSection>
-                <motion.ul
-                  style={{ listStyle: "none" }}
-                  variants={motionVariants}
-                  initial="closed"
-                  animate="open"
-                >
-                  {/* <h2>HOTELES Y ESTANCIAS</h2> */}
-                  {clientes1.map((cliente, index) => (
-                    <motion.li
-                      variants={listItemVariants}
-                      initial="closed"
-                      animate="open"
-                      key={index}
-                    >
-                      <WorkLi>
-                        <Content>
-                          <WorkTitle>{cliente.nombre}</WorkTitle>
+            <Parallax speed={-20}>
+              <Info>
+                <WorkSection>
+                  <motion.ul
+                    style={{ listStyle: "none" }}
+                    variants={motionVariants}
+                    initial="closed"
+                    animate="open"
+                  >
+                    {/* <h2>HOTELES Y ESTANCIAS</h2> */}
+                    {clientes1.map((cliente, index) => (
+                      <motion.li
+                        variants={listItemVariants}
+                        initial="closed"
+                        animate="open"
+                        key={index}
+                      >
+                        <WorkLi>
+                          <Content>
+                            <WorkTitle>{cliente.nombre}</WorkTitle>
 
-                          {cliente.lugar ? (
-                            <>
-                              <More>{cliente.lugar}</More>
-                            </>
-                          ) : (
-                            <></>
-                          )}
-                        </Content>
-                      </WorkLi>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </WorkSection>
+                            {cliente.lugar ? (
+                              <>
+                                <More>{cliente.lugar}</More>
+                              </>
+                            ) : (
+                              <></>
+                            )}
+                          </Content>
+                        </WorkLi>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </WorkSection>
 
-              <WorkSection>
-                <motion.ul
-                  style={{ listStyle: "none" }}
-                  variants={container}
-                  initial="hidden"
-                  animate="show"
-                >
-                  {/* <h2>MARCAS</h2> */}
-                  {clientes2.map((cliente, index) => (
-                    <motion.li variants={item} key={index}>
-                      <WorkLi>
-                        <Content2>
-                          <WorkTitle>{cliente.nombre}</WorkTitle>
+                <WorkSection>
+                  <motion.ul
+                    style={{ listStyle: "none" }}
+                    variants={container}
+                    initial="hidden"
+                    animate="show"
+                  >
+                    {/* <h2>MARCAS</h2> */}
+                    {clientes2.map((cliente, index) => (
+                      <motion.li variants={item} key={index}>
+                        <WorkLi>
+                          <Content2>
+                            <WorkTitle>{cliente.nombre}</WorkTitle>
 
-                          {cliente.lugar ? (
-                            <>
-                              <More>{cliente.lugar}</More>
-                            </>
-                          ) : (
-                            <></>
-                          )}
-                        </Content2>
-                      </WorkLi>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </WorkSection>
-            </Info>
+                            {cliente.lugar ? (
+                              <>
+                                <More>{cliente.lugar}</More>
+                              </>
+                            ) : (
+                              <></>
+                            )}
+                          </Content2>
+                        </WorkLi>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </WorkSection>
+              </Info>
+            </Parallax>
           </div>
         </ClientesContainer>
       </ClientsSection>
@@ -205,31 +176,16 @@ function ClientesInside() {
 }
 
 const ClientsSection = styled(Section)`
-margin-top: 100px;
-`
+  margin-top: 100px;
+`;
 
-// const ObrasTitle = styled(Title)`
-//   align-self: flex-end;
-//   /* font-family: "Montserrat"; */
-
-//   font-family: "Bebas Neue", sans-serif !important;
-//   font-size: 60px;
-//   color: #4a4747;
-//   line-height: 90%;
-//   font-weight: 200;
-//   margin-top: 100px;
-
-
-// `;
-
-const ObrasTitleAnimated = motion(Title);
 
 const ClientesContainer = styled(Container)`
   display: flex;
   flex-direction: row;
- 
+
   @media screen and (max-width: 820px) {
-flex-direction: column;
+    flex-direction: column;
   }
 
   .left {
@@ -238,7 +194,7 @@ flex-direction: column;
     @media screen and (max-width: 820px) {
       width: 100%;
       margin-top: 0px;
-  }
+    }
   }
 
   .right {
@@ -248,7 +204,7 @@ flex-direction: column;
     @media screen and (max-width: 820px) {
       width: 100%;
       margin-top: 0px;
-  }
+    }
   }
 `;
 
@@ -256,7 +212,7 @@ const Info = styled.div`
   display: flex;
 
   @media screen and (max-width: 500px) {
-flex-direction: column;
+    flex-direction: column;
   }
   h2 {
     color: red;

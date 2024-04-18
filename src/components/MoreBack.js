@@ -36,7 +36,7 @@ const SectionLinks = styled.div`
   border-bottom: 0.8px solid black;
 
   h6 {
-    font-family: "Montserrat";
+    font-family: var(--font-montserrat);
     color: #4a4747;
     font-size: 12px;
     margin-right: 5px;

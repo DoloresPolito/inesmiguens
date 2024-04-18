@@ -1,65 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { Section, Container, Title } from "../styles/styles";
+import { Section, Container, SectionTitle } from "../styles/styles";
 import Link from "next/link";
 import More from "@/components/More";
 import img1a from "../../public/assets/images/hoteles/principal/1.jpg";
 import img2a from "../../public/assets/images/hoteles/principal/2.jpg";
 import img3a from "../../public/assets/images/hoteles/principal/3.jpg";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
+import AnimatedText from "@/components/AnimatedText";
 
 function HotelesInside() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const titleVariants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-    hidden: {
-      opacity: 0.5,
-      y: 10,
-    },
-  };
-
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  React.useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [controls, inView]);
-
-
   return (
     <ObrasSectionContainer>
       <ObrasContainer>
-        <ObrasTitleAnimated
-          variants={titleVariants}
-          initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
-        >
-         HOTELES Y ESTANCIAS
-        </ObrasTitleAnimated>
+        <AnimatedText>
+          <ObrasTitle>HOTELES Y ESTANCIAS</ObrasTitle>
+        </AnimatedText>
 
         <ObrasGrid>
-          <ObrasItem1
-          >
+          <ObrasItem1>
             <Link href="/cauquenes">
               <ImpermanenciaContainer>
                 <div className="top">
@@ -137,22 +98,19 @@ const ObrasContainer = styled(Container)`
   } */
 `;
 
-const ObrasTitle = styled(Title)`
+const ObrasTitle = styled(SectionTitle)`
   align-self: flex-end;
   /* font-family: "Montserrat"; */
 
-  font-family: "Bebas Neue", sans-serif !important;
+  font-family: var(--font-bebasneue);
   font-size: 60px;
-  color: #4a4747;
+  color: #5e5d5d;
   line-height: 90%;
   font-weight: 200;
   margin-top: 100px;
-
-
 `;
 
 const ObrasTitleAnimated = motion(ObrasTitle);
-
 
 const ObrasGrid = styled.div`
   display: flex;
@@ -165,71 +123,64 @@ const ObrasItem1 = styled.div`
   margin-top: -20px;
 `;
 
-
 const ObrasItem2 = styled.div`
   width: 100%;
 `;
-
 
 const ObrasItem3 = styled.div`
   width: 100%;
 `;
 
-
 const ImpermanenciaContainer = styled.div`
   width: 90%;
-  height: 400px; 
-  margin-bottom: 100px; 
-  position: relative; 
+  height: 400px;
+  margin-bottom: 100px;
+  position: relative;
 
   .top {
     width: 100%;
     height: 100%;
-    overflow: hidden; 
-    transition: transform 0.8s ease; 
+    overflow: hidden;
+    transition: transform 0.8s ease;
   }
 
   .top img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s ease; 
+    transition: transform 0.8s ease;
   }
 
   .bottom {
-    position: absolute; 
-    bottom: 0; 
+    position: absolute;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 20%; 
+    height: 20%;
     background-color: white;
     /* padding: 20px; */
     padding-top: 20px;
     display: flex;
     align-items: flex-start;
-    transition: transform 0.8s ease; 
-    transform: translateY(
-      50%
-    ); 
-    z-index: 1; 
-
+    transition: transform 0.8s ease;
+    transform: translateY(50%);
+    z-index: 1;
   }
 
   &:hover .bottom {
-    height: 20%; 
+    height: 20%;
     transform: translateY(80%);
   }
 `;
 const ObrasSubtitle = styled.h4`
   margin: 0;
-  font-family: "Montserrat";
+  font-family: var(--font-montserrat);
   font-size: 23px;
   color: #4a4747;
   line-height: 120%;
   font-weight: 400;
   max-width: 300px;
   letter-spacing: 0.5px;
-
 `;
 
 export default HotelesInside;

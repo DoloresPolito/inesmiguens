@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const Loop = ({ content, reverse}) => (
-  <LoopSection reverse={reverse} >
+const Loop = ({ content, reverse }) => (
+  <LoopSection reverse={reverse}>
     <div className="blocks">
       <div className="contents">
         <span className="firstBlock">{content}</span>
@@ -10,10 +10,9 @@ const Loop = ({ content, reverse}) => (
       </div>
     </div>
   </LoopSection>
-)
+);
 
 const LoopSection = styled.div`
-
   .blocks {
     left: 0px;
     height: auto;
@@ -24,44 +23,29 @@ const LoopSection = styled.div`
 
   /*remove p*/
   .contents {
-    width: 100%;
+    width: auto; /* Cambiado de 100% */
     margin: 0 auto;
     font-size: 30px;
     white-space: nowrap;
+    display: flex; /* Agregado */
+    /* animation: animation1 100s linear infinite; */
   }
 
-  .firstBlock {
+  .firstBlock, .secondBlock {
     display: inline-block;
-    animation: animation1 60s linear infinite;
-    animation-direction: ${props => (props.reverse ? 'reverse' : 'normal')};
-  }
-
-  .secondBlock {
-    display: inline-block;
-    animation: animation2 60s linear infinite;
-    animation-direction: ${props => (props.reverse ? 'reverse' : 'normal')};
+    padding-right: 20px; /* Agregado para separar los bloques */
+    /* animation: animation1 100s linear infinite; */
+    animation: animation1 100s linear infinite;
   }
   /* scrolling-left is continuous/repeatly text */
   @keyframes animation1 {
-    0% {
+    0%, 100% {
       transform: translateX(0%);
-      -webkit-transform: translateX(0%);
     }
     100% {
-      transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%); /* Cambiado a -100% para mover hacia la izquierda */
     }
   }
-  @keyframes animation2 {
-    0% {
-      transform: translateX(100%);
-      -webkit-transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-    }
-  }
-`
+`;
 
-export default Loop
+export default Loop;

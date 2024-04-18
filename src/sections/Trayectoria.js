@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
-import { Section, Container, Title } from "../styles/styles";
+import { Section, Container, SectionTitle } from "../styles/styles";
 import Image from "next/image";
 import libro1 from "../../public/assets/images/libros/hijos del sol.png";
 import libro2 from "../../public/assets/images/libros/madres argentinas.png";
 import libro3 from "../../public/assets/images/libros/parques y jardones.png";
+import AnimatedText from "@/components/AnimatedText";
 const Work = () => {
-
-
-
-  
   const libros = [
     {
       nombre: "Hijos del Sol",
@@ -54,20 +51,7 @@ const Work = () => {
     },
   };
 
-  const titleVariants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-    hidden: {
-      opacity: 0.5,
-      y: 10,
-    },
-  };
+ 
 
   return (
     <>
@@ -79,11 +63,9 @@ const Work = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <TrayectoriaContainer>
-            <ObrasTitleAnimated
-                        variants={titleVariants}
-                        initial="hidden"
-                        animate={isVisible ? "visible" : "hidden"}
-            >LIBROS EDITADOS</ObrasTitleAnimated>
+            <AnimatedText>
+              <BooksTitle>LIBROS EDITADOS</BooksTitle>
+            </AnimatedText>
 
             <LibrosSection>
               <AnimatePresence>
@@ -140,14 +122,10 @@ const TrayectoriaSection = styled.div`
   width: 100%;
 `;
 
-const BooksTitle = styled(Title)`
+const BooksTitle = styled(SectionTitle)`
   align-self: flex-start;
   margin-top: 90px;
-  font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 1px;
 `;
-
-const ObrasTitleAnimated = motion(BooksTitle);
 
 export const Text = styled.h5`
   margin: 0;

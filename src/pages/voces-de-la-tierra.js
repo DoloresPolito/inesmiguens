@@ -7,9 +7,7 @@ import {
   ObrasTopContainer,
   PicturesContainer,
 } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion, useAnimation } from "framer-motion";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import MoreBack from "@/components/MoreBack";
 
@@ -47,13 +45,7 @@ function Voces() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
+
         <VocesSection>
           <ObrasTopContainer>
             <div className="left">
@@ -94,8 +86,6 @@ function Voces() {
             </PicturesContainer>
           </ObrasBottomContainer>
         </VocesSection>
-        <Footer />
-      </motion.div>
     </>
   );
 }

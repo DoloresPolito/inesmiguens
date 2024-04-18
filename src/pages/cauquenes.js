@@ -1,8 +1,5 @@
 import React from "react";
-import { Section,  HotelesContainer, PicturesContainer, HotelSubtitle, HotelText } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
-import { motion } from "framer-motion";
-import Footer from "@/components/Footer";
+import { Section,  HotelesContainer, PicturesContainer, HotelSubtitle, HotelText, TextContainer } from "../styles/styles";
 import styled from "styled-components";
 import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/hoteles/cauquenes comp/1baja.jpg";
@@ -26,18 +23,16 @@ function Cauquenes() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
+
         <HotelesSection>
           <HotelesContainer>
+            <TextContainer>
+
+    
             <HotelSubtitle>Los Cauquenes</HotelSubtitle>
             <HotelText>Bariloche</HotelText>
             <MoreBack text="hoteles" link="/hoteles" />
+            </TextContainer>
             <PicturesContainer>
     
               <AnimatedRowOf2 image1={img1} image2={img2}></AnimatedRowOf2>
@@ -53,8 +48,8 @@ function Cauquenes() {
             </PicturesContainer>
           </HotelesContainer>
         </HotelesSection>
-        <Footer />
-      </motion.div>
+
+
     </>
   );
 }

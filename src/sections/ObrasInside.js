@@ -6,11 +6,14 @@ import vanishing1 from "../../public/assets/images/obras/vanishing jpg reduce co
 import voces2 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
 import ecos from "../../public/assets/images/obras/ecos jpg reduce/estabaja6a.jpg";
 import hijos from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
-import { Section, Container, Title } from "../styles/styles";
+import { Section, Container, SectionTitle } from "../styles/styles";
 import Link from "next/link";
 import More from "@/components/More";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+
+import { Parallax } from "react-scroll-parallax";
+import AnimatedText from "@/components/AnimatedText";
 
 function ObrasInside() {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,92 +51,93 @@ function ObrasInside() {
   return (
     <ObrasSectionContainer>
       <ObrasContainer>
-        <ObrasTitleAnimated
-          variants={titleVariants}
-          initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
-        >
-          OBRAS
-        </ObrasTitleAnimated>
+        <AnimatedText>
+          <ObrasTitle>OBRAS</ObrasTitle>
+        </AnimatedText>
 
         <ObrasGrid>
-          <ObrasItem1Animated
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={controls}
-            transition={{ duration: 1 }}
-          >
-            <Link href="/voces-de-la-tierra">
-              <ImpermanenciaContainer>
-                <div className="top">
-                  <Image src={voces2} alt="voces" />
-                </div>
-
-                <div className="bottom">
-                  <div>
-                    <ObrasSubtitle>voces de la tierra</ObrasSubtitle>
-                    <More text="ver más" />
+          <Parallax speed={-5}>
+            <ObrasItem1Animated
+              ref={ref}
+              initial={{ opacity: 0, y: 20 }}
+              animate={controls}
+              transition={{ duration: 1 }}
+            >
+              <Link href="/voces-de-la-tierra">
+                <ImpermanenciaContainer>
+                  <div className="top">
+                    <Image src={voces2} alt="voces" />
                   </div>
-                </div>
-              </ImpermanenciaContainer>
-            </Link>
-          </ObrasItem1Animated>
 
-          <ObrasItem2Animated
-            initial={{ opacity: 0, y: 50 }}
-            animate={controls}
-            transition={{ duration: 1 }}
-          >
-            <Link href="/vanishing">
-              <ImpermanenciaContainer>
-                <div className="top">
-                  <Image src={vanishing1} alt="vanishing" />
-                </div>
-
-                <div className="bottom">
-                  <div>
-                    <ObrasSubtitle>vanishing landscapes</ObrasSubtitle>
-                    <More text="ver más" />
+                  <div className="bottom">
+                    <div>
+                      <ObrasSubtitle>voces de la tierra</ObrasSubtitle>
+                      <More text="ver más" />
+                    </div>
                   </div>
-                </div>
-              </ImpermanenciaContainer>
-            </Link>
-          </ObrasItem2Animated>
+                </ImpermanenciaContainer>
+              </Link>
+            </ObrasItem1Animated>
+          </Parallax>
 
-          <ObrasItem3>
-            <Link href="/impermanencia">
-              <ImpermanenciaContainer>
-                <div className="top">
-                  <Image src={impermanencia1} alt="impermanencia" />
-                </div>
-
-                <div className="bottom">
-                  <div>
-                    <ObrasSubtitle>impermanencia</ObrasSubtitle>
-                    <More text="ver más" />
+          <Parallax speed={10}>
+            <ObrasItem2Animated
+              initial={{ opacity: 0, y: 50 }}
+              animate={controls}
+              transition={{ duration: 1 }}
+            >
+              <Link href="/vanishing">
+                <ImpermanenciaContainer>
+                  <div className="top">
+                    <Image src={vanishing1} alt="vanishing" />
                   </div>
-                </div>
-              </ImpermanenciaContainer>
-            </Link>
-          </ObrasItem3>
 
-          <ObrasItem4>
-            <Link href="/ecos-en-el-tiempo">
-              <ImpermanenciaContainer>
-                <div className="top">
-                  <Image src={ecos} alt="ecos-en-el-tiempo" />
-                </div>
-
-                <div className="bottom">
-                  <div>
-                    <ObrasSubtitle>ecos en el tiempo</ObrasSubtitle>
-                    <More text="ver más" />
+                  <div className="bottom">
+                    <div>
+                      <ObrasSubtitle>vanishing landscapes</ObrasSubtitle>
+                      <More text="ver más" />
+                    </div>
                   </div>
-                </div>
-              </ImpermanenciaContainer>
-            </Link>
-          </ObrasItem4>
+                </ImpermanenciaContainer>
+              </Link>
+            </ObrasItem2Animated>
+          </Parallax>
+          <Parallax speed={5}>
+            <ObrasItem3>
+              <Link href="/impermanencia">
+                <ImpermanenciaContainer>
+                  <div className="top">
+                    <Image src={impermanencia1} alt="impermanencia" />
+                  </div>
 
+                  <div className="bottom">
+                    <div>
+                      <ObrasSubtitle>impermanencia</ObrasSubtitle>
+                      <More text="ver más" />
+                    </div>
+                  </div>
+                </ImpermanenciaContainer>
+              </Link>
+            </ObrasItem3>
+          </Parallax>
+          <Parallax speed={20}>
+            <ObrasItem4>
+              <Link href="/ecos-en-el-tiempo">
+                <ImpermanenciaContainer>
+                  <div className="top">
+                    <Image src={ecos} alt="ecos-en-el-tiempo" />
+                  </div>
+
+                  <div className="bottom">
+                    <div>
+                      <ObrasSubtitle>ecos en el tiempo</ObrasSubtitle>
+                      <More text="ver más" />
+                    </div>
+                  </div>
+                </ImpermanenciaContainer>
+              </Link>
+            </ObrasItem4>
+          </Parallax>
           <ObrasItem3>
             <Link href="/hijos-del-sol">
               <ImpermanenciaContainer>
@@ -167,14 +171,10 @@ const ObrasContainer = styled(Container)`
   overflow: hidden;
 `;
 
-const ObrasTitle = styled(Title)`
+const ObrasTitle = styled(SectionTitle)`
   align-self: flex-end;
   margin-top: 90px;
-  font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 1px;
 `;
-
-const ObrasTitleAnimated = motion(ObrasTitle);
 
 const ObrasGrid = styled.div`
   display: grid;
@@ -207,14 +207,13 @@ const ObrasItem3 = styled.div`
   margin-top: -60px;
 `;
 
-const ObrasItem3Animated = motion(ObrasItem3);
+
 
 const ObrasItem4 = styled.div`
   width: 100%;
   margin-top: 0px;
 `;
 
-const ObrasItem4Animated = motion(ObrasItem4);
 
 const ImpermanenciaContainer = styled.div`
   width: 100%;
@@ -241,7 +240,6 @@ const ImpermanenciaContainer = styled.div`
     padding-top: 20px;
     display: flex;
     align-items: flex-start;
-
   }
 
   &:hover .top {
@@ -255,7 +253,7 @@ const ImpermanenciaContainer = styled.div`
 
 const ObrasSubtitle = styled.h4`
   margin: 0;
-  font-family: "Montserrat";
+  font-family: var(--font-montserrat);
   font-size: 23px;
   color: #4a4747;
   line-height: 120%;

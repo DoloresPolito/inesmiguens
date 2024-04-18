@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-const Loop = ({ content, reverse }) => (
-  <LoopSection reverse={reverse}>
+const LoopReves = ({ content, reverse}) => (
+  <LoopSection reverse={reverse} >
     <div className="blocks">
       <div className="contents">
         <span className="firstBlock">{content}</span>
@@ -10,9 +10,10 @@ const Loop = ({ content, reverse }) => (
       </div>
     </div>
   </LoopSection>
-);
+)
 
 const LoopSection = styled.div`
+
   .blocks {
     left: 0px;
     height: auto;
@@ -21,6 +22,7 @@ const LoopSection = styled.div`
     overflow: hidden;
   }
 
+  /*remove p*/
   .contents {
     width: 100%;
     margin: 0 auto;
@@ -30,33 +32,37 @@ const LoopSection = styled.div`
 
   .firstBlock {
     display: inline-block;
-    animation: animation1 60s linear infinite;
-    animation-direction: ${props => (props.reverse ? 'normal' : 'reverse')};
+    animation: animation2 100s linear infinite;
+
   }
 
   .secondBlock {
     display: inline-block;
-    animation: animation2 60s linear infinite;
-    animation-direction: ${props => (props.reverse ? 'normal' : 'reverse')};
-  }
+    animation: animation2 100s linear infinite;    
 
-  @keyframes animation1 {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+  
   }
-
+  /* scrolling-left is continuous/repeatly text */
   @keyframes animation2 {
     0% {
       transform: translateX(0%);
+      -webkit-transform: translateX(0%);
     }
     100% {
-      transform: translateX(-200%);
+      transform: translateX(-100%) !important;
+      -webkit-transform: translateX(-100%);
     }
   }
-`;
+  /* @keyframes animation2 {
+    0% {
+      transform: translateX(100%);
+      -webkit-transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+    }
+  } */
+`
 
-export default Loop;
+export default LoopReves

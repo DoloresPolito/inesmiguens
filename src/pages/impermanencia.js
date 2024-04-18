@@ -7,12 +7,9 @@ import {
   ObrasTopContainer,
   PicturesContainer,
 } from "../styles/styles";
-import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 import { motion } from "framer-motion";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import More from "@/components/More";
-
 import img1 from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
 import img2 from "../../public/assets/images/obras/impermanencia jpg reduce comp/2.jpg";
 import img3 from "../../public/assets/images/obras/impermanencia jpg reduce comp/3.jpg";
@@ -39,49 +36,40 @@ function Impermanencia() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <FramerNavbar />
-        <VocesSection>
-          <ObrasTopContainer>
-            <div className="left">
-              <ObrasTitle>Impermanencia</ObrasTitle>
-              <div>
-                <ObrasText>
-                  La ciudad se convierte en un mar de fugaces  y fantasmagóricos
-                  encuentros, en la que se desvanece la posibilidad de la
-                  percepción de los otros, prácticamente invisibles,
-                  incorpóreos.  Una geometría que dibuja en el asfalto el
-                  vértigo del tiempo, preñado de destiempo y expatriado de toda
-                  permanencia. Su cruce demora apenas un minuto que es la cifra
-                  de la celeridad en la que vivimos.
-                </ObrasText>
-                <More text="obras" link="/obras" />
-              </div>
+      <VocesSection>
+        <ObrasTopContainer>
+          <div className="left">
+            <ObrasTitle>Impermanencia</ObrasTitle>
+            <div>
+              <ObrasText>
+                La ciudad se convierte en un mar de fugaces  y fantasmagóricos
+                encuentros, en la que se desvanece la posibilidad de la
+                percepción de los otros, prácticamente invisibles, incorpóreos.
+                 Una geometría que dibuja en el asfalto el vértigo del tiempo,
+                preñado de destiempo y expatriado de toda permanencia. Su cruce
+                demora apenas un minuto que es la cifra de la celeridad en la
+                que vivimos.
+              </ObrasText>
+              <More text="obras" link="/obras" />
             </div>
-            <motion.div
-              className="right"
-              variants={variants}
-              initial="hidden"
-              animate="visible"
-            >
-              <StyledImageCover src={img1} alt="image1" />
-            </motion.div>
-          </ObrasTopContainer>
+          </div>
+          <motion.div
+            className="right"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+          >
+            <StyledImageCover src={img1} alt="image1" />
+          </motion.div>
+        </ObrasTopContainer>
 
-          <ObrasBottomContainer>
-            <PicturesContainer>
-              <AnimatedRowOf2 image1={img1} image2={img2} />
-              <AnimatedRowOf2 image1={img3} image2={img4} />
-            </PicturesContainer>
-          </ObrasBottomContainer>
-        </VocesSection>
-        <Footer />
-      </motion.div>
+        <ObrasBottomContainer>
+          <PicturesContainer>
+            <AnimatedRowOf2 image1={img1} image2={img2} />
+            <AnimatedRowOf2 image1={img3} image2={img4} />
+          </PicturesContainer>
+        </ObrasBottomContainer>
+      </VocesSection>
     </>
   );
 }
@@ -112,9 +100,7 @@ const ObrasBottomContainer = styled.div`
   @media screen and (max-width: 1190px) {
     width: 93%;
     margin-top: 0px !important;
-
   }
-
 `;
 
 export default Impermanencia;
