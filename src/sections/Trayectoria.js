@@ -6,8 +6,11 @@ import Image from "next/image";
 import libro1 from "../../public/assets/images/libros/hijos del sol.png";
 import libro2 from "../../public/assets/images/libros/madres argentinas.png";
 import libro3 from "../../public/assets/images/libros/parques y jardones.png";
-import More from "@/components/MoreBack";
 const Work = () => {
+
+
+
+  
   const libros = [
     {
       nombre: "Hijos del Sol",
@@ -51,6 +54,21 @@ const Work = () => {
     },
   };
 
+  const titleVariants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    hidden: {
+      opacity: 0.5,
+      y: 10,
+    },
+  };
+
   return (
     <>
       <Section>
@@ -61,7 +79,11 @@ const Work = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <TrayectoriaContainer>
-            <BooksTitle>LIBROS EDITADOS</BooksTitle>
+            <ObrasTitleAnimated
+                        variants={titleVariants}
+                        initial="hidden"
+                        animate={isVisible ? "visible" : "hidden"}
+            >LIBROS EDITADOS</ObrasTitleAnimated>
 
             <LibrosSection>
               <AnimatePresence>
@@ -124,6 +146,8 @@ const BooksTitle = styled(Title)`
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 1px;
 `;
+
+const ObrasTitleAnimated = motion(BooksTitle);
 
 export const Text = styled.h5`
   margin: 0;

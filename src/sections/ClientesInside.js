@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import { Section, Container, Title } from "../styles/styles";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 function ClientesInside() {
   const container = {
     hidden: { opacity: 0 },
@@ -89,12 +90,49 @@ function ClientesInside() {
     { nombre: "Sensei Restaurant", lugar: "" },
     { nombre: "VZ", lugar: "" },
   ];
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const titleVariants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    hidden: {
+      opacity: 0.5,
+      y: 10,
+    },
+  };
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
   return (
     <>
       <ClientsSection>
         <ClientesContainer>
           <div className="left">
-            <Title>Clientes</Title>
+            <ObrasTitleAnimated
+                variants={titleVariants}
+                initial="hidden"
+                animate={isVisible ? "visible" : "hidden"}
+            >Clientes</ObrasTitleAnimated>
           </div>
           <div className="right">
             <Info>
@@ -169,6 +207,22 @@ function ClientesInside() {
 const ClientsSection = styled(Section)`
 margin-top: 100px;
 `
+
+// const ObrasTitle = styled(Title)`
+//   align-self: flex-end;
+//   /* font-family: "Montserrat"; */
+
+//   font-family: "Bebas Neue", sans-serif !important;
+//   font-size: 60px;
+//   color: #4a4747;
+//   line-height: 90%;
+//   font-weight: 200;
+//   margin-top: 100px;
+
+
+// `;
+
+const ObrasTitleAnimated = motion(Title);
 
 const ClientesContainer = styled(Container)`
   display: flex;

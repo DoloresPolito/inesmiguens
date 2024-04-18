@@ -8,7 +8,7 @@ import styled from "styled-components";
 import More from "@/components/More";
 import Cover from "@/components/Carousel";
 
-import AnimatedText from "@/components/AnimatedText";
+
 function Talleres() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -124,6 +124,11 @@ const TalleresContainer = styled(Container)`
   margin-top: 80px;
   flex-direction: row;
   padding-bottom: 100px;
+
+
+
+
+
 `;
 
 const Top = styled.div`
@@ -132,6 +137,8 @@ const Top = styled.div`
   align-items: space-between;
   height: 100%;
   margin-top: 20px;
+
+
 `;
 
 const TitleTalleres = styled(Title)`
@@ -143,13 +150,25 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: row;
 
+  @media screen and (max-width: 1100px) {
+flex-direction: column;
+
+  }
+
   .cursos {
     width: 50%;
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+    }
   }
 
   .imagenes-container {
     width: 50%;
     margin-top: -100px;
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+      margin-top: 30px;
+    }
   }
 `;
 const TitleContainer = styled.div`

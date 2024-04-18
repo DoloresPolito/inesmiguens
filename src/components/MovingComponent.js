@@ -51,7 +51,7 @@ const CustomersSection = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  margin-top: ${(props) => (props.item === "first" ? "40px" : "0px")};
+
   /* margin-top: 30px; */
   max-width: 1600px;
 `;
