@@ -1,7 +1,7 @@
 import Head from "next/head";
 import GlobalStyles from "../styles/global";
 import { ParallaxProvider } from "react-scroll-parallax";
-import Layout from "../app/Layout";
+import Layout from "../components/Layout";
 import { Bebas_Neue, Montserrat, Georama } from "next/font/google";
 
 const bebasneue = Bebas_Neue({
