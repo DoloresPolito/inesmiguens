@@ -1,8 +1,8 @@
 import Head from "next/head";
 import GlobalStyles from "../styles/global";
 import { ParallaxProvider } from "react-scroll-parallax";
-import Layout from "../components/Layout";
 import { Bebas_Neue, Montserrat, Georama } from "next/font/google";
+import Layout from "@/components/Layout";
 
 const bebasneue = Bebas_Neue({
   subsets: ["latin"],
@@ -61,7 +61,6 @@ const MyApp = ({ Component, pageProps }) => {
         <main
           className={`${bebasneue.variable} ${montserrat.variable} ${georama.variable} font-sans`}
         >
-          {" "}
           <Layout>
             <Component {...pageProps} />
           </Layout>
