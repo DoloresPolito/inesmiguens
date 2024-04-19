@@ -77,9 +77,9 @@ const Navbar = () => {
             <LinksContainer>
               {links.map((link, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     {link.href === path && <Underline />}
-                    <Link href={link.href} key={index}>
+                    <Link href={link.href} >
                       <p>{link.title}</p>
                     </Link>
                   </div>
