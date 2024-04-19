@@ -34,41 +34,43 @@ const Navbar = () => {
 
   const path = usePathname();
 
-  const [scrollDirection, setScrollDirection] = useState("down");
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
+  // const [scrollDirection, setScrollDirection] = useState("down");
+  // const [prevScrollPos, setPrevScrollPos] = useState(0);
+  // const [visible, setVisible] = useState(true);
 
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
+  // const handleScroll = () => {
+  //   const currentScrollPos = window.pageYOffset;
 
-    if (prevScrollPos > currentScrollPos) {
-      setScrollDirection("up");
-    } else {
-      setScrollDirection("down");
-    }
+  //   if (prevScrollPos > currentScrollPos) {
+  //     setScrollDirection("up");
+  //   } else {
+  //     setScrollDirection("down");
+  //   }
 
-    setPrevScrollPos(currentScrollPos);
-  };
+  //   setPrevScrollPos(currentScrollPos);
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos, scrollDirection]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [prevScrollPos, scrollDirection]);
 
-  useEffect(() => {
-    setVisible(
-      (scrollDirection === "up" && window.scrollY > 20) || window.scrollY <= 0
-    );
-  }, [scrollDirection]);
+  // useEffect(() => {
+  //   setVisible(
+  //     (scrollDirection === "up" && window.scrollY > 20) || window.scrollY <= 0
+  //   );
+  // }, [scrollDirection]);
 
   return (
     <>
       {width > medium ? (
         <>
-          <NavbarContainer visible={visible}>
+          <NavbarContainer 
+          // visible={visible}
+          >
             <LogoContainer>
               <Link href="/">
                 <p>INÉS MIGUENS</p>
@@ -121,12 +123,12 @@ const NavbarContainer = styled.div`
   margin: 0 auto;
   max-width: 1600px;
 
-  opacity: ${(props) =>
+  /* opacity: ${(props) =>
     props.visible || props.scrollDirection === "up" ? 1 : 0};
   transform: ${(props) =>
     props.visible || props.scrollDirection === "up"
       ? "none"
-      : "translateY(-100%)"};
+      : "translateY(-100%)"}; */
 `;
 
 const LogoContainer = styled.div`
