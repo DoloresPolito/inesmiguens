@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
-import { Section, Container, SectionTitle } from "../styles/styles";
+import { Container, SectionTitle, Text } from "../styles/styles";
 import Image from "next/image";
 import libro1 from "../../public/assets/images/libros/hijos del sol.png";
 import libro2 from "../../public/assets/images/libros/madres argentinas.png";
 import libro3 from "../../public/assets/images/libros/parques y jardones.png";
 import AnimatedText from "@/components/AnimatedText";
-const Work = () => {
+
+
+const LibrosSection = () => {
   const libros = [
     {
       nombre: "Hijos del Sol",
@@ -55,19 +57,19 @@ const Work = () => {
 
   return (
     <>
-      <Section>
+      <Container>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <TrayectoriaContainer>
+  
             <AnimatedText>
-              <BooksTitle>LIBROS EDITADOS</BooksTitle>
+              <SectionTitle>LIBROS EDITADOS</SectionTitle>
             </AnimatedText>
 
-            <LibrosSection>
+            <LibrosContainer>
               <AnimatePresence>
                 {isVisible &&
                   libros.map((item, index) => (
@@ -83,22 +85,18 @@ const Work = () => {
                     </Item>
                   ))}
               </AnimatePresence>
-            </LibrosSection>
+            </LibrosContainer>
 
-            <TrayectoriaSection></TrayectoriaSection>
-          </TrayectoriaContainer>
+          
+     
         </motion.div>
-      </Section>
+      </Container>
     </>
   );
 };
 
-const TrayectoriaContainer = styled(Container)`
-  margin-top: 10px;
-  justify-content: center;
-  align-items: center;
-`;
-const LibrosSection = styled.div`
+
+const LibrosContainer = styled.div`
   display: flex;
   flex: row;
   justify-content: center;
@@ -117,26 +115,5 @@ const Item = styled.div`
   }
 `;
 
-const TrayectoriaSection = styled.div`
-  height: 600px;
-  width: 100%;
-`;
 
-const BooksTitle = styled(SectionTitle)`
-  align-self: flex-start;
-  margin-top: 90px;
-`;
-
-export const Text = styled.h5`
-  margin: 0;
-  font-family: "Montserrat";
-  font-size: 14px;
-  color: #4a4747;
-  line-height: 130%;
-  font-weight: 500;
-  max-width: 200px;
-  margin-top: 5px;
-  margin-left: 8px;
-`;
-
-export default Work;
+export default LibrosSection;

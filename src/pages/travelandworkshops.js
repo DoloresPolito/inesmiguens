@@ -1,17 +1,20 @@
 import React from "react";
-import LibrosSection from "@/sections/Libros";
-
+import TravelAndWorkshopsSection from "@/sections/TravelAndWorkshops";
 import DisableContextMenu from "@/components/DisableContextMenu";
 import { Section } from "../styles/styles";
-function Libros() {
+
+function TravelAndWorkshops() {
   return (
     <>
       <Section>
         <DisableContextMenu />
-        <LibrosSection />
+        <TravelAndWorkshopsSection />
       </Section>
     </>
   );
 }
 
-export default Libros;
+export default TravelAndWorkshops;
+
+
+

@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
-
 export const Section = styled.div`
   height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  /* min-height: 100vh; */
-  @media screen and (max-width: 700px) {
-    margin-top: 30px;
+  margin-top: 80px;
+
+  @media screen and (max-width: 1200px) {
+    margin-top: 80px;
   }
 `;
 
@@ -23,6 +21,7 @@ export const Container = styled.div`
   align-items: flex-start;
   max-width: 1600px;
   margin: 0 auto;
+  margin-top: -40px;
 `;
 
 export const Text = styled.p`
@@ -31,38 +30,27 @@ export const Text = styled.p`
   color: #000000;
   transition: 0.25s color;
   font-weight: 400;
-  /* line-height: 30px;
-  margin: 0; */
 `;
 
 export const SectionTitle = styled.h2`
-
-  font-size: 60px;
-  color: #5E5D5D;
+  font-size: 80px;
+  color: #5e5d5d;
   line-height: 90%;
   font-weight: 200;
   font-family: var(--font-bebasneue);
   letter-spacing: 1px;
 `;
 
-
-
-
-
 //obras
 export const ObrasTitle = styled.h2`
-  /* font-family: "Montserrat"; */
-
   font-family: var(--font-bebasneue);
   font-style: normal;
   font-size: 60px !important;
-  color: #5E5D5D;
+  color: #5e5d5d;
   line-height: 90%;
   align-self: flex-start;
   margin: 0;
   margin-right: 20px;
-
-
 
   @media screen and (max-width: 1100px) {
     line-height: 100%;
@@ -78,13 +66,17 @@ export const ObrasTitle = styled.h2`
 `;
 
 export const ObrasTopContainer = styled(Container)`
-  margin-top: 130px;
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   width: 93%;
   align-items: center;
   height: 500px;
+  /* @media screen and (max-width: 450px) {
+   
+      margin-top: 40px !important;
+    } */
 
   .left {
     width: 50%;
@@ -96,7 +88,7 @@ export const ObrasTopContainer = styled(Container)`
     padding: 30px;
 
     @media screen and (max-width: 1100px) {
-      width: 90%;
+      width: 92%;
       height: 100%;
       align-self: flex-start;
       padding: 10px;
@@ -112,24 +104,22 @@ export const ObrasTopContainer = styled(Container)`
     @media screen and (max-width: 1100px) {
       width: 100%;
 
-      img{
+      img {
         width: 100%;
       }
-
     }
+
+ 
   }
 
   @media screen and (max-width: 1100px) {
-    margin-top: 100px;
+    margin-top: 50px;
     flex-direction: column;
     height: auto;
     margin-bottom: 0px;
-
   }
 
-  @media screen and (max-width: 530px) {
-    margin-top: 80px;
-  }
+
 `;
 
 export const ObrasText = styled.p`
@@ -147,17 +137,13 @@ export const ObrasText = styled.p`
   }
 `;
 
-
-
 //hoteles
 
 export const HotelesContainer = styled(Container)`
   height: auto;
-  margin-top: 110px;
+  margin-top: 40px;
   width: 90%;
-
 `;
-
 
 export const PicturesContainer = styled.div`
   display: flex;
@@ -173,8 +159,6 @@ export const PicturesContainer = styled.div`
     margin-top: 90px;
   }
 `;
-
-
 
 export const HotelSubtitle = styled.h4`
   margin: 0;
@@ -199,9 +183,8 @@ export const HotelText = styled.h5`
   margin-bottom: 10px;
 `;
 
-
 export const TextContainer = styled.div`
-display: flex;
-flex-direction: column;
-margin-bottom: 30px;
-`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+`;

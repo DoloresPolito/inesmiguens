@@ -8,7 +8,7 @@ import FramerNavbarMobile from "@/components/FramerNavbarMobile/FramerNavbarMobi
 const links = [
   { href: "/hoteles", title: "HOTELES" },
   { href: "/obras", title: "OBRAS" },
-  { href: "/talleres", title: "TRAVEL & WORKSHOPS" },
+  { href: "/travelandworkshops", title: "TRAVEL & WORKSHOPS" },
   { href: "/libros", title: "LIBROS" },
   { href: "/clientes", title: "CLIENTES" },
   { href: "/contacto", title: "CONTACTO" },
@@ -34,11 +34,41 @@ const Navbar = () => {
 
   const path = usePathname();
 
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+      setScrollDirection("up");
+    } else {
+      setScrollDirection("down");
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos, scrollDirection]);
+
+  useEffect(() => {
+    setVisible(
+      (scrollDirection === "up" && window.scrollY > 20) || window.scrollY <= 0
+    );
+  }, [scrollDirection]);
+
   return (
     <>
       {width > medium ? (
         <>
-          <NavbarContainer>
+          <NavbarContainer visible={visible}>
             <LogoContainer>
               <Link href="/">
                 <p>INÉS MIGUENS</p>
@@ -68,12 +98,35 @@ const Navbar = () => {
 };
 
 const NavbarContainer = styled.div`
-  width: 90%;
+  /* width: 90%;
   height: 80px;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
+  align-items: center; */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  width: 90%;
+  height: 60px;
   align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin: 0 auto;
+  max-width: 1600px;
+
+  opacity: ${(props) =>
+    props.visible || props.scrollDirection === "up" ? 1 : 0};
+  transform: ${(props) =>
+    props.visible || props.scrollDirection === "up"
+      ? "none"
+      : "translateY(-100%)"};
 `;
 
 const LogoContainer = styled.div`

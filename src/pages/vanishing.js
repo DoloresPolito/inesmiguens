@@ -5,9 +5,9 @@ import {
   ObrasTitle,
   ObrasText,
   ObrasTopContainer,
-  PicturesContainer
+  PicturesContainer,
 } from "../styles/styles";
-import { motion  } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import More from "@/components/More";
 import img1 from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
@@ -15,7 +15,6 @@ import img2 from "../../public/assets/images/obras/vanishing jpg reduce comp/2.j
 import img3 from "../../public/assets/images/obras/vanishing jpg reduce comp/3a.jpg";
 import img4 from "../../public/assets/images/obras/vanishing jpg reduce comp/3b.jpg";
 import img5 from "../../public/assets/images/obras/vanishing jpg reduce comp/4.jpg";
-
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
@@ -38,12 +37,11 @@ function Vanishing() {
 
   return (
     <>
-
-        <VocesSection>
-          <ObrasTopContainer>
-            <div className="left">
-              <ObrasTitle>vanishing landscapes</ObrasTitle>
-              <div>
+      <VocesSection>
+        <ObrasTopContainer>
+          <div className="left">
+            <ObrasTitle>vanishing landscapes</ObrasTitle>
+            <div>
               <ObrasText>
                 El Amazonas esta en permanente peligro de existencia. Mi fuerte
                 conexión con la naturaleza me ha llevado varias veces a
@@ -58,35 +56,28 @@ function Vanishing() {
                 en peligro el mayor reservorio de agua dulce del planeta.
               </ObrasText>
               <More text="obras" link="/obras" />
-              </div>
- 
             </div>
-            <motion.div
-              className="right"
-              variants={variants}
-              initial="hidden"
-              animate="visible"
-            >
-              <StyledImageCover src={img1} alt="image1" />
-            </motion.div>
-          </ObrasTopContainer>
+          </div>
+          <motion.div
+            className="right"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+          >
+            <StyledImageCover src={img1} alt="image1" />
+          </motion.div>
+        </ObrasTopContainer>
 
-<ObrasBottomContainer>
-
-
+        <ObrasBottomContainer>
           <PicturesContainer>
             <AnimatedRowOf2 image1={img2} image2={img3} />
             <AnimatedRowOf2 image1={img4} image2={img5} />
           </PicturesContainer>
-          </ObrasBottomContainer>
-        </VocesSection>
-
+        </ObrasBottomContainer>
+      </VocesSection>
     </>
   );
 }
-
-
-
 
 const VocesSection = styled(Section)`
   height: auto;
@@ -102,13 +93,13 @@ const StyledImageCover = styled(Image)`
     object-fit: cover;
     width: 100%;
     height: 600px;
-    padding:10px 0px;
+    padding: 10px 0px;
     margin-top: 20px;
   }
   @media screen and (max-width: 750px) {
     width: 90%;
     height: auto;
-    padding:10px 0px;
+    padding: 10px 0px;
     margin-top: 5px;
   }
 `;
@@ -122,12 +113,7 @@ const ObrasBottomContainer = styled.div`
   @media screen and (max-width: 1190px) {
     width: 93%;
     margin-top: 0px !important;
-
   }
-
 `;
-
-
-
 
 export default Vanishing;

@@ -5,7 +5,7 @@ import Image from "next/image";
 import instagram from "../../public/assets/icons/instagram.png";
 import mail from "../../public/assets/icons/mail.png";
 import phone from "../../public/assets/icons/phone.png";
-import profile from "../../public/assets/images/profile/profile.jpeg";
+// import profile from "../../public/assets/images/profile/profile.jpeg";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { sendContactForm } from "../lib/api";
@@ -90,76 +90,69 @@ function Contacto() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <Section>
-          <ContactContainer>
-            <LeftContainer
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 3, ease: "easeOut" }}
-            >
-              <div className="form-container">
-                <form>
-                  <input
-                    type="text"
-                    placeholder="nombre y apellido"
-                    name="name"
-                    value={values.name}
-                    onChange={handleChange}
-                  />
-                  <input
-                    placeholder="email"
-                    name="email"
-                    value={values.email}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="text"
-                    placeholder="mensaje"
-                    name="message"
-                    value={values.message}
-                    onChange={handleChange}
-                  />
+      <Section>
+        <ContactContainer>
+          <LeftContainer
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 3, ease: "easeOut" }}
+          >
+            <div className="form-container">
+              <form>
+                <input
+                  type="text"
+                  placeholder="nombre y apellido"
+                  name="name"
+                  value={values.name}
+                  onChange={handleChange}
+                />
+                <input
+                  placeholder="email"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  placeholder="mensaje"
+                  name="message"
+                  value={values.message}
+                  onChange={handleChange}
+                />
 
-                  <button onClick={onSubmit}>
-                    <p>enviar</p>
-                  </button>
-                </form>
-              </div>
-              <div className="info-container">
-                <AnimatePresence>
-                  {isVisible &&
-                    contactList.map((contact, index) => (
-                      <motion.div
-                        key={index}
-                        variants={listItemVariants}
-                        custom={index}
-                        initial="hidden"
-                        animate="visible"
-                      >
-                        <Link href={contact.url}>
-                          <div>
-                            <Image src={contact.image} alt="logo" />
-                            <Text>{contact.text}</Text>
-                          </div>
-                        </Link>
-                      </motion.div>
-                    ))}
-                </AnimatePresence>
-              </div>
-            </LeftContainer>
-            <RightContainer>
+                <button onClick={onSubmit}>
+                  <p>enviar</p>
+                </button>
+              </form>
+            </div>
+            <div className="info-container">
+              <AnimatePresence>
+                {isVisible &&
+                  contactList.map((contact, index) => (
+                    <motion.div
+                      key={index}
+                      variants={listItemVariants}
+                      custom={index}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      <Link href={contact.url}>
+                        <div>
+                          <Image src={contact.image} alt="logo" />
+                          <Text>{contact.text}</Text>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  ))}
+              </AnimatePresence>
+            </div>
+          </LeftContainer>
+          {/* <RightContainer>
               <Image src={profile} alt="profile" />
-            </RightContainer>
-          </ContactContainer>
-        </Section>
-      </motion.div>
+            </RightContainer> */}
+        </ContactContainer>
+      </Section>
     </>
   );
 }

@@ -6,7 +6,7 @@ import vanishing1 from "../../public/assets/images/obras/vanishing jpg reduce co
 import voces2 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
 import ecos from "../../public/assets/images/obras/ecos jpg reduce/estabaja6a.jpg";
 import hijos from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
-import { Section, Container, SectionTitle } from "../styles/styles";
+import { Container, SectionTitle } from "../styles/styles";
 import Link from "next/link";
 import More from "@/components/More";
 import { motion, useAnimation } from "framer-motion";
@@ -15,7 +15,7 @@ import { useInView } from "react-intersection-observer";
 import { Parallax } from "react-scroll-parallax";
 import AnimatedText from "@/components/AnimatedText";
 
-function ObrasInside() {
+function ObrasSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView();
   const controls = useAnimation();
@@ -27,20 +27,7 @@ function ObrasInside() {
     return () => clearTimeout(timer);
   }, []);
 
-  const titleVariants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-    hidden: {
-      opacity: 0.5,
-      y: 10,
-    },
-  };
+
 
   useEffect(() => {
     if (inView) {
@@ -49,11 +36,13 @@ function ObrasInside() {
   }, [controls, inView]);
 
   return (
-    <ObrasSectionContainer>
-      <ObrasContainer>
+
+      <Container>
         <AnimatedText>
-          <ObrasTitle>OBRAS</ObrasTitle>
+          <SectionTitle>OBRAS</SectionTitle>
         </AnimatedText>
+
+
 
         <ObrasGrid>
           <Parallax speed={-5}>
@@ -155,26 +144,17 @@ function ObrasInside() {
             </Link>
           </ObrasItem3>
         </ObrasGrid>
-      </ObrasContainer>
-    </ObrasSectionContainer>
+
+
+      </Container>
+
   );
 }
 
-const ObrasSectionContainer = styled(Section)`
-  width: 90%;
-  margin: 0 auto;
-`;
 
-const ObrasContainer = styled(Container)`
-  margin: 0 auto;
-  margin-bottom: 200px;
-  overflow: hidden;
-`;
 
-const ObrasTitle = styled(SectionTitle)`
-  align-self: flex-end;
-  margin-top: 90px;
-`;
+
+
 
 const ObrasGrid = styled.div`
   display: grid;
@@ -262,4 +242,4 @@ const ObrasSubtitle = styled.h4`
   letter-spacing: 0.5px;
 `;
 
-export default ObrasInside;
+export default ObrasSection;

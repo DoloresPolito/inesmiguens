@@ -1,10 +1,12 @@
 import React from "react";
-import ClientesInside from "@/sections/ClientesInside";
-
+import ClientesSection from "@/sections/Clientes";
+import { Section } from "../styles/styles";
 function Clientes() {
   return (
     <>
-      <ClientesInside />
+      <Section>
+        <ClientesSection />
+      </Section>
     </>
   );
 }

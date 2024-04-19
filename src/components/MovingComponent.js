@@ -20,6 +20,7 @@ const Customers = () => {
           reverse="true"
           content={
             <>
+            {/* <h2>travel and workshops  </h2> */}
               <Image src={img6} alt="fortnite" />
 
               <Image src={img4} alt="crunchyroll" />
@@ -70,6 +71,15 @@ const CustomersContainer = styled.div`
     padding: 0 20px;
     height: 300px;
     width: 500px;
+  }
+
+  h2{  font-size: 400px;
+  color: #5e5d5d;
+  line-height: 90%;
+  font-weight: 200;
+  font-family: var(--font-bebasneue);
+  letter-spacing: 3px;
+
   }
 `;
 

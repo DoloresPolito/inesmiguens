@@ -35,7 +35,7 @@ const LoopSection = styled.div`
     display: inline-block;
     padding-right: 20px; /* Agregado para separar los bloques */
     /* animation: animation1 100s linear infinite; */
-    animation: animation1 100s linear infinite;
+    animation: animation1 80s linear infinite;
   }
   /* scrolling-left is continuous/repeatly text */
   @keyframes animation1 {

@@ -1,18 +1,17 @@
 import React from "react";
 import { Section } from "../styles/styles";
-import HotelesInside from "@/sections/HotelesInside";
-import styled from "styled-components";
-function Hoteles() {
+import Hoteles from "@/sections/Hoteles";
+
+function HotelesSection() {
   return (
     <>
 
-      <HotelesSection>
-        <HotelesInside />
-      </HotelesSection>
+      <Section>
+        <Hoteles />
+      </Section>
     </>
   );
 }
 
-const HotelesSection = styled(Section)``;
 
-export default Hoteles;
+export default HotelesSection;
