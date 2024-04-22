@@ -4,12 +4,12 @@ import styled from "styled-components";
 import Image from "next/image";
 
 
-const RowOf2 = ({ image1, image2 }) => {
+const RowOf2 = ({ image1, image2, obra}) => {
     return (
       <>
         <Row2Container>
-          <StyledImage src={image1} alt="image1" />
-          <StyledImage src={image2} alt="image1" />
+          <StyledImage src={image1} alt="image1" obra={obra}/>
+          <StyledImage src={image2} alt="image1" obra={obra}/>
         </Row2Container>
       </>
     );
@@ -37,7 +37,8 @@ const RowOf2 = ({ image1, image2 }) => {
 `;
 
 const StyledImage = styled(Image)`
-  height: 380px;
+
+  height: ${(props) => props.obra ? "620px" : "380px"};
   width: 49%;
   object-fit: cover;
 

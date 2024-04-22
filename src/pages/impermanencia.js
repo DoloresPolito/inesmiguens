@@ -10,11 +10,11 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 import More from "@/components/More";
-import img1 from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
-import img2 from "../../public/assets/images/obras/impermanencia jpg reduce comp/2.jpg";
-import img3 from "../../public/assets/images/obras/impermanencia jpg reduce comp/3.jpg";
-import img4 from "../../public/assets/images/obras/impermanencia jpg reduce comp/4.jpg";
-
+import img1 from "../../public/assets/images/obras/IMPERMANENCIA/1.jpg";
+import img2 from "../../public/assets/images/obras/IMPERMANENCIA/2.jpg";
+import img3 from "../../public/assets/images/obras/IMPERMANENCIA/3.jpg";
+import img4 from "../../public/assets/images/obras/IMPERMANENCIA/4.jpg";
+import img5 from "../../public/assets/images/obras/IMPERMANENCIA/5.jpg";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
 function Impermanencia() {
@@ -65,8 +65,8 @@ function Impermanencia() {
 
         <ObrasBottomContainer>
           <PicturesContainer>
-            <AnimatedRowOf2 image1={img1} image2={img2} />
-            <AnimatedRowOf2 image1={img3} image2={img4} />
+            <AnimatedRowOf2 image1={img5} image2={img2} obra="impermanencia"/>
+            <AnimatedRowOf2 image1={img3} image2={img4} obra="impermanencia"/>
           </PicturesContainer>
         </ObrasBottomContainer>
       </VocesSection>

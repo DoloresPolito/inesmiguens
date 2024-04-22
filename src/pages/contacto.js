@@ -93,12 +93,21 @@ function Contacto() {
       <Section>
         <ContactContainer>
           <LeftContainer
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 3, ease: "easeOut" }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // exit={{ opacity: 0 }}
+            // transition={{ duration: 2, ease: "easeOut" }}
           >
-            <div className="form-container">
+            <motion.div
+            
+            initial={{ opacity: 0.5, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              ease: "easeInOut",
+              duration: 1,
+      
+            }}
+            className="form-container">
               <form>
                 <input
                   type="text"
@@ -125,7 +134,7 @@ function Contacto() {
                   <p>enviar</p>
                 </button>
               </form>
-            </div>
+            </motion.div>
             <div className="info-container">
               <AnimatePresence>
                 {isVisible &&

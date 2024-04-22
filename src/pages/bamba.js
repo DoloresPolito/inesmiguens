@@ -1,9 +1,7 @@
 import React from "react";
 import { Section, HotelesContainer, PicturesContainer,  HotelSubtitle, HotelText, TextContainer  } from "../styles/styles";
-
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Footer from "@/components/Footer";
 import styled from "styled-components";
 import Image from "next/image";
 import MoreBack from "@/components/MoreBack";

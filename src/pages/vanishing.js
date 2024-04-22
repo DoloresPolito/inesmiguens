@@ -10,11 +10,11 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 import More from "@/components/More";
-import img1 from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
-import img2 from "../../public/assets/images/obras/vanishing jpg reduce comp/2.jpg";
-import img3 from "../../public/assets/images/obras/vanishing jpg reduce comp/3a.jpg";
-import img4 from "../../public/assets/images/obras/vanishing jpg reduce comp/3b.jpg";
-import img5 from "../../public/assets/images/obras/vanishing jpg reduce comp/4.jpg";
+import img1 from "../../public/assets/images/obras/VANISHING/1.jpg";
+import img2 from "../../public/assets/images/obras/VANISHING/2.jpg";
+import img3 from "../../public/assets/images/obras/VANISHING/3.jpg";
+import img4 from "../../public/assets/images/obras/VANISHING/4.jpg";
+import img5 from "../../public/assets/images/obras/VANISHING/5.jpg";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
@@ -70,8 +70,8 @@ function Vanishing() {
 
         <ObrasBottomContainer>
           <PicturesContainer>
-            <AnimatedRowOf2 image1={img2} image2={img3} />
-            <AnimatedRowOf2 image1={img4} image2={img5} />
+            <AnimatedRowOf2 image1={img5} image2={img3} />
+            <AnimatedRowOf2 image1={img4} image2={img2} />
           </PicturesContainer>
         </ObrasBottomContainer>
       </VocesSection>

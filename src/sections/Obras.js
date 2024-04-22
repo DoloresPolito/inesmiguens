@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import impermanencia1 from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
 import vanishing1 from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
-import voces2 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
+import voces2 from "../../public/assets/images/obras/VOCES/1.jpg";
 import ecos from "../../public/assets/images/obras/ecos jpg reduce/estabaja6a.jpg";
 import hijos from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
 import { Container, SectionTitle } from "../styles/styles";

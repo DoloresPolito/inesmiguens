@@ -2,13 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import LoopReves from "./LoopReves";
 import Image from "next/image";
-import img1 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
-import img2 from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
 
-import img3 from "../../public/assets/images/obras/ecos en el tiempo comp/baja 7.jpg";
-import img4 from "../../public/assets/images/obras/ecos en el tiempo comp/baja3.jpg";
-import img5 from "../../public/assets/images/obras/ecos en el tiempo comp/baja6.jpg";
-import img6 from "../../public/assets/images/obras/ecos en el tiempo comp/baja10.jpg";
+import img1 from "../../public/assets/images/home/5.jpg";
+
+import img2 from "../../public/assets/images/home/6.jpg";
+import img3 from "../../public/assets/images/home/7.jpeg";
+import img4 from "../../public/assets/images/home/8.jpeg";
 
 const Customers = () => {
   return (
@@ -19,17 +18,15 @@ const Customers = () => {
           reverse="false"
           content={
             <>
-              <Image src={img3} alt="fortnite" />
+              <Image src={img1} alt="img1" />
 
-              <Image src={img2} alt="crunchyroll" />
+              <Image src={img2} alt="img2" />
 
-              <Image src={img6} alt="freefire" />
+              <Image src={img3} alt="img3" />
 
-              <Image src={img4} alt="minecraft" />
+              <Image src={img4} alt="img4" />
 
-              <Image src={img2} alt="mobilelegends" />
-
-              <Image src={img3} alt="pubg" />
+  
             </>
           }
         />

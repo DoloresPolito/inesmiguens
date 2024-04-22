@@ -9,68 +9,83 @@ import img2a from "../../public/assets/images/hoteles/principal/2.jpg";
 import img3a from "../../public/assets/images/hoteles/principal/3.jpg";
 
 import AnimatedText from "@/components/AnimatedText";
-
+import AnimatedImage from "@/components/AnimatedImage";
+import { motion } from "framer-motion";
 function HotelesSection() {
   return (
     <Container>
-      <AnimatedText>
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          ease: "easeInOut",
+          duration: 1,
+
+        }}
+      >
         <SectionTitle>HOTELES Y ESTANCIAS</SectionTitle>
-      </AnimatedText>
+      </motion.div>
 
       <HotelesGrid>
-        <Link href="/cauquenes">
+        <AnimatedText>
+          <Link href="/cauquenes">
+            <HotelItem>
+              <ItemContainer>
+                <div className="top">
+                  <Image src={img1a} alt="Los Cauquenes" />
+                </div>
+
+                <div className="bottom">
+                  <div>
+                    <HotelSubtitle>Los Cauquenes</HotelSubtitle>
+
+                    <More text="ver más" />
+                  </div>
+                </div>
+              </ItemContainer>
+            </HotelItem>
+          </Link>
+        </AnimatedText>
+
+        <AnimatedImage>
           <HotelItem>
-            <ItemContainer>
-              <div className="top">
-                <Image src={img1a} alt="Los Cauquenes" />
-              </div>
-
-              <div className="bottom">
-                <div>
-                  <HotelSubtitle>Los Cauquenes</HotelSubtitle>
-
-                  <More text="ver más" />
+            <Link href="/bamba">
+              <ItemContainer>
+                <div className="top">
+                  <Image src={img3a} alt="La Bamba de Areco" />
                 </div>
-              </div>
-            </ItemContainer>
+
+                <div className="bottom">
+                  <div>
+                    <HotelSubtitle>La Bamba de Areco</HotelSubtitle>
+
+                    <More text="ver más" />
+                  </div>
+                </div>
+              </ItemContainer>
+            </Link>
           </HotelItem>
-        </Link>
+        </AnimatedImage>
 
-        <HotelItem>
-          <Link href="/bamba">
-            <ItemContainer>
-              <div className="top">
-                <Image src={img3a} alt="La Bamba de Areco" />
-              </div>
-
-              <div className="bottom">
-                <div>
-                  <HotelSubtitle>La Bamba de Areco</HotelSubtitle>
-
-                  <More text="ver más" />
+        <AnimatedImage>
+          <HotelItem>
+            <Link href="/diana">
+              <ItemContainer>
+                <div className="top">
+                  <Image src={img2a} alt="Parque Diana" />
                 </div>
-              </div>
-            </ItemContainer>
-          </Link>
-        </HotelItem>
 
-        <HotelItem>
-          <Link href="/diana">
-            <ItemContainer>
-              <div className="top">
-                <Image src={img2a} alt="Parque Diana" />
-              </div>
+                <div className="bottom">
+                  <div>
+                    <HotelSubtitle>Parque Diana</HotelSubtitle>
 
-              <div className="bottom">
-                <div>
-                  <HotelSubtitle>Parque Diana</HotelSubtitle>
-
-                  <More text="ver más" />
+                    <More text="ver más" />
+                  </div>
                 </div>
-              </div>
-            </ItemContainer>
-          </Link>
-        </HotelItem>
+              </ItemContainer>
+            </Link>
+          </HotelItem>
+        </AnimatedImage>
       </HotelesGrid>
     </Container>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Section, Container, SectionTitle } from "../styles/styles";
+import {Container, SectionTitle } from "../styles/styles";
 import { motion} from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 import AnimatedText from "@/components/AnimatedText";
@@ -183,7 +183,6 @@ function ClientesSection() {
 const ClientesContainer = styled(Container)`
   display: flex;
   flex-direction: row;
-  background-color: red;
 
   @media screen and (max-width: 820px) {
     flex-direction: column;

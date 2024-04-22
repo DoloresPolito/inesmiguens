@@ -10,16 +10,20 @@ import {
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import MoreBack from "@/components/MoreBack";
-import img1 from "../../public/assets/images/obras/voces de la tierra comp/1baja.jpg";
-import img2 from "../../public/assets/images/obras/voces de la tierra comp/2baja.jpg";
-import img3 from "../../public/assets/images/obras/voces de la tierra comp/3baja.jpg";
-import img4 from "../../public/assets/images/obras/voces de la tierra comp/4baja.jpg";
-import img5 from "../../public/assets/images/obras/voces de la tierra comp/6baja.jpg";
-import img6 from "../../public/assets/images/obras/voces de la tierra comp/7baja.jpg";
-import img7 from "../../public/assets/images/obras/voces de la tierra comp/9baja.jpg";
-import img8 from "../../public/assets/images/obras/voces de la tierra comp/11baja.jpg";
-import img10 from "../../public/assets/images/obras/voces de la tierra comp/12baja.jpg";
-import img11 from "../../public/assets/images/obras/voces de la tierra comp/13baja.jpg";
+import img1 from "../../public/assets/images/obras/VOCES/1.jpg";
+import img2 from "../../public/assets/images/obras/VOCES/2.jpg";
+import img3 from "../../public/assets/images/obras/VOCES/3.jpg";
+import img4 from "../../public/assets/images/obras/VOCES/4.jpg";
+import img5 from "../../public/assets/images/obras/VOCES/5.jpg";
+import img6 from "../../public/assets/images/obras/VOCES/6.jpg";
+import img7 from "../../public/assets/images/obras/VOCES/7.jpg";
+import img8 from "../../public/assets/images/obras/VOCES/8.jpg";
+import img9 from "../../public/assets/images/obras/VOCES/9.jpg";
+import img10 from "../../public/assets/images/obras/VOCES/10.jpg";
+import img11 from "../../public/assets/images/obras/VOCES/11.jpg";
+import img12 from "../../public/assets/images/obras/VOCES/12.jpg";
+import img13 from "../../public/assets/images/obras/VOCES/13.jpg";
+
 import { useInView } from "react-intersection-observer";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
@@ -65,18 +69,22 @@ function Voces() {
             initial="hidden"
             animate="visible"
           >
-            <StyledImageCover src={img1} alt="image1" />
+            <StyledImageCover src={img2} alt="image1" />
           </motion.div>
         </ObrasTopContainer>
 
         <ObrasBottomContainer>
           <PicturesContainer>
-            <AnimatedRowOf2 image1={img2} image2={img3} />
-            <AnimatedRowOf3Vertical image1={img4} image2={img6} image3={img5} />
+            <AnimatedRowOf2 image1={img4} image2={img3} />
+
+       
+
+            <AnimatedRowOf3Vertical image1={img7} image2={img6} image3={img5} />
 
             <AnimatedRowOf2 image1={img10} image2={img11} />
 
-            <AnimatedRowOf2 image1={img7} image2={img8} />
+            <AnimatedRowOf2 image1={img9} image2={img13} />
+            <AnimatedRowOf2 image1={img8} image2={img1} />
           </PicturesContainer>
         </ObrasBottomContainer>
       </Section>
