@@ -68,27 +68,29 @@ const Navbar = () => {
     <>
       {width > medium ? (
         <>
-          <NavbarContainer 
+          <NavbarSection
           // visible={visible}
           >
-            <LogoContainer>
-              <Link href="/">
-                <p>INÉS MIGUENS</p>
-              </Link>
-            </LogoContainer>
-            <LinksContainer>
-              {links.map((link, index) => {
-                return (
-                  <div key={index}>
-                    {link.href === path && <Underline />}
-                    <Link href={link.href} >
-                      <p>{link.title}</p>
-                    </Link>
-                  </div>
-                );
-              })}
-            </LinksContainer>
-          </NavbarContainer>
+            <NavbarContainer>
+              <LogoContainer>
+                <Link href="/">
+                  <p>INÉS MIGUENS</p>
+                </Link>
+              </LogoContainer>
+              <LinksContainer>
+                {links.map((link, index) => {
+                  return (
+                    <div key={index}>
+                      {link.href === path && <Underline />}
+                      <Link href={link.href}>
+                        <p>{link.title}</p>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </LinksContainer>
+            </NavbarContainer>
+          </NavbarSection>
         </>
       ) : (
         <>
@@ -99,7 +101,7 @@ const Navbar = () => {
   );
 };
 
-const NavbarContainer = styled.div`
+const NavbarSection = styled.div`
   /* width: 90%;
   height: 80px;
   display: flex;
@@ -114,10 +116,8 @@ const NavbarContainer = styled.div`
   background-color: white;
   z-index: 1000;
   display: flex;
-  width: 90%;
-  height: 60px;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
+
   padding-top: 10px;
   transition: opacity 0.3s ease, transform 0.3s ease;
   margin: 0 auto;
@@ -129,6 +129,15 @@ const NavbarContainer = styled.div`
     props.visible || props.scrollDirection === "up"
       ? "none"
       : "translateY(-100%)"}; */
+`;
+
+const NavbarContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const LogoContainer = styled.div`
