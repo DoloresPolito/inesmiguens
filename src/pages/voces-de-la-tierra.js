@@ -26,6 +26,7 @@ import img13 from "../../public/assets/images/obras/VOCES/13.jpg";
 
 import { useInView } from "react-intersection-observer";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
+import AnimatedText from "@/components/AnimatedText";
 
 function Voces() {
   const variants = {
@@ -40,7 +41,7 @@ function Voces() {
     },
     hidden: {
       opacity: 0.5,
-      x: 10,
+      x: 50,
     },
   };
 
@@ -49,8 +50,11 @@ function Voces() {
       <Section>
         <ObrasTopContainer>
           <div className="left">
+            <AnimatedText>
             <ObrasTitle>Voces de la tierra</ObrasTitle>
-            <div>
+            </AnimatedText>
+      <AnimatedText>
+      <div>
               <ObrasText>
                 La ciudad se convierte en un mar de fugaces  y fantasmagóricos
                 encuentros, en la que se desvanece la posibilidad de la
@@ -62,6 +66,8 @@ function Voces() {
               </ObrasText>
               <MoreBack text="obras" link="/obras" />
             </div>
+      </AnimatedText>
+     
           </div>
           <motion.div
             className="right"

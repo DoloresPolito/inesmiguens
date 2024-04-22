@@ -17,6 +17,7 @@ import img4 from "../../public/assets/images/obras/VANISHING/4.jpg";
 import img5 from "../../public/assets/images/obras/VANISHING/5.jpg";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
+import AnimatedText from "@/components/AnimatedText";
 
 function Vanishing() {
   const variants = {
@@ -31,7 +32,7 @@ function Vanishing() {
     },
     hidden: {
       opacity: 0.5,
-      x: 10,
+      x: 50,
     },
   };
 
@@ -40,8 +41,12 @@ function Vanishing() {
       <VocesSection>
         <ObrasTopContainer>
           <div className="left">
+            <AnimatedText>
             <ObrasTitle>vanishing landscapes</ObrasTitle>
-            <div>
+            </AnimatedText>
+       
+       <AnimatedText>
+       <div>
               <ObrasText>
                 El Amazonas esta en permanente peligro de existencia. Mi fuerte
                 conexión con la naturaleza me ha llevado varias veces a
@@ -57,6 +62,8 @@ function Vanishing() {
               </ObrasText>
               <More text="obras" link="/obras" />
             </div>
+       </AnimatedText>
+
           </div>
           <motion.div
             className="right"

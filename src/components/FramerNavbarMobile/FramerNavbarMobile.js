@@ -6,7 +6,7 @@ import Link from "next/link";
 const links = [
   { href: "/hoteles", title: "HOTELES" },
   { href: "/obras", title: "OBRAS" },
-  { href: "/talleres", title: "TRAVEL & WORKSHOPS" },
+  { href: "/travelandworkshops", title: "TRAVEL & WORKSHOPS" },
   { href: "/libros", title: "LIBROS" },
   { href: "/clientes", title: "CLIENTES" },
   { href: "/contacto", title: "CONTACTO" },
@@ -19,21 +19,25 @@ const FramerNavbarMobile = () => {
     setBurgerMenuActive(!burgerMenuActive);
   };
 
-  const [scrollDirection, setScrollDirection] = useState("down");
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
+  // const [scrollDirection, setScrollDirection] = useState("down");
+  // const [prevScrollPos, setPrevScrollPos] = useState(0);
+  // const [visible, setVisible] = useState(true);
 
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
+  // const handleScroll = () => {
+  //   const currentScrollPos = window.pageYOffset;
 
-    if (prevScrollPos > currentScrollPos) {
-      setScrollDirection("up");
-    } else {
-      setScrollDirection("down");
-    }
+  //   if (prevScrollPos > currentScrollPos) {
+  //     setScrollDirection("up");
+  //   } else {
+  //     setScrollDirection("down");
+  //   }
 
-    setPrevScrollPos(currentScrollPos);
-  };
+  //   setPrevScrollPos(currentScrollPos);
+  // };
+
+  const handleClose = () => {
+    setBurgerMenuActive(false)
+  }
 
   const motionVariants = {
     open: {
@@ -82,7 +86,7 @@ const FramerNavbarMobile = () => {
           <div className={Styles.navigation}>
             <div className="logo">
               <Link href="/">
-                <p>INES MIGUENS</p>
+                <p>INÉS MIGUENS</p>
               </Link>
             </div>
             <div
@@ -99,7 +103,7 @@ const FramerNavbarMobile = () => {
               variants={motionVariants}
             >
               {links.map((link) => (
-                <motion.li variants={listItemVariants} key={link.href}>
+                <motion.li variants={listItemVariants} key={link.href} onClick={handleClose}>
                   <Link href={link.href}>{link.title}</Link>
                 </motion.li>
               ))}
