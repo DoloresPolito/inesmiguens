@@ -4,6 +4,12 @@ import styled from "styled-components";
 import More from "@/components/More";
 import AnimatedText from "@/components/AnimatedText";
 import MovingComponentReves from "@/components/MovingComponentReves";
+import Image from "next/image";
+
+import img1 from "../../public/assets/images/cursos/curso4.jpeg";
+import img2 from "../../public/assets/images/cursos/cursotravel.jpeg";
+import img3 from "../../public/assets/images/cursos/curso3.jpeg";
+import Link from "next/link";
 function Talleres() {
   return (
     <>
@@ -11,14 +17,14 @@ function Talleres() {
         <AnimatedText>
           <SectionTitle>Travel and workshops</SectionTitle>
         </AnimatedText>
-        <MovingComponentReves />
-        <InfoContainer>
- 
-            <CursoContainer>
-              <h4>ciclo basico</h4>
-              <div className="text-container">
 
-           
+        <InfoContainer>
+          <Link href="/contacto">
+      
+          <CursoContainer>
+            <h4>ciclo basico</h4>
+            <Image className="course-img" src={img1} alt="curso 2" />
+            <div className="text-container">
               <p>
                 Se impartirán los conocimientos para la comprensión de imágenes
                 color y blanco y negro. Se aprenderá a manejar la cámara,
@@ -28,15 +34,19 @@ function Talleres() {
                 baja. Profundización en composición, figuras y formas y líneas,
                 Conocimientos de las herramientas Photoshop, jpeg y raw.
               </p>
-              </div>
-              <More text="más info" link="/contacto" />
-            </CursoContainer>
+            </div>
 
-            <CursoContainer>
-              <h4>travel and workshops</h4>
-              <div className="text-container">
+            <More text="más info" link="/contacto" />
+          </CursoContainer>
+          </Link>
 
-         
+          <Link href='/contacto'>
+ 
+
+          <CursoContainer>
+            <h4>travel and workshops</h4>
+            <Image className="course-img" src={img2} alt="curso 2" />
+            <div className="text-container">
               <p>
                 Workshop es un taller especializado en un tema específico, donde
                 se destaca la teoría, los autores contemporáneos que trabajan
@@ -45,15 +55,16 @@ function Talleres() {
                 Reforzamos la edición y la elaboración de un portfolio sobre
                 dicho tema.
               </p>
-              </div>
-              <More text="más info" link="/contacto" />
-            </CursoContainer>
+            </div>
 
-            <CursoContainer>
-              <h4>talleres</h4>
-              <div className="text-container">
-
-      
+            <More text="más info" link="/contacto" />
+          </CursoContainer>
+      </Link>
+          <Link href='/contacto'>
+          <CursoContainer>
+            <h4>talleres</h4>
+            <Image className="course-img" src={img3} alt="curso 2" />
+            <div className="text-container">
               <p>
                 Los talleres son grupos que se organizan cada 15 días, según el
                 nivel de conocimiento del alumno. El objetivo es alcanzar un
@@ -62,11 +73,13 @@ function Talleres() {
                 técnico. Análisis y edición de obra. Creación de un Portfolio.
                 Preparación y exposición.
               </p>
-              </div>
-              <More text="más info" link="/contacto" />
-            </CursoContainer>
-        
+            </div>
+
+            <More text="más info" link="/contacto" />
+          </CursoContainer>
+          </Link>
         </InfoContainer>
+        {/* <MovingComponentReves /> */}
       </TalleresContainer>
     </>
   );
@@ -74,13 +87,19 @@ function Talleres() {
 
 const TalleresContainer = styled(Container)``;
 
-
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
+  margin-bottom: 80px;
+  margin: 0 auto;
+  margin-top: -30px;
+  width: 100%;
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
 
+  }
 `;
 
 const CursoContainer = styled.div`
@@ -88,14 +107,46 @@ const CursoContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   margin-bottom: 10px;
-  width: 100%;
   margin-bottom: 40px;
   padding: 20px;
   margin: 20px 20px 20px 0px;
-  height: 300px;
+  height: 670px;
+  transition: background-color 0.5s ease;
+  border-radius: 5px;
+  width: 350px;
+  
+  @media screen and (max-width: 1100px) {
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: 40px;
+  }
 
-  .text-container{
-    height: 220px;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin: 0px 0px 80px 0px;
+    padding: 0px;
+  }
+
+
+  &:hover{
+    background-color: #f9f9f9;
+  }
+
+  .course-img {
+    width: 100%;
+    height: auto;
+    
+  }
+
+  .text-container {
+    min-height: 220px;
+    margin-top: 20px;
+
+    @media screen and (max-width: 1100px) {
+      min-height: auto;
+    }
+
   }
 
   h4 {
@@ -103,12 +154,13 @@ const CursoContainer = styled.div`
     font-size: 20px;
     color: #4a4747;
     line-height: 90%;
-    font-weight: 500;
+    font-weight: 200;
     align-self: flex-start;
     line-height: 110%;
     margin: 0;
     margin-right: 20px;
     letter-spacing: 1px;
+    margin-bottom: 20px;
   }
 
   p {
@@ -119,7 +171,12 @@ const CursoContainer = styled.div`
     max-width: 600px;
     letter-spacing: 0.5px;
     text-align: justify;
-  text-justify: inter-word;
+    text-justify: inter-word;
+    margin-bottom: 30px;
+    font-weight: 200;
+    @media screen and (max-width: 1100px) {
+      margin-bottom: 20px;
+    }
 
     @media screen and (max-width: 530px) {
       font-size: 11px;

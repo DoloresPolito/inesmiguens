@@ -26,6 +26,7 @@ import img10 from "../../public/assets/images/obras/ECOS/10.jpg";
 import { useInView } from "react-intersection-observer";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
+import AnimatedText from "@/components/AnimatedText";
 
 function Ecos() {
   const variants = {
@@ -40,7 +41,7 @@ function Ecos() {
     },
     hidden: {
       opacity: 0.5,
-      x: 10,
+      x: 50,
     },
   };
 
@@ -49,8 +50,12 @@ function Ecos() {
       <VocesSection>
         <ObrasTopContainer>
           <div className="left">
+            <AnimatedText>
             <ObrasTitle>ECOS EN EL TIEMPO</ObrasTitle>
-            <div>
+            </AnimatedText>
+           
+           <AnimatedText>
+           <div>
               <ObrasText>
                 La ciudad se convierte en un mar de fugaces  y fantasmagóricos
                 encuentros, en la que se desvanece la posibilidad de la
@@ -62,6 +67,8 @@ function Ecos() {
               </ObrasText>
               <MoreBack text="obras" link="/obras" />
             </div>
+           </AnimatedText>
+      
           </div>
           <motion.div
             className="right"

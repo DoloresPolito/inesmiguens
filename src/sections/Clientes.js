@@ -1,63 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import {Container, SectionTitle } from "../styles/styles";
-import { motion} from "framer-motion";
-import { Parallax } from "react-scroll-parallax";
+import { Container, SectionTitle } from "../styles/styles";
+import { motion, useAnimation } from "framer-motion";
 import AnimatedText from "@/components/AnimatedText";
 
-
 function ClientesSection() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-  };
-
-  const motionVariants = {
-    open: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        ease: "easeOut",
-        type: "spring",
-      },
-    },
-    closed: {
-      opacity: 0,
-      transition: {
-        staggerChildren: 0,
-        duration: 0,
-      },
-    },
-  };
-
-  const listItemVariants = {
-    hidden: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.35,
-        ease: "easeOut",
-      },
-    },
-    show: {
-      y: 100,
-      opacity: 0,
-      transition: {
-        duration: 0,
-      },
-    },
-  };
-
   const clientesA = [
     {
       nombre: "Estancia La Bamba de Areco",
@@ -92,130 +39,182 @@ function ClientesSection() {
     { nombre: "VZ", lugar: "" },
   ];
 
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(!isVisible);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const [isVisible2, setIsVisible2] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible2(!isVisible2);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const containerVariants = {
+    visible: {
+      height: "auto",
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+    hidden: {
+      height: 0,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const motionVariants = {
+    open: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        ease: "easeInOut",
+        type: "spring",
+      },
+    },
+    closed: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0,
+        duration: 0,
+      },
+    },
+  };
+
+  const listItemVariants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.35,
+        ease: "easeOut",
+      },
+    },
+    closed: {
+      y: 100,
+      opacity: 0,
+      transition: {
+        duration: 0,
+      },
+    },
+  };
 
   return (
     <>
- 
-        <ClientesContainer>
-          <div className="left">
-            <AnimatedText>
+      <ClientesContainer>
+        <div className="left">
+          <AnimatedText>
             <SectionTitle>Clientes</SectionTitle>
-            </AnimatedText>
+          </AnimatedText>
+        </div>
 
-          </div>
+        <div className="right">
+          <Info
+            variants={containerVariants}
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+          >
+            <div>
+              <motion.ul
+                animate={isVisible2 ? "open" : "closed"}
+                variants={motionVariants}
+              >
+                {clientesA.map((cliente, index) => (
+                  <motion.li variants={listItemVariants} key={index}>
+                    <AnimatedWorkLi>
+                      <Content>
+                        <WorkTitle>{cliente.nombre}</WorkTitle>
+                        {cliente.lugar && <More>{cliente.lugar}</More>}
+                      </Content>
+                    </AnimatedWorkLi>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
 
-          <div className="right">
-            <Parallax speed={-20}>
-              <Info>
-                <WorkSection>
-                  <motion.ul
-                    style={{ listStyle: "none" }}
-                    variants={motionVariants}
-                    initial="closed"
-                    animate="open"
-                  >
-             
-                    {clientesA.map((cliente, index) => (
-                      <motion.li
-                        variants={listItemVariants}
-                        initial="closed"
-                        animate="open"
-                        key={index}
-                      >
-                        <WorkLi>
-                          <Content>
-                            <WorkTitle>{cliente.nombre}</WorkTitle>
-
-                            {cliente.lugar ? (
-                              <>
-                                <More>{cliente.lugar}</More>
-                              </>
-                            ) : (
-                              <></>
-                            )}
-                          </Content>
-                        </WorkLi>
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                </WorkSection>
-
-                <WorkSection>
-                  <motion.ul
-                    style={{ listStyle: "none" }}
-                    variants={container}
-                    initial="hidden"
-                    animate="show"
-                  >
-                   
-                    {clientesB.map((cliente, index) => (
-                      <motion.li variants={item} key={index}>
-                        <WorkLi>
-                          <Content2>
-                            <WorkTitle>{cliente.nombre}</WorkTitle>
-
-                            {cliente.lugar ? (
-                              <>
-                                <More>{cliente.lugar}</More>
-                              </>
-                            ) : (
-                              <></>
-                            )}
-                          </Content2>
-                        </WorkLi>
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                </WorkSection>
-              </Info>
-            </Parallax>
-          </div>
-        </ClientesContainer>
-
+            <div>
+              <motion.ul
+                animate={isVisible2 ? "open" : "closed"}
+                variants={motionVariants}
+              >
+                {clientesB.map((cliente, index) => (
+                  <motion.li variants={listItemVariants} key={index}>
+                    <AnimatedWorkLi>
+                      <Content>
+                        <WorkTitle>{cliente.nombre}</WorkTitle>
+                        {cliente.lugar && <More>{cliente.lugar}</More>}
+                      </Content>
+                    </AnimatedWorkLi>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+          </Info>
+        </div>
+      </ClientesContainer>
     </>
   );
 }
 
-
-
-
 const ClientesContainer = styled(Container)`
   display: flex;
   flex-direction: row;
+  min-height: 100vh;
 
-  @media screen and (max-width: 820px) {
+  @media screen and (max-width: 920px) {
     flex-direction: column;
   }
 
   .left {
     width: 30%;
     margin-top: 50px;
-    @media screen and (max-width: 820px) {
+    @media screen and (max-width: 920px) {
       width: 100%;
-      margin-top: 0px;
     }
   }
 
   .right {
-    margin-top: -80px;
     width: 70%;
+    margin-bottom: 50px;
 
-    @media screen and (max-width: 820px) {
+    @media screen and (max-width: 920px) {
       width: 100%;
-      margin-top: 0px;
+      margin-bottom: 150px;
     }
   }
 `;
 
-const Info = styled.div`
+const Info = styled(motion.div)`
   display: flex;
+  margin-top: 100px;
+  background-color: #f9f9f9;
+  justify-content: space-between;
+  padding: 50px;
+  width: 600px;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 920px) {
+    margin-top: 0px;
+    padding: 10px;
+  }
+
+
+
+  @media screen and (max-width: 660px) {
     flex-direction: column;
+    width: auto;
   }
   h2 {
-    color: red;
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
     margin-bottom: 40px;
@@ -224,27 +223,13 @@ const Info = styled.div`
     color: #6a6f58;
     line-height: 100%;
   }
-`;
 
-const WorkSection = styled.div`
-  width: 100%;
-  margin-top: 110px;
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #fafafa;
-  padding-top: 50px;
-
-  @media screen and (max-width: 820px) {
-    padding-top: 10px;
-    margin-top: 0px;
-  }
-  @media screen and (max-width: 500px) {
-    margin-bottom: 20px;
+  ul {
+    list-style: none;
   }
 `;
-const WorkLi = styled.div`
+
+const AnimatedWorkLi = styled(motion.div)`
   display: flex;
   flex-direction: row;
   margin-bottom: 5px;
@@ -258,13 +243,6 @@ const Content = styled.div`
   height: 42px;
   justify-content: center;
 `;
-const Content2 = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  height: 22px;
-  justify-content: center;
-`;
 const WorkTitle = styled.h4`
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
@@ -272,7 +250,7 @@ const WorkTitle = styled.h4`
   font-weight: 400;
   color: black;
   margin: 0;
-  line-height: 100%;
+  line-height: 120%;
 `;
 const More = styled.p`
   font-family: "Montserrat", sans-serif;
@@ -280,8 +258,7 @@ const More = styled.p`
   letter-spacing: 0.3px;
   font-weight: 500;
   color: #6a6f58;
-  line-height: 0%;
-  background-color: red;
+  line-height: 100%;
 `;
 
 export default ClientesSection;

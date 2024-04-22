@@ -3,6 +3,7 @@ import GlobalStyles from "../styles/global";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Bebas_Neue, Montserrat, Georama } from "next/font/google";
 import Layout from "@/components/Layout";
+import ScrollToTop from "react-scroll-to-top";
 
 const bebasneue = Bebas_Neue({
   subsets: ["latin"],
@@ -64,6 +65,20 @@ const MyApp = ({ Component, pageProps }) => {
           <Layout>
             <Component {...pageProps} />
           </Layout>
+          <ScrollToTop
+            style={{
+              backgroundColor: "white",
+              zIndex: "10000",
+              borderRadius: "20px",
+              height: "50px",
+              position:"fixed",
+              bottom:"20px",
+              right:"20px"
+
+            }}
+            color="#6a6f58"
+            smooth
+          />
         </main>
       </ParallaxProvider>
     </>

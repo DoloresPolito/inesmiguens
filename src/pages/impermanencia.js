@@ -16,6 +16,7 @@ import img3 from "../../public/assets/images/obras/IMPERMANENCIA/3.jpg";
 import img4 from "../../public/assets/images/obras/IMPERMANENCIA/4.jpg";
 import img5 from "../../public/assets/images/obras/IMPERMANENCIA/5.jpg";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
+import AnimatedText from "@/components/AnimatedText";
 
 function Impermanencia() {
   const variants = {
@@ -30,7 +31,7 @@ function Impermanencia() {
     },
     hidden: {
       opacity: 0.5,
-      x: 10,
+      x: 50,
     },
   };
 
@@ -39,8 +40,12 @@ function Impermanencia() {
       <VocesSection>
         <ObrasTopContainer>
           <div className="left">
+            <AnimatedText>
             <ObrasTitle>Impermanencia</ObrasTitle>
-            <div>
+            </AnimatedText>
+
+<AnimatedText>
+<div>
               <ObrasText>
                 La ciudad se convierte en un mar de fugaces  y fantasmagóricos
                 encuentros, en la que se desvanece la posibilidad de la
@@ -52,6 +57,8 @@ function Impermanencia() {
               </ObrasText>
               <More text="obras" link="/obras" />
             </div>
+</AnimatedText>
+
           </div>
           <motion.div
             className="right"
