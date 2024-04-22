@@ -11,19 +11,18 @@ import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import MoreBack from "@/components/MoreBack";
 
-import img1 from "../../public/assets/images/obras/hijos del sol/baja1.jpg";
-import img2 from "../../public/assets/images/obras/hijos del sol/baja2.jpg";
-import img3 from "../../public/assets/images/obras/hijos del sol/baja4.jpg";
-import img4 from "../../public/assets/images/obras/hijos del sol/baja7.jpg";
-import img5 from "../../public/assets/images/obras/hijos del sol/baja9.jpg";
-
-import img6 from "../../public/assets/images/obras/hijos del sol/baja11.jpg";
-import img7 from "../../public/assets/images/obras/hijos del sol/dddbaja.jpg";
-import img8 from "../../public/assets/images/obras/hijos del sol/iiibaja.jpg";
-import img9 from "../../public/assets/images/obras/hijos del sol/jjbaja.jpg";
-import img10 from "../../public/assets/images/obras/hijos del sol/kkbaja.jpg";
-import img11 from "../../public/assets/images/obras/hijos del sol/nnbaja.jpg";
-
+import img1 from "../../public/assets/images/obras/HIJOS/1.jpg";
+import img2 from "../../public/assets/images/obras/HIJOS/2.jpg";
+import img3 from "../../public/assets/images/obras/HIJOS/3.jpg";
+import img4 from "../../public/assets/images/obras/HIJOS/4.jpg";
+import img5 from "../../public/assets/images/obras/HIJOS/5.jpg";
+import img6 from "../../public/assets/images/obras/HIJOS/6.jpg";
+import img7 from "../../public/assets/images/obras/HIJOS/7.jpg";
+import img8 from "../../public/assets/images/obras/HIJOS/8.jpg";
+import img9 from "../../public/assets/images/obras/HIJOS/9.jpg";
+import img10 from "../../public/assets/images/obras/HIJOS/10.jpg";
+import img11 from "../../public/assets/images/obras/HIJOS/11.jpg";
+import img12 from "../../public/assets/images/obras/HIJOS/12.jpg";
 
 import { useInView } from "react-intersection-observer";
 
@@ -68,19 +67,19 @@ function Hijos() {
               initial="hidden"
               animate="visible"
             >
-              <StyledImageCover src={img11} alt="image1" />
+              <StyledImageCover src={img9} alt="image1" />
             </motion.div>
           </ObrasTopContainer>
 
           <ObrasBottomContainer>
             <PicturesContainer>
-            {/* <AnimatedRowOf2 image1={img2} image2={img3} /> */}
-              <AnimatedRowOf3Vertical image1={img2} image2={img3} image3={img4} />
+         
+              <AnimatedRowOf3Vertical image1={img2} image2={img4} image3={img5} />
            
-              <AnimatedRowOf2 image1={img1} image2={img8} />
+              <AnimatedRowOf2 image1={img1} image2={img3} />
 
-              <AnimatedRowOf3Vertical image1={img1} image2={img5} image3={img6} />
-              <AnimatedRowOf2 image1={img9} image2={img10} />
+              <AnimatedRowOf3Vertical image1={img6} image2={img7} image3={img8} />
+              <AnimatedRowOf2 image1={img10} image2={img12} />
             </PicturesContainer>
           </ObrasBottomContainer>
         </VocesSection>

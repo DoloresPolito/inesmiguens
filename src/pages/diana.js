@@ -1,6 +1,5 @@
 import React from "react";
 import { Section, PicturesContainer, HotelesContainer,  HotelSubtitle, HotelText, TextContainer  } from "../styles/styles";
-
 import styled from "styled-components";
 import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/hoteles/parque diana comp/1bajaa.jpg";

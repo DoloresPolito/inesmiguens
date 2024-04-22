@@ -22,7 +22,7 @@ const AnimatedText = ({ children, delay = 0 }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 30}}
       animate={controls}
       style={{ opacity: 0, y: 30 }}
     >

@@ -6,7 +6,7 @@ import RowOf2 from "./RowOf2";
 
 
 
-const AnimatedRowOf2 = ({ image1, image2 }) => {
+const AnimatedRowOf2 = ({ image1, image2, obra }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
   
@@ -23,7 +23,7 @@ const AnimatedRowOf2 = ({ image1, image2 }) => {
         animate={controls}
         transition={{ duration: 1 }}
       >
-        <RowOf2 image1={image1} image2={image2} />
+        <RowOf2 image1={image1} image2={image2} obra={obra}/>
       </motion.div>
     );
   };

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import {
   Section,
-  Container,
   ObrasTitle,
   ObrasText,
   ObrasTopContainer,
@@ -13,16 +12,16 @@ import { motion, useAnimation } from "framer-motion";
 
 import MoreBack from "@/components/MoreBack";
 import Image from "next/image";
-import img1 from "../../public/assets/images/obras/ecos jpg reduce/baja 7.jpg";
-import img2 from "../../public/assets/images/obras/ecos jpg reduce/baja5.jpg";
-import img3 from "../../public/assets/images/obras/ecos jpg reduce/baja6.jpg";
-import img4 from "../../public/assets/images/obras/ecos jpg reduce/estabaja6a.jpg";
-import img5 from "../../public/assets/images/obras/ecos jpg reduce/baja2.jpg";
-import img6 from "../../public/assets/images/obras/ecos jpg reduce/baja3.jpg";
-import img7 from "../../public/assets/images/obras/ecos jpg reduce/estabaja 1.jpg";
-import img8 from "../../public/assets/images/obras/ecos jpg reduce/baja10.jpg";
-import img9 from "../../public/assets/images/obras/ecos jpg reduce/baja8.jpg";
-import img10 from "../../public/assets/images/obras/ecos jpg reduce/cuba10baja.jpg";
+import img1 from "../../public/assets/images/obras/ECOS/1.jpg";
+import img2 from "../../public/assets/images/obras/ECOS/2.jpg";
+import img3 from "../../public/assets/images/obras/ECOS/3.jpg";
+import img4 from "../../public/assets/images/obras/ECOS/4.jpg";
+import img5 from "../../public/assets/images/obras/ECOS/5.jpg";
+import img6 from "../../public/assets/images/obras/ECOS/6.jpg";
+import img7 from "../../public/assets/images/obras/ECOS/7.jpg";
+import img8 from "../../public/assets/images/obras/ECOS/8.jpg";
+import img9 from "../../public/assets/images/obras/ECOS/9.jpg";
+import img10 from "../../public/assets/images/obras/ECOS/10.jpg";
 
 import { useInView } from "react-intersection-observer";
 
@@ -78,7 +77,7 @@ function Ecos() {
             <AnimatedRowOf2 image1={img2} image2={img3} />
             <AnimatedRowOf2 image1={img5} image2={img6} />
             <RowOf1 />
-            <AnimatedRowOf2 image1={img7} image2={img8} />
+            <AnimatedRowOf2 image1={img4} image2={img8} />
             <AnimatedRowOf2 image1={img9} image2={img10} />
           </PicturesContainer>
         </ObrasBottomContainer>
@@ -102,7 +101,7 @@ const RowOf1 = () => {
     <>
       <Row1Container ref={ref}>
         <StyledImage
-          src={img4}
+          src={img7}
           alt="image1"
           custom={0}
           animate={controls}

@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import impermanencia1 from "../../public/assets/images/obras/impermanencia jpg reduce comp/1.jpg";
-import impermanencia2 from "../../public/assets/images/obras/impermanencia jpg reduce comp/3.jpg";
-import vanishing1 from "../../public/assets/images/obras/vanishing jpg reduce comp/1.jpg";
-import vanishing2 from "../../public/assets/images/obras/vanishing jpg reduce comp/2.jpg";
-import voces2 from "../../public/assets/images/obras/voces de la tierra comp/0baja.jpg";
-import ecos from "../../public/assets/images/obras/ecos jpg reduce/estabaja6a.jpg";
-import hijos1 from "../../public/assets/images/obras/hijos del sol/jjbaja.jpg";
-import hijos2 from "../../public/assets/images/obras/hijos del sol/dddbaja.jpg";
+import impermanencia1 from "../../public/assets/images/obras/IMPERMANENCIA/1.jpg";
+import impermanencia2 from "../../public/assets/images/obras/IMPERMANENCIA/3.jpg";
+import vanishing1 from "../../public/assets/images/obras/VANISHING/2.jpg";
+import vanishing2 from "../../public/assets/images/obras/VANISHING/4.jpg";
+import voces1 from "../../public/assets/images/obras/VOCES/1.jpg";
+import voces2 from "../../public/assets/images/obras/VOCES/2.jpg";
+import ecos1 from "../../public/assets/images/obras/ECOS/6.jpg";
+import ecos2 from "../../public/assets/images/obras/ECOS/9.jpg";
+import hijos1 from "../../public/assets/images/obras/HIJOS/1.jpg";
+import hijos2 from "../../public/assets/images/obras/HIJOS/9.jpg";
 import { Container, SectionTitle } from "../styles/styles";
 import Link from "next/link";
 import More from "@/components/More";
@@ -17,7 +19,7 @@ import { useInView } from "react-intersection-observer";
 
 import { Parallax } from "react-scroll-parallax";
 import AnimatedText from "@/components/AnimatedText";
-import Obras from "@/pages/obras";
+import AnimatedImage from "@/components/AnimatedImage";
 
 function ObrasSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,81 +44,135 @@ function ObrasSection() {
       <AnimatedText>
         <SectionTitle>OBRAS</SectionTitle>
       </AnimatedText>
-      <ObrasContainer>
-        <AnimatedText>
-          <Link href="/hijos-del-sol">
-            <ObraContainer>
-              <HijosImageContainer>
-                <ImageOverlay>
-                  <Img1 className="img1" src={hijos1} alt="hijos del sol" />
-                  <Parallax speed={5}>
-                    <HijosImg2
-                      className="img2"
-                      src={hijos2}
-                      alt="hijos del sol"
-                    />
-                  </Parallax>
-                </ImageOverlay>
-              </HijosImageContainer>
-              {/* 
-          <div className="overlay">
-            <div className="overlay-text">ver más</div>
-          </div> */}
-            </ObraContainer>
-          </Link>
-        </AnimatedText>
+      <motion.div
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          ease: "easeInOut",
+          duration: 1,
+          delay: 0.1,
+        }}
+      >
+        <ObrasContainer>
+          <AnimatedImage>
+            <Link href="/hijos-del-sol">
+              <ObraContainer>
+                <HijosImageContainer>
+                  <ImageOverlay>
+                    <Img1 className="img1" src={hijos1} alt="hijos del sol" />
+                    <Parallax speed={5}>
+                      <HijosImg2
+                        className="img2"
+                        src={hijos2}
+                        alt="hijos del sol"
+                      />
+                    </Parallax>
+                  </ImageOverlay>
+                </HijosImageContainer>
+              </ObraContainer>
+            </Link>
+          </AnimatedImage>
 
-        <AnimatedText>
-          <Link href="/impermanencia">
-            <ObraContainer style={{marginTop:"50px"}}>
-              <HijosImageContainer>
-                <ImageOverlay>
-                  <ImpermanenciaImg1
-                    className="img1"
-                    src={impermanencia1}
-                    alt="impermanencia"
-                  />
-                  <Parallax speed={5}>
-                    <Img2
-                      className="img2"
-                      src={impermanencia2}
-                      alt="vanishing"
+          <AnimatedImage>
+            <Link href="/impermanencia">
+              <ObraContainer style={{ marginTop: "50px" }}>
+                <HijosImageContainer>
+                  <ImageOverlay>
+                    <ImpermanenciaImg1
+                      className="img1"
+                      src={impermanencia1}
+                      alt="impermanencia"
                     />
-                  </Parallax>
-                </ImageOverlay>
-              </HijosImageContainer>
-              {/* <div className="overlay">
+                    <Parallax speed={5}>
+                      <Img2
+                        className="img2"
+                        src={impermanencia2}
+                        alt="vanishing"
+                      />
+                    </Parallax>
+                  </ImageOverlay>
+                </HijosImageContainer>
+                {/* <div className="overlay">
             <div className="overlay-text">ver más</div>
           </div> */}
-            </ObraContainer>
-          </Link>
-        </AnimatedText>
-        <AnimatedText>
-            <Link href='/vanishing'>
-          <ObraContainer>
-            <HijosImageContainer>
-              <ImageOverlay>
-                <VanishingImg1
-                  className="img1"
-                  src={vanishing2}
-                  alt="Vanishing Landscapes"
-                />
-                <Parallax speed={5}>
-                  <VanishingImg2
-                    className="img2"
-                    src={vanishing1}
-                    alt="Vanishing Landscapes"
-                  />
-                </Parallax>
-              </ImageOverlay>
-            </HijosImageContainer>
-            {/* <div className="overlay">
-            <div className="overlay-text">ver más</div>
-          </div> */}
-          </ObraContainer>
-          </Link>
-        </AnimatedText>
-      </ObrasContainer>
+              </ObraContainer>
+            </Link>
+          </AnimatedImage>
+          <AnimatedImage>
+            <Link href="/vanishing">
+              <ObraContainer>
+                <HijosImageContainer>
+                  <ImageOverlay>
+                    <VanishingImg1
+                      className="img1"
+                      src={vanishing2}
+                      alt="Vanishing Landscapes"
+                    />
+                    <Parallax speed={5}>
+                      <VanishingImg2
+                        className="img2"
+                        src={vanishing1}
+                        alt="Vanishing Landscapes"
+                      />
+                    </Parallax>
+                  </ImageOverlay>
+                </HijosImageContainer>
+              </ObraContainer>
+            </Link>
+          </AnimatedImage>
+
+
+
+          <AnimatedImage>
+            <Link href="/voces-de-la-tierra">
+              <ObraContainer>
+                <HijosImageContainer>
+                  <ImageOverlay>
+                    <VanishingImg1
+                      className="img1"
+                      src={voces1}
+                      alt="Voces de la Tierra"
+                    />
+                    <Parallax speed={5}>
+                      <VanishingImg2
+                        className="img2"
+                        src={voces2}
+                        alt="Voces de la Tierra"
+                      />
+                    </Parallax>
+                  </ImageOverlay>
+                </HijosImageContainer>
+              </ObraContainer>
+            </Link>
+          </AnimatedImage>
+
+
+          <AnimatedImage>
+            <Link href="/ecos-en-el-tiempo">
+              <ObraContainer>
+                <HijosImageContainer>
+                  <ImageOverlay>
+                    <VanishingImg1
+                      className="img1"
+                      src={ecos2}
+                      alt="Ecos en el Tiempo"
+                    />
+                    <Parallax speed={5}>
+                      <VanishingImg2
+                        className="img2"
+                        src={ecos1}
+                        alt="Ecos en el Tiempo"
+                      />
+                    </Parallax>
+                  </ImageOverlay>
+                </HijosImageContainer>
+              </ObraContainer>
+            </Link>
+          </AnimatedImage>
+
+
+        </ObrasContainer>
+      </motion.div>
     </Container>
   );
 }
@@ -176,6 +232,17 @@ const ObraContainer = styled.div`
     font-weight: 400;
     max-width: 300px;
     align-self: center;
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
   }
 `;
 
