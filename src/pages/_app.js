@@ -73,7 +73,10 @@ const MyApp = ({ Component, pageProps }) => {
               height: "50px",
               position:"fixed",
               bottom:"20px",
-              right:"20px"
+              right:"20px",
+              display:"flex",
+              justifyContent:"center",
+              alignItems:"center"
 
             }}
             color="#6a6f58"
