@@ -40,11 +40,12 @@ function ObrasSection() {
   }, [controls, inView]);
 
   return (
-    <Container>
+    <SectionObrasContainer>
       <AnimatedText>
-        <SectionTitle>OBRAS</SectionTitle>
+        <ObrasTitle>OBRAS</ObrasTitle>
       </AnimatedText>
       <motion.div
+        className="contenedor"
         initial={{ opacity: 0, x: -80 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{
@@ -55,20 +56,28 @@ function ObrasSection() {
       >
         <ObrasContainer>
           <AnimatedImage>
-            <Link href="/hijos-del-sol">
+            <Link href="/vanishing">
               <ObraContainer>
                 <HijosImageContainer>
                   <ImageOverlay>
-                    <Img1 className="img1" src={hijos1} alt="hijos del sol" />
+                    <VanishingImg1
+                      className="img1"
+                      src={vanishing2}
+                      alt="Vanishing Landscapes"
+                    />
                     <Parallax speed={5}>
-                      <HijosImg2
+                      <VanishingImg2
                         className="img2"
-                        src={hijos2}
-                        alt="hijos del sol"
+                        src={vanishing1}
+                        alt="Vanishing Landscapes"
                       />
                     </Parallax>
                   </ImageOverlay>
                 </HijosImageContainer>
+                <div className="text-container ecos">
+                  <h2>VANISHING Landscapes</h2>
+                  <More text="ver más" />
+                </div>
               </ObraContainer>
             </Link>
           </AnimatedImage>
@@ -92,36 +101,13 @@ function ObrasSection() {
                     </Parallax>
                   </ImageOverlay>
                 </HijosImageContainer>
-                {/* <div className="overlay">
-            <div className="overlay-text">ver más</div>
-          </div> */}
+                <div className="text-container impermanencia">
+                  <h2>IMPERMANENCIA</h2>
+                  <More text="ver más" />
+                </div>
               </ObraContainer>
             </Link>
           </AnimatedImage>
-          <AnimatedImage>
-            <Link href="/vanishing">
-              <ObraContainer>
-                <HijosImageContainer>
-                  <ImageOverlay>
-                    <VanishingImg1
-                      className="img1"
-                      src={vanishing2}
-                      alt="Vanishing Landscapes"
-                    />
-                    <Parallax speed={5}>
-                      <VanishingImg2
-                        className="img2"
-                        src={vanishing1}
-                        alt="Vanishing Landscapes"
-                      />
-                    </Parallax>
-                  </ImageOverlay>
-                </HijosImageContainer>
-              </ObraContainer>
-            </Link>
-          </AnimatedImage>
-
-
 
           <AnimatedImage>
             <Link href="/voces-de-la-tierra">
@@ -142,10 +128,13 @@ function ObrasSection() {
                     </Parallax>
                   </ImageOverlay>
                 </HijosImageContainer>
+                <div className="text-container ecos">
+                  <h2>VOCES DE LA TIERRA</h2>
+                  <More text="ver más" />
+                </div>
               </ObraContainer>
             </Link>
           </AnimatedImage>
-
 
           <AnimatedImage>
             <Link href="/ecos-en-el-tiempo">
@@ -166,25 +155,87 @@ function ObrasSection() {
                     </Parallax>
                   </ImageOverlay>
                 </HijosImageContainer>
+                <div className="text-container ecos">
+                  <h2>ECOS EN EL TIEMPO</h2>
+                  <More text="ver más" />
+                </div>
               </ObraContainer>
             </Link>
           </AnimatedImage>
-
-
+          <AnimatedImage>
+            <Link href="/hijos-del-sol">
+              <ObraContainer>
+                <HijosImageContainer>
+                  <ImageOverlay>
+                    <Img1 className="img1" src={hijos1} alt="hijos del sol" />
+                    <Parallax speed={5}>
+                      <HijosImg2
+                        className="img2"
+                        src={hijos2}
+                        alt="hijos del sol"
+                      />
+                    </Parallax>
+                  </ImageOverlay>
+                </HijosImageContainer>
+                <div className="text-container hijos">
+                  <h2>HIJOS DEL SOL</h2>
+                  <More text="ver más" />
+                </div>
+              </ObraContainer>
+            </Link>
+          </AnimatedImage>
         </ObrasContainer>
       </motion.div>
-    </Container>
+    </SectionObrasContainer>
   );
 }
+
+const SectionObrasContainer = styled(Container)`
+  @media screen and (max-width: 590px) {
+    width: 100%;
+  }
+
+  .contenedor {
+    @media screen and (max-width: 590px) {
+      margin: 0 auto;
+      width: 95%;
+    }
+  }
+`;
+
+
+const ObrasTitle = styled(SectionTitle)`
+   @media screen and (max-width: 590px) {
+    margin-left: 50px;
+   }
+
+   @media screen and (max-width: 450px) {
+    margin-left: 20px;
+   }
+
+`
 
 const ObrasContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: -120px;
+  margin-top: -100px;
   height: auto; /* Ajusta la altura según sea necesario */
   margin-left: 200px;
+
+  @media screen and (max-width: 1200px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 850px) {
+    margin-top: -30px;
+    margin-left: 0px;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 590px) {
+    width: 100%;
+  }
 `;
 
 const ObraContainer = styled.div`
@@ -192,56 +243,52 @@ const ObraContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   margin-top: 10px;
-  padding-bottom: 150px;
+  padding-bottom: 50px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 
-  .overlay {
-    position: absolute;
-    bottom: 0; /* Cambiar de top: 0 a bottom: 0 */
-    left: 0;
-    width: 80%;
-    height: 80%;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 590px) {
+    margin: 0 auto;
+
     align-items: center;
-    margin-left: 0px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease; /* Ajustar la transición */
-    transform: translateY(
-      80%
-    ); /* Inicialmente ocultar el overlay fuera de la pantalla */
   }
 
-  &:hover {
-    .overlay {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(
-        0
-      ); /* Mostrar el overlay moviéndolo de abajo hacia arriba */
-    }
-  }
-  .overlay-text {
-    margin: 0;
-    font-family: var(--font-montserrat);
-    font-size: 20px;
+  h2 {
+    font-family: var(--font-bebasneue);
+    font-size: 30px;
     color: #4a4747;
-    font-weight: 400;
-    max-width: 300px;
-    align-self: center;
+    line-height: 90%;
+    font-weight: 200;
+    align-self: flex-start;
+    margin-bottom: 0;
   }
 
-  @keyframes show {
-    from {
-      opacity: 0;
-      scale: 25%;
+  .text-container {
+    margin-top: 30px !important;
+
+
+  }
+
+  .hijos {
+    margin-top: 100px !important;
+    @media screen and (max-width: 590px) {
+      margin-top: 20px !important;
     }
-    to {
-      opacity: 1;
-      scale: 100%;
+  }
+
+  .impermanencia {
+    margin-top: 0px !important;
+
+  }
+
+  .ecos{
+    @media screen and (max-width: 590px) {
+      margin-top: 0px !important;
     }
   }
 `;
@@ -273,6 +320,12 @@ const Img2 = styled(Image)`
   z-index: 1;
   height: 400px;
   width: 400px;
+
+  @media screen and (max-width: 590px) {
+    height: 350px;
+    width: 350px;
+    transform: translate(-50%,10%);
+  }
 `;
 
 //impermanencia
@@ -290,6 +343,11 @@ const HijosImageContainer = styled.div`
   height: 450px; /* Ajusta la altura según sea necesario */
   width: 550px; /* Ajusta el ancho según sea necesario */
   position: relative;
+
+  @media screen and (max-width: 590px) {
+    height: 350px; /* Ajusta la altura según sea necesario */
+    width: 350px; /* Ajusta el ancho según sea necesario */
+  }
 `;
 
 const HijosImg2 = styled(Image)`
@@ -303,6 +361,12 @@ const HijosImg2 = styled(Image)`
   z-index: 1;
   height: 400px;
   width: 450px;
+
+  @media screen and (max-width: 590px) {
+    height: 300px; /* Ajusta la altura según sea necesario */
+    width: 350px; /* Ajusta el ancho según sea necesario */
+    transform: translate(-50%, 40%);
+  }
 `;
 
 //vanishing
@@ -313,6 +377,10 @@ const VanishingImg1 = styled(Image)`
   height: 100%;
   /* transform: translate(60%, 0%); */
   object-fit: cover; /* Ajusta el comportamiento de ajuste de la imagen */
+
+  @media screen and (max-width: 590px) {
+    width: 350px;
+  }
 `;
 
 const VanishingImg2 = styled(Image)`
@@ -326,6 +394,12 @@ const VanishingImg2 = styled(Image)`
   z-index: 1;
   height: 400px;
   width: 500px;
+
+  @media screen and (max-width: 590px) {
+    height: 300px;
+    width: 350px;
+    /* transform: translate(-60%, 30%); */
+  }
 `;
 
 export default ObrasSection;
