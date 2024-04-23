@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container, SectionTitle } from "../styles/styles";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import AnimatedText from "@/components/AnimatedText";
 
 function ClientesSection() {

@@ -10,7 +10,7 @@ const links = [
   { href: "/obras", title: "OBRAS" },
   { href: "/travelandworkshops", title: "TRAVEL & WORKSHOPS" },
   { href: "/libros", title: "LIBROS" },
-  { href: "/libros", title: "TRAYECTORIA" },
+  { href: "/trayectoria", title: "TRAYECTORIA" },
   { href: "/clientes", title: "CLIENTES" },
   { href: "/contacto", title: "CONTACTO" },
 ];
@@ -75,7 +75,7 @@ const Navbar = () => {
             <NavbarContainer>
               <LogoContainer>
                 <Link href="/">
-                  <p>INÉS MIGUENS</p>
+                  <p className="logo">INÉS MIGUENS</p>
                 </Link>
               </LogoContainer>
               <LinksContainer>
@@ -116,7 +116,8 @@ const NavbarSection = styled.div`
   padding-top: 10px;
   transition: opacity 0.3s ease, transform 0.3s ease;
   margin: 0 auto;
-  max-width: 1600px;
+
+
 
   opacity: ${(props) =>
     props.visible || props.scrollDirection === "up" ? 1 : 0};
@@ -133,15 +134,17 @@ const NavbarContainer = styled.div`
   height: 60px;
   align-items: center;
   justify-content: space-between;
+  max-width: 1600px;
 `;
 
 const LogoContainer = styled.div`
-  p {
+  .logo {
     font-size: 30px;
     color: #4a4747;
-
     font-family: var(--font-montserrat);
     font-weight: 100 !important;
+
+
 
   }
 `;

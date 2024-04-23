@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Container, SectionTitle } from "../styles/styles";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import libro2 from "../../public/assets/images/libros/madres argentinas.png";
 import libro3 from "../../public/assets/images/libros/parques y jardones.png";
 import AnimatedText from "@/components/AnimatedText";
 import AnimatedImage from "@/components/AnimatedImage";
+import { Parallax } from "react-scroll-parallax";
 
 const LibrosSection = () => {
   const libros = [
@@ -33,33 +34,6 @@ const LibrosSection = () => {
     },
   ];
 
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const listItemVariants = {
-    visible: (index) => ({
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        delay: index * 0.2,
-        duration: 1,
-        ease: "easeInOut",
-      },
-    }),
-    hidden: {
-      opacity: 0,
-      x: -0,
-      y: 20,
-    },
-  };
-
   return (
     <>
       <LibrosContainerSection>
@@ -70,13 +44,7 @@ const LibrosSection = () => {
         <LibrosContainer>
           <AnimatedImage>
             {libros.map((item, index) => (
-              <Item
-                key={index}
-                variants={listItemVariants}
-                custom={index}
-                initial="hidden"
-                animate="visible"
-              >
+              <Item key={index}>
                 <div className="left">
                   <Image
                     src={item.image}
@@ -84,13 +52,14 @@ const LibrosSection = () => {
                     className="book-image"
                   />
                 </div>
-
+                <Parallax speed={-3}>
                 <div className="right">
                   <h4>{item.nombre}</h4>
                   <AnimatedText>
                     <p>{item.description}</p>
                   </AnimatedText>
                 </div>
+                </Parallax>
               </Item>
             ))}
           </AnimatedImage>
@@ -109,6 +78,7 @@ const LibrosContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   align-items: center;
+
 `;
 
 const Item = styled(motion.div)`
@@ -117,13 +87,14 @@ const Item = styled(motion.div)`
   width: 800px;
   margin-bottom: 60px;
 
+
   @media screen and (max-width: 860px) {
     flex-direction: column;
     width: 500px;
   }
 
   @media screen and (max-width: 540px) {
-    width: 98%;
+    width: 100%;
     height: auto;
   }
 
@@ -160,8 +131,11 @@ const Item = styled(motion.div)`
     }
 
     @media screen and (max-width: 540px) {
-      width: 90%;
+      width: 100%;
       align-self: center;
+  
+      margin-bottom: 20px;
+      margin-top: 10px;
     }
   }
 

@@ -141,7 +141,7 @@ const CursoContainer = styled.div`
   height: 670px;
   transition: background-color 0.5s ease;
   border-radius: 5px;
-  width: 350px;
+  width: 90%;
   
   @media screen and (max-width: 1100px) {
     width: 70%;
