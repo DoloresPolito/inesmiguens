@@ -38,7 +38,7 @@ const LibrosSection = () => {
     <>
       <LibrosContainerSection>
         <AnimatedText>
-          <SectionTitle>LIBROS </SectionTitle>
+          <SectionTitle>LIBROS</SectionTitle>
         </AnimatedText>
 
         <LibrosContainer>
