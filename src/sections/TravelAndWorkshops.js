@@ -3,13 +3,15 @@ import { Container, SectionTitle } from "../styles/styles";
 import styled from "styled-components";
 import More from "@/components/More";
 import AnimatedText from "@/components/AnimatedText";
-import MovingComponentReves from "@/components/MovingComponentReves";
 import Image from "next/image";
 
 import img1 from "../../public/assets/images/cursos/curso4.jpeg";
 import img2 from "../../public/assets/images/cursos/cursotravel.jpeg";
 import img3 from "../../public/assets/images/cursos/curso3.jpeg";
 import Link from "next/link";
+
+import AnimatedImage from "@/components/AnimatedImage";
+
 function Talleres() {
   return (
     <>
@@ -19,11 +21,17 @@ function Talleres() {
         </AnimatedText>
 
         <InfoContainer>
+          <AnimatedImage>
+
+  
           <Link href="/contacto">
       
           <CursoContainer>
             <h4>ciclo basico</h4>
             <Image className="course-img" src={img1} alt="curso 2" />
+            <AnimatedText>
+
+
             <div className="text-container">
               <p>
                 Se impartirán los conocimientos para la comprensión de imágenes
@@ -35,10 +43,17 @@ function Talleres() {
                 Conocimientos de las herramientas Photoshop, jpeg y raw.
               </p>
             </div>
+            </AnimatedText>
 
             <More text="más info" link="/contacto" />
           </CursoContainer>
           </Link>
+          </AnimatedImage>
+
+
+          <AnimatedImage>
+
+    
 
           <Link href='/contacto'>
  
@@ -46,6 +61,10 @@ function Talleres() {
           <CursoContainer>
             <h4>travel and workshops</h4>
             <Image className="course-img" src={img2} alt="curso 2" />
+
+            <AnimatedText>
+
+ 
             <div className="text-container">
               <p>
                 Workshop es un taller especializado en un tema específico, donde
@@ -56,14 +75,22 @@ function Talleres() {
                 dicho tema.
               </p>
             </div>
-
+            </AnimatedText>
             <More text="más info" link="/contacto" />
           </CursoContainer>
       </Link>
+      </AnimatedImage>
+
+      <AnimatedImage>
+
+
           <Link href='/contacto'>
           <CursoContainer>
             <h4>talleres</h4>
             <Image className="course-img" src={img3} alt="curso 2" />
+            <AnimatedText>
+
+     
             <div className="text-container">
               <p>
                 Los talleres son grupos que se organizan cada 15 días, según el
@@ -74,12 +101,13 @@ function Talleres() {
                 Preparación y exposición.
               </p>
             </div>
-
+            </AnimatedText>
             <More text="más info" link="/contacto" />
           </CursoContainer>
           </Link>
+          </AnimatedImage>
         </InfoContainer>
-        {/* <MovingComponentReves /> */}
+
       </TalleresContainer>
     </>
   );
@@ -108,7 +136,7 @@ const CursoContainer = styled.div`
   justify-content: space-around;
   margin-bottom: 10px;
   margin-bottom: 40px;
-  padding: 20px;
+  padding: 5px !important;
   margin: 20px 20px 20px 0px;
   height: 670px;
   transition: background-color 0.5s ease;
@@ -142,6 +170,7 @@ const CursoContainer = styled.div`
   .text-container {
     min-height: 220px;
     margin-top: 20px;
+    padding: 8px;
 
     @media screen and (max-width: 1100px) {
       min-height: auto;
@@ -161,6 +190,7 @@ const CursoContainer = styled.div`
     margin-right: 20px;
     letter-spacing: 1px;
     margin-bottom: 20px;
+    padding: 5px;
   }
 
   p {
