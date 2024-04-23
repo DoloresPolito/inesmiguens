@@ -270,6 +270,9 @@ const ObraContainer = styled.div`
 
   .text-container {
     margin-top: 30px !important;
+    @media screen and (max-width: 590px) {
+     text-align: center;
+    }
 
 
   }
@@ -365,7 +368,7 @@ const HijosImg2 = styled(Image)`
   @media screen and (max-width: 590px) {
     height: 300px; /* Ajusta la altura según sea necesario */
     width: 350px; /* Ajusta el ancho según sea necesario */
-    transform: translate(-50%, 40%);
+    transform: translate(-50%, 20%);
   }
 `;
 
@@ -398,7 +401,7 @@ const VanishingImg2 = styled(Image)`
   @media screen and (max-width: 590px) {
     height: 300px;
     width: 350px;
-    /* transform: translate(-60%, 30%); */
+    transform: translate(-50%, 15%);
   }
 `;
 
