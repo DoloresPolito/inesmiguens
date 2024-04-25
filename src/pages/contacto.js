@@ -5,7 +5,7 @@ import Image from "next/image";
 import instagram from "../../public/assets/icons/instagram.png";
 import mail from "../../public/assets/icons/mail.png";
 import phone from "../../public/assets/icons/phone.png";
-// import profile from "../../public/assets/images/profile/profile.jpeg";
+import profile from "../../public/assets/images/profile/profile.jpeg";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { sendContactForm } from "../lib/api";
@@ -157,9 +157,9 @@ function Contacto() {
               </AnimatePresence>
             </div>
           </LeftContainer>
-          {/* <RightContainer>
+          <RightContainer>
               <Image src={profile} alt="profile" />
-            </RightContainer> */}
+            </RightContainer>
         </ContactContainer>
       </Section>
     </>
@@ -177,7 +177,7 @@ const ContactContainer = styled(Container)`
   margin-top: 80px;
   margin-bottom: 80px;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1100px) {
     flex-direction: column;
     width: 90%;
   }
@@ -245,7 +245,7 @@ const LeftContainer = styled(motion.div)`
         font-size: 14px;
       }
     }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1100px) {
       width: 90%;
     }
   }
@@ -271,7 +271,7 @@ const LeftContainer = styled(motion.div)`
       padding-right: 10px;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1100px) {
       width: 100%;
     }
   }
@@ -285,16 +285,21 @@ const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 80%;
+  height: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: -40px;
 
   img {
     height: auto;
-    width: 90%;
+    width: 350px;
+
+    @media screen and (max-width: 1100px) {
+      width: 300px;
+    }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1100px) {
     width: 100%;
     margin-top: 40px;
   }

@@ -23,7 +23,7 @@ const Customers = () => {
 
               <Image src={img3} alt="img3" />
 
-              <Image src={img4} alt="img4" />
+              <Image src={img4} alt="img4" style={{width:"350px"}}/>
 
        
             </>

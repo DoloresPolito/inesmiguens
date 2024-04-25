@@ -33,12 +33,14 @@ export const Text = styled.p`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 80px;
+  font-size: 55px;
   color: #5e5d5d;
   line-height: 90%;
-  font-weight: 200;
+  font-weight: 100 !important;
   font-family: var(--font-bebasneue);
   letter-spacing: 1px;
+  margin-top: 70px;
+
 `;
 
 //obras
@@ -51,6 +53,7 @@ export const ObrasTitle = styled.h2`
   align-self: flex-start;
   margin: 0;
   margin-right: 20px;
+  font-weight: 100;
 
   @media screen and (max-width: 1100px) {
     line-height: 100%;

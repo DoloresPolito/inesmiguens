@@ -5,9 +5,9 @@ import More from "@/components/More";
 import AnimatedText from "@/components/AnimatedText";
 import Image from "next/image";
 
-import img1 from "../../public/assets/images/cursos/curso4.jpeg";
-import img2 from "../../public/assets/images/cursos/cursotravel.jpeg";
-import img3 from "../../public/assets/images/cursos/curso3.jpeg";
+import img1 from "../../public/assets/images/cursos/nieve.jpg";
+import img2 from "../../public/assets/images/cursos/camellos.jpg";
+import img3 from "../../public/assets/images/cursos/foto.jpg";
 import Link from "next/link";
 
 import AnimatedImage from "@/components/AnimatedImage";
@@ -157,13 +157,16 @@ const CursoContainer = styled.div`
   }
 
 
-  &:hover{
-    background-color: #f9f9f9;
-  }
-
   .course-img {
-    width: 100%;
+    width: 380px;
     height: auto;
+
+    @media screen and (max-width: 1100px) {
+      width: 90%;
+    height: auto;
+    align-self: flex-start;
+    margin-left: 5px;
+    }
     
   }
 
@@ -174,6 +177,7 @@ const CursoContainer = styled.div`
 
     @media screen and (max-width: 1100px) {
       min-height: auto;
+
     }
 
   }

@@ -147,6 +147,7 @@ function ClientesSection() {
               <motion.ul
                 animate={isVisible2 ? "open" : "closed"}
                 variants={motionVariants}
+                style={{marginTop:"0px"}}
               >
                 {clientesB.map((cliente, index) => (
                   <motion.li variants={listItemVariants} key={index}>
@@ -178,7 +179,8 @@ const ClientesContainer = styled(Container)`
 
   .left {
     width: 30%;
-    margin-top: 50px;
+    margin-top: 0px;
+
     @media screen and (max-width: 920px) {
       width: 100%;
     }
@@ -187,6 +189,7 @@ const ClientesContainer = styled(Container)`
   .right {
     width: 70%;
     margin-bottom: 50px;
+    margin-top: -30px;
 
     @media screen and (max-width: 920px) {
       width: 100%;
@@ -198,7 +201,7 @@ const ClientesContainer = styled(Container)`
 const Info = styled(motion.div)`
   display: flex;
   margin-top: 100px;
-  background-color: #f9f9f9;
+  background-color: white;
   justify-content: space-between;
   padding: 50px;
   width: 600px;

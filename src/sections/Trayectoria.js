@@ -4,6 +4,12 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container, SectionTitle } from "../styles/styles";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import libro1 from "../../public/assets/images/libros/hijos del sol.png";
+import libro2 from "../../public/assets/images/libros/madres argentinas.png";
+import libro3 from "../../public/assets/images/libros/parques y jardones.png";
+
+import AnimatedImage from "@/components/AnimatedImage";
 
 const TrayectoriaSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -79,6 +85,19 @@ const TrayectoriaSection = () => {
 
   const trayectoria = [
     {
+      año: 2023,
+      items: [
+        {
+          titulo: "PRAXIS, GALERIA VIRTUAL",
+          subtitulo: "“Hijos del Sol”",
+        },
+        {
+          titulo: "PLANET ART COLLECTION",
+          subtitulo: "Alemania",
+        },
+      ],
+    },
+    {
       año: 2016,
       items: [
         {
@@ -89,7 +108,7 @@ const TrayectoriaSection = () => {
     },
     {
       año: 2015,
-      items: [{ titulo: "MILÁN", subtitulo: "ARTinterete" }],
+      items: [{ titulo: "MILÁN ARTEINTERETE", subtitulo: "ARTinterete" }],
     },
     {
       año: 2014,
@@ -129,13 +148,13 @@ const TrayectoriaSection = () => {
       items: [
         {
           titulo: "CENTRO CULTURAL BORGES,",
-          subtitulo: "“Pueblos Olvidados”",
+          subtitulo: "“Voces de la Tierra”",
         },
         {
           titulo: "GALERÍA THAMES,",
           subtitulo: "“Pueblos Olvidados”",
         },
-        { titulo: "CENTRO CULTURAL BORGES,", subtitulo: "“Madres Argentinas”" },
+     
       ],
     },
 
@@ -215,9 +234,37 @@ const TrayectoriaSection = () => {
       ],
     },
   ];
+
+  const libros = [
+    {
+      nombre: "Hijos del Sol",
+      image: libro1,
+      link: "/hijos-del-sol",
+      description:
+        "Hijos del Sol es el testimonio de la fe de un pueblo, y pretende reflejar su esencia, sus creencias y costumbres. En esta cultura, lo pagano y la fe cristiana se amalgaman para dar lugar a un lenguaje mágico, profundo y deslumbrante. Fue necesario vivir con los descendientes de los incas, en sus lugares sagrados, para captar el sentido trascendente que le otorgan a la vida.",
+    },
+    {
+      nombre: "Madres Argentinas",
+      image: libro2,
+      link: "/",
+      description:
+        "“Quisiera señalar que no es este un libro de denuncia. No pretende realizar un análisis exhaustivo de la maternindad en Argentina; es tan solo la visiøn de una artista nacional, una lúcida mirada general, un conjunto de imágenes que no intentan alcanzar la validez científica. Pero de este libro brota esperanza. Madres Argentinas responde a una idea optimista, sostiene una apuesta por la vida: si a pesar de los temores y fatigas de la maternidad el universo de humanos crece como crece, entonces ser madre tiene que ser una experiencia superadora.” Pablo Roviralta",
+    },
+    {
+      nombre: "Parques y Jardines",
+      image: libro3,
+      link: "/",
+      description: "",
+    },
+  ];
   return (
     <>
       <TrayectoriaContainer>
+        <div className="right">
+          <AnimatedText>
+            <SectionTitle>TRAYECTORIA</SectionTitle>
+          </AnimatedText>
+        </div>
         <div className="left">
           <Info
             variants={containerVariants}
@@ -251,11 +298,35 @@ const TrayectoriaSection = () => {
           </Info>
         </div>
 
-        <div className="right">
+        <LibrosContainerSection>
           <AnimatedText>
-            <SectionTitle>TRAYECTORIA</SectionTitle>
+            <SectionTitle>LIBROS</SectionTitle>
           </AnimatedText>
-        </div>
+
+          <LibrosContainer>
+           
+                {libros.map((item, index) => (
+                  <Item key={index}>
+                    <div className="top">
+                      <Image
+                        src={item.image}
+                        alt={`imagen-${index}`}
+                        className="book-image"
+                      />
+                    </div>
+
+                    <div className="bottom">
+                      <h4>{item.nombre}</h4>
+                      <AnimatedText>
+                        <p>{item.description}</p>
+                      </AnimatedText>
+                    </div>
+                  </Item>
+                ))}
+           
+ 
+          </LibrosContainer>
+        </LibrosContainerSection>
       </TrayectoriaContainer>
     </>
   );
@@ -263,7 +334,7 @@ const TrayectoriaSection = () => {
 
 const TrayectoriaContainer = styled(Container)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   min-height: 100vh;
 
   @media screen and (max-width: 1100px) {
@@ -271,8 +342,7 @@ const TrayectoriaContainer = styled(Container)`
   }
 
   .right {
-    width: 30%;
-    margin-bottom: 50px;
+    width: 100%;
 
     @media screen and (max-width: 1100px) {
       width: 100%;
@@ -282,29 +352,18 @@ const TrayectoriaContainer = styled(Container)`
 
   .left {
     width: 70%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-
+    /* min-height: 100vh; */
     @media screen and (max-width: 1100px) {
       width: 100%;
-      margin-bottom: 50px;
-      margin-top: 0px;
-    }
-  }
-
-  @media screen and (max-width: 1100px) {
-    & > *:nth-child(2) {
-      order: -1;
     }
   }
 `;
 
 const Info = styled(motion.div)`
   display: flex;
-  margin-top: 100px;
-  background-color: #f9f9f9;
+  margin-top: 0px;
+  background-color: white;
   justify-content: space-between;
-  padding: 50px;
   width: 600px;
 
   @media screen and (max-width: 920px) {
@@ -381,7 +440,6 @@ const Content = styled.div`
   }
 
   .trayectoria-año-container {
-    background-color: blue;
     display: flex;
     flex-direction: column !important;
   }
@@ -395,6 +453,114 @@ const WorkTitle = styled.h4`
   color: black;
   margin: 0;
   line-height: 120%;
+`;
+
+const LibrosContainerSection = styled(Container)`
+  width: 100%;
+
+`;
+
+const LibrosContainer = styled.div`
+  display: flex;
+
+  margin-top: 30px;
+  width: 100%;
+  flex-direction: row !important;
+justify-content: space-around;
+flex-wrap: wrap;
+`;
+
+const Item = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-bottom: 60px;
+  align-items: center;
+
+
+
+  .book-image {
+    height: 350px;
+    width: auto;
+    margin-bottom: 30px;
+    /* @media screen and (max-width: 860px) {
+      width: 60%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 540px) {
+      width: 90%;
+      height: auto;
+    } */
+  }
+
+  .top {
+    display: flex;
+ 
+    @media screen and (max-width: 860px) {
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+align-items: center !important;
+
+    /* @media screen and (max-width: 860px) {
+      margin-left: 0px;
+    }
+
+    @media screen and (max-width: 540px) {
+      width: 100%;
+      align-self: center;
+
+      margin-bottom: 20px;
+      margin-top: 10px;
+    } */
+  }
+
+  h4 {
+    font-family: var(--font-bebasneue);
+    font-size: 20px;
+    color: #4a4747;
+    line-height: 90%;
+    font-weight: 200;
+    align-self: flex-start;
+    line-height: 110%;
+    margin: 0;
+    margin-right: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    padding: 5px;
+    align-self: center;
+    @media screen and (max-width: 860px) {
+      align-self: center;
+    }
+  }
+
+  p {
+    font-family: var(--font-montserrat);
+    color: black;
+    font-size: 12px;
+    line-height: 170%;
+    max-width: 600px;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 30px;
+    font-weight: 200;
+    padding: 0px 20px;
+    @media screen and (max-width: 1100px) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 530px) {
+      font-size: 11px;
+      line-height: 160%;
+    }
+  }
 `;
 
 export default TrayectoriaSection;

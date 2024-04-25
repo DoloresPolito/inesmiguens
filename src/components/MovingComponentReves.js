@@ -6,8 +6,10 @@ import Image from "next/image";
 import img1 from "../../public/assets/images/home/5.jpg";
 
 import img2 from "../../public/assets/images/home/6.jpg";
-import img3 from "../../public/assets/images/home/7.jpeg";
-import img4 from "../../public/assets/images/home/8.jpeg";
+
+
+import img3 from "../../public/assets/images/obras/VOCES/mujer gallo.jpg";
+import img4 from "../../public/assets/images/obras/VOCES/mujer flores.jpg";
 
 const Customers = () => {
   return (
@@ -22,9 +24,9 @@ const Customers = () => {
 
               <Image src={img2} alt="img2" />
 
-              <Image src={img3} alt="img3" />
+              <Image src={img3} alt="img3" style={{width:"320px"}}/>
 
-              <Image src={img4} alt="img4" />
+              <Image src={img4} alt="img4" style={{width:"450px"}}/>
 
   
             </>
