@@ -11,16 +11,17 @@ import img3a from "../../public/assets/images/hoteles/principal/3.jpg";
 import AnimatedText from "@/components/AnimatedText";
 import AnimatedImage from "@/components/AnimatedImage";
 import { motion } from "framer-motion";
+import DisableContextMenu from "@/components/DisableContextMenu";
 function HotelesSection() {
   return (
     <Container>
+      <DisableContextMenu />
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{
           ease: "easeInOut",
           duration: 1,
-
         }}
       >
         <SectionTitle>HOTELES Y ESTANCIAS</SectionTitle>

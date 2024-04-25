@@ -27,6 +27,7 @@ import img13 from "../../public/assets/images/obras/VOCES/13.jpg";
 import { useInView } from "react-intersection-observer";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
+import DisableContextMenu from "@/components/DisableContextMenu";
 
 function Voces() {
   const variants = {
@@ -48,26 +49,26 @@ function Voces() {
   return (
     <>
       <Section>
+        <DisableContextMenu />
         <ObrasTopContainer>
           <div className="left">
             <AnimatedText>
-            <ObrasTitle>Voces de la tierra</ObrasTitle>
+              <ObrasTitle>Voces de la tierra</ObrasTitle>
             </AnimatedText>
-      <AnimatedText>
-      <div>
-              <ObrasText>
-                La ciudad se convierte en un mar de fugaces  y fantasmagóricos
-                encuentros, en la que se desvanece la posibilidad de la
-                percepción de los otros, prácticamente invisibles, incorpóreos.
-                 Una geometría que dibuja en el asfalto el vértigo del tiempo,
-                preñado de destiempo y expatriado de toda permanencia. Su cruce
-                demora apenas un minuto que es la cifra de la celeridad en la
-                que vivimos.
-              </ObrasText>
-              <MoreBack text="obras" link="/obras" />
-            </div>
-      </AnimatedText>
-     
+            <AnimatedText>
+              <div>
+                <ObrasText>
+                  La ciudad se convierte en un mar de fugaces  y fantasmagóricos
+                  encuentros, en la que se desvanece la posibilidad de la
+                  percepción de los otros, prácticamente invisibles,
+                  incorpóreos.  Una geometría que dibuja en el asfalto el
+                  vértigo del tiempo, preñado de destiempo y expatriado de toda
+                  permanencia. Su cruce demora apenas un minuto que es la cifra
+                  de la celeridad en la que vivimos.
+                </ObrasText>
+                <MoreBack text="obras" link="/obras" />
+              </div>
+            </AnimatedText>
           </div>
           <motion.div
             className="right"
@@ -82,8 +83,6 @@ function Voces() {
         <ObrasBottomContainer>
           <PicturesContainer>
             <AnimatedRowOf2 image1={img4} image2={img3} />
-
-       
 
             <AnimatedRowOf3Vertical image1={img7} image2={img6} image3={img5} />
 
@@ -165,6 +164,7 @@ const Row3VerticalContainer = styled.div`
     height: auto;
     margin-top: -60px;
     gap: 0px;
+    margin-bottom: 20px;
   }
 `;
 const StyledImageVertical = styled(Image)`

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
   Section,
@@ -8,7 +8,7 @@ import {
   PicturesContainer,
 } from "../styles/styles";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 import MoreBack from "@/components/MoreBack";
 import Image from "next/image";
@@ -23,8 +23,7 @@ import img8 from "../../public/assets/images/obras/ECOS/8.jpg";
 import img9 from "../../public/assets/images/obras/ECOS/9.jpg";
 import img10 from "../../public/assets/images/obras/ECOS/10.jpg";
 
-import { useInView } from "react-intersection-observer";
-
+import DisableContextMenu from "@/components/DisableContextMenu";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
 
@@ -48,6 +47,7 @@ function Ecos() {
   return (
     <>
       <VocesSection>
+      <DisableContextMenu />
         <ObrasTopContainer>
           <div className="left">
             <AnimatedText>

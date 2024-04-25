@@ -254,7 +254,7 @@ const TrayectoriaSection = () => {
       nombre: "Parques y Jardines",
       image: libro3,
       link: "/",
-      description: "",
+      description: "Este libro reúne aquellos jardines que, según mi criterio, se prestan a una lectura expresiva del espíritu de quien los concibió y los habita. No se previlegia el tamaño, la ubicación ni el diseño, sino lo que cada jardín es capaz de manifestar. Un sitio de recogimiento y de armonía donde se concilian varias ideas con un diseño personal que responde a las necesidades de la vida diaria. Un espacio íntimo que nos conecta con la naturaleza; un lugar para recrearnos y recrear.",
     },
   ];
   return (

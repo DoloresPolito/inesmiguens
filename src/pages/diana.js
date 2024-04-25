@@ -13,12 +13,13 @@ import img8 from "../../public/assets/images/hoteles/parque diana comp/8bajaaa.j
 import img9 from "../../public/assets/images/hoteles/parque diana comp/9baja.jpg";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
-
+import DisableContextMenu from "@/components/DisableContextMenu";
 function Diana() {
   return (
     <>
 
         <HotelesSection>
+        <DisableContextMenu />
           <HotelesContainer>
             <TextContainer>
 

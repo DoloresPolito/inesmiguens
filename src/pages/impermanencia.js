@@ -17,7 +17,7 @@ import img4 from "../../public/assets/images/obras/IMPERMANENCIA/4.jpg";
 import img5 from "../../public/assets/images/obras/IMPERMANENCIA/5.jpg";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
-
+import DisableContextMenu from "@/components/DisableContextMenu";
 function Impermanencia() {
   const variants = {
     visible: {
@@ -38,27 +38,27 @@ function Impermanencia() {
   return (
     <>
       <VocesSection>
+        <DisableContextMenu />
         <ObrasTopContainer>
           <div className="left">
             <AnimatedText>
-            <ObrasTitle>Impermanencia</ObrasTitle>
+              <ObrasTitle>Impermanencia</ObrasTitle>
             </AnimatedText>
 
-<AnimatedText>
-<div>
-              <ObrasText>
-                La ciudad se convierte en un mar de fugaces  y fantasmagóricos
-                encuentros, en la que se desvanece la posibilidad de la
-                percepción de los otros, prácticamente invisibles, incorpóreos.
-                 Una geometría que dibuja en el asfalto el vértigo del tiempo,
-                preñado de destiempo y expatriado de toda permanencia. Su cruce
-                demora apenas un minuto que es la cifra de la celeridad en la
-                que vivimos.
-              </ObrasText>
-              <MoreBack text="obras" link="/obras" />
-            </div>
-</AnimatedText>
-
+            <AnimatedText>
+              <div>
+                <ObrasText>
+                  La ciudad se convierte en un mar de fugaces  y fantasmagóricos
+                  encuentros, en la que se desvanece la posibilidad de la
+                  percepción de los otros, prácticamente invisibles,
+                  incorpóreos.  Una geometría que dibuja en el asfalto el
+                  vértigo del tiempo, preñado de destiempo y expatriado de toda
+                  permanencia. Su cruce demora apenas un minuto que es la cifra
+                  de la celeridad en la que vivimos.
+                </ObrasText>
+                <MoreBack text="obras" link="/obras" />
+              </div>
+            </AnimatedText>
           </div>
           <motion.div
             className="right"
@@ -72,8 +72,8 @@ function Impermanencia() {
 
         <ObrasBottomContainer>
           <PicturesContainer>
-            <AnimatedRowOf2 image1={img5} image2={img2} obra="impermanencia"/>
-            <AnimatedRowOf2 image1={img3} image2={img4} obra="impermanencia"/>
+            <AnimatedRowOf2 image1={img5} image2={img2} obra="impermanencia" />
+            <AnimatedRowOf2 image1={img3} image2={img4} obra="impermanencia" />
           </PicturesContainer>
         </ObrasBottomContainer>
       </VocesSection>

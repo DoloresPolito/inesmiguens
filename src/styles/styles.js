@@ -76,10 +76,7 @@ export const ObrasTopContainer = styled(Container)`
   width: 93%;
   align-items: center;
   height: 500px;
-  /* @media screen and (max-width: 450px) {
-   
-      margin-top: 40px !important;
-    } */
+
 
   .left {
     width: 50%;
@@ -104,9 +101,10 @@ export const ObrasTopContainer = styled(Container)`
     display: flex;
     align-items: center !important;
     justify-content: center;
+    /* margin-bottom: 20px; */
     @media screen and (max-width: 1100px) {
       width: 100%;
-
+      margin-bottom: 60px;
       img {
         width: 100%;
       }
@@ -158,9 +156,7 @@ export const PicturesContainer = styled.div`
   max-width: 1600px;
   margin: 0 auto;
 
-  @media screen and (max-width: 1190px) {
-    margin-top: 90px;
-  }
+
 `;
 
 export const HotelSubtitle = styled.h4`

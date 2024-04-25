@@ -32,6 +32,7 @@ const RowOf2 = ({ image1, image2, obra}) => {
     margin-top: -60px;
     gap: 0px;
     margin-top: 0px;
+    margin-bottom: 0px;
 
   }
 `;

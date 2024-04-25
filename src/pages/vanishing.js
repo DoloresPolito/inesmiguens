@@ -16,8 +16,14 @@ import img3 from "../../public/assets/images/obras/VANISHING/3.jpg";
 import img4 from "../../public/assets/images/obras/VANISHING/4.jpg";
 import img5 from "../../public/assets/images/obras/VANISHING/5.jpg";
 
+import img6 from "../../public/assets/images/obras/VANISHING/6.jpg";
+import img7 from "../../public/assets/images/obras/VANISHING/new1.jpg";
+import img8 from "../../public/assets/images/obras/VANISHING/new2.jpg";
+import img9 from "../../public/assets/images/obras/VANISHING/new3..jpg";
+
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
+import DisableContextMenu from "@/components/DisableContextMenu";
 
 function Vanishing() {
   const variants = {
@@ -39,31 +45,32 @@ function Vanishing() {
   return (
     <>
       <VocesSection>
+        <DisableContextMenu />
         <ObrasTopContainer>
           <div className="left">
             <AnimatedText>
-            <ObrasTitle>vanishing landscapes</ObrasTitle>
+              <ObrasTitle>vanishing landscapes</ObrasTitle>
             </AnimatedText>
-       
-       <AnimatedText>
-       <div>
-              <ObrasText>
-                El Amazonas esta en permanente peligro de existencia. Mi fuerte
-                conexión con la naturaleza me ha llevado varias veces a
-                permanecer allí. Sus enormes flujos de agua, la gran variedad de
-                arboles y plantas, el aire límpido que se respira… Hay una
-                verdadera sensación de quietud y perfeccion. La abrumadora y
-                necesaria conciencia de ser uno con la naturaleza conectado con
-                la fuerza de su existencia. De su tierra ella desprende
-                humedales, ríos voladores, de los cuales se elevan y producen la
-                lluvia que alimenta a todo el ecosistema. La deforestación, la
-                búsqueda del oro, los incendios y la tala de los árboles ponen
-                en peligro el mayor reservorio de agua dulce del planeta.
-              </ObrasText>
-              <MoreBack text="obras" link="/obras" />
-            </div>
-       </AnimatedText>
 
+            <AnimatedText>
+              <div>
+                <ObrasText>
+                  El Amazonas esta en permanente peligro de existencia. Mi
+                  fuerte conexión con la naturaleza me ha llevado varias veces a
+                  permanecer allí. Sus enormes flujos de agua, la gran variedad
+                  de arboles y plantas, el aire límpido que se respira… Hay una
+                  verdadera sensación de quietud y perfeccion. La abrumadora y
+                  necesaria conciencia de ser uno con la naturaleza conectado
+                  con la fuerza de su existencia. De su tierra ella desprende
+                  humedales, ríos voladores, de los cuales se elevan y producen
+                  la lluvia que alimenta a todo el ecosistema. La deforestación,
+                  la búsqueda del oro, los incendios y la tala de los árboles
+                  ponen en peligro el mayor reservorio de agua dulce del
+                  planeta.
+                </ObrasText>
+                <MoreBack text="obras" link="/obras" />
+              </div>
+            </AnimatedText>
           </div>
           <motion.div
             className="right"
@@ -79,6 +86,8 @@ function Vanishing() {
           <PicturesContainer>
             <AnimatedRowOf2 image1={img5} image2={img3} />
             <AnimatedRowOf2 image1={img4} image2={img2} />
+            <AnimatedRowOf2 image1={img6} image2={img7} />
+            <AnimatedRowOf2 image1={img8} image2={img9} />
           </PicturesContainer>
         </ObrasBottomContainer>
       </VocesSection>

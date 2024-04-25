@@ -20,11 +20,13 @@ import img9 from "../../public/assets/images/hoteles/cauquenes comp/89baja.jpg";
 import img10 from "../../public/assets/images/hoteles/cauquenes comp/90baja.jpg";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
+import DisableContextMenu from "@/components/DisableContextMenu";
 
 function Cauquenes() {
   return (
     <>
       <Section>
+      <DisableContextMenu />
         <HotelesContainer>
           <TextContainer>
             <HotelSubtitle>Los Cauquenes</HotelSubtitle>

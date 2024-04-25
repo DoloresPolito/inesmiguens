@@ -18,11 +18,13 @@ import img10 from "../../public/assets/images/hoteles/la bamba comp/10baja.jpg";
 import img11 from "../../public/assets/images/hoteles/la bamba comp/11baja.jpg";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
+import DisableContextMenu from "@/components/DisableContextMenu";
 function LaBamba() {
   return (
     <>
 
         <HotelesSection>
+        <DisableContextMenu />
           <HotelesContainer>
             <TextContainer>
 

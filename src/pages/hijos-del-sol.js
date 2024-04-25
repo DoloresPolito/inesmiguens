@@ -28,6 +28,7 @@ import { useInView } from "react-intersection-observer";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 
 import AnimatedText from "@/components/AnimatedText";
+import DisableContextMenu from "@/components/DisableContextMenu";
 
 function Hijos() {
   const variants = {
@@ -49,6 +50,7 @@ function Hijos() {
   return (
     <>
       <VocesSection>
+      <DisableContextMenu />
         <ObrasTopContainer>
           <div className="left">
             <AnimatedText>
