@@ -9,7 +9,7 @@ import {
 } from "../styles/styles";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import More from "@/components/More";
+import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/obras/VANISHING/1.jpg";
 import img2 from "../../public/assets/images/obras/VANISHING/2.jpg";
 import img3 from "../../public/assets/images/obras/VANISHING/3.jpg";
@@ -60,7 +60,7 @@ function Vanishing() {
                 búsqueda del oro, los incendios y la tala de los árboles ponen
                 en peligro el mayor reservorio de agua dulce del planeta.
               </ObrasText>
-              <More text="obras" link="/obras" />
+              <MoreBack text="obras" link="/obras" />
             </div>
        </AnimatedText>
 

@@ -16,8 +16,8 @@ import img1 from "../../public/assets/images/obras/ECOS/1.jpg";
 import img2 from "../../public/assets/images/obras/ECOS/2.jpg";
 import img3 from "../../public/assets/images/obras/ECOS/3.jpg";
 import img4 from "../../public/assets/images/obras/ECOS/4.jpg";
-import img5 from "../../public/assets/images/obras/ECOS/5.jpg";
-import img6 from "../../public/assets/images/obras/ECOS/6.jpg";
+// import img5 from "../../public/assets/images/obras/ECOS/5.jpg";
+import img6 from "../../public/assets/images/obras/ECOS/12.jpg";
 import img7 from "../../public/assets/images/obras/ECOS/7.jpg";
 import img8 from "../../public/assets/images/obras/ECOS/8.jpg";
 import img9 from "../../public/assets/images/obras/ECOS/9.jpg";
@@ -82,8 +82,8 @@ function Ecos() {
         <ObrasBottomContainer>
           <PicturesContainer>
             <AnimatedRowOf2 image1={img2} image2={img3} />
-            <AnimatedRowOf2 image1={img5} image2={img6} />
-            <RowOf1 />
+            <AnimatedRowOf2 image1={img6} image2={img7} />
+            {/* <RowOf1 /> */}
             <AnimatedRowOf2 image1={img4} image2={img8} />
             <AnimatedRowOf2 image1={img9} image2={img10} />
           </PicturesContainer>
@@ -93,31 +93,31 @@ function Ecos() {
   );
 }
 
-const RowOf1 = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+// const RowOf1 = () => {
+//   const controls = useAnimation();
+//   const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-  return (
-    <>
-      <Row1Container ref={ref}>
-        <StyledImage
-          src={img7}
-          alt="image1"
-          custom={0}
-          animate={controls}
-          initial="hidden"
-        />
-      </Row1Container>
-    </>
-  );
-};
+//   useEffect(() => {
+//     if (inView) {
+//       controls.start("visible");
+//     } else {
+//       controls.start("hidden");
+//     }
+//   }, [controls, inView]);
+//   return (
+//     <>
+//       <Row1Container ref={ref}>
+//         <StyledImage
+//           src={img7}
+//           alt="image1"
+//           custom={0}
+//           animate={controls}
+//           initial="hidden"
+//         />
+//       </Row1Container>
+//     </>
+//   );
+// };
 
 const VocesSection = styled(Section)`
   height: auto;

@@ -9,7 +9,7 @@ import {
 } from "../styles/styles";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import More from "@/components/More";
+import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/obras/IMPERMANENCIA/1.jpg";
 import img2 from "../../public/assets/images/obras/IMPERMANENCIA/2.jpg";
 import img3 from "../../public/assets/images/obras/IMPERMANENCIA/3.jpg";
@@ -55,7 +55,7 @@ function Impermanencia() {
                 demora apenas un minuto que es la cifra de la celeridad en la
                 que vivimos.
               </ObrasText>
-              <More text="obras" link="/obras" />
+              <MoreBack text="obras" link="/obras" />
             </div>
 </AnimatedText>
 

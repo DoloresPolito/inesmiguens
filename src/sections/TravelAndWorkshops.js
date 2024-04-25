@@ -42,10 +42,11 @@ function Talleres() {
                 baja. Profundización en composición, figuras y formas y líneas,
                 Conocimientos de las herramientas Photoshop, jpeg y raw.
               </p>
+              <More text="más info" link="/contacto" />
             </div>
             </AnimatedText>
 
-            <More text="más info" link="/contacto" />
+     
           </CursoContainer>
           </Link>
           </AnimatedImage>
@@ -74,9 +75,10 @@ function Talleres() {
                 Reforzamos la edición y la elaboración de un portfolio sobre
                 dicho tema.
               </p>
+              <More text="más info" link="/contacto" />
             </div>
             </AnimatedText>
-            <More text="más info" link="/contacto" />
+  
           </CursoContainer>
       </Link>
       </AnimatedImage>
@@ -100,9 +102,10 @@ function Talleres() {
                 técnico. Análisis y edición de obra. Creación de un Portfolio.
                 Preparación y exposición.
               </p>
+              <More text="más info" link="/contacto"/>
             </div>
             </AnimatedText>
-            <More text="más info" link="/contacto" />
+
           </CursoContainer>
           </Link>
           </AnimatedImage>
@@ -113,7 +116,11 @@ function Talleres() {
   );
 }
 
-const TalleresContainer = styled(Container)``;
+const TalleresContainer = styled(Container)`
+  @media screen and (max-width: 800px) {
+    width: 95%;
+  }
+`;
 
 const InfoContainer = styled.div`
   display: flex;
@@ -128,20 +135,21 @@ const InfoContainer = styled.div`
     flex-direction: column;
 
   }
+
 `;
 
 const CursoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-bottom: 10px;
   margin-bottom: 40px;
   padding: 5px !important;
   margin: 20px 20px 20px 0px;
-  height: 670px;
+  height: 550px;
   transition: background-color 0.5s ease;
   border-radius: 5px;
   width: 90%;
+
   
   @media screen and (max-width: 1100px) {
     width: 70%;
@@ -154,29 +162,46 @@ const CursoContainer = styled.div`
     width: 100%;
     margin: 0px 0px 80px 0px;
     padding: 0px;
+  
+    width: 95%;
   }
 
 
   .course-img {
-    width: 380px;
+    width: 360px;
     height: auto;
+
+    border-radius: 2px;
+
 
     @media screen and (max-width: 1100px) {
       width: 90%;
     height: auto;
-    align-self: flex-start;
-    margin-left: 5px;
+    align-self: center;
     }
+
+    @media screen and (max-width: 800px) {
+      align-self: flex-start;
+    }
+
+    @media screen and (max-width: 550px) {
+      align-self: center;
+      width: 100%;
+    }
+    
     
   }
 
   .text-container {
     min-height: 220px;
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 8px;
+
 
     @media screen and (max-width: 1100px) {
       min-height: auto;
+      align-self: center !important;
+      margin: 0 auto;
 
     }
 
@@ -191,9 +216,9 @@ const CursoContainer = styled.div`
     align-self: flex-start;
     line-height: 110%;
     margin: 0;
-    margin-right: 20px;
+  /* margin-left: 10px; */
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 5px;
   }
 
@@ -206,10 +231,14 @@ const CursoContainer = styled.div`
     letter-spacing: 0.5px;
     text-align: justify;
     text-justify: inter-word;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-weight: 200;
+
+
+
     @media screen and (max-width: 1100px) {
       margin-bottom: 20px;
+      margin-left: 0px;
     }
 
     @media screen and (max-width: 530px) {

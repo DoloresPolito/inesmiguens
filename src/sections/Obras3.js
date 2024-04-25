@@ -7,7 +7,7 @@ import vanishing1 from "../../public/assets/images/obras/VANISHING/2.jpg";
 import vanishing2 from "../../public/assets/images/obras/VANISHING/4.jpg";
 import voces1 from "../../public/assets/images/obras/VOCES/mujer gallo.jpg";
 import voces2 from "../../public/assets/images/obras/VOCES/mujer flores.jpg";
-import ecos1 from "../../public/assets/images/obras/ECOS/6.jpg";
+import ecos1 from "../../public/assets/images/obras/ECOS/4.jpg";
 import ecos2 from "../../public/assets/images/obras/ECOS/9.jpg";
 import hijos1 from "../../public/assets/images/obras/HIJOS/3.jpg";
 import hijos2 from "../../public/assets/images/obras/HIJOS/6.jpg";
@@ -16,8 +16,6 @@ import Link from "next/link";
 import More from "@/components/More";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-import { Parallax } from "react-scroll-parallax";
 import AnimatedText from "@/components/AnimatedText";
 import AnimatedImage from "@/components/AnimatedImage";
 
@@ -182,7 +180,7 @@ function ObrasSection() {
                     <></>
                   )}
 
-                  <EcosImg1
+                  <EcosImg2
                     className="img1"
                     src={ecos1}
                     alt="Ecos en el Tiempo"
@@ -199,7 +197,7 @@ function ObrasSection() {
             <Link href="/hijos-del-sol">
               <ObraContainer>
                 <ImageContainer>
-                  <VanishingImg1
+                  <HijosImg1
                     className="img1"
                     src={hijos1}
                     alt="Vanishing Landscapes"
@@ -207,7 +205,7 @@ function ObrasSection() {
                   {width > 980 ? (
                     <>
                       {" "}
-                      <VanishingImg2
+                      <HijosImg2
                         className="img1"
                         src={hijos2}
                         alt="Vanishing Landscapes"
@@ -352,6 +350,47 @@ const VanishingImg2 = styled(Image)`
   width: 300px;
 `;
 
+//hijos
+
+const HijosImg1 = styled(Image)`
+  height: 340px;
+  width: 500px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+
+
+const HijosImg2 = styled(Image)`
+  object-fit: cover;
+
+  height: 350px;
+  width: 300px;
+`;
+
+//ecos
+
+const EcosImg1 = styled(Image)`
+  height: 350px;
+  width: 440px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+
+
+const EcosImg2 = styled(Image)`
+  object-fit: cover;
+
+  height: 350px;
+  width: 440px;
+`;
+
+
 
 //voces
 
@@ -372,13 +411,6 @@ const VocesImg2 = styled(Image)`
   width: 300px;
 `;
 
-const EcosImg1 = styled(Image)`
-  height: 340px;
-  width: 450px;
-  @media screen and (max-width: 600px) {
-    width: 100%;
-    height: auto;
-  }
-`;
+
 
 export default ObrasSection;
