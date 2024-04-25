@@ -388,6 +388,11 @@ const EcosImg2 = styled(Image)`
 
   height: 350px;
   width: 440px;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 
