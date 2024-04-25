@@ -33,7 +33,7 @@ const LoopSection = styled.div`
 
   .firstBlock, .secondBlock {
     display: inline-block;
-    padding-right: 20px; /* Agregado para separar los bloques */
+    padding-right: 0px; /* Agregado para separar los bloques */
     /* animation: animation1 100s linear infinite; */
     animation: animation1 80s linear infinite;
   }

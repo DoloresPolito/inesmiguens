@@ -8,9 +8,11 @@ import img1 from "../../public/assets/images/home/5.jpg";
 import img2 from "../../public/assets/images/home/6.jpg";
 
 
-import img3 from "../../public/assets/images/obras/VOCES/mujer gallo.jpg";
-import img4 from "../../public/assets/images/obras/VOCES/mujer flores.jpg";
-import img5 from "../../public/assets/images/obras/VANISHING/6.jpg";
+import img3 from "../../public/assets/images/home/mujer gallo.jpg";
+
+import img5 from "../../public/assets/images/home/9.jpg";
+
+import img6 from "../../public/assets/images/home/10.jpg";
 const Customers = () => {
   return (
     <CustomersSection >
@@ -26,8 +28,9 @@ const Customers = () => {
 
               <Image src={img3} alt="img3" style={{width:"320px"}}/>
 
-              <Image src={img4} alt="img4" style={{width:"450px"}}/>
+          
               <Image src={img5} alt="img5" />
+              <Image src={img6} alt="img4" style={{width:"350px"}}/>
   
             </>
           }
@@ -49,9 +52,9 @@ const CustomersSection = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-
-  /* margin-top: 30px; */
   max-width: 1600px;
+  margin-top: -10px;
+margin-bottom: 12px;
 `;
 
 const CustomersContainer = styled.div`
