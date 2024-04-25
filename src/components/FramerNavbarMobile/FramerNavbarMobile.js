@@ -84,7 +84,8 @@ const FramerNavbarMobile = () => {
           }`}
         >
           <div className={Styles.navigation}>
-            <div className="logo">
+            <div className="logo" 
+                onClick={handleClose}>
               <Link href="/">
                 <p>INÉS MIGUENS</p>
               </Link>

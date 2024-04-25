@@ -90,7 +90,9 @@ const StyledImageCover = styled(Image)`
   width: 500px;
   height: 500px;
   object-fit: cover;
-
+  @media screen and (max-width: 1100px) {
+    margin-bottom: -30px;
+  }
   @media screen and (max-width: 750px) {
     width: 90%;
     height: auto;

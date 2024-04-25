@@ -112,6 +112,9 @@ const StyledImageCover = styled(Image)`
     padding: 10px 0px;
     margin-top: 20px;
   }
+  @media screen and (max-width: 1100px) {
+    margin-bottom: -40px;
+  }
   @media screen and (max-width: 750px) {
     width: 90%;
     height: auto;
