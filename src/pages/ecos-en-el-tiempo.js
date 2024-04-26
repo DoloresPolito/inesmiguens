@@ -20,7 +20,7 @@ import img4 from "../../public/assets/images/obras/ECOS/4.jpg";
 import img6 from "../../public/assets/images/obras/ECOS/12.jpg";
 import img7 from "../../public/assets/images/obras/ECOS/7.jpg";
 import img8 from "../../public/assets/images/obras/ECOS/8.jpg";
-import img9 from "../../public/assets/images/obras/ECOS/9.jpg";
+import img9 from "../../public/assets/images/obras/ECOS/9..jpg";
 import img10 from "../../public/assets/images/obras/ECOS/10.jpg";
 
 import DisableContextMenu from "@/components/DisableContextMenu";

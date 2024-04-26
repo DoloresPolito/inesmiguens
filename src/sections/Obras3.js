@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import impermanencia1 from "../../public/assets/images/obras/IMPERMANENCIA/1.jpg";
 import impermanencia2 from "../../public/assets/images/obras/IMPERMANENCIA/3.jpg";
-import vanishing1 from "../../public/assets/images/obras/VANISHING/2reduce.jpg";
+import vanishing1 from "../../public/assets/images/obras/VANISHING/2derecha.jpg";
 import vanishing2 from "../../public/assets/images/obras/VANISHING/van new.jpg";
 import voces1 from "../../public/assets/images/obras/VOCES/mujer gallo.jpg";
 import voces2 from "../../public/assets/images/obras/VOCES/mujer flores.jpg";

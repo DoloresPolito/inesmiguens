@@ -18,7 +18,7 @@ import img5 from "../../public/assets/images/obras/VOCES/5.jpg";
 import img6 from "../../public/assets/images/obras/VOCES/6.jpg";
 import img7 from "../../public/assets/images/obras/VOCES/7.jpg";
 import img9 from "../../public/assets/images/obras/VOCES/9.jpg";
-import img10 from "../../public/assets/images/obras/VOCES/10.jpg";
+import img10 from "../../public/assets/images/obras/VOCES/10..jpg";
 import img11 from "../../public/assets/images/obras/VOCES/11.jpg";
 import img12 from "../../public/assets/images/obras/VOCES/12.jpg";
 import img13 from "../../public/assets/images/obras/VOCES/13.jpg";
