@@ -135,7 +135,7 @@ function ClientesSection() {
                     <AnimatedWorkLi>
                       <Content>
                         <WorkTitle>{cliente.nombre}</WorkTitle>
-                        {cliente.lugar && <More>{cliente.lugar}</More>}
+                        {/* {cliente.lugar && <More>{cliente.lugar}</More>} */}
                       </Content>
                     </AnimatedWorkLi>
                   </motion.li>
@@ -147,14 +147,14 @@ function ClientesSection() {
               <motion.ul
                 animate={isVisible2 ? "open" : "closed"}
                 variants={motionVariants}
-                style={{marginTop:"0px"}}
+              
               >
                 {clientesB.map((cliente, index) => (
                   <motion.li variants={listItemVariants} key={index}>
                     <AnimatedWorkLi>
                       <Content>
                         <WorkTitle>{cliente.nombre}</WorkTitle>
-                        {cliente.lugar && <More>{cliente.lugar}</More>}
+                        {/* {cliente.lugar && <More>{cliente.lugar}</More>} */}
                       </Content>
                     </AnimatedWorkLi>
                   </motion.li>
