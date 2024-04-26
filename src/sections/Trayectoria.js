@@ -353,8 +353,13 @@ const TrayectoriaContainer = styled(Container)`
   .left {
     width: 70%;
     /* min-height: 100vh; */
+    margin: 0 auto;
+
+
     @media screen and (max-width: 1100px) {
       width: 100%;
+      margin-left: -30px;
+
     }
   }
 `;
@@ -362,7 +367,6 @@ const TrayectoriaContainer = styled(Container)`
 const Info = styled(motion.div)`
   display: flex;
   margin-top: 0px;
-  background-color: white;
   justify-content: space-between;
   width: 600px;
 
@@ -374,6 +378,8 @@ const Info = styled(motion.div)`
   @media screen and (max-width: 660px) {
     flex-direction: column;
     width: auto;
+    background-color: white;
+    padding: 0;
   }
   h2 {
     font-family: "Montserrat", sans-serif;
@@ -402,11 +408,14 @@ const Fix = styled.div`
   flex-direction: column;
   height: auto;
   margin-left: 40px;
+  margin-bottom: 10px;
 `;
 const YearContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
+
+  margin-bottom: 10px;
 
   .title {
     font-family: "Montserrat", sans-serif;
@@ -415,7 +424,8 @@ const YearContainer = styled.div`
     font-weight: 400;
     color: black;
     margin: 0;
-    line-height: 120%;
+    line-height: 110%;
+
   }
 
   .subtitle {
@@ -446,13 +456,14 @@ const Content = styled.div`
 `;
 
 const WorkTitle = styled.h4`
-  font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 20px;
   letter-spacing: 1px;
-  font-weight: 400;
-  color: black;
+  font-weight: 100;
+  color: #6a6f58;
   margin: 0;
   line-height: 120%;
+  font-family: var(--font-bebasneue);
 `;
 
 const LibrosContainerSection = styled(Container)`

@@ -131,6 +131,7 @@ const InfoContainer = styled.div`
   margin: 0 auto;
   margin-top: -30px;
   width: 100%;
+
   @media screen and (max-width: 1100px) {
     flex-direction: column;
 
@@ -149,6 +150,7 @@ const CursoContainer = styled.div`
   transition: background-color 0.5s ease;
   border-radius: 5px;
   width: 90%;
+
 
   
   @media screen and (max-width: 1100px) {
@@ -170,8 +172,8 @@ const CursoContainer = styled.div`
   .course-img {
     width: 360px;
     height: auto;
-
     border-radius: 2px;
+
 
 
     @media screen and (max-width: 1100px) {
@@ -196,13 +198,13 @@ const CursoContainer = styled.div`
     min-height: 220px;
     margin-top: 5px;
     padding: 8px;
-
+max-width:360px;
 
     @media screen and (max-width: 1100px) {
       min-height: auto;
       align-self: center !important;
       margin: 0 auto;
-
+      max-width:900px;
     }
 
   }
