@@ -3,14 +3,14 @@ import styled from "styled-components";
 import LoopReves from "./LoopReves";
 import Image from "next/image";
 
-import img1 from "../../public/assets/images/home/5.jpg";
+import img1 from "../../public/assets/images/home/van2.jpg";
 
-import img2 from "../../public/assets/images/home/6.jpg";
+import img2 from "../../public/assets/images/home/van3.jpg";
 
 
-import img3 from "../../public/assets/images/home/mujer gallo.jpg";
+import img3 from "../../public/assets/images/home/4.jpg";
 
-import img5 from "../../public/assets/images/home/9.jpg";
+import img5 from "../../public/assets/images/home/5.jpg";
 
 import img6 from "../../public/assets/images/home/10.jpg";
 const Customers = () => {

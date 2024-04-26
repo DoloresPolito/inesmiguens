@@ -47,22 +47,23 @@ function Ecos() {
   return (
     <>
       <VocesSection>
-      <DisableContextMenu />
+        <DisableContextMenu />
         <ObrasTopContainer>
           <div className="left">
             <AnimatedText>
-            <ObrasTitle>ECOS EN EL TIEMPO</ObrasTitle>
+              <ObrasTitle>ECOS EN EL TIEMPO</ObrasTitle>
             </AnimatedText>
-           
-           <AnimatedText>
-           <div>
-              <ObrasText>
-        
-              </ObrasText>
-              <MoreBack text="obras" link="/obras" />
-            </div>
-           </AnimatedText>
-      
+
+            <AnimatedText>
+              <div>
+                <ObrasText>
+                  Tierra de contrastes. <br />
+                  Se tiñe de atemporalidad mientras marca un ritmo al son de su
+                  música, y de sus encuentros callejeros.
+                </ObrasText>
+                <MoreBack text="obras" link="/obras" />
+              </div>
+            </AnimatedText>
           </div>
           <motion.div
             className="right"

@@ -4,11 +4,11 @@ import Loop from "./Loop";
 
 import Image from "next/image";
 
-import img1 from "../../public/assets/images/home/1.jpg";
-import img2 from "../../public/assets/images/home/2.jpg";
-import img3 from "../../public/assets/images/home/3.jpg";
-import img4 from "../../public/assets/images/home/4.jpg";
-import img5 from "../../public/assets/images/home/mujer flores.jpg";
+import img1 from "../../public/assets/images/home/2.jpg";
+import img2 from "../../public/assets/images/home/9.jpg";
+import img3 from "../../public/assets/images/home/van1.jpg";
+import img4 from "../../public/assets/images/home/10.jpg";
+import img5 from "../../public/assets/images/home/3.jpg";
 
 
 const Customers = () => {

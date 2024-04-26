@@ -55,7 +55,7 @@ function Vanishing() {
             <AnimatedText>
               <div>
                 <ObrasText>
-                  El Amazonas esta en permanente peligro de existencia. Mi
+                  {/* El Amazonas esta en permanente peligro de existencia. Mi
                   fuerte conexión con la naturaleza me ha llevado varias veces a
                   permanecer allí. Sus enormes flujos de agua, la gran variedad
                   de arboles y plantas, el aire límpido que se respira… Hay una
@@ -66,7 +66,24 @@ function Vanishing() {
                   la lluvia que alimenta a todo el ecosistema. La deforestación,
                   la búsqueda del oro, los incendios y la tala de los árboles
                   ponen en peligro el mayor reservorio de agua dulce del
-                  planeta.
+                  planeta. */}
+                  Mi amor por la naturaleza me llevó una y otra vez a la selva
+                  brasilera amazónica. Allí, la contemplación de la perfección
+                  solamente se rompe por el graznar de un pájaro, y el susurro
+                  del viento. La naturaleza me lleva a la más intima
+                  contemplación de la vida misma, su riqueza y sus ciclos. <br/>
+                  La codicia del hombre, los incendios, la deforestación, la
+                  búsqueda de oro esta poniendo en peligro el mayor reservorio
+                  de agua dulce del planeta. Los ríos voladores que brindan
+                  lluvia a Sudamerica están desapareciendo. Los nativos y sus
+                  tribus están siendo desplazados de sus milenarios hogares
+                  hacia un refugio incierto. El hombre avanza sobre la tierra
+                  que nos cobija. <br/>
+                   Supongamos por un momento que podamos
+                  garantizar que nuestros hijos hereden esta tierra…  <br/>
+                  Atraer la
+                  mirada del hombre a este ecosistema, seria la forma de
+                  asegurar el futuro?
                 </ObrasText>
                 <MoreBack text="obras" link="/obras" />
               </div>
