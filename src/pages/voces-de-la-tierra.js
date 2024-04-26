@@ -17,7 +17,6 @@ import img4 from "../../public/assets/images/obras/VOCES/4.jpg";
 import img5 from "../../public/assets/images/obras/VOCES/5.jpg";
 import img6 from "../../public/assets/images/obras/VOCES/6.jpg";
 import img7 from "../../public/assets/images/obras/VOCES/7.jpg";
-import img8 from "../../public/assets/images/obras/VOCES/8.jpg";
 import img9 from "../../public/assets/images/obras/VOCES/9.jpg";
 import img10 from "../../public/assets/images/obras/VOCES/10.jpg";
 import img11 from "../../public/assets/images/obras/VOCES/11.jpg";
@@ -58,13 +57,7 @@ function Voces() {
             <AnimatedText>
               <div>
                 <ObrasText>
-                  La ciudad se convierte en un mar de fugaces  y fantasmagóricos
-                  encuentros, en la que se desvanece la posibilidad de la
-                  percepción de los otros, prácticamente invisibles,
-                  incorpóreos.  Una geometría que dibuja en el asfalto el
-                  vértigo del tiempo, preñado de destiempo y expatriado de toda
-                  permanencia. Su cruce demora apenas un minuto que es la cifra
-                  de la celeridad en la que vivimos.
+     
                 </ObrasText>
                 <MoreBack text="obras" link="/obras" />
               </div>
@@ -89,7 +82,7 @@ function Voces() {
             <AnimatedRowOf2 image1={img10} image2={img11} />
 
             <AnimatedRowOf2 image1={img9} image2={img13} />
-            <AnimatedRowOf2 image1={img8} image2={img1} />
+            <AnimatedRowOf2 image1={img12} image2={img1} />
           </PicturesContainer>
         </ObrasBottomContainer>
       </Section>

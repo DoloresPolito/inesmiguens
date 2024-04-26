@@ -9,7 +9,6 @@ import img4 from "../../public/assets/images/hoteles/parque diana comp/3bajaa.jp
 import img5 from "../../public/assets/images/hoteles/parque diana comp/4bajaa.jpg";
 import img6 from "../../public/assets/images/hoteles/parque diana comp/5bajaa.jpg";
 import img7 from "../../public/assets/images/hoteles/parque diana comp/6bajaa.jpg";
-import img8 from "../../public/assets/images/hoteles/parque diana comp/8bajaaa.jpg";
 import img9 from "../../public/assets/images/hoteles/parque diana comp/9baja.jpg";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
@@ -35,9 +34,8 @@ function Diana() {
 
               <AnimatedRowOf2 image1={img5} image2={img6}></AnimatedRowOf2>
 
-              <AnimatedRowOf2 image1={img7} image2={img8}></AnimatedRowOf2>
+              <AnimatedRowOf2 image1={img7} image2={img9}></AnimatedRowOf2>
 
-              <AnimatedRowOf2 image1={img9} image2={img9}></AnimatedRowOf2>
             
             </PicturesContainer>
           </HotelesContainer>

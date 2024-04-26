@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import img1 from "../../public/assets/images/cursos/nieve.jpg";
 import img2 from "../../public/assets/images/cursos/camellos.jpg";
-import img3 from "../../public/assets/images/cursos/foto.jpg";
+import img3 from "../../public/assets/images/cursos/caballos.jpg";
 import Link from "next/link";
 
 import AnimatedImage from "@/components/AnimatedImage";

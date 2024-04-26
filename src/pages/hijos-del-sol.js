@@ -60,10 +60,14 @@ function Hijos() {
             <AnimatedText>
               <div>
                 <ObrasText>
-                  Hijos del Sol es el testimonio de un pueblo, sus creencias y
+
+                  Hijos del sol es el testimonio de un pueblo y pretende reflejar su esencia, sus creencias y sus costumbres. Aquí lo pagano y cristiano se amalgaman para crear un lenguaje mágico y profundo.
+                A través de las imagenes intento revelar lo invisible y visibilizar lo imaginado. Pasado y presente continúan conviviendo en los herederos de los Incas.
+
+                  {/* Hijos del Sol es el testimonio de un pueblo, sus creencias y
                   sus costumbres. A través de las imágenes intente revelar lo
                   invisible y visibilizar lo imaginado. Pasado y presente
-                  continúan conviviendo en los herederos de los Incas.
+                  continúan conviviendo en los herederos de los Incas. */}
                 </ObrasText>
                 <MoreBack text="obras" link="/obras" />
               </div>
@@ -75,7 +79,7 @@ function Hijos() {
             initial="hidden"
             animate="visible"
           >
-            <StyledImageCover src={img9} alt="image1" />
+            <StyledImageCover src={img12} alt="image1" />
           </motion.div>
         </ObrasTopContainer>
 
@@ -86,7 +90,7 @@ function Hijos() {
             <AnimatedRowOf2 image1={img1} image2={img3} />
 
             <AnimatedRowOf3Vertical image1={img6} image2={img7} image3={img8} />
-            <AnimatedRowOf2 image1={img10} image2={img12} />
+            <AnimatedRowOf2 image1={img10} image2={img9} />
           </PicturesContainer>
         </ObrasBottomContainer>
       </VocesSection>
