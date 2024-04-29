@@ -74,9 +74,9 @@ const Navbar = () => {
           >
             <NavbarContainer>
               <LogoContainer>
-                <Link href="/">
+                <StyledLink href="/" >
                   <p className="logo">INÉS MIGUENS</p>
-                </Link>
+                </StyledLink>
               </LogoContainer>
               <LinksContainer>
                 {links.map((link, index) => {
@@ -137,12 +137,18 @@ const NavbarContainer = styled.div`
   max-width: 1600px;
 `;
 
+const StyledLink = styled(Link)`
+ text-decoration: none; 
+`
+
 const LogoContainer = styled.div`
+ text-decoration: none; 
   .logo {
     font-size: 30px;
     color: #4a4747;
     font-family: var(--font-montserrat);
     font-weight: 100 !important;
+    text-decoration: none; 
 
 
 
