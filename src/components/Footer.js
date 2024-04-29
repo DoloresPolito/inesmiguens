@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Text } from "../styles/styles";
 import styled from "styled-components";
-
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -11,8 +11,18 @@ function Footer() {
           <TopContainer>
             <div>
               <h6>Contacto</h6>
+              <Link href="https://api.whatsapp.com/send/?phone=541154675902" target="_blank">
+
               <FooterText>+54 11 5467 5902</FooterText>
-              <FooterText>inesmiguensphoto@gmail.com</FooterText>
+              </Link>
+          <Link href="mailto:inesmiguensphoto@gmail.com" target="_blank">
+          <FooterText>inesmiguensphoto@gmail.com</FooterText>
+          </Link>
+
+          <Link href="https://www.instagram.com/inesmiguensphoto/" target="_blank">
+          <FooterText>@inesmiguensphoto</FooterText>
+          </Link>
+         
             </div>
 
           </TopContainer>

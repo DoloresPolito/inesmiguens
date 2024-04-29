@@ -20,8 +20,8 @@ function Contacto() {
       url: "https://www.instagram.com/inesmiguensphoto/",
       image: instagram,
     },
-    { text: "+54 11 54675902", url: "", image: phone },
-    { text: "inesmiguensphoto@gmail.com", url: "", image: mail },
+    { text: "+54 11 54675902", url: "https://api.whatsapp.com/send/?phone=541154675902", image: phone },
+    { text: "inesmiguensphoto@gmail.com", url: "mailto:inesmiguensphoto@gmail.com", image: mail },
   ];
   const [state, setState] = useState(initState);
 
@@ -146,7 +146,7 @@ function Contacto() {
                       initial="hidden"
                       animate="visible"
                     >
-                      <Link href={contact.url}>
+                      <Link href={contact.url} target="_blank">
                         <div>
                           <Image src={contact.image} alt="logo" />
                           <Text>{contact.text}</Text>

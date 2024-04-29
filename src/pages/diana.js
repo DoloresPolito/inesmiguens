@@ -8,8 +8,8 @@ import img3 from "../../public/assets/images/hoteles/parque diana comp/2bajaa.jp
 import img4 from "../../public/assets/images/hoteles/parque diana comp/3bajaa.jpg";
 import img5 from "../../public/assets/images/hoteles/parque diana comp/4bajaa.jpg";
 import img6 from "../../public/assets/images/hoteles/parque diana comp/5bajaa.jpg";
-import img7 from "../../public/assets/images/hoteles/parque diana comp/6bajaa.jpg";
-import img9 from "../../public/assets/images/hoteles/parque diana comp/9baja.jpg";
+import img7 from "../../public/assets/images/hoteles/parque diana comp/6bajaaa.jpg";
+import img9 from "../../public/assets/images/hoteles/parque diana comp/9bajaa.jpg";
 
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import DisableContextMenu from "@/components/DisableContextMenu";

@@ -12,7 +12,7 @@ import img3 from "../../public/assets/images/home/4.jpg";
 
 import img5 from "../../public/assets/images/home/5.jpg";
 
-import img6 from "../../public/assets/images/home/10.jpg";
+import img6 from "../../public/assets/images/home/impernew.jpg";
 const Customers = () => {
   return (
     <CustomersSection >
@@ -24,14 +24,14 @@ const Customers = () => {
             <>
               <Image src={img1} alt="img1" />
 
-              <Image src={img2} alt="img2" />
 
               <Image src={img3} alt="img3" style={{width:"320px"}}/>
 
           
               <Image src={img5} alt="img5" />
-              <Image src={img6} alt="img4" style={{width:"350px"}}/>
+              <Image src={img6} alt="img4" style={{width:"300px"}}/>
   
+              <Image src={img2} alt="img2" />
             </>
           }
         />

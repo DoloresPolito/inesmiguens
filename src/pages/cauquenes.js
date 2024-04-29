@@ -30,7 +30,7 @@ function Cauquenes() {
         <HotelesContainer>
           <TextContainer>
             <HotelSubtitle>Los Cauquenes</HotelSubtitle>
-            <HotelText>Bariloche</HotelText>
+            <HotelText>Ushuaia</HotelText>
             <MoreBack text="hoteles" link="/hoteles" />
           </TextContainer>
           <PicturesContainer>

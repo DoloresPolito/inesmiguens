@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import img1 from "../../public/assets/images/home/2.jpg";
 import img2 from "../../public/assets/images/home/9.jpg";
-import img3 from "../../public/assets/images/home/van1.jpg";
+import img3 from "../../public/assets/images/home/mujermasazul.jpg";
 import img4 from "../../public/assets/images/home/10.jpg";
 import img5 from "../../public/assets/images/home/3.jpg";
 
@@ -20,7 +20,7 @@ const Customers = () => {
           reverse="true"
           content={
             <>
-              <Image src={img1} alt="img1" />
+             
 
               <Image src={img2} alt="img2" />
 
@@ -29,7 +29,7 @@ const Customers = () => {
               <Image src={img4} alt="img4" style={{width:"350px"}}/>
 
               <Image src={img5} alt="img4" style={{width:"450px"}}/>
-
+              <Image src={img1} alt="img1"style={{width:"440px"}}/>
             </>
           }
         />

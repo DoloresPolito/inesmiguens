@@ -13,7 +13,7 @@ import MoreBack from "@/components/MoreBack";
 import img1 from "../../public/assets/images/obras/VANISHING/1.jpg";
 import img2 from "../../public/assets/images/obras/VANISHING/2.jpg";
 import img3 from "../../public/assets/images/obras/VANISHING/3.jpg";
-import img4 from "../../public/assets/images/obras/VANISHING/4.jpg";
+import img4 from "../../public/assets/images/obras/VANISHING/mujermasazul.jpg";
 import img5 from "../../public/assets/images/obras/VANISHING/5.jpg";
 
 import img6 from "../../public/assets/images/obras/VANISHING/6.jpg";

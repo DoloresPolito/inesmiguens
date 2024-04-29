@@ -57,7 +57,13 @@ function Voces() {
             <AnimatedText>
               <div>
                 <ObrasText>
-     
+                  “La canción de la tierra tiene voz de mujer”. <br />
+                  Teresa Parodi.
+                  <br />
+                  <br />
+                  Voces al latido de su tierra.
+                  <br />
+                  Voces que despiertan el arraigo y la memoria.
                 </ObrasText>
                 <MoreBack text="obras" link="/obras" />
               </div>
