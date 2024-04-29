@@ -24,7 +24,7 @@ const LibrosSection = () => {
       image: libro2,
       link: "/",
       description:
-        "“Quisiera señalar que no es este un libro de denuncia. No pretende realizar un análisis exhaustivo de la maternindad en Argentina; es tan solo la visiøn de una artista nacional, una lúcida mirada general, un conjunto de imágenes que no intentan alcanzar la validez científica. Pero de este libro brota esperanza. Madres Argentinas responde a una idea optimista, sostiene una apuesta por la vida: si a pesar de los temores y fatigas de la maternidad el universo de humanos crece como crece, entonces ser madre tiene que ser una experiencia superadora.” Pablo Roviralta",
+        "“De este libro brota esperanza. Madres Argentinas responde a una idea optimista, sostiene una apuesta por la vida: si a pesar de los temores y fatigas de la maternidad el universo de humanos crece como crece, entonces ser madre tiene que ser una experiencia superadora.” Pablo Roviralta",
     },
     {
       nombre: "Parques y Jardines",

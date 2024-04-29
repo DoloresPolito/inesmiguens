@@ -53,16 +53,7 @@ const LoopSection = styled.div`
       -webkit-transform: translateX(-100%);
     }
   }
-  /* @keyframes animation2 {
-    0% {
-      transform: translateX(100%);
-      -webkit-transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-    }
-  } */
+
 `
 
 export default LoopReves

@@ -68,9 +68,7 @@ function Vanishing() {
                   ponen en peligro el mayor reservorio de agua dulce del
                   planeta. */}
                   Mi amor por la naturaleza me llevó una y otra vez a la selva
-                  brasilera amazónica. Allí, la contemplación de la perfección
-                  solamente se rompe por el graznar de un pájaro, y el susurro
-                  del viento. La naturaleza me lleva a la más intima
+                  brasilera amazónica. Este me lleva a la más intima
                   contemplación de la vida misma, su riqueza y sus ciclos. <br/>
                   La codicia del hombre, los incendios, la deforestación, la
                   búsqueda de oro esta poniendo en peligro el mayor reservorio
