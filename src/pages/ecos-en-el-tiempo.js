@@ -59,7 +59,7 @@ function Ecos() {
                 <ObrasText>
                   Tierra de contrastes. <br />
                   Se tiñe de atemporalidad mientras marca un ritmo al son de su
-                  música, y de sus encuentros callejeros.
+                  música y sus encuentros callejeros.
                 </ObrasText>
                 <MoreBack text="obras" link="/obras" />
               </div>
