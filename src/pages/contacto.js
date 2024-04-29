@@ -109,20 +109,20 @@ function Contacto() {
             }}
             className="form-container">
               <form>
-                <input
+                <Input
                   type="text"
                   placeholder="nombre y apellido"
                   name="name"
                   value={values.name}
                   onChange={handleChange}
                 />
-                <input
+                <Input
                   placeholder="email"
                   name="email"
                   value={values.email}
                   onChange={handleChange}
                 />
-                <input
+                <Input
                   type="text"
                   placeholder="mensaje"
                   name="message"
@@ -203,7 +203,7 @@ const LeftContainer = styled(motion.div)`
       flex-direction: column;
     }
 
-    input {
+    /* input {
       width: 100%;
       padding: 8px;
       border: none;
@@ -229,6 +229,15 @@ const LeftContainer = styled(motion.div)`
       line-height: 10px;
       outline: none;
     }
+
+    input:active {
+      color: #000000;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 10px;
+      outline: none;
+    } */
 
     button {
       background-color: transparent;
@@ -278,6 +287,28 @@ const LeftContainer = styled(motion.div)`
 
   @media screen and (max-width: 800px) {
     width: 100%;
+  }
+`;
+
+const Input = styled.input`
+
+
+  width: 100%;
+      padding: 8px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      color: white;
+      margin-top: 40px;
+      color: #000000; /* Color de texto */
+      font-family: "Montserrat", sans-serif;
+
+  &::placeholder {
+    color: #000000; /* Color del placeholder */
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
   }
 `;
 
