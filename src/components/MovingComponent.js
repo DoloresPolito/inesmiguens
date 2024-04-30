@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import Loop from "./Loop";
 
 import Image from "next/image";
 
@@ -29,26 +28,26 @@ const Customers = () => {
               <div className="contents">
                 <span className="firstBlock">
                   <>
-                    <Image src={img2} alt="img2" />
+                    <Image src={img2} alt="img2" loading="eager" />
 
-                    <Image src={img3} alt="img3" />
+                    <Image src={img3} alt="img3" loading="eager" />
 
-                    {/* <Image src={img4} alt="img4" style={{ width: "350px" }} />
+                    <Image src={img4} alt="img4" style={{ width: "350px" }} loading="eager" />
 
-                    <Image src={img5} alt="img4" style={{ width: "450px" }} />
-                    <Image src={img1} alt="img1" style={{ width: "440px" }} /> */}
+                    <Image src={img5} alt="img4" style={{ width: "450px" }} loading="eager" />
+                    <Image src={img1} alt="img1" style={{ width: "440px" }} loading="eager" />
                   </>
                 </span>
                 <span className="secondBlock">
                   <>
-                    <Image src={img2} alt="img2" />
+                    <Image src={img2} alt="img2" loading="eager" />
 
-                    <Image src={img3} alt="img3" />
+                    <Image src={img3} alt="img3" loading="eager" />
 
-                    {/* <Image src={img4} alt="img4" style={{ width: "350px" }} />
+                    <Image src={img4} alt="img4" style={{ width: "350px" }} loading="eager" />
 
-                    <Image src={img5} alt="img4" style={{ width: "450px" }} />
-                    <Image src={img1} alt="img1" style={{ width: "440px" }} /> */}
+                    <Image src={img5} alt="img4" style={{ width: "450px" }} loading="eager" />
+                    <Image src={img1} alt="img1" style={{ width: "440px" }} loading="eager" />
                   </>
                 </span>
               </div>
@@ -64,27 +63,27 @@ const Customers = () => {
                 <span className="thirdBlock">
                   {" "}
                   <>
-                    <Image src={img6} alt="img1" />
+                    <Image src={img6} alt="img1" loading="eager"/>
 
-                    <Image src={img8} alt="img3" style={{ width: "320px" }} />
+                    <Image src={img8} alt="img3" style={{ width: "320px" }} loading="eager"/>
 
-                    {/* <Image src={img7} alt="img5" />
-                    <Image src={img10} alt="img4" style={{ width: "300px" }} />
+                    <Image src={img7} alt="img5" loading="eager"/>
+                    <Image src={img10} alt="img4" style={{ width: "300px" }} loading="eager"/>
 
-                    <Image src={img9} alt="img2" /> */}
+                    <Image src={img9} alt="img2" loading="eager"/>
                   </>
                 </span>
                 <span className="fourthBlock">
                   {" "}
                   <>
-                    <Image src={img6} alt="img1" />
+                    <Image src={img6} alt="img1" loading="eager"/>
 
-                    <Image src={img8} alt="img3" style={{ width: "320px" }} />
+                    <Image src={img8} alt="img3" style={{ width: "320px" }} loading="eager"/>
 
-                    {/* <Image src={img7} alt="img5" />
-                    <Image src={img9} alt="img4" style={{ width: "300px" }} />
+                    <Image src={img7} alt="img5" loading="eager"/>
+                    <Image src={img9} alt="img4" style={{ width: "300px" }} loading="eager"/>
 
-                    <Image src={img10} alt="img2" /> */}
+                    <Image src={img10} alt="img2" loading="eager"/>
                   </>
                 </span>
               </div>
