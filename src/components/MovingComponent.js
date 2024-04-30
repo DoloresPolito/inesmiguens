@@ -33,10 +33,10 @@ const Customers = () => {
 
                     <Image src={img3} alt="img3" />
 
-                    <Image src={img4} alt="img4" style={{ width: "350px" }} />
+                    {/* <Image src={img4} alt="img4" style={{ width: "350px" }} />
 
                     <Image src={img5} alt="img4" style={{ width: "450px" }} />
-                    <Image src={img1} alt="img1" style={{ width: "440px" }} />
+                    <Image src={img1} alt="img1" style={{ width: "440px" }} /> */}
                   </>
                 </span>
                 <span className="secondBlock">
@@ -45,10 +45,10 @@ const Customers = () => {
 
                     <Image src={img3} alt="img3" />
 
-                    <Image src={img4} alt="img4" style={{ width: "350px" }} />
+                    {/* <Image src={img4} alt="img4" style={{ width: "350px" }} />
 
                     <Image src={img5} alt="img4" style={{ width: "450px" }} />
-                    <Image src={img1} alt="img1" style={{ width: "440px" }} />
+                    <Image src={img1} alt="img1" style={{ width: "440px" }} /> */}
                   </>
                 </span>
               </div>
@@ -68,10 +68,10 @@ const Customers = () => {
 
                     <Image src={img8} alt="img3" style={{ width: "320px" }} />
 
-                    <Image src={img7} alt="img5" />
+                    {/* <Image src={img7} alt="img5" />
                     <Image src={img10} alt="img4" style={{ width: "300px" }} />
 
-                    <Image src={img9} alt="img2" />
+                    <Image src={img9} alt="img2" /> */}
                   </>
                 </span>
                 <span className="fourthBlock">
@@ -81,10 +81,10 @@ const Customers = () => {
 
                     <Image src={img8} alt="img3" style={{ width: "320px" }} />
 
-                    <Image src={img7} alt="img5" />
+                    {/* <Image src={img7} alt="img5" />
                     <Image src={img9} alt="img4" style={{ width: "300px" }} />
 
-                    <Image src={img10} alt="img2" />
+                    <Image src={img10} alt="img2" /> */}
                   </>
                 </span>
               </div>
