@@ -61,6 +61,21 @@ function Contacto() {
     }
   };
 
+  const variants = {
+    visible: {
+      opacity: 1,
+      x: 0, // Posición inicial
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+    hidden: {
+      opacity: 0.5,
+      x: 50, // Mueve la imagen hacia arriba para ocultarla
+    },
+  };
+
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -153,9 +168,16 @@ function Contacto() {
               </AnimatePresence>
             </div>
           </LeftContainer>
-          <RightContainer>
+
+ <RightContainer
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+          >
+   
               <Image src={profile} alt="profile" />
-            </RightContainer>
+          
+          </RightContainer>
         </ContactContainer>
       </Section>
     </>
@@ -274,7 +296,7 @@ const Input = styled.input`
   }
 `;
 
-const RightContainer = styled.div`
+const RightContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -301,5 +323,7 @@ const RightContainer = styled.div`
     margin-top: 40px;
   }
 `;
+
+
 
 export default Contacto;

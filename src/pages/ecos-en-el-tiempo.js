@@ -40,6 +40,7 @@ function Ecos() {
     },
   };
 
+
   return (
     <>
       <VocesSection>

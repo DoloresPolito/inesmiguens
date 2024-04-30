@@ -12,7 +12,7 @@ import img1 from "../../public/assets/images/hoteles/cauquenes comp/1baja.jpg";
 import img2 from "../../public/assets/images/hoteles/cauquenes comp/2baja.jpg";
 import img3 from "../../public/assets/images/hoteles/cauquenes comp/3baja.jpg";
 import img4 from "../../public/assets/images/hoteles/cauquenes comp/6baja.jpg";
-import img5 from "../../public/assets/images/hoteles/cauquenes comp/6.jpg";
+import img5 from "../../public/assets/images/hoteles/cauquenes comp/arreglada.jpg";
 import img6 from "../../public/assets/images/hoteles/cauquenes comp/7baja.jpg";
 import img7 from "../../public/assets/images/hoteles/cauquenes comp/8baja.jpg";
 import img8 from "../../public/assets/images/hoteles/cauquenes comp/9baja.jpg";

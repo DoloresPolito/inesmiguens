@@ -56,7 +56,7 @@ function Vanishing() {
                   Mi amor por la naturaleza me llevó una y otra vez a la selva
                   brasilera amazónica. Este me lleva a la más intima
                   contemplación de la vida misma, su riqueza y sus ciclos. <br/>
-                  La codicia del hombre, los incendios, la deforestación, la
+                  La codicia del hombre, los incendios, la deforestación y la
                   búsqueda de oro esta poniendo en peligro el mayor reservorio
                   de agua dulce del planeta. Los ríos voladores que brindan
                   lluvia a Sudamerica están desapareciendo. Los nativos y sus

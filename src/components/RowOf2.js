@@ -39,7 +39,7 @@ const RowOf2 = ({ image1, image2, obra}) => {
 
 const StyledImage = styled(Image)`
 
-  height: ${(props) => props.obra ? "620px" : "380px"};
+  height: ${(props) => props.obra ? "620px" : "480px"};
   width: 49%;
   object-fit: cover;
 
