@@ -135,7 +135,6 @@ function ClientesSection() {
                     <AnimatedWorkLi>
                       <Content>
                         <WorkTitle>{cliente.nombre}</WorkTitle>
-                        {/* {cliente.lugar && <More>{cliente.lugar}</More>} */}
                       </Content>
                     </AnimatedWorkLi>
                   </motion.li>
@@ -154,7 +153,6 @@ function ClientesSection() {
                     <AnimatedWorkLi>
                       <Content>
                         <WorkTitle>{cliente.nombre}</WorkTitle>
-                        {/* {cliente.lugar && <More>{cliente.lugar}</More>} */}
                       </Content>
                     </AnimatedWorkLi>
                   </motion.li>

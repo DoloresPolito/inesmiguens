@@ -7,11 +7,11 @@ import More from "@/components/More";
 import img1a from "../../public/assets/images/hoteles/principal/1.jpg";
 import img2a from "../../public/assets/images/hoteles/principal/2.jpg";
 import img3a from "../../public/assets/images/hoteles/principal/3.jpg";
-
 import AnimatedText from "@/components/AnimatedText";
 import AnimatedImage from "@/components/AnimatedImage";
 import { motion } from "framer-motion";
 import DisableContextMenu from "@/components/DisableContextMenu";
+
 function HotelesSection() {
   return (
     <Container>

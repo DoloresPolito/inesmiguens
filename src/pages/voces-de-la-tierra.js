@@ -22,7 +22,6 @@ import img10 from "../../public/assets/images/obras/VOCES/10..jpg";
 import img11 from "../../public/assets/images/obras/VOCES/11.jpg";
 import img12 from "../../public/assets/images/obras/VOCES/12.jpg";
 import img13 from "../../public/assets/images/obras/VOCES/13.jpg";
-
 import { useInView } from "react-intersection-observer";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
@@ -82,11 +81,8 @@ function Voces() {
         <ObrasBottomContainer>
           <PicturesContainer>
             <AnimatedRowOf2 image1={img4} image2={img3} />
-
             <AnimatedRowOf3Vertical image1={img7} image2={img6} image3={img5} />
-
             <AnimatedRowOf2 image1={img10} image2={img11} />
-
             <AnimatedRowOf2 image1={img9} image2={img13} />
             <AnimatedRowOf2 image1={img12} image2={img1} />
           </PicturesContainer>

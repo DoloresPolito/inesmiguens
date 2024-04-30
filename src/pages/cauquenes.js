@@ -18,7 +18,6 @@ import img7 from "../../public/assets/images/hoteles/cauquenes comp/8baja.jpg";
 import img8 from "../../public/assets/images/hoteles/cauquenes comp/9baja.jpg";
 import img9 from "../../public/assets/images/hoteles/cauquenes comp/89baja.jpg";
 import img10 from "../../public/assets/images/hoteles/cauquenes comp/90baja.jpg";
-
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import DisableContextMenu from "@/components/DisableContextMenu";
 
@@ -36,9 +35,7 @@ function Cauquenes() {
           <PicturesContainer>
             <AnimatedRowOf2 image1={img1} image2={img2}></AnimatedRowOf2>
             <AnimatedRowOf2 image1={img3} image2={img4}></AnimatedRowOf2>
-
             <AnimatedRowOf2 image1={img5} image2={img6}></AnimatedRowOf2>
-
             <AnimatedRowOf2 image1={img7} image2={img8} />
             <AnimatedRowOf2 image1={img9} image2={img10} />
           </PicturesContainer>

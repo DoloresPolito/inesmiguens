@@ -18,6 +18,7 @@ import img5 from "../../public/assets/images/obras/IMPERMANENCIA/5.jpg";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
 import DisableContextMenu from "@/components/DisableContextMenu";
+
 function Impermanencia() {
   const variants = {
     visible: {

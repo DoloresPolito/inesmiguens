@@ -15,12 +15,10 @@ import img2 from "../../public/assets/images/obras/VANISHING/2.jpg";
 import img3 from "../../public/assets/images/obras/VANISHING/3.jpg";
 import img4 from "../../public/assets/images/obras/VANISHING/mujermasazul.jpg";
 import img5 from "../../public/assets/images/obras/VANISHING/5.jpg";
-
 import img6 from "../../public/assets/images/obras/VANISHING/6.jpg";
 import img7 from "../../public/assets/images/obras/VANISHING/new1.jpg";
 import img8 from "../../public/assets/images/obras/VANISHING/new2.jpg";
 import img9 from "../../public/assets/images/obras/VANISHING/new3..jpg";
-
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
 import DisableContextMenu from "@/components/DisableContextMenu";

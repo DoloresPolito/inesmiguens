@@ -151,10 +151,9 @@ const LogoContainer = styled.div`
   .logo {
     font-size: 30px;
     color: #4a4747;
-    font-family: var(--font-montserrat);
-    font-weight: 100 !important;
+    font-weight: 200 !important;
     text-decoration: none; 
-
+    font-family: "Montserrat", sans-serif !important;
 
 
   }
@@ -177,9 +176,10 @@ const LinksContainer = styled.div`
   p {
     font-size: 12px;
     color: #4a4747;
-    font-weight: 200;
+    font-weight: 300;
     font-family: var(--font-montserrat);
     line-height: 0%;
+    font-family: "Montserrat", sans-serif !important;
     &:hover {
       font-weight: 500;
     }
@@ -193,7 +193,7 @@ const Underline = styled.span`
   display: block;
   height: 1px;
   width: 100%;
-  background-color: black;
+  background-color: #4a4747;
 `;
 
 export default Navbar;

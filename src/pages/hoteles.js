@@ -5,7 +5,6 @@ import Hoteles from "@/sections/Hoteles";
 function HotelesSection() {
   return (
     <>
-
       <Section>
         <Hoteles />
       </Section>

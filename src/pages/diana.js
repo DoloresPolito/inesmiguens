@@ -10,9 +10,9 @@ import img5 from "../../public/assets/images/hoteles/parque diana comp/4bajaa.jp
 import img6 from "../../public/assets/images/hoteles/parque diana comp/5bajaa.jpg";
 import img7 from "../../public/assets/images/hoteles/parque diana comp/6bajaaa.jpg";
 import img9 from "../../public/assets/images/hoteles/parque diana comp/9bajaaa.jpg";
-
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import DisableContextMenu from "@/components/DisableContextMenu";
+
 function Diana() {
   return (
     <>
@@ -21,22 +21,15 @@ function Diana() {
         <DisableContextMenu />
           <HotelesContainer>
             <TextContainer>
-
-      
             <HotelSubtitle>Parque Diana</HotelSubtitle>
             <HotelText>Neuquen</HotelText>
             <MoreBack text="hoteles" link="/hoteles" />
             </TextContainer>
             <PicturesContainer>
               <AnimatedRowOf2 image1={img1} image2={img2}></AnimatedRowOf2>
-
               <AnimatedRowOf2 image1={img3} image2={img4}></AnimatedRowOf2>
-
               <AnimatedRowOf2 image1={img5} image2={img6}></AnimatedRowOf2>
-
               <AnimatedRowOf2 image1={img7} image2={img9}></AnimatedRowOf2>
-
-            
             </PicturesContainer>
           </HotelesContainer>
         </HotelesSection>

@@ -10,7 +10,6 @@ import {
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import MoreBack from "@/components/MoreBack";
-
 import img1 from "../../public/assets/images/obras/HIJOS/1.jpg";
 import img2 from "../../public/assets/images/obras/HIJOS/2.jpg";
 import img3 from "../../public/assets/images/obras/HIJOS/3.jpg";
@@ -22,11 +21,8 @@ import img8 from "../../public/assets/images/obras/HIJOS/8.jpg";
 import img9 from "../../public/assets/images/obras/HIJOS/9.jpg";
 import img10 from "../../public/assets/images/obras/HIJOS/10.jpg";
 import img12 from "../../public/assets/images/obras/HIJOS/12.jpg";
-
 import { useInView } from "react-intersection-observer";
-
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
-
 import AnimatedText from "@/components/AnimatedText";
 import DisableContextMenu from "@/components/DisableContextMenu";
 
@@ -50,20 +46,21 @@ function Hijos() {
   return (
     <>
       <VocesSection>
-      <DisableContextMenu />
+        <DisableContextMenu />
         <ObrasTopContainer>
           <div className="left">
             <AnimatedText>
               <ObrasTitle>Hijos del Sol</ObrasTitle>
             </AnimatedText>
-
             <AnimatedText>
               <div>
                 <ObrasText>
-
-                  Hijos del sol es el testimonio de un pueblo y pretende reflejar su esencia, sus creencias y sus costumbres. Aquí lo pagano y cristiano se amalgaman para crear un lenguaje mágico y profundo.
-                A través de las imagenes intento revelar lo invisible y visibilizar lo imaginado. Pasado y presente continúan conviviendo en los herederos de los Incas.
-
+                  Hijos del sol es el testimonio de un pueblo y pretende
+                  reflejar su esencia, sus creencias y sus costumbres. Aquí lo
+                  pagano y cristiano se amalgaman para crear un lenguaje mágico
+                  y profundo. <br />A través de las imagenes intento revelar lo
+                  invisible y visibilizar lo imaginado. Pasado y presente
+                  continúan conviviendo en los herederos de los Incas.
                 </ObrasText>
                 <MoreBack text="obras" link="/obras" />
               </div>
@@ -82,9 +79,7 @@ function Hijos() {
         <ObrasBottomContainer>
           <PicturesContainer>
             <AnimatedRowOf3Vertical image1={img2} image2={img4} image3={img5} />
-
             <AnimatedRowOf2 image1={img1} image2={img3} />
-
             <AnimatedRowOf3Vertical image1={img6} image2={img7} image3={img8} />
             <AnimatedRowOf2 image1={img10} image2={img9} />
           </PicturesContainer>

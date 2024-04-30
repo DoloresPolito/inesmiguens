@@ -1,6 +1,5 @@
 import AnimatedText from "@/components/AnimatedText";
 import React, { useState, useEffect } from "react";
-
 import styled from "styled-components";
 import { Container, SectionTitle } from "../styles/styles";
 import { motion } from "framer-motion";
@@ -8,8 +7,6 @@ import Image from "next/image";
 import libro1 from "../../public/assets/images/libros/hijos del sol.png";
 import libro2 from "../../public/assets/images/libros/madres argentinas.png";
 import libro3 from "../../public/assets/images/libros/parques y jardones.png";
-
-import AnimatedImage from "@/components/AnimatedImage";
 
 const TrayectoriaSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -154,7 +151,6 @@ const TrayectoriaSection = () => {
           titulo: "GALERÍA THAMES,",
           subtitulo: "“Pueblos Olvidados”",
         },
-     
       ],
     },
 
@@ -254,7 +250,8 @@ const TrayectoriaSection = () => {
       nombre: "Parques y Jardines",
       image: libro3,
       link: "/",
-      description: "Este libro reúne aquellos jardines que, según mi criterio, se prestan a una lectura expresiva del espíritu de quien los concibió y los habita. No se previlegia el tamaño, la ubicación ni el diseño, sino lo que cada jardín es capaz de manifestar. Un sitio de recogimiento y de armonía donde se concilian varias ideas con un diseño personal que responde a las necesidades de la vida diaria. Un espacio íntimo que nos conecta con la naturaleza; un lugar para recrearnos y recrear.",
+      description:
+        "Este libro reúne aquellos jardines que, según mi criterio, se prestan a una lectura expresiva del espíritu de quien los concibió y los habita. No se previlegia el tamaño, la ubicación ni el diseño, sino lo que cada jardín es capaz de manifestar. Un sitio de recogimiento y de armonía donde se concilian varias ideas con un diseño personal que responde a las necesidades de la vida diaria. Un espacio íntimo que nos conecta con la naturaleza; un lugar para recrearnos y recrear.",
     },
   ];
   return (
@@ -304,27 +301,24 @@ const TrayectoriaSection = () => {
           </AnimatedText>
 
           <LibrosContainer>
-           
-                {libros.map((item, index) => (
-                  <Item key={index}>
-                    <div className="top">
-                      <Image
-                        src={item.image}
-                        alt={`imagen-${index}`}
-                        className="book-image"
-                      />
-                    </div>
+            {libros.map((item, index) => (
+              <Item key={index}>
+                <div className="top">
+                  <Image
+                    src={item.image}
+                    alt={`imagen-${index}`}
+                    className="book-image"
+                  />
+                </div>
 
-                    <div className="bottom">
-                      <h4>{item.nombre}</h4>
-                      <AnimatedText>
-                        <p>{item.description}</p>
-                      </AnimatedText>
-                    </div>
-                  </Item>
-                ))}
-           
- 
+                <div className="bottom">
+                  <h4>{item.nombre}</h4>
+                  <AnimatedText>
+                    <p>{item.description}</p>
+                  </AnimatedText>
+                </div>
+              </Item>
+            ))}
           </LibrosContainer>
         </LibrosContainerSection>
       </TrayectoriaContainer>
@@ -355,11 +349,9 @@ const TrayectoriaContainer = styled(Container)`
     /* min-height: 100vh; */
     margin: 0 auto;
 
-
     @media screen and (max-width: 1100px) {
       width: 100%;
       margin-left: -30px;
-
     }
   }
 `;
@@ -425,7 +417,6 @@ const YearContainer = styled.div`
     color: black;
     margin: 0;
     line-height: 110%;
-
   }
 
   .subtitle {
@@ -456,7 +447,6 @@ const Content = styled.div`
 `;
 
 const WorkTitle = styled.h4`
-  /* font-family: "Montserrat", sans-serif; */
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 100;
@@ -468,7 +458,6 @@ const WorkTitle = styled.h4`
 
 const LibrosContainerSection = styled(Container)`
   width: 100%;
-
 `;
 
 const LibrosContainer = styled.div`
@@ -477,8 +466,8 @@ const LibrosContainer = styled.div`
   margin-top: 30px;
   width: 100%;
   flex-direction: row !important;
-justify-content: space-around;
-flex-wrap: wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 const Item = styled(motion.div)`
@@ -488,26 +477,15 @@ const Item = styled(motion.div)`
   margin-bottom: 60px;
   align-items: center;
 
-
-
   .book-image {
     height: 350px;
     width: auto;
     margin-bottom: 30px;
-    /* @media screen and (max-width: 860px) {
-      width: 60%;
-      height: auto;
-    }
-
-    @media screen and (max-width: 540px) {
-      width: 90%;
-      height: auto;
-    } */
   }
 
   .top {
     display: flex;
- 
+
     @media screen and (max-width: 860px) {
       justify-content: center;
       margin-bottom: 20px;
@@ -517,19 +495,7 @@ const Item = styled(motion.div)`
   .bottom {
     display: flex;
     flex-direction: column;
-align-items: center !important;
-
-    /* @media screen and (max-width: 860px) {
-      margin-left: 0px;
-    }
-
-    @media screen and (max-width: 540px) {
-      width: 100%;
-      align-self: center;
-
-      margin-bottom: 20px;
-      margin-top: 10px;
-    } */
+    align-items: center !important;
   }
 
   h4 {

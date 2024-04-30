@@ -8,7 +8,7 @@ import vanishing2 from "../../public/assets/images/obras/VANISHING/van new.jpg";
 import voces1 from "../../public/assets/images/obras/VOCES/mujer gallo.jpg";
 import voces2 from "../../public/assets/images/obras/VOCES/mujer flores.jpg";
 import ecos1 from "../../public/assets/images/obras/ECOS/4.jpg";
-import ecos2 from "../../public/assets/images/obras/ECOS/9.jpg";
+import ecos2 from "../../public/assets/images/obras/ECOS/9.....jpg";
 import hijos1 from "../../public/assets/images/obras/HIJOS/3.jpg";
 import hijos2 from "../../public/assets/images/obras/HIJOS/6.jpg";
 import { Container, SectionTitle } from "../styles/styles";
