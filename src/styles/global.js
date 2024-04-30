@@ -35,7 +35,9 @@ const GlobalStyles = createGlobalStyle`
  
   }
 
-
+  .disable-scroll {
+  overflow: hidden;
+}
   
 `;
 

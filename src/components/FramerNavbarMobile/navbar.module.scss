@@ -28,6 +28,7 @@
     height: 90px;
 
 
+
       p {
         font-size: 30px;
         color: #4a4747;
@@ -43,6 +44,7 @@
       position: relative;
       right: 0;
       cursor: pointer;
+  
 
       .burgerMenuTrigger {
         content: "";
@@ -131,6 +133,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
 
   .navigation {
     .button {

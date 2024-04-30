@@ -33,6 +33,10 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="Inés Miguens Photo" />
+        <meta
+          name="keywords"
+          content="Ines Miguens, Inés Miguens, fotografia, fotografía, photos, clases, clases de fotografia, ines miguens, foto hoteles, fotos hoteleria, obras"
+        />
 
         <link
           rel="apple-touch-icon"
@@ -71,13 +75,12 @@ const MyApp = ({ Component, pageProps }) => {
               zIndex: "10000",
               borderRadius: "20px",
               height: "50px",
-              position:"fixed",
-              bottom:"20px",
-              right:"20px",
-              display:"flex",
-              justifyContent:"center",
-              alignItems:"center"
-
+              position: "fixed",
+              bottom: "20px",
+              right: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
             color="#6a6f58"
             smooth

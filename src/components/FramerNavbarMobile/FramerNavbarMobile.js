@@ -15,29 +15,28 @@ const links = [
 const FramerNavbarMobile = () => {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
 
-  const toggleBurgerMenu = () => {
-    setBurgerMenuActive(!burgerMenuActive);
-  };
-
-  // const [scrollDirection, setScrollDirection] = useState("down");
-  // const [prevScrollPos, setPrevScrollPos] = useState(0);
-  // const [visible, setVisible] = useState(true);
-
-  // const handleScroll = () => {
-  //   const currentScrollPos = window.pageYOffset;
-
-  //   if (prevScrollPos > currentScrollPos) {
-  //     setScrollDirection("up");
-  //   } else {
-  //     setScrollDirection("down");
-  //   }
-
-  //   setPrevScrollPos(currentScrollPos);
+  // const toggleBurgerMenu = () => {
+  //   setBurgerMenuActive(!burgerMenuActive);
   // };
 
+  const toggleBurgerMenu = () => {
+    setBurgerMenuActive(!burgerMenuActive);
+    if (!burgerMenuActive) {
+      document.body.classList.add("disable-scroll");
+    } else {
+      document.body.classList.remove("disable-scroll");
+    }
+  };
+
+
+  // const handleClose = () => {
+  //   setBurgerMenuActive(false)
+  // }
+
   const handleClose = () => {
-    setBurgerMenuActive(false)
-  }
+    setBurgerMenuActive(false);
+    document.body.classList.remove("disable-scroll");
+  };
 
   const motionVariants = {
     open: {
