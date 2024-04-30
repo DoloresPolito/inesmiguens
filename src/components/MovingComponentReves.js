@@ -18,7 +18,6 @@ const Customers = () => {
       <CustomersContainer>
         <LoopReves
           item
-          reverse="false"
           content={
             <>
               <Image src={img1} alt="img1" />

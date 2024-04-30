@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const LoopReves = ({ content, reverse}) => (
-  <LoopSection reverse={reverse} >
+const LoopReves = ({ content }) => (
+  <LoopSection  >
     <div className="blocks">
       <div className="contents">
         <span className="firstBlock">{content}</span>
