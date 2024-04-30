@@ -48,10 +48,10 @@ function Impermanencia() {
             <AnimatedText>
               <div>
                 <ObrasText>
-                  La ciudad se convierte en un mar de fugaces  y fantasmagóricos
+                  La ciudad se convierte en un mar de fugaces y fantasmagóricos
                   encuentros, en la que se desvanece la posibilidad de la
                   percepción de los otros, prácticamente invisibles,
-                  incorpóreos.  Una geometría que dibuja en el asfalto el
+                  incorpóreos. Una geometría que dibuja en el asfalto el
                   vértigo del tiempo, preñado de destiempo y expatriado de toda
                   permanencia. Su cruce demora apenas un minuto que es la cifra
                   de la celeridad en la que vivimos.

@@ -55,18 +55,6 @@ function Vanishing() {
             <AnimatedText>
               <div>
                 <ObrasText>
-                  {/* El Amazonas esta en permanente peligro de existencia. Mi
-                  fuerte conexión con la naturaleza me ha llevado varias veces a
-                  permanecer allí. Sus enormes flujos de agua, la gran variedad
-                  de arboles y plantas, el aire límpido que se respira… Hay una
-                  verdadera sensación de quietud y perfeccion. La abrumadora y
-                  necesaria conciencia de ser uno con la naturaleza conectado
-                  con la fuerza de su existencia. De su tierra ella desprende
-                  humedales, ríos voladores, de los cuales se elevan y producen
-                  la lluvia que alimenta a todo el ecosistema. La deforestación,
-                  la búsqueda del oro, los incendios y la tala de los árboles
-                  ponen en peligro el mayor reservorio de agua dulce del
-                  planeta. */}
                   Mi amor por la naturaleza me llevó una y otra vez a la selva
                   brasilera amazónica. Este me lleva a la más intima
                   contemplación de la vida misma, su riqueza y sus ciclos. <br/>

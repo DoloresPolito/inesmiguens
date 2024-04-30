@@ -64,10 +64,6 @@ function Hijos() {
                   Hijos del sol es el testimonio de un pueblo y pretende reflejar su esencia, sus creencias y sus costumbres. Aquí lo pagano y cristiano se amalgaman para crear un lenguaje mágico y profundo.
                 A través de las imagenes intento revelar lo invisible y visibilizar lo imaginado. Pasado y presente continúan conviviendo en los herederos de los Incas.
 
-                  {/* Hijos del Sol es el testimonio de un pueblo, sus creencias y
-                  sus costumbres. A través de las imágenes intente revelar lo
-                  invisible y visibilizar lo imaginado. Pasado y presente
-                  continúan conviviendo en los herederos de los Incas. */}
                 </ObrasText>
                 <MoreBack text="obras" link="/obras" />
               </div>
