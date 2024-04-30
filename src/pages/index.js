@@ -2,7 +2,6 @@ import React from "react";
 import DisableContextMenu from "@/components/DisableContextMenu";
 import MovingComponent from "@/components/MovingComponent";
 import styled from "styled-components";
-// import MovingComponentReves from "@/components/MovingComponentReves";
 import {motion} from "framer-motion"
 
 function Home() {
@@ -19,7 +18,6 @@ function Home() {
               }}
       >
         <MovingComponent />
-        {/* <MovingComponentReves /> */}
       </IndexContainerAnimated>
     </>
   );

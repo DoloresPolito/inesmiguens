@@ -5,7 +5,7 @@ import Image from "next/image";
 import instagram from "../../public/assets/icons/instagram.png";
 import mail from "../../public/assets/icons/mail.png";
 import phone from "../../public/assets/icons/phone.png";
-import profile from "../../public/assets/images/profile/profile.jpeg";
+import profile from "../../public/assets/images/profile/profile1.jpeg";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { sendContactForm } from "../lib/api";
@@ -93,10 +93,6 @@ function Contacto() {
       <Section>
         <ContactContainer>
           <LeftContainer
-            // initial={{ opacity: 0 }}
-            // animate={{ opacity: 1 }}
-            // exit={{ opacity: 0 }}
-            // transition={{ duration: 2, ease: "easeOut" }}
           >
             <motion.div
             
@@ -203,41 +199,7 @@ const LeftContainer = styled(motion.div)`
       flex-direction: column;
     }
 
-    /* input {
-      width: 100%;
-      padding: 8px;
-      border: none;
-      border-bottom: 1px solid #ccc;
-      outline: none;
-      color: white;
-      margin-top: 40px;
-    }
-
-    input::placeholder {
-      color: #000000;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 10px;
-    }
-
-    input:focus {
-      color: #000000;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 10px;
-      outline: none;
-    }
-
-    input:active {
-      color: #000000;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 10px;
-      outline: none;
-    } */
+    
 
     button {
       background-color: transparent;
@@ -323,10 +285,14 @@ const RightContainer = styled.div`
 
   img {
     height: auto;
-    width: 350px;
+    width: 550px;
 
     @media screen and (max-width: 1100px) {
-      width: 300px;
+      width: 70%;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 100%;
     }
   }
 

@@ -78,6 +78,7 @@ function ObrasSection() {
                     className="img1"
                     src={vanishing1}
                     alt="Vanishing Landscapes"
+                    loading="eager"
                   />
                   {width > 980 ? (
                     <>
@@ -86,6 +87,7 @@ function ObrasSection() {
                         className="img1"
                         src={vanishing2}
                         alt="Vanishing Landscapes"
+                        loading="eager"
                       />
                     </>
                   ) : (
@@ -107,7 +109,8 @@ function ObrasSection() {
                   <ImpermanenciaImg1
                     className="img1"
                     src={impermanencia1}
-                    alt="impermanencia"
+                    alt="Impermanencia"
+                    loading="eager"
                   />
 
                   {width > 980 ? (
@@ -116,7 +119,8 @@ function ObrasSection() {
                       <Img2
                         className="img2"
                         src={impermanencia2}
-                        alt="vanishing"
+                        alt="Impermanencia"
+                        loading="eager"
                       />
                     </>
                   ) : (
@@ -140,6 +144,7 @@ function ObrasSection() {
                         className="img1"
                         src={voces2}
                         alt="Voces de la Tierra"
+                        loading="eager"
                       />
                 
 
@@ -149,6 +154,7 @@ function ObrasSection() {
                     className="img1"
                     src={voces1}
                     alt="Voces de la Tierra"
+                    loading="eager"
                   />
            
                     </>
@@ -174,6 +180,7 @@ function ObrasSection() {
                         className="img1"
                         src={ecos2}
                         alt="Ecos en el Tiempo"
+                        loading="eager"
                       />
                     </>
                   ) : (
@@ -184,6 +191,7 @@ function ObrasSection() {
                     className="img1"
                     src={ecos1}
                     alt="Ecos en el Tiempo"
+                    loading="eager"
                   />
                 </ImageContainer>
                 <div className="text-container ">
@@ -200,7 +208,8 @@ function ObrasSection() {
                   <HijosImg1
                     className="img1"
                     src={hijos1}
-                    alt="Vanishing Landscapes"
+                    alt="Hijos del sol"
+                    loading="eager"
                   />
                   {width > 980 ? (
                     <>
@@ -208,7 +217,8 @@ function ObrasSection() {
                       <HijosImg2
                         className="img1"
                         src={hijos2}
-                        alt="Vanishing Landscapes"
+                        alt="Hijos del sol"
+                        loading="eager"
                       />
                     </>
                   ) : (

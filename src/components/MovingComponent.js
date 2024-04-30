@@ -18,7 +18,7 @@ import img10 from "../../public/assets/images/nuevas home/impernew.jpg";
 const Customers = () => {
   return (
     <>
-    {img1 && img2 && img6 && img7 && img3 && img4 && img5 && img8 && img8 && img10 ? (<>
+  
       <CustomersSection>
         <CustomersContainer>
 
@@ -92,14 +92,6 @@ const Customers = () => {
         </CustomersContainer>
       </CustomersSection>
     
-    </>)  :  (<>
-    
-    <div style={{backgroundColor:"red"}}>
-      <p>prueba</p>
-    </div>
-    
-    </>)}
-     
     </>
   );
 };

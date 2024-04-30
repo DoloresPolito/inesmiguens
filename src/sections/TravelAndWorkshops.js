@@ -28,7 +28,7 @@ function Talleres() {
       
           <CursoContainer>
             <h4>ciclo basico</h4>
-            <Image className="course-img" src={img1} alt="curso 2" />
+            <Image className="course-img" src={img1} alt="CICLO BASICO" loading="eager"/>
             <AnimatedText>
 
 
@@ -61,7 +61,7 @@ function Talleres() {
 
           <CursoContainer>
             <h4>travel and workshops</h4>
-            <Image className="course-img" src={img2} alt="curso 2" />
+            <Image className="course-img" src={img2} alt="TRAVEL AND WORKSHOPS" loading="eager"/>
 
             <AnimatedText>
 
@@ -89,7 +89,7 @@ function Talleres() {
           <Link href='/contacto'>
           <CursoContainer>
             <h4>talleres</h4>
-            <Image className="course-img" src={img3} alt="curso 2" />
+            <Image className="course-img" src={img3} alt="TALLERES" loading="eager"/>
             <AnimatedText>
 
      

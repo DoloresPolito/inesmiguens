@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import FramerNavbarMobile from "@/components/FramerNavbarMobile/FramerNavbarMobile";
+import {motion} from "framer-motion"
+
 
 const links = [
   { href: "/hoteles", title: "HOTELES" },
@@ -73,7 +75,10 @@ const Navbar = () => {
           visible={visible}
           >
             <NavbarContainer>
-              <LogoContainer>
+
+              <LogoContainer
+         
+              >
                 <StyledLink href="/" >
                   <p className="logo">INÉS MIGUENS</p>
                 </StyledLink>
@@ -154,6 +159,8 @@ const LogoContainer = styled.div`
 
   }
 `;
+
+
 
 const LinksContainer = styled.div`
   display: flex;

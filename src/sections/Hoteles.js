@@ -33,7 +33,7 @@ function HotelesSection() {
             <HotelItem>
               <ItemContainer>
                 <div className="top">
-                  <Image src={img1a} alt="Los Cauquenes" />
+                  <Image src={img1a} alt="Los Cauquenes" loading="eager"/>
                 </div>
 
                 <div className="bottom">
@@ -53,7 +53,7 @@ function HotelesSection() {
             <Link href="/bamba">
               <ItemContainer>
                 <div className="top">
-                  <Image src={img3a} alt="La Bamba de Areco" />
+                  <Image src={img3a} alt="La Bamba de Areco" loading="eager"/>
                 </div>
 
                 <div className="bottom">
@@ -73,7 +73,7 @@ function HotelesSection() {
             <Link href="/diana">
               <ItemContainer>
                 <div className="top">
-                  <Image src={img2a} alt="Parque Diana" />
+                  <Image src={img2a} alt="Parque Diana" loading="eager"/>
                 </div>
 
                 <div className="bottom">
