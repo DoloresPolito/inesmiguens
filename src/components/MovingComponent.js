@@ -19,26 +19,10 @@ import img10 from "../../public/assets/images/nuevas home/impernew.jpg";
 const Customers = () => {
   return (
     <>
+    {img1 && img2 && img6 && img7 && img3 && img4 && img5 && img8 && img8 && img10 ? (<>
       <CustomersSection>
         <CustomersContainer>
-          {/* <Loop
-          item
-          reverse="true"
-          content={
-            <>
-             
 
-              <Image src={img2} alt="img2" />
-
-              <Image src={img3} alt="img3" />
-
-              <Image src={img4} alt="img4" style={{width:"350px"}}/>
-
-              <Image src={img5} alt="img4" style={{width:"450px"}}/>
-              <Image src={img1} alt="img1"style={{width:"440px"}}/>
-            </>
-          }
-        /> */}
 
           <LoopSection>
             <div className="blocks">
@@ -108,6 +92,15 @@ const Customers = () => {
           </LoopSection>
         </CustomersContainer>
       </CustomersSection>
+    
+    </>)  :  (<>
+    
+    <div style={{backgroundColor:"red"}}>
+      <p>prueba</p>
+    </div>
+    
+    </>)}
+     
     </>
   );
 };
