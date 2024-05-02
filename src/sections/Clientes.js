@@ -29,6 +29,7 @@ function ClientesSection() {
     { nombre: "Cicer", lugar: "" },
     { nombre: "Editorial Lariviere", lugar: "" },
     { nombre: "Estudio Sierchuk - Barrionuevo", lugar: "" },
+    { nombre: "La Pastora", lugar: "" },
     { nombre: "Own", lugar: "" },
     ,
     { nombre: "Sofia Revista", lugar: "" },

@@ -48,6 +48,7 @@ function Talleres() {
           </>)}
          
           <AnimatedImage>
+          <Link href="/contacto">
             <CursoContainer>
               <h4>ciclo básico</h4>
               <Image
@@ -75,8 +76,10 @@ function Talleres() {
                       </Link>
                     </div> */}
                 </div>
+                
               </AnimatedText>
             </CursoContainer>
+            </Link>
           </AnimatedImage>
 
           <AnimatedImage>
@@ -194,7 +197,7 @@ const InfoContainer = styled.div`
 
   width: auto;
 
-  width: 60%;
+  width: 55%;
   @media screen and (max-width: 970px) {
     width: 90%;
   }
@@ -216,7 +219,7 @@ const CursoContainer = styled.div`
 
   .course-img {
     width: 100%;
-    height: 400px;
+    height: auto;
     border-radius: 2px;
     @media screen and (max-width: 970px) {
       height: auto;
@@ -258,7 +261,7 @@ const CursoContainer = styled.div`
     text-align: justify;
     text-justify: inter-word;
     margin-bottom: 10px;
-    font-weight: 200;
+    /* font-weight: 300; */
     margin-top: 25px;
     /* @media screen and (max-width: 1100px) {
       margin-bottom: 20px;
