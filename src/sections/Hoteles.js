@@ -14,7 +14,7 @@ import DisableContextMenu from "@/components/DisableContextMenu";
 
 function HotelesSection() {
   return (
-    <Container>
+    <HotelesContainer>
       <DisableContextMenu />
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -88,13 +88,23 @@ function HotelesSection() {
           </HotelItem>
         </AnimatedImage>
       </HotelesGrid>
-    </Container>
+    </HotelesContainer>
   );
 }
+
+const HotelesContainer = styled.div`
+width: 80%;
+margin: 0 auto;
+
+@media screen and (max-width: 900px) {
+  width: 90%;
+}
+`
 
 const HotelesGrid = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
   width: 90%;
   @media screen and (max-width: 560px) {
     width: 100%;

@@ -10,7 +10,7 @@ function Footer() {
         <FooterContainer>
           <TopContainer>
             <div>
-              <h6>Contacto</h6>
+              {/* <h6>Contacto</h6> */}
               <Link href="https://api.whatsapp.com/send/?phone=541154675902" target="_blank">
 
               <FooterText>+54 11 5467 5902</FooterText>
@@ -64,6 +64,7 @@ const TopContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
+
 
   div {
     display: flex;

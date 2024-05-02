@@ -170,6 +170,8 @@ const ClientesContainer = styled(Container)`
   display: flex;
   flex-direction: row;
   min-height: 100vh;
+  width: 80%;
+
 
   @media screen and (max-width: 920px) {
     flex-direction: column;
@@ -201,8 +203,9 @@ const Info = styled(motion.div)`
   margin-top: 100px;
   background-color: white;
   justify-content: space-between;
-  padding: 50px;
+  padding: 50px 0px;
   width: 600px;
+
 
   @media screen and (max-width: 920px) {
     margin-top: 0px;
@@ -215,10 +218,14 @@ const Info = styled(motion.div)`
     flex-direction: column;
     width: auto;
   }
+
+  @media screen and (max-width: 490px) {
+
+  }
   h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     letter-spacing: 0.3px;
     font-weight: 500;
     color: #6a6f58;

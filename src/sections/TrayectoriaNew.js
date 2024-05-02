@@ -257,43 +257,41 @@ const TrayectoriaSection = () => {
   return (
     <>
       <TrayectoriaContainer>
-        <div className="right">
+        <InfoContainer
+          variants={containerVariants}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+        >
           <AnimatedText>
-            <SectionTitle>TRAYECTORIA</SectionTitle>
+            <TitleContainer>
+              <TravelTitle>trayectoria</TravelTitle>
+            </TitleContainer>
           </AnimatedText>
-        </div>
-        <div className="left">
-          <Info
-            variants={containerVariants}
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-          >
-            <div>
-              <motion.ul
-                animate={isVisible2 ? "open" : "closed"}
-                variants={motionVariants}
-              >
-                {trayectoria.map((item, index) => (
-                  <motion.li variants={listItemVariants} key={index}>
-                    <AnimatedWorkLi>
-                      <Content>
-                        <WorkTitle>{item.año}</WorkTitle>
-                        <Fix>
-                          {item.items.map((i, index) => (
-                            <YearContainer key={index}>
-                              <p className="title">{i.titulo}</p>
-                              <p className="subtitle">{i.subtitulo}</p>
-                            </YearContainer>
-                          ))}
-                        </Fix>
-                      </Content>
-                    </AnimatedWorkLi>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </div>
-          </Info>
-        </div>
+          <div>
+            <motion.ul
+              animate={isVisible2 ? "open" : "closed"}
+            //   variants={motionVariants}
+            >
+              {trayectoria.map((item, index) => (
+                <motion.li variants={listItemVariants} key={index}>
+                  <AnimatedWorkLi>
+                    <Content>
+                      <WorkTitle>{item.año}</WorkTitle>
+                      <Fix>
+                        {item.items.map((i, index) => (
+                          <YearContainer key={index}>
+                            <p className="title">{i.titulo}</p>
+                            <p className="subtitle">{i.subtitulo}</p>
+                          </YearContainer>
+                        ))}
+                      </Fix>
+                    </Content>
+                  </AnimatedWorkLi>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </div>
+        </InfoContainer>
 
         <LibrosContainerSection>
           <AnimatedText>
@@ -329,83 +327,82 @@ const TrayectoriaSection = () => {
 const TrayectoriaContainer = styled(Container)`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 
-  @media screen and (max-width: 1100px) {
-    flex-direction: column;
-  }
 
-  @media screen and (max-width: 660px) {
-    width: 90%;
-  }
-
-  .right {
-    width: 100%;
-
-    @media screen and (max-width: 1100px) {
-      width: 100%;
-      margin-bottom: 0px;
-    }
-  }
-
-  .left {
-    width: 70%;
-    /* min-height: 100vh; */
-    margin: 0 auto;
-
-    @media screen and (max-width: 1100px) {
-      width: 100%;
-      margin-left: -30px;
-    }
-  }
 `;
 
-const Info = styled(motion.div)`
+const TitleContainer = styled.div`
+  /* border-bottom: 1px solid grey;
+align-self: flex-start;
+width: auto; */
+  margin-bottom: 50px;
+`;
+
+const TravelTitle = styled(SectionTitle)`
+  font-size: 40px;
+  max-width: 500px;
+  line-height: 120%;
+  margin: 0;
+  margin-top: 80px;
+  align-self: flex-start;
+
+justify-self: flex-start;
+`;
+
+const InfoContainer = styled(motion.div)`
   display: flex;
-  margin-top: 0px;
-  justify-content: space-between;
-  width: 600px;
-  margin-left: 200px;
-  margin-top: -50px;
-
-  @media screen and (max-width: 920px) {
-    margin-top: 0px;
-    padding: 10px;
-    margin-left: 0px;
-    margin-top: 0px;
-  }
-
-  @media screen and (max-width: 660px) {
-    flex-direction: column;
-    width: auto;
-    background-color: white;
-    padding: 0;
-    margin-top: 0px;
-    padding: 10px;
-    margin-left: 0px;
-    margin-top: 0px;
-  }
-  h2 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    margin-bottom: 40px;
-    letter-spacing: 0.3px;
-    font-weight: 500;
-    color: #6a6f58;
-    line-height: 100%;
-  }
+  flex-direction: column;
+  /* align-items: center; */
+  width: auto;
+ 
 
   ul {
     list-style: none;
   }
 `;
 
+// const Info = styled(motion.div)`
+//   display: flex;
+//   margin-top: 0px;
+//   justify-content: space-between;
+//   width: 600px;
+
+//   @media screen and (max-width: 920px) {
+//     margin-top: 0px;
+//     padding: 10px;
+//   }
+
+//   @media screen and (max-width: 660px) {
+//     flex-direction: column;
+//     width: auto;
+//     background-color: white;
+//     padding: 0;
+//   }
+//   h2 {
+//     font-family: "Montserrat", sans-serif;
+//     font-size: 20px;
+//     margin-bottom: 40px;
+//     letter-spacing: 0.3px;
+//     font-weight: 500;
+//     color: #6a6f58;
+//     line-height: 100%;
+//   }
+
+//   ul {
+//     list-style: none;
+//   }
+// `;
+
 const AnimatedWorkLi = styled(motion.div)`
   display: flex;
   flex-direction: row;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   align-items: center;
+
 `;
 
 const Fix = styled.div`
@@ -414,31 +411,39 @@ const Fix = styled.div`
   height: auto;
   margin-left: 40px;
   margin-bottom: 10px;
+
 `;
 const YearContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: auto;
 
   margin-bottom: 10px;
 
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+
+
   .title {
     font-family: "Montserrat", sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight: 400;
     color: black;
     margin: 0;
-    line-height: 110%;
+    line-height: 100%;
   }
 
   .subtitle {
     font-family: "Montserrat", sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.3px;
-    font-weight: 500;
+    font-weight: 400;
     color: #6a6f58;
     line-height: 100%;
+    margin: 0;
+    margin-left: 20px;
   }
 `;
 
@@ -464,9 +469,11 @@ const WorkTitle = styled.h4`
   letter-spacing: 1px;
   font-weight: 100;
   color: #6a6f58;
-  margin: 0;
+  margin: 0 ;
   line-height: 120%;
   font-family: var(--font-bebasneue);
+
+width: 100px;
 `;
 
 const LibrosContainerSection = styled(Container)`
@@ -475,16 +482,12 @@ const LibrosContainerSection = styled(Container)`
 
 const LibrosContainer = styled.div`
   display: flex;
+
   margin-top: 30px;
   width: 100%;
-  flex-direction: row;
+  flex-direction: row !important;
   justify-content: space-around;
-
-  @media screen and (max-width: 1100px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  flex-wrap: wrap;
 `;
 
 const Item = styled(motion.div)`
@@ -493,10 +496,6 @@ const Item = styled(motion.div)`
   width: 400px;
   margin-bottom: 60px;
   align-items: center;
-
-  @media screen and (max-width: 420px) {
-    width: auto;
-  }
 
   .book-image {
     height: 350px;

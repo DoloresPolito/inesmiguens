@@ -5,7 +5,7 @@ export const Section = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
+  margin-top: 100px;
 
   @media screen and (max-width: 1200px) {
     margin-top: 80px;

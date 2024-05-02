@@ -239,6 +239,7 @@ function ObrasSection() {
 }
 
 const SectionObrasContainer = styled(Container)`
+width: 80%;
   @media screen and (max-width: 980px) {
     width: 100%;
   }

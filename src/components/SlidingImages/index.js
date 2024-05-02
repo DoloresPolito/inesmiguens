@@ -1,26 +1,94 @@
-import React from "react";
-import styled from "styled-components";
-
+import { useRef, useState, useEffect } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
+import styles from "./style.module.scss";
 import Image from "next/image";
+import styled from "styled-components"
 
-import img1 from "../../public/assets/images/nuevas home/2.jpg";
-import img2 from "../../public/assets/images/nuevas home/9.jpg";
-import img3 from "../../public/assets/images/nuevas home/mujermasazul.jpg";
-import img4 from "../../public/assets/images/nuevas home/10.jpg";
-import img5 from "../../public/assets/images/nuevas home/3.jpg";
 
-import img6 from "../../public/assets/images/nuevas home/van2.jpg";
-import img7 from "../../public/assets/images/nuevas home/van3.jpg";
-import img8 from "../../public/assets/images/nuevas home/4.jpg";
-import img9 from "../../public/assets/images/nuevas home/5.jpg";
-import img10 from "../../public/assets/images/nuevas home/impernew.jpg";
-import { motion } from "framer-motion";
 
-const Customers = () => {
+import img1 from "/public/assets/images/nuevas home/2.jpg";
+import img2 from "/public/assets/images/nuevas home/9.jpg";
+import img3 from "/public/assets/images/nuevas home/mujermasazul.jpg";
+import img4 from "/public/assets/images/nuevas home/10.jpg";
+import img5 from "/public/assets/images/nuevas home/3.jpg";
+
+import img6 from "/public/assets/images/nuevas home/van2.jpg";
+import img7 from "/public/assets/images/nuevas home/van3.jpg";
+import img8 from "/public/assets/images/nuevas home/4.jpg";
+import img9 from "/public/assets/images/nuevas home/5.jpg";
+import img10 from "/public/assets/images/nuevas home/impernew.jpg";
+
+const slider1 = [
+  {
+    color: "#e3e5e7",
+    src: "2.jpg",
+  },
+  {
+    color: "#d6d7dc",
+    src: "3.jpg",
+  },
+  {
+    color: "#e3e3e3",
+    src: "4.jpg",
+  },
+  {
+    color: "#21242b",
+    src: "5.jpg",
+  },
+];
+
+const slider2 = [
+  {
+    color: "#d4e3ec",
+    src: "9.jpg",
+  },
+  {
+    color: "#e5e0e1",
+    src: "10.jpg",
+  },
+  {
+    color: "#d7d4cf",
+    src: "impernew.jpg",
+  },
+  {
+    color: "#e1dad6",
+    src: "van2.jpg",
+  },
+];
+
+export default function index() {
+
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  const medium = 1200;
+
+
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  });
+
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
+
   return (
-    <>
-      <SlidingImages>
-        <CustomersSection>
+    <div ref={container} className={styles.slidingImages}>
+       <CustomersSection>
           <CustomersContainer>
             <LoopSection>
               <div className="blocks">
@@ -140,21 +208,56 @@ const Customers = () => {
             </LoopSection>
           </CustomersContainer>
         </CustomersSection>
+      {/* <motion.div style={{ x: x1 }} className={styles.slider}>
+        {slider1.map((project, index) => {
+          return (
+            <div
+              key={index}
+              className={styles.project}
+            //   style={{ backgroundColor: project.color }}
+            >
+              <div className={styles.imageContainer}>
+                <Image
+                  fill={true}
+                  alt={"image"}
+                  src={`/assets/images/home/${project.src}`}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </motion.div>
+      <motion.div style={{ x: x2, marginTop:"-50px" }} className={styles.slider}>
+        {slider2.map((project, index) => {
+          return (
+            <div
+              key={index}
+              className={styles.project}
+            //   style={{ backgroundColor: project.color }}
+            >
+              <div key={index} className={styles.imageContainer}>
+                <Image
+                  fill={true}
+                  alt={"image"}
+                  src={`/assets/images/home/${project.src}`}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </motion.div> */}
 
-      </SlidingImages>
-    </>
+      {width > 900 ? (<>
+        <motion.div style={{ height }} className={styles.circleContainer}>
+        <div className={styles.circle}></div>
+      </motion.div>
+      </>) : (<>
+      
+      </>)}
+
+    </div>
   );
-};
-
-const SlidingImages = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-top: 50px;
-  background-color: white;
-  z-index: 1;
-`;
-
+}
 
 
 const CustomersSection = styled.div`
@@ -253,5 +356,3 @@ const LoopSection = styled.div`
     }
   }
 `;
-
-export default Customers;

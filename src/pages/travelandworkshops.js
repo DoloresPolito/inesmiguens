@@ -1,5 +1,5 @@
 import React from "react";
-import TravelAndWorkshopsSection from "@/sections/TravelAndWorkshops";
+import TravelAndWorkshopsSection from "@/sections/TravelNew";
 import DisableContextMenu from "@/components/DisableContextMenu";
 import { Section } from "../styles/styles";
 

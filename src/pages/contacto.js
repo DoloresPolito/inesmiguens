@@ -5,10 +5,12 @@ import Image from "next/image";
 import instagram from "../../public/assets/icons/instagram.png";
 import mail from "../../public/assets/icons/mail.png";
 import phone from "../../public/assets/icons/phone.png";
-import profile from "../../public/assets/images/profile/profile1.jpeg";
+import profile from "../../public/assets/images/profile/profile3.jpeg";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { sendContactForm } from "../lib/api";
+import Rounded from "../common/Rounded";
+import Magnetic from "../common/Magnetic"
 
 const initValues = { name: "", email: "", message: "" };
 const initState = { error: "", values: initValues };
@@ -20,8 +22,16 @@ function Contacto() {
       url: "https://www.instagram.com/inesmiguensphoto/",
       image: instagram,
     },
-    { text: "+54 11 54675902", url: "https://api.whatsapp.com/send/?phone=541154675902", image: phone },
-    { text: "inesmiguensphoto@gmail.com", url: "mailto:inesmiguensphoto@gmail.com", image: mail },
+    {
+      text: "+54 11 54675902",
+      url: "https://api.whatsapp.com/send/?phone=541154675902",
+      image: phone,
+    },
+    {
+      text: "inesmiguensphoto@gmail.com",
+      url: "mailto:inesmiguensphoto@gmail.com",
+      image: mail,
+    },
   ];
   const [state, setState] = useState(initState);
 
@@ -107,18 +117,16 @@ function Contacto() {
     <>
       <Section>
         <ContactContainer>
-          <LeftContainer
-          >
+          <LeftContainer>
             <motion.div
-            
-            initial={{ opacity: 0.5, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeInOut",
-              duration: 1,
-      
-            }}
-            className="form-container">
+              initial={{ opacity: 0.5, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 1,
+              }}
+              className="form-container"
+            >
               <form>
                 <Input
                   type="text"
@@ -141,9 +149,13 @@ function Contacto() {
                   onChange={handleChange}
                 />
 
-                <button onClick={onSubmit}>
-                  <p>enviar</p>
-                </button>
+                <ButtonContainer>
+                  <Rounded>
+                    <button onClick={onSubmit}>
+                      <p>enviar</p>
+                    </button>
+                  </Rounded>
+                </ButtonContainer>
               </form>
             </motion.div>
             <div className="info-container">
@@ -158,10 +170,12 @@ function Contacto() {
                       animate="visible"
                     >
                       <Link href={contact.url} target="_blank">
+                        <Magnetic>
                         <div>
                           <Image src={contact.image} alt="logo" />
                           <Text>{contact.text}</Text>
                         </div>
+                        </Magnetic>
                       </Link>
                     </motion.div>
                   ))}
@@ -169,14 +183,12 @@ function Contacto() {
             </div>
           </LeftContainer>
 
- <RightContainer
+          <RightContainer
             variants={variants}
             initial="hidden"
             animate="visible"
           >
-   
-              <Image src={profile} alt="profile" />
-          
+            <Image src={profile} alt="profile" />
           </RightContainer>
         </ContactContainer>
       </Section>
@@ -187,7 +199,7 @@ function Contacto() {
 const ContactContainer = styled(Container)`
   flex-direction: row;
   height: auto;
-  width: 80%;
+  width: 70%;
   padding-top: 20px;
 
   justify-content: center;
@@ -221,23 +233,6 @@ const LeftContainer = styled(motion.div)`
       flex-direction: column;
     }
 
-    
-
-    button {
-      background-color: transparent;
-      border: 0.5px solid black;
-      padding: 10px 20px;
-      margin-top: 40px;
-      align-self: flex-end;
-      justify-self: flex-end;
-
-      p {
-        margin: 0;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-      }
-    }
     @media screen and (max-width: 1100px) {
       width: 90%;
     }
@@ -274,18 +269,40 @@ const LeftContainer = styled(motion.div)`
   }
 `;
 
-const Input = styled.input`
+const ButtonContainer = styled.div`
+  width: 150px;
+  height: 50px;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-top: 20px;
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
 
+    align-self: flex-end;
+    justify-self: flex-end;
+    cursor: pointer;
 
-  width: 100%;
-      padding: 8px;
-      border: none;
-      border-bottom: 1px solid #ccc;
-      outline: none;
-      color: white;
-      margin-top: 40px;
-      color: #000000; /* Color de texto */
+    p {
+      margin: 0;
       font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  color: white;
+  margin-top: 40px;
+  color: #000000; /* Color de texto */
+  font-family: "Montserrat", sans-serif;
 
   &::placeholder {
     color: #000000; /* Color del placeholder */
@@ -301,13 +318,15 @@ const RightContainer = styled(motion.div)`
   flex-direction: column;
   width: 50%;
   height: 100%;
+
   justify-content: center;
   align-items: center;
   margin-top: -40px;
 
   img {
     height: auto;
-    width: 550px;
+    width: 450px;
+
 
     @media screen and (max-width: 1100px) {
       width: 70%;
@@ -323,7 +342,5 @@ const RightContainer = styled(motion.div)`
     margin-top: 40px;
   }
 `;
-
-
 
 export default Contacto;
