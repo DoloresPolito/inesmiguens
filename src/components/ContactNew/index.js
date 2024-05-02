@@ -7,7 +7,7 @@ import Link from "next/link";
 import { slideUp, opacity } from "../ContactNew/animation";
 import Rounded from "../../common/Rounded"
 
-export default function index() {
+export default function Index() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,

@@ -56,7 +56,7 @@ const slider2 = [
   },
 ];
 
-export default function index() {
+export default function Index() {
 
   const [width, setWidth] = useState(null);
 
