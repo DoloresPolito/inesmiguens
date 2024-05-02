@@ -1,6 +1,5 @@
 import React from "react";
 import DisableContextMenu from "@/components/DisableContextMenu";
-import MovingComponent from "@/components/MovingComponent";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import NewHome from "@/sections/NewHome";
@@ -18,7 +17,6 @@ function Home() {
                 delay: 0.1,
               }}
       >
-        {/* <MovingComponent /> */}
         <NewHome/>
       </IndexContainerAnimated>
     </>

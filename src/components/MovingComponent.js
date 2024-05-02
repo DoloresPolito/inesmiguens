@@ -14,7 +14,6 @@ import img7 from "../../public/assets/images/nuevas home/van3.jpg";
 import img8 from "../../public/assets/images/nuevas home/4.jpg";
 import img9 from "../../public/assets/images/nuevas home/5.jpg";
 import img10 from "../../public/assets/images/nuevas home/impernew.jpg";
-import { motion } from "framer-motion";
 
 const Customers = () => {
   return (

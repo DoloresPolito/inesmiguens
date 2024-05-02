@@ -212,7 +212,6 @@ const CursoContainer = styled.div`
   justify-content: space-around;
   margin-bottom: 40px;
   padding: 5px !important;
-  /* margin: 20px 20px 50px 0px; */
   height: auto;
   transition: background-color 0.5s ease;
   border-radius: 5px;
@@ -244,7 +243,6 @@ const CursoContainer = styled.div`
     align-self: flex-start;
     line-height: 110%;
     margin: 0;
-    /* margin-left: 10px; */
     letter-spacing: 1px;
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -256,22 +254,12 @@ const CursoContainer = styled.div`
     color: black;
     font-size: 12px;
     line-height: 170%;
-    /* max-width: 600px; */
     letter-spacing: 0.5px;
     text-align: justify;
     text-justify: inter-word;
     margin-bottom: 10px;
-    /* font-weight: 300; */
     margin-top: 25px;
-    /* @media screen and (max-width: 1100px) {
-      margin-bottom: 20px;
-      margin-left: 0px;
-    }
 
-    @media screen and (max-width: 530px) {
-      font-size: 11px;
-      line-height: 160%;
-    } */
   }
 `;
 

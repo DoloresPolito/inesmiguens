@@ -2,9 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import styles from "./style.module.scss";
 import Image from "next/image";
-import styled from "styled-components"
-
-
+import styled from "styled-components";
 
 import img1 from "/public/assets/images/nuevas home/2.jpg";
 import img2 from "/public/assets/images/nuevas home/9.jpg";
@@ -18,46 +16,7 @@ import img8 from "/public/assets/images/nuevas home/4.jpg";
 import img9 from "/public/assets/images/nuevas home/5.jpg";
 import img10 from "/public/assets/images/nuevas home/impernew.jpg";
 
-const slider1 = [
-  {
-    color: "#e3e5e7",
-    src: "2.jpg",
-  },
-  {
-    color: "#d6d7dc",
-    src: "3.jpg",
-  },
-  {
-    color: "#e3e3e3",
-    src: "4.jpg",
-  },
-  {
-    color: "#21242b",
-    src: "5.jpg",
-  },
-];
-
-const slider2 = [
-  {
-    color: "#d4e3ec",
-    src: "9.jpg",
-  },
-  {
-    color: "#e5e0e1",
-    src: "10.jpg",
-  },
-  {
-    color: "#d7d4cf",
-    src: "impernew.jpg",
-  },
-  {
-    color: "#e1dad6",
-    src: "van2.jpg",
-  },
-];
-
 export default function Index() {
-
   const [width, setWidth] = useState(null);
 
   useEffect(() => {
@@ -73,8 +32,6 @@ export default function Index() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const medium = 1200;
-
 
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -88,177 +45,140 @@ export default function Index() {
 
   return (
     <div ref={container} className={styles.slidingImages}>
-       <CustomersSection>
-          <CustomersContainer>
-            <LoopSection>
-              <div className="blocks">
-                <div className="contents">
-                  <span className="firstBlock">
-                    <>
-                      <Image src={img2} alt="img2" loading="eager" />
+      <CustomersSection>
+        <CustomersContainer>
+          <LoopSection>
+            <div className="blocks">
+              <div className="contents">
+                <span className="firstBlock">
+                  <>
+                    <Image src={img2} alt="img2" loading="eager" />
 
-                      <Image src={img3} alt="img3" loading="eager" />
+                    <Image src={img3} alt="img3" loading="eager" />
 
-                      <Image
-                        src={img4}
-                        alt="img4"
-                        style={{ width: "350px" }}
-                        loading="eager"
-                      />
+                    <Image
+                      src={img4}
+                      alt="img4"
+                      style={{ width: "350px" }}
+                      loading="eager"
+                    />
 
-                      <Image
-                        src={img5}
-                        alt="img4"
-                        style={{ width: "450px" }}
-                        loading="eager"
-                      />
-                      <Image
-                        src={img1}
-                        alt="img1"
-                        style={{ width: "440px" }}
-                        loading="eager"
-                      />
-                    </>
-                  </span>
-                  <span className="secondBlock">
-                    <>
-                      <Image src={img2} alt="img2" loading="eager" />
+                    <Image
+                      src={img5}
+                      alt="img4"
+                      style={{ width: "450px" }}
+                      loading="eager"
+                    />
+                    <Image
+                      src={img1}
+                      alt="img1"
+                      style={{ width: "440px" }}
+                      loading="eager"
+                    />
+                  </>
+                </span>
+                <span className="secondBlock">
+                  <>
+                    <Image src={img2} alt="img2" loading="eager" />
 
-                      <Image src={img3} alt="img3" loading="eager" />
+                    <Image src={img3} alt="img3" loading="eager" />
 
-                      <Image
-                        src={img4}
-                        alt="img4"
-                        style={{ width: "350px" }}
-                        loading="eager"
-                      />
+                    <Image
+                      src={img4}
+                      alt="img4"
+                      style={{ width: "350px" }}
+                      loading="eager"
+                    />
 
-                      <Image
-                        src={img5}
-                        alt="img4"
-                        style={{ width: "450px" }}
-                        loading="eager"
-                      />
-                      <Image
-                        src={img1}
-                        alt="img1"
-                        style={{ width: "440px" }}
-                        loading="eager"
-                      />
-                    </>
-                  </span>
-                </div>
-              </div>
-            </LoopSection>
-          </CustomersContainer>
-        </CustomersSection>
-        <CustomersSection>
-          <CustomersContainer>
-            <LoopSection>
-              <div className="blocks">
-                <div className="contents">
-                  <span className="thirdBlock">
-                    {" "}
-                    <>
-                      <Image src={img6} alt="img1" loading="eager" />
-
-                      <Image
-                        src={img8}
-                        alt="img3"
-                        style={{ width: "320px" }}
-                        loading="eager"
-                      />
-
-                      <Image src={img7} alt="img5" loading="eager" />
-                      <Image
-                        src={img10}
-                        alt="img4"
-                        style={{ width: "300px" }}
-                        loading="eager"
-                      />
-
-                      <Image src={img9} alt="img2" loading="eager" />
-                    </>
-                  </span>
-                  <span className="fourthBlock">
-                    {" "}
-                    <>
-                      <Image src={img6} alt="img1" loading="eager" />
-
-                      <Image
-                        src={img8}
-                        alt="img3"
-                        style={{ width: "320px" }}
-                        loading="eager"
-                      />
-
-                      <Image src={img7} alt="img5" loading="eager" />
-                      <Image
-                        src={img9}
-                        alt="img4"
-                        style={{ width: "300px" }}
-                        loading="eager"
-                      />
-
-                      <Image src={img10} alt="img2" loading="eager" />
-                    </>
-                  </span>
-                </div>
-              </div>
-            </LoopSection>
-          </CustomersContainer>
-        </CustomersSection>
-      {/* <motion.div style={{ x: x1 }} className={styles.slider}>
-        {slider1.map((project, index) => {
-          return (
-            <div
-              key={index}
-              className={styles.project}
-            //   style={{ backgroundColor: project.color }}
-            >
-              <div className={styles.imageContainer}>
-                <Image
-                  fill={true}
-                  alt={"image"}
-                  src={`/assets/images/home/${project.src}`}
-                />
+                    <Image
+                      src={img5}
+                      alt="img4"
+                      style={{ width: "450px" }}
+                      loading="eager"
+                    />
+                    <Image
+                      src={img1}
+                      alt="img1"
+                      style={{ width: "440px" }}
+                      loading="eager"
+                    />
+                  </>
+                </span>
               </div>
             </div>
-          );
-        })}
-      </motion.div>
-      <motion.div style={{ x: x2, marginTop:"-50px" }} className={styles.slider}>
-        {slider2.map((project, index) => {
-          return (
-            <div
-              key={index}
-              className={styles.project}
-            //   style={{ backgroundColor: project.color }}
-            >
-              <div key={index} className={styles.imageContainer}>
-                <Image
-                  fill={true}
-                  alt={"image"}
-                  src={`/assets/images/home/${project.src}`}
-                />
+          </LoopSection>
+        </CustomersContainer>
+      </CustomersSection>
+      <CustomersSection>
+        <CustomersContainer>
+          <LoopSection>
+            <div className="blocks">
+              <div className="contents">
+                <span className="thirdBlock">
+                  {" "}
+                  <>
+                    <Image src={img6} alt="img1" loading="eager" />
+
+                    <Image
+                      src={img8}
+                      alt="img3"
+                      style={{ width: "320px" }}
+                      loading="eager"
+                    />
+
+                    <Image src={img7} alt="img5" loading="eager" />
+                    <Image
+                      src={img10}
+                      alt="img4"
+                      style={{ width: "300px" }}
+                      loading="eager"
+                    />
+
+                    <Image src={img9} alt="img2" loading="eager" />
+                  </>
+                </span>
+                <span className="fourthBlock">
+                  {" "}
+                  <>
+                    <Image src={img6} alt="img1" loading="eager" />
+
+                    <Image
+                      src={img8}
+                      alt="img3"
+                      style={{ width: "320px" }}
+                      loading="eager"
+                    />
+
+                    <Image src={img7} alt="img5" loading="eager" />
+                    <Image
+                      src={img9}
+                      alt="img4"
+                      style={{ width: "300px" }}
+                      loading="eager"
+                    />
+
+                    <Image src={img10} alt="img2" loading="eager" />
+                  </>
+                </span>
               </div>
             </div>
-          );
-        })}
-      </motion.div> */}
+          </LoopSection>
+        </CustomersContainer>
+      </CustomersSection>
+     
 
-      {width > 900 ? (<>
-        <motion.div style={{ height }} className={styles.circleContainer}>
-        <div className={styles.circle}></div>
-      </motion.div>
-      </>) : (<>
-      
-      </>)}
-
+      {width > 900 ? (
+        <>
+          <motion.div style={{ height }} className={styles.circleContainer}>
+            <div className={styles.circle}></div>
+          </motion.div>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
-
 
 const CustomersSection = styled.div`
   height: 350px;
@@ -300,7 +220,7 @@ const CustomersContainer = styled.div`
 `;
 
 const LoopSection = styled.div`
-    position: relative;
+  position: relative;
   .blocks {
     left: 0px;
     height: auto;

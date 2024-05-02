@@ -351,7 +351,6 @@ const TrayectoriaContainer = styled(Container)`
 
   .left {
     width: 70%;
-    /* min-height: 100vh; */
     margin: 0 auto;
 
     @media screen and (max-width: 1100px) {

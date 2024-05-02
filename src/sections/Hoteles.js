@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { Container, SectionTitle } from "../styles/styles";
+import { SectionTitle } from "../styles/styles";
 import Link from "next/link";
 import More from "@/components/More";
 import img1a from "../../public/assets/images/hoteles/principal/1.jpg";

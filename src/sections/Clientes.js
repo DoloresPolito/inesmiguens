@@ -263,13 +263,6 @@ const WorkTitle = styled.h4`
   margin: 0;
   line-height: 120%;
 `;
-const More = styled.p`
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.3px;
-  font-weight: 500;
-  color: #6a6f58;
-  line-height: 100%;
-`;
+
 
 export default ClientesSection;
