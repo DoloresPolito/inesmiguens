@@ -287,6 +287,7 @@ const ButtonContainer = styled.div`
     p {
       margin: 0;
       font-family: "Montserrat", sans-serif;
+      font-family: var(--font-montserrat);
       font-weight: 400;
       font-size: 14px;
     }
@@ -303,10 +304,12 @@ const Input = styled.input`
   margin-top: 40px;
   color: #000000; /* Color de texto */
   font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat);
 
   &::placeholder {
     color: #000000; /* Color del placeholder */
     font-family: "Montserrat", sans-serif;
+    font-family: var(--font-montserrat);
     font-weight: 400;
     font-size: 12px;
     line-height: 10px;

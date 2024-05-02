@@ -32,10 +32,11 @@
       transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
       font-size: 30px;
       color: #4a4747;
-      font-weight: 200 !important ;
+      font-weight: 100 !important ;
       text-decoration: none;
       // font-family: "Montserrat", sans-serif !important;
       font-family: var(--font-montserrat);
+    
     }
     .name {
       display: flex;
@@ -98,6 +99,7 @@
       line-height: 0%;
       // font-family: "Montserrat", sans-serif;
       font-family: var(--font-montserrat);
+
 
       &:hover {
         font-size: 13px;

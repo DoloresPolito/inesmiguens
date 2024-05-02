@@ -427,7 +427,7 @@ const YearContainer = styled.div`
     font-size: 13px;
     letter-spacing: 1px;
     font-weight: 400;
-    color: black;
+    color: #4a4747;
     margin: 0;
     line-height: 110%;
   }
