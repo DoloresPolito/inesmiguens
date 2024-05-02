@@ -34,7 +34,8 @@
       color: #4a4747;
       font-weight: 200 !important ;
       text-decoration: none;
-      font-family: "Montserrat", sans-serif !important;
+      // font-family: "Montserrat", sans-serif !important;
+      font-family: var(--font-montserrat);
     }
     .name {
       display: flex;
@@ -95,7 +96,8 @@
       font-weight: 300;
 
       line-height: 0%;
-      font-family: "Montserrat", sans-serif;
+      // font-family: "Montserrat", sans-serif;
+      font-family: var(--font-montserrat);
 
       &:hover {
         font-size: 13px;

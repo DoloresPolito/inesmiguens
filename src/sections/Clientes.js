@@ -224,6 +224,7 @@ const Info = styled(motion.div)`
   }
   h2 {
     font-family: "Montserrat", sans-serif;
+
     font-size: 20px;
     margin-bottom: 20px;
     letter-spacing: 0.3px;
@@ -253,10 +254,11 @@ const Content = styled.div`
 `;
 const WorkTitle = styled.h4`
   font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat);
   font-size: 13px;
   letter-spacing: 1px;
   font-weight: 400;
-  color: black;
+  color: #4a4747;
   margin: 0;
   line-height: 120%;
 `;

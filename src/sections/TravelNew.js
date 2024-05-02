@@ -49,7 +49,7 @@ function Talleres() {
          
           <AnimatedImage>
             <CursoContainer>
-              <h4>ciclo basico</h4>
+              <h4>ciclo básico</h4>
               <Image
                 className="course-img"
                 src={img1}
