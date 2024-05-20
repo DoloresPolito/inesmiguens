@@ -4,6 +4,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { Bebas_Neue, Montserrat, Georama } from "next/font/google";
 import Layout from "@/components/Layout";
 import ScrollToTop from "react-scroll-to-top";
+import { AnimatePresence } from "framer-motion";
 
 const bebasneue = Bebas_Neue({
   subsets: ["latin"],
@@ -13,7 +14,7 @@ const bebasneue = Bebas_Neue({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["200","300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "600", "700"],
   variable: "--font-montserrat",
 });
 
@@ -23,7 +24,7 @@ const georama = Georama({
   variable: "--font-georama",
 });
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps, router }) => {
   return (
     <>
       <Head>

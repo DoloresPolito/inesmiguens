@@ -15,6 +15,3 @@ function TravelAndWorkshops() {
 }
 
 export default TravelAndWorkshops;
-
-
-

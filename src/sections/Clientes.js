@@ -63,6 +63,7 @@ function ClientesSection() {
       height: "auto",
       transition: {
         duration: 1,
+
         ease: "easeInOut",
       },
     },
@@ -70,6 +71,7 @@ function ClientesSection() {
       height: 0,
       transition: {
         duration: 1,
+
         ease: "easeInOut",
       },
     },
@@ -99,6 +101,7 @@ function ClientesSection() {
       opacity: 1,
       transition: {
         duration: 0.35,
+
         ease: "easeOut",
       },
     },
@@ -130,6 +133,7 @@ function ClientesSection() {
               <motion.ul
                 animate={isVisible2 ? "open" : "closed"}
                 variants={motionVariants}
+                initial={false} // Evita la animación inicial
               >
                 {clientesA.map((cliente, index) => (
                   <motion.li variants={listItemVariants} key={index}>
@@ -147,7 +151,7 @@ function ClientesSection() {
               <motion.ul
                 animate={isVisible2 ? "open" : "closed"}
                 variants={motionVariants}
-              
+                initial={false} // Evita la animación inicial
               >
                 {clientesB.map((cliente, index) => (
                   <motion.li variants={listItemVariants} key={index}>
@@ -172,7 +176,6 @@ const ClientesContainer = styled(Container)`
   flex-direction: row;
   min-height: 100vh;
   width: 80%;
-
 
   @media screen and (max-width: 920px) {
     flex-direction: column;
@@ -207,13 +210,10 @@ const Info = styled(motion.div)`
   padding: 50px 0px;
   width: 600px;
 
-
   @media screen and (max-width: 920px) {
     margin-top: 0px;
     padding: 10px;
   }
-
-
 
   @media screen and (max-width: 660px) {
     flex-direction: column;
@@ -221,7 +221,6 @@ const Info = styled(motion.div)`
   }
 
   @media screen and (max-width: 490px) {
-
   }
   h2 {
     font-family: "Montserrat", sans-serif;
@@ -263,6 +262,5 @@ const WorkTitle = styled.h4`
   margin: 0;
   line-height: 120%;
 `;
-
 
 export default ClientesSection;

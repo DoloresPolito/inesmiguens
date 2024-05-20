@@ -1,7 +1,7 @@
 import React from "react";
 import DisableContextMenu from "@/components/DisableContextMenu";
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import NewHome from "@/sections/NewHome";
 
 function Home() {
@@ -9,15 +9,15 @@ function Home() {
     <>
       <DisableContextMenu />
       <IndexContainerAnimated
-              initial={{ opacity: 0}}
-              animate={{ opacity: 1}}
-              transition={{
-                ease: "easeInOut",
-                duration: 1,
-                delay: 0.1,
-              }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          ease: "easeInOut",
+          duration: 1,
+          delay: 0.1,
+        }}
       >
-        <NewHome/>
+        <NewHome />
       </IndexContainerAnimated>
     </>
   );

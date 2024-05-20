@@ -10,7 +10,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { sendContactForm } from "../lib/api";
 import Rounded from "../common/Rounded";
-import Magnetic from "../common/Magnetic"
+import Magnetic from "../common/Magnetic";
 
 const initValues = { name: "", email: "", message: "" };
 const initState = { error: "", values: initValues };
@@ -171,10 +171,10 @@ function Contacto() {
                     >
                       <Link href={contact.url} target="_blank">
                         <Magnetic>
-                        <div>
-                          <Image src={contact.image} alt="logo" />
-                          <Text>{contact.text}</Text>
-                        </div>
+                          <div>
+                            <Image src={contact.image} alt="logo" />
+                            <Text>{contact.text}</Text>
+                          </div>
                         </Magnetic>
                       </Link>
                     </motion.div>
@@ -329,7 +329,6 @@ const RightContainer = styled(motion.div)`
   img {
     height: auto;
     width: 450px;
-
 
     @media screen and (max-width: 1100px) {
       width: 70%;

@@ -28,11 +28,14 @@ class MyDocument extends Document {
     }
   }
   render() {
+    const isVercelDomain =
+      process.env.NEXT_PUBLIC_VERCEL_URL &&
+      process.env.NEXT_PUBLIC_VERCEL_URL.includes("vercel.app");
+
     return (
       <Html lang="es">
         <Head>
-
-
+          {isVercelDomain && <meta name="robots" content="noindex, nofollow" />}
         </Head>
         <body>
           <Main />

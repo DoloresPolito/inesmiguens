@@ -12,5 +12,4 @@ function HotelesSection() {
   );
 }
 
-
 export default HotelesSection;
