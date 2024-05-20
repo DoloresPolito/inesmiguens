@@ -60,6 +60,7 @@ const MyApp = ({ Component, pageProps, router }) => {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="google-site-verification" content="44s4f3DibxWEnGHtJY1SxryKUDSm8GkL4Yrg3Rwj334" />
       </Head>{" "}
       <ParallaxProvider>
         <GlobalStyles />
