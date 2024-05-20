@@ -35,6 +35,7 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
+        <title>INES MIGUENS</title>
         <meta name="google-site-verification" content="44s4f3DibxWEnGHtJY1SxryKUDSm8GkL4Yrg3Rwj334" />
           {isVercelDomain && <meta name="robots" content="noindex, nofollow" />}
         </Head>
