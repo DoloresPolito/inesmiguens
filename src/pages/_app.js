@@ -36,7 +36,7 @@ const MyApp = ({ Component, pageProps, router }) => {
         <meta name="description" content="Inés Miguens Photo" />
         <meta
           name="keywords"
-          content="Ines Miguens, Inés Miguens, fotografia, fotografía, photos, clases, clases de fotografia, ines miguens, foto hoteles, fotos hoteleria, obras"
+          content="Ines Miguens, Inés Miguens, fotografia, fotografía, photos, clases, clases de fotografia, ines miguens, foto hoteles, fotos hoteleria, obras, ines miguens photo, ines miguens fotografia"
         />
 
         <link
