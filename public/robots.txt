@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://inesmiguensphoto.com
+
+# Sitemaps
+Sitemap: https://inesmiguensphoto.com/sitemap.xml
