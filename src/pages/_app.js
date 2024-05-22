@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import ScrollToTop from "react-scroll-to-top";
 
 
+
 const bebasneue = Bebas_Neue({
   subsets: ["latin"],
   weight: ["400"],
@@ -23,6 +24,8 @@ const georama = Georama({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-georama",
 });
+
+
 
 const MyApp = ({ Component, pageProps, router }) => {
   return (
