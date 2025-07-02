@@ -16,6 +16,10 @@ import img8 from "/public/assets/images/nuevas home/4.jpg";
 import img9 from "/public/assets/images/nuevas home/5.jpg";
 import img10 from "/public/assets/images/nuevas home/impernew.jpg";
 
+import img13 from "/public/assets/images/obras/VANISHING/van25.1.jpg";
+import img11 from "/public/assets/images/obras/VANISHING/van25.2.jpg";
+import img12 from "/public/assets/images/obras/VANISHING/van25.3.jpg";
+
 export default function Index() {
   const [width, setWidth] = useState(null);
 
@@ -52,9 +56,9 @@ export default function Index() {
               <div className="contents">
                 <span className="firstBlock">
                   <>
-                    <Image src={img2} alt="img2" loading="eager" />
+                    <Image src={img12} alt="img2" loading="eager" />
 
-                    <Image src={img3} alt="img3" loading="eager" />
+                    <Image src={img13} alt="img3" loading="eager" />
 
                     <Image
                       src={img4}
@@ -70,7 +74,7 @@ export default function Index() {
                       loading="eager"
                     />
                     <Image
-                      src={img1}
+                      src={img11}
                       alt="img1"
                       style={{ width: "440px" }}
                       loading="eager"
@@ -79,9 +83,9 @@ export default function Index() {
                 </span>
                 <span className="secondBlock">
                   <>
-                    <Image src={img2} alt="img2" loading="eager" />
+                    <Image src={img12} alt="img2" loading="eager" />
 
-                    <Image src={img3} alt="img3" loading="eager" />
+                    <Image src={img13} alt="img3" loading="eager" />
 
                     <Image
                       src={img4}

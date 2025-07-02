@@ -19,6 +19,9 @@ import img6 from "../../public/assets/images/obras/VANISHING/6.jpg";
 import img7 from "../../public/assets/images/obras/VANISHING/new1.jpg";
 import img8 from "../../public/assets/images/obras/VANISHING/new2.jpg";
 import img9 from "../../public/assets/images/obras/VANISHING/new3..jpg";
+import img10 from "../../public/assets/images/obras/VANISHING/van25.1.jpg";
+import img11 from "../../public/assets/images/obras/VANISHING/van25.2.jpg";
+import img12 from "../../public/assets/images/obras/VANISHING/van25.3.jpg";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
 import DisableContextMenu from "@/components/DisableContextMenu";
@@ -79,15 +82,15 @@ function Vanishing() {
             initial="hidden"
             animate="visible"
           >
-            <StyledImageCover src={img1} alt="image1" />
+            <StyledImageCover src={img11} alt="image1" />
           </motion.div>
         </ObrasTopContainer>
 
         <ObrasBottomContainer>
           <PicturesContainer>
             <AnimatedRowOf2 image1={img5} image2={img3} />
-            <AnimatedRowOf2 image1={img4} image2={img2} />
-            <AnimatedRowOf2 image1={img6} image2={img7} />
+            <AnimatedRowOf2 image1={img10} image2={img2} />
+            <AnimatedRowOf2 image1={img12} image2={img7} />
             <AnimatedRowOf2 image1={img8} image2={img9} />
           </PicturesContainer>
         </ObrasBottomContainer>

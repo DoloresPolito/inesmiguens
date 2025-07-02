@@ -82,6 +82,25 @@ const TrayectoriaSection = () => {
 
   const trayectoria = [
     {
+      año: 2025,
+      items: [
+        {
+          titulo: "THE ART GALLERY B@W",
+          subtitulo: "Foto fest Almas Latinas",
+        }
+      ],
+    },
+    {
+      año: 2024,
+      items: [
+        {
+          titulo: "GALERIA ANDROMEDA, MÉXICO",
+          subtitulo: "“Vanishing Landscapes”",
+        }
+      ],
+    },
+
+    {
       año: 2023,
       items: [
         {
