@@ -23,6 +23,8 @@ import img10 from "../../public/assets/images/obras/ALMAS/10.png";
 import img11 from "../../public/assets/images/obras/ALMAS/11.png";
 import img12 from "../../public/assets/images/obras/ALMAS/12.png";
 import img13 from "../../public/assets/images/obras/ALMAS/13.png";
+import img14 from "../../public/assets/images/obras/ALMAS/14.jpg";
+import img15 from "../../public/assets/images/obras/ALMAS/15.jpg";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
 import DisableContextMenu from "@/components/DisableContextMenu";
@@ -87,12 +89,14 @@ function Almas() {
 
         <ObrasBottomContainer>
           <PicturesContainer>
-            <AnimatedRowOf2 image1={img7} image2={img6} />
-            <AnimatedRowOf2 image1={img13} image2={img12} />
+          <AnimatedRowOf2 image1={img15} image2={img7} />
+            <AnimatedRowOf2 image1={img6} image2={img13} />
+            <AnimatedRowOf2 image1={img14} image2={img12} />
             <AnimatedRowOf2 image1={img11} image2={img5} />
             <AnimatedRowOf2 image1={img8} image2={img9} />
             <AnimatedRowOf2 image1={img10} image2={img2} />
             <AnimatedRowOf2 image1={img3} image2={img4} />
+
           </PicturesContainer>
         </ObrasBottomContainer>
       </VocesSection>

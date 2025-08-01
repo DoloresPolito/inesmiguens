@@ -85,9 +85,13 @@ const TrayectoriaSection = () => {
       año: 2025,
       items: [
         {
-          titulo: "THE ART GALLERY B@W",
-          subtitulo: "Foto fest Almas Latinas",
-        }
+          titulo: "THE ART GALLERY ",
+          subtitulo: "B@W",
+        },
+        {
+          titulo: "FOTO FEST",
+          subtitulo: "“Almas Latinas”",
+        },
       ],
     },
     {
