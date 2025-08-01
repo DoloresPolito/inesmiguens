@@ -22,6 +22,7 @@ import img9 from "../../public/assets/images/obras/ALMAS/9.png";
 import img10 from "../../public/assets/images/obras/ALMAS/10.png";
 import img11 from "../../public/assets/images/obras/ALMAS/11.png";
 import img12 from "../../public/assets/images/obras/ALMAS/12.png";
+import img13 from "../../public/assets/images/obras/ALMAS/13.png";
 import AnimatedRowOf2 from "@/components/AnimatedRowOf2";
 import AnimatedText from "@/components/AnimatedText";
 import DisableContextMenu from "@/components/DisableContextMenu";
@@ -56,7 +57,19 @@ function Almas() {
             <AnimatedText>
               <div>
                 <ObrasText>
-               
+                  Las imágenes de Almas Latinas simbolizan las creencias y ritos
+                  de sus pueblos. Un conjunto de tradiciones, valores y
+                  expresiones humanas que conforman la identidad de su pueblo.
+                  <br />
+                  La devoción de su gente se manifiesta en las multitudinarias
+                  peregrinaciones, en las procesiones y en las danzas. La
+                  riqueza de sus ritos, sus trajes, el uso del color, y la gran
+                  ornamentación, son el reflejo palpable de la mitología
+                  enraizada en la creencia popular.
+                  <br />A veces su símbolo es religioso, pero siempre su
+                  objetivo de fondo es la integración del hombre con la
+                  naturaleza y sus rituales asociados a la fertilidad de la
+                  tierra.
                 </ObrasText>
                 <MoreBack text="obras" link="/obras" />
               </div>
@@ -74,11 +87,12 @@ function Almas() {
 
         <ObrasBottomContainer>
           <PicturesContainer>
-            <AnimatedRowOf2 image1={img2} image2={img3} />
-            <AnimatedRowOf2 image1={img4} image2={img5} />
-            <AnimatedRowOf2 image1={img6} image2={img7} />
+            <AnimatedRowOf2 image1={img7} image2={img6} />
+            <AnimatedRowOf2 image1={img13} image2={img12} />
+            <AnimatedRowOf2 image1={img11} image2={img5} />
             <AnimatedRowOf2 image1={img8} image2={img9} />
-            <AnimatedRowOf2 image1={img10} image2={img11} />
+            <AnimatedRowOf2 image1={img10} image2={img2} />
+            <AnimatedRowOf2 image1={img3} image2={img4} />
           </PicturesContainer>
         </ObrasBottomContainer>
       </VocesSection>

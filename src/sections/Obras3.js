@@ -11,6 +11,8 @@ import ecos1 from "../../public/assets/images/obras/ECOS/4.jpg";
 import ecos2 from "../../public/assets/images/obras/ECOS/9.....jpg";
 import hijos1 from "../../public/assets/images/obras/HIJOS/3.jpg";
 import hijos2 from "../../public/assets/images/obras/HIJOS/6.jpg";
+import almas1 from "../../public/assets/images/obras/ALMAS/1.png";
+import almas2 from "../../public/assets/images/obras/ALMAS/7.png";
 import { Container, SectionTitle } from "../styles/styles";
 import Link from "next/link";
 import More from "@/components/More";
@@ -232,6 +234,40 @@ function ObrasSection() {
               </ObraContainer>
             </Link>
           </AnimatedImage>
+
+          <AnimatedImage>
+            <Link href="/almas-latinas">
+              <ObraContainer>
+                <ImageContainer>
+                  <HijosImg1
+                    className="img1"
+                    src={almas1}
+                    alt="Almas Latinas"
+                    loading="eager"
+                  />
+                  {width > 980 ? (
+                    <>
+                      {" "}
+                      <HijosImg2
+                        className="img1"
+                        src={almas2}
+                        alt="Almas Latinas"
+                        loading="eager"
+                      />
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </ImageContainer>
+                <div className="text-container hijos">
+                  <h2>ALMAS LATINAS</h2>
+                  <More text="ver más" />
+                </div>
+              </ObraContainer>
+            </Link>
+          </AnimatedImage>
+
+
         </ObrasContainer>
       </motion.div>
     </SectionObrasContainer>
